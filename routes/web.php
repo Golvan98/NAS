@@ -4,6 +4,7 @@ use illuminate\Support\Facades\Auth;
 use illuminate\Contracts\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\SurveyQuestionController;
 use App\Http\Controllers\StudentController;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
@@ -22,6 +23,8 @@ use App\Models\Student;
 |
 */
 
+Route::get('/survey/{surveys}', [SurveyQuestionController::class, 'surveyform']);
+
 Route::get('/', function () {
     return view('originlayout');
 });
@@ -39,7 +42,6 @@ Route::post('/logout', [StudentController::class, 'testlogout']);
 
 Route::get('testsurvey/{survey}', [SurveyController::class, 'testsurvey']);
 
-Route::get('/survey/{surveys}', [SurveyController::class, 'showsurvey']);
 
 Route::get('/surveylist', [SurveyController::class, 'listsurvey']);
 

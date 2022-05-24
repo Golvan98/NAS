@@ -32,15 +32,7 @@ class SurveyController extends Controller
 
    
 
-    public function showsurvey(Survey $surveys)
-    {
-        
-
-        $surveys = survey::where('id', $surveys->id)->get();     
-
-      
-        return view('/surveyholder')->with(['surveys' => $surveys]);
-    }
+   
 
     public function listsurvey(Survey $surveys)
     {
