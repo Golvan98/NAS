@@ -23,7 +23,9 @@ use App\Models\Student;
 |
 */
 
-Route::get('/survey/{surveys}', [SurveyQuestionController::class, 'surveyform']);
+Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform']);
+
+Route::get('/createanswer/{survey}', [SurveyQuestionController::class, 'createanswer']);
 
 Route::get('/', function () {
     return view('originlayout');

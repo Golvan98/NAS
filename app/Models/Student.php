@@ -32,6 +32,7 @@ class Student extends Authenticatable
 
     }
 
+    
 
     public function SurveyResponses()
     {

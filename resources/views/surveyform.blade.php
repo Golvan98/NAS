@@ -5,9 +5,9 @@
 
 
     <article class="bg-gray-500">     
-
-   
-      
+    @foreach($survey as $survey)
+    <a href="/createanswer/{{$survey}}"> <button class="bg-yellow-300"> Die and Dump </button> </a>
+    @endforeach
        <form method="POST" action="#"> 
        <div>
   
@@ -40,6 +40,8 @@
                     
        </form>	
        {{$SurveyQuestions->links()}}
+
+       
     </article>
         
       

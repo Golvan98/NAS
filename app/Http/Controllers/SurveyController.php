@@ -79,7 +79,7 @@ class SurveyController extends Controller
 
         $CoeStudents = Student::all()->whereIn('course_id', $CoeCourses)->pluck('firstname');
 
-        dd($CoeStudents);
+        
         
         $BSCAcount = Student::all()->whereIn('course_id', $BSCA)->count();
         $BSCScount = Student::all()->whereIn('course_id', $BSCS)->count();

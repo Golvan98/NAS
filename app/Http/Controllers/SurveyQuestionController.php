@@ -1,24 +1,55 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
-use App\Models\ResponseAnswers;
+use App\Models\SurveyResponseAnswers;
+use App\Models\Student;
 
 class SurveyQuestionController extends Controller
 {
-    public function surveyform(Survey $surveys)
+    public function surveyform(Survey $survey)
     {
         
-
-        $surveys = survey::where('id', $surveys->id)->pluck('id');
-
-       
-        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $surveys)->paginate(4);
+        $student = auth()->user()->id;
 
         
-        return view('/surveyform')->with(['surveys' => $surveys, 'SurveyQuestions' => $SurveyQuestions]);
+
+        $survey = survey::where('id', $survey->id)->pluck('id');
+
+        
+       
+        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(4);
+
+        
+        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student]);
+    }
+
+    public function createanswer(SurveyResponseAnswers $SurveyResponseAnswers, Survey $survey, Student $student)
+    {
+        $student = auth()->user()->id;
+        
+       
+        
+        
+
+        $response = SurveyReponse::create([
+            'survey_id' => $survey->id,
+            'student_id' => $student
+        ]);
+
+        dd($response->id);
+        $answer = request()->validate([
+            'answer' => 'required',
+            'password' => 'required',
+        ]);
+
+        SurveyResponseAnswers::create($answer);
+
+        return view('home');
+
+
     }
 }
