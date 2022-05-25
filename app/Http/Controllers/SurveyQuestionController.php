@@ -7,6 +7,8 @@ use App\Models\Survey;
 use App\Models\SurveyQuestion;
 use App\Models\SurveyResponseAnswers;
 use App\Models\Student;
+use App\Models\SurveyResponses;
+use App\Http\Controllers\SurveyResponsesController;
 
 class SurveyQuestionController extends Controller
 {
@@ -21,34 +23,43 @@ class SurveyQuestionController extends Controller
 
         
        
-        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(4);
+        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
 
         
         return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student]);
     }
 
-    public function createanswer(SurveyResponseAnswers $SurveyResponseAnswers, Survey $survey, Student $student)
+    public function createanswer(Survey $survey, SurveyQuestion $SurveyQuestion, SurveyResponseAnswers $SurveyResponseAnswers, Student $student, SurveyResponses $SurveyResponses)
     {
+        
+      
+
         $student = auth()->user()->id;
         
        
-        
-        
-
-        $response = SurveyReponse::create([
+        $responsedata = [
             'survey_id' => $survey->id,
-            'student_id' => $student
-        ]);
+            'student_id' => $student,
+            
+        ];
 
-        dd($response->id);
+        $newresponse = SurveyResponses::create($responsedata);
+
+       
+
+
         $answer = request()->validate([
             'answer' => 'required',
-            'password' => 'required',
+            'survey_response_id' => $newresponse->id,
+            'survey_question_id' => $SurveyQuestion->id            
         ]);
 
-        SurveyResponseAnswers::create($answer);
+        dd($answer);
 
-        return view('home');
+        $newanswer = SurveyResponseAnswers::create($answer); 
+
+        dd($newanswer);
+        return redirect('/home');
 
 
     }

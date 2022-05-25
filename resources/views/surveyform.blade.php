@@ -5,30 +5,35 @@
 
 
     <article class="bg-gray-500">     
-    @foreach($survey as $survey)
+   <!--  @foreach($survey as $survey)
     <a href="/createanswer/{{$survey}}"> <button class="bg-yellow-300"> Die and Dump </button> </a>
-    @endforeach
-       <form method="POST" action="#"> 
+    @endforeach -->
+
+
+    @foreach($SurveyQuestions as $SurveyQuestion)
+       <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}"> 
+       @csrf
+       @method('POST')
        <div>
   
         </div>
-    
+             
         
-            @foreach($SurveyQuestions as $SurveyQuestion)
-            @csrf
-            
-                    @method('PATCH')
+                 
                     <div class="flex-auto space-y-2"> 
                     
                     
                     {{$SurveyQuestion->question}} 
-                    @foreach($SurveyQuestion->surveyresponseanswers as $surveyanswer)
-                    <input class="{{$surveyanswer->answer}}" name="{{$surveyanswer->answer}}", id="{{$surveyanswer->answer}}"> 
-                    </input>
-                    
-                    @endforeach
                    
-            @endforeach
+                    <input class="border border-gray-400 p-0.5 w-full"
+			        type="text"
+			        name="answer"
+			        id="answer"
+		        	required
+			        >
+                   
+                   
+            
 						
             <button type="submit" 
                     
@@ -37,8 +42,9 @@
                      </button>  
                     </div>
 
-                    
+    @endforeach           
        </form>	
+       
        {{$SurveyQuestions->links()}}
 
        

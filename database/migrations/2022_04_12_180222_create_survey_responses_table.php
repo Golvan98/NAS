@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id(); 
             $table->unsignedBigInteger('student_id')->nullable();
             $table->unsignedBigInteger('survey_id')->nullable();
-            $table->string('status');
+            $table->boolean('status')->nullable()->default(1);
             $table->timestamps();
 
             $table->foreign('student_id')

@@ -20,7 +20,7 @@ class SurveyResponsesFactory extends Factory
     {
         return [
             
-            'status' => $this->faker->randomElement(['Inactive', 'In Progress']),
+            'status' => $this->faker->boolean(),
         ];
     }
 }

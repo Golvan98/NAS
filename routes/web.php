@@ -5,6 +5,7 @@ use illuminate\Contracts\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\SurveyQuestionController;
+use App\Http\Controllers\SurveyResponsesController;
 use App\Http\Controllers\StudentController;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
@@ -25,7 +26,7 @@ use App\Models\Student;
 
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform']);
 
-Route::get('/createanswer/{survey}', [SurveyQuestionController::class, 'createanswer']);
+Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
 Route::get('/', function () {
     return view('originlayout');
