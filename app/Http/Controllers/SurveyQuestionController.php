@@ -45,20 +45,22 @@ class SurveyQuestionController extends Controller
 
         $newresponse = SurveyResponses::create($responsedata);
 
-       
+        $newresponseid = $newresponse->id;
+        $SurveyQuestionid = $SurveyQuestion->id;
 
+        
 
         $answer = request()->validate([
-            'answer' => 'required',
-            'survey_response_id' => $newresponse->id,
-            'survey_question_id' => $SurveyQuestion->id            
+            'answer' => 'required',           
         ]);
 
-        dd($answer);
+        
 
         $newanswer = SurveyResponseAnswers::create($answer); 
 
-        dd($newanswer);
+       
+        $newanswerupdated = SurveyResponseAnswers::where('id', $newanswer->id)->update(['survey_response_id' => $newresponse->id, 'survey_question_id' => $SurveyQuestionid]);
+        
         return redirect('/home');
 
 
