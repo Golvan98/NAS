@@ -25,14 +25,19 @@ class SurveyQuestionController extends Controller
        
         $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
 
+        $nextpage = $SurveyQuestions->nextPageURL();
+
+      
         
-        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student]);
+        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage]);
     }
 
-    public function createanswer(Survey $survey, SurveyQuestion $SurveyQuestion, SurveyResponseAnswers $SurveyResponseAnswers, Student $student, SurveyResponses $SurveyResponses)
+    public function createanswer(Survey $survey, SurveyQuestion $SurveyQuestion, SurveyResponseAnswers $SurveyResponseAnswers, Student $student, SurveyResponses $SurveyResponses, )
     {
-        
+       
+
       
+     
 
         $student = auth()->user()->id;
         
@@ -61,8 +66,14 @@ class SurveyQuestionController extends Controller
        
         $newanswerupdated = SurveyResponseAnswers::where('id', $newanswer->id)->update(['survey_response_id' => $newresponse->id, 'survey_question_id' => $SurveyQuestionid]);
         
-        return redirect('/home');
+        $SurveyQuestionz = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
 
+        $currentpage = $SurveyQuestionz->currentPage();
 
+        $url = url()->previous();
+
+        
+
+        return redirect($url);
     }
 }

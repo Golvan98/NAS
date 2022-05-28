@@ -36,14 +36,16 @@
             <button type="submit" 
                     
                     class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
-                     Submit Answer
+                     Submit Answer 
                      </button>  
                     </div>
+                    {{$SurveyQuestions->links()}}
+                    </form>	
 
     @endforeach           
-       </form>	
        
-       {{$SurveyQuestions->links()}}
+       
+      
 
        
     </article>

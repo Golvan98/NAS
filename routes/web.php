@@ -24,7 +24,7 @@ use App\Models\Student;
 |
 */
 
-Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform']);
+Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
@@ -34,7 +34,7 @@ Route::get('/', function () {
 
 Route::get('/home', function(){
     return view('/homepage');
-});
+})->name('balay');
 
 
 Route::get('/login', [StudentController::class, 'testlogin']);
