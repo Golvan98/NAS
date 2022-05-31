@@ -9,6 +9,8 @@ use App\Models\SurveyResponseAnswers;
 use App\Models\Student;
 use App\Models\SurveyResponses;
 use App\Http\Controllers\SurveyResponsesController;
+use Illuminate\Support\Facades\DB;
+
 
 class SurveyQuestionController extends Controller
 {
@@ -48,7 +50,7 @@ class SurveyQuestionController extends Controller
             
         ];
 
-        $newresponse = SurveyResponses::create($responsedata);
+        $newresponse = SurveyResponses::firstOrCreate($responsedata);
 
         $newresponseid = $newresponse->id;
         $SurveyQuestionid = $SurveyQuestion->id;
@@ -59,21 +61,45 @@ class SurveyQuestionController extends Controller
             'answer' => 'required',           
         ]);
 
-        
-
-        $newanswer = SurveyResponseAnswers::create($answer); 
-
        
-        $newanswerupdated = SurveyResponseAnswers::where('id', $newanswer->id)->update(['survey_response_id' => $newresponse->id, 'survey_question_id' => $SurveyQuestionid]);
+           $checkanswer = DB::table('survey_response_answers')
+                        ->where('survey_response_id', '=', $newresponseid)
+                        ->where('survey_question_id', '=', $SurveyQuestionid)->exists();
+
+        if($checkanswer)
+
+        {
         
-        $SurveyQuestionz = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
+          $updatedanswer =  DB::table('survey_response_answers')
+                            ->where('survey_response_id', '=', $newresponseid)
+                              ->where('survey_question_id', '=', $SurveyQuestionid)->update($answer);
 
-        $currentpage = $SurveyQuestionz->currentPage();
+        }
 
-        $url = url()->previous();
+        else
+        {
+
+        $newanswer = SurveyResponseAnswers::create($answer);
+
+        $newanswerid = $newanswer->id;        
+        $newanswerupdated = SurveyResponseAnswers::where('id', $newanswerid)->update(['survey_response_id' => $newresponse->id, 'survey_question_id' => $SurveyQuestionid]);
+        
+        $anewanswer = DB::table('survey_response_answers')
+        ->where('id', '=', $newanswerid);
+        
+
+        
+       
+
+        
+        }
+               
+
+        return redirect()->back()->withInput();
+
 
         
 
-        return redirect($url);
+        /* return redirect('texthere/' . $variablehere->id '?page=' . $page->id);  THE RESULT OF THIS IS /texthere/varaiableid?page=pageid*/
     }
 }

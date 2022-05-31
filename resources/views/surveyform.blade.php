@@ -9,9 +9,9 @@
     <a href="/createanswer/{{$survey}}"> <button class="bg-yellow-300"> Die and Dump </button> </a>
     @endforeach -->
 
-
+   
     @foreach($SurveyQuestions as $SurveyQuestion)
-       <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}"> 
+       <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
        <div>
@@ -22,16 +22,19 @@
                     
                     
                     {{$SurveyQuestion->question}} 
+                    {{$nextpage}}
                    
                     <input class="border border-gray-400 p-0.5 w-full"
 			        type="text"
 			        name="answer"
 			        id="answer"
 		        	required
+                    value="{{old('answer')}}"
 			        >
                    
                    
-            
+                    
+
 						
             <button type="submit" 
                     
@@ -40,6 +43,7 @@
                      </button>  
                     </div>
                     {{$SurveyQuestions->links()}}
+
                     </form>	
 
     @endforeach           
