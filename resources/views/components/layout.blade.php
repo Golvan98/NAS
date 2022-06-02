@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <script src ="app.js"> </script>
+  <script src ="public/app.js"> </script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <div id="main" class="flex-no-wrap bg-gray-300">
@@ -88,6 +91,23 @@
 
 <footer class="bg-gray-500">
     FOOTER 
+
+    @if ($message = Session::get('success'))
+
+	<div x-data="{show: true)"
+	x-init="setTimeout(() => show = false, 4000)"
+	x-show="show"
+    class="bg-green-500">
+
+        <strong>{{ session('success') }}</strong>
+    </div>
+    @endif
+
+    @if ($message = Session::get('error'))
+
+    <strong>{{ $message }}</strong>
+
+    @endif
 </footer>
 
 

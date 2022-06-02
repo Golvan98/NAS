@@ -66,36 +66,29 @@ class SurveyQuestionController extends Controller
                         ->where('survey_response_id', '=', $newresponseid)
                         ->where('survey_question_id', '=', $SurveyQuestionid)->exists();
 
-        if($checkanswer)
+            if($checkanswer)
 
-        {
-        
-          $updatedanswer =  DB::table('survey_response_answers')
-                            ->where('survey_response_id', '=', $newresponseid)
-                              ->where('survey_question_id', '=', $SurveyQuestionid)->update($answer);
+                    {
+                    
+                                        $updatedanswer =  DB::table('survey_response_answers')
+                                        ->where('survey_response_id', '=', $newresponseid)
+                                        ->where('survey_question_id', '=', $SurveyQuestionid)->update($answer);
 
-        }
+                    }
 
-        else
-        {
+            else
+            {
+                    $newanswer = SurveyResponseAnswers::create($answer);
 
-        $newanswer = SurveyResponseAnswers::create($answer);
-
-        $newanswerid = $newanswer->id;        
-        $newanswerupdated = SurveyResponseAnswers::where('id', $newanswerid)->update(['survey_response_id' => $newresponse->id, 'survey_question_id' => $SurveyQuestionid]);
-        
-        $anewanswer = DB::table('survey_response_answers')
-        ->where('id', '=', $newanswerid);
-        
-
-        
-       
-
-        
-        }
+                    $newanswerid = $newanswer->id;        
+                    $newanswerupdated = SurveyResponseAnswers::where('id', $newanswerid)->update(['survey_response_id' => $newresponse->id, 'survey_question_id' => $SurveyQuestionid]);
+                    
+                    $anewanswer = DB::table('survey_response_answers')
+                    ->where('id', '=', $newanswerid);    
+            }
                
 
-        return redirect()->back()->withInput();
+        return redirect()->back()->withInput()->withSuccess('IT WORKS!');;
 
 
         
