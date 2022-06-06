@@ -29,7 +29,7 @@ class StudentController extends Controller
                                           }
         else 
         {
-            return redirect()->back()->with('error', 'Failed to log in. But yo code works tho');                             
+            return redirect()->back()->with('error', 'Failed to log in');                             
         }
     }
 

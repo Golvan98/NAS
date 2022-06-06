@@ -14,6 +14,31 @@ use Illuminate\Support\Facades\DB;
 
 class SurveyQuestionController extends Controller
 {
+    public function editquestion()
+    {
+        $data = request()->validate(
+            [
+               'question' => 'required',
+               'survey_id' => 'required'
+            ]);
+   
+    }
+
+    public function createquestion()
+    {
+        $data = request()->validate(
+            [
+               'question' => 'required',
+               'survey_id' => 'required'
+            ]);
+    }
+
+
+
+
+
+
+
     public function surveyform(Survey $survey)
     {
         
@@ -88,7 +113,7 @@ class SurveyQuestionController extends Controller
             }
                
 
-        return redirect()->back()->withInput()->withSuccess('IT WORKS!');;
+        return redirect()->back()->withInput()->withSuccess('Answer Saved Successfully');
 
 
         

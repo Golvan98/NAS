@@ -22,7 +22,7 @@
                     
                     
                     {{$SurveyQuestion->question}} 
-                    {{$nextpage}}
+                   
                    
                     <input class="border border-gray-400 p-0.5 w-full"
 			        type="text"

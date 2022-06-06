@@ -29,9 +29,9 @@
 
             @auth
                                                
-            <form method="POST" action="/logout"> 
+            <form method="POST" action="/logout" class="text-white font-bold"> 
             @csrf
-            Welcome {{ auth()->user()->firstname }} !
+             Welcome {{ auth()->user()->firstname }} ! 
             
             <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded"> logout </button> </a> 
 
@@ -89,30 +89,33 @@
 
 </div>
 
-<footer class="bg-gray-500">
-    FOOTER 
+<footer class="bg-gray-500 flex">
+    <div class="px-72 bg-white">  </div>
+    <div class="px-72 bg-white">  </div>
 
-    @if ($message = Session::get('success'))
 
-	<div x-data="{show: true)"
-	x-init="setTimeout(() => show = false, 4000)"
-	x-show="show"
-    class="bg-green-500">
+    
+</footer>
 
-        <strong>{{ session('success') }}</strong>
+@if ($message = Session::get('success'))
+    <div x-data="{show: true}"
+     x-show="show"
+     x-init="setTimeout(() => show = false, 3000)"
+     class="fixed bg-green-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm" >
+     <strong>{{$message }}</strong>
     </div>
     @endif
 
-    @if ($message = Session::get('error'))
 
-    <strong>{{ $message }}</strong>
+@if ($message = Session::get('error'))
+    <div x-data="{show: true}"
+     x-show="show"
+     x-init="setTimeout(() => show = false, 3000)"
+     class="fixed bg-red-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+     <strong>{{$message }}</strong>
+    </div>
 
     @endif
-</footer>
-
-
-
-
 
 
 
