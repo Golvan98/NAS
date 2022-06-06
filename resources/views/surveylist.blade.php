@@ -6,23 +6,34 @@
 
     <article class="bg-gray-500 flex">     
 
-    
-        @foreach($surveys as $survey)
-
-        <article class="flex-auto items-center justify-center text-center bg-gray-300 flex-auto font-bold border border-red-500">
-            <a href="/survey/{{$survey->id}}">
-                <div>
-                     {{$survey->name}} 
-                     <section class="hero container mx-auto flex justify-center">
-                        <img src="{{ asset('storage/manage.png') }}" alt="description of myimageee"> 
-                    </section>
-                </div>        
+    <article class="flex-auto bg-gray-300 flex-auto font-bold border border-red-500">
 
 
-            </a>
+        
+
+         <div class=" ml-4 pr-48 border border-green-500 place-content-center place-items-center place-self-center">
+         
+
+            <div class="text-white  bg-gray-500 justify-items-center grid place-items-center">
+                                All Surveys
+            <table class="text-black grid place-items-center m-2 text-center text-left mt-8 border border-black mb-4 ">
+
+         @foreach($surveys as $survey)
+            <tr>              
+            <th class="whitespace-pre px-24 py-4"> {{$survey->name}} </th>  
+            <th class="whitespace-pre px-24 py-4"> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Questions </th> </button> </a>
+            <th class="whitespace-pre px-24 py-4"> <a href="#"> <button class="bg-gray-300 rounded-xl py-2"> Create Question </th> </button> </a>
+            </tr> 
+            @endforeach   
+            </table>
+            </div>
+
+         </div>
+
+        
             
         </article>
-        @endforeach
+       
        
     </article>
         

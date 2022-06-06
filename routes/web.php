@@ -27,6 +27,13 @@ use App\Models\Student;
 
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 
+Route::get('/createsurveyquestion/{survey}', [SurveyQuestionController::class, 'createquestion']);
+
+Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'questionlist']);
+
+Route::get('/questioneditor/{surveyquestion}', [SurveyQuestionController::class, 'questioneditor']);
+
+
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
 Route::get('/', function () {

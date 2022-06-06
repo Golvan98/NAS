@@ -14,6 +14,35 @@ use Illuminate\Support\Facades\DB;
 
 class SurveyQuestionController extends Controller
 {
+
+
+    public function questionlist(Survey $survey)
+    {
+        return view('surveyquestionlist')->with(['survey' => $survey]);
+    }
+
+
+    public function questioneditor(SurveyQuestion $surveyquestion)
+    {
+
+       
+        return view('/questioneditor')->with(['surveyquestion' => $surveyquestion]);
+    }
+
+
+
+    public function createquestion()
+    {
+        $data = request()->validate(
+            [
+               'question' => 'required',
+               'survey_id' => 'required'
+            ]);
+
+
+        
+    }
+
     public function editquestion()
     {
         $data = request()->validate(
@@ -23,16 +52,6 @@ class SurveyQuestionController extends Controller
             ]);
    
     }
-
-    public function createquestion()
-    {
-        $data = request()->validate(
-            [
-               'question' => 'required',
-               'survey_id' => 'required'
-            ]);
-    }
-
 
 
 
