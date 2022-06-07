@@ -15,7 +15,14 @@ class SurveyController extends Controller
 {
 
 
+    public function deletesurvey(Survey $survey)
+    {
+    
+        $survey->delete();
 
+        return redirect()->back()->with('success' , 'Survey Deleted Successfully');
+     
+    }
 
 
 

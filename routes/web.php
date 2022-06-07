@@ -41,6 +41,8 @@ Route::patch('/updatequestion/{surveyquestion}', [SurveyQuestionController::clas
 
 Route::delete('/deletequestion/{surveyquestion}', [SurveyQuestionController::class, 'deletequestion']);
 
+Route::delete('/deletesurvey/{survey}', [SurveyController::class, 'deletesurvey']);
+
 
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
