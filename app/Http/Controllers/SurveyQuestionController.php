@@ -36,13 +36,24 @@ class SurveyQuestionController extends Controller
                'question' => 'required',
             ]);
 
-       
+            $survey = $surveyquestion->survey_id;
    
         $surveyquestion->update($data);
         
-            return redirect('/home')->with('success', 'Question Edited Successfully');
+       return redirect()->route('surveylist', [$survey])->with('success', 'Question Edited Successfully');
+
+          // return redirect('/home')->with('success', 'Question Edited Successfully');
     }
 
+    public function deletequestion(SurveyQuestion $surveyquestion)
+    {
+        $survey = $surveyquestion->survey_id;
+
+        $surveyquestion->delete();
+
+        return redirect()->route('surveylist', [$survey])->with('success', 'Question Deleted Successfully');
+     
+    }
 
     public function createquestion()
     {

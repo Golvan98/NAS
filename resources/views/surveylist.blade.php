@@ -22,7 +22,8 @@
             <tr>              
             <th class="whitespace-pre px-24 py-4"> {{$survey->name}} </th>  
             <th class="whitespace-pre px-24 py-4"> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Questions </th> </button> </a>
-            <th class="whitespace-pre px-24 py-4"> <a href="#"> <button class="bg-gray-300 rounded-xl py-2"> Create Question </th> </button> </a>
+            <th class="whitespace-pre px-24 py-4"> <a href="#"> <button type="submit" class="bg-gray-300 rounded-xl py-2"> Delete Survey </th> </button> </a> 
+           
             </tr> 
             @endforeach   
             </table>

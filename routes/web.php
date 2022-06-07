@@ -29,11 +29,13 @@ Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])-
 
 Route::get('/createsurveyquestion/{survey}', [SurveyQuestionController::class, 'createquestion']);
 
-Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'questionlist']);
+Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'questionlist'])->name('surveylist');
 
 Route::get('/questioneditor/{surveyquestion}', [SurveyQuestionController::class, 'questioneditor']);
 
 Route::patch('/updatequestion/{surveyquestion}', [SurveyQuestionController::class, 'updatequestion']);
+
+Route::delete('/deletequestion/{surveyquestion}', [SurveyQuestionController::class, 'deletequestion']);
 
 
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
