@@ -33,6 +33,8 @@ Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'question
 
 Route::get('/questioneditor/{surveyquestion}', [SurveyQuestionController::class, 'questioneditor']);
 
+Route::patch('/updatequestion/{surveyquestion}', [SurveyQuestionController::class, 'updatequestion']);
+
 
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 

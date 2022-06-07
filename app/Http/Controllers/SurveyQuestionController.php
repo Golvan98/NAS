@@ -25,10 +25,23 @@ class SurveyQuestionController extends Controller
     public function questioneditor(SurveyQuestion $surveyquestion)
     {
 
-       
-        return view('/questioneditor')->with(['surveyquestion' => $surveyquestion]);
+       $surveyid = $surveyquestion->survey_id;   
+        return view('/questioneditor')->with(['surveyquestion' => $surveyquestion, 'surveyid' => $surveyid]);
     }
 
+    public function updatequestion(SurveyQuestion $surveyquestion)
+    {
+        $data = request()->validate(
+            [
+               'question' => 'required',
+            ]);
+
+       
+   
+        $surveyquestion->update($data);
+        
+            return redirect('/home')->with('success', 'Question Edited Successfully');
+    }
 
 
     public function createquestion()
@@ -36,23 +49,14 @@ class SurveyQuestionController extends Controller
         $data = request()->validate(
             [
                'question' => 'required',
-               'survey_id' => 'required'
+               'survey_id' => $survey->id
             ]);
 
 
         
     }
 
-    public function editquestion()
-    {
-        $data = request()->validate(
-            [
-               'question' => 'required',
-               'survey_id' => 'required'
-            ]);
    
-    }
-
 
 
 
