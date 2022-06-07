@@ -55,15 +55,29 @@ class SurveyQuestionController extends Controller
      
     }
 
-    public function createquestion()
+    public function questioncreator(Survey $survey)
     {
+
+      
+        return view('/surveyquestioncreator')->with(['survey' => $survey]);
+    }
+
+    public function createquestion(Survey $survey)
+    {
+
+       
         $data = request()->validate(
             [
                'question' => 'required',
-               'survey_id' => $survey->id
             ]);
 
+        $newquestion = SurveyQuestion::create($data);
 
+        $newquestion->update(['survey_id' => $survey->id, 'type' => NULL, 'category' => NULL]);
+
+        $survey = $newquestion->survey_id;
+
+        return redirect()->route('surveylist', [$survey])->with('success', 'Question Created Successfully');
         
     }
 

@@ -34,12 +34,12 @@ class SurveyController extends Controller
 
    
 
-    public function listsurvey(Survey $surveys)
+    public function listsurvey(Survey $survey)
     {
 
-        $surveys = survey::all();
+        $survey = survey::all();
 
-        return view('/surveylist')->with(['surveys' =>$surveys]);
+        return view('/surveylist')->with(['surveys' =>$survey]);
     }
     
 
