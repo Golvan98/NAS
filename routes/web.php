@@ -29,9 +29,17 @@ Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])-
 
 Route::get('/createsurveyquestion/{survey}', [SurveyQuestionController::class, 'createquestion']);
 
-Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'questionlist'])->name('surveylist');
+Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'questionlist'])->name('surveyquestionlist');
 
 Route::get('/questioneditor/{surveyquestion}', [SurveyQuestionController::class, 'questioneditor']);
+
+Route::get('/surveyeditor/{survey}', [SurveyController::class, 'surveyeditor']);
+
+Route::get('/surveycreator', [SurveyController::class, 'surveycreator']);
+
+Route::post('/createsurvey', [SurveyController::class, 'createsurvey']);
+
+Route::patch('/updatesurvey/{survey}', [SurveyController::class, 'updatesurvey']);
 
 Route::get('/questioncreator/{survey}', [SurveyQuestionController::class, 'questioncreator']);
 
@@ -64,7 +72,7 @@ Route::post('/logout', [StudentController::class, 'testlogout']);
 Route::get('testsurvey/{survey}', [SurveyController::class, 'testsurvey']);
 
 
-Route::get('/surveylist', [SurveyController::class, 'listsurvey']);
+Route::get('/surveylist', [SurveyController::class, 'listsurvey'])->name('allsurveys');
 
 Route::get('/surveyresults/', [SurveyController::class, 'surveyresults'])->name('MgaData');
 

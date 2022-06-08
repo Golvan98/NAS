@@ -13,7 +13,39 @@ use App\Models\Department;
 
 class SurveyController extends Controller
 {
+    public function surveyeditor(Survey $survey)
+    {
+        return view('/surveyeditor')->with(['survey' => $survey]);            
+    }
 
+    public function surveycreator(Survey $survey)
+    {
+        return view('surveycreator');
+    }
+
+    public function createsurvey(Survey $survey)
+    {
+        $data = request()->validate([
+            'name' => 'required'
+        ]);
+        
+        $newsurvey = Survey::create($data);
+
+        return redirect()->route('allsurveys')->with('success', 'Survey Created Successfully');
+    }
+
+    public function updatesurvey(Survey $survey)
+    {
+        
+        $data = request()->validate([
+            'name' => 'required'
+        ]);
+        
+        $survey->update($data);
+
+        return redirect()->route('allsurveys')->with('success', 'Survey Updated Successfully');
+
+    }
 
     public function deletesurvey(Survey $survey)
     {

@@ -36,7 +36,6 @@ class StudentController extends Controller
     public function testlogout()
     {
         auth()->logout();
-
-        return view('/homepage')->with('message', 'IT WORKS!');
+        return redirect('home')->with('success', 'Logged Out Successfully');
     }
 }
