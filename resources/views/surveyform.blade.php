@@ -15,7 +15,24 @@
        @csrf
        @method('POST')
        <div>
-  
+     
+
+       @if($SurveyQuestion->type =='likertscale')
+                    echo likertscale
+       @endif
+       @if($SurveyQuestion->type =='ratingscale')
+                    echo ratingscale
+       @endif
+       @if($SurveyQuestion->type =='multiplechoice')
+                    echo multiplechoice
+       @endif
+       @if($SurveyQuestion->type =='matrixquestion')
+                    echo matrixquestion
+       @endif
+       @if($SurveyQuestion->type =='openended')
+                    echo openended
+       @endif
+
         </div>
                                       
                     <div class="flex-auto space-y-2"> 
@@ -24,6 +41,8 @@
                     {{$SurveyQuestion->question}} 
                    
                    
+                    
+
                     <input class="border border-gray-400 p-0.5 w-full"
 			        type="text"
 			        name="answer"
