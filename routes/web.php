@@ -54,6 +54,9 @@ Route::delete('/deletesurvey/{survey}', [SurveyController::class, 'deletesurvey'
 
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
+Route::get('/surveyform/{survey}', [SurveyQuestionController::class, 'surveyform']);
+
+
 Route::get('/', function () {
     return view('originlayout');
 });

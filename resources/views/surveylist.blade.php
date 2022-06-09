@@ -23,7 +23,7 @@
          @foreach($surveys as $survey)
             <tr>              
             <th class="whitespace-pre px-20 py-4"> {{$survey->name}} </th>  
-            <th class="whitespace-pre px-20 py-4"> <a href="/surveyeditor/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Survey </th> </button> </a>
+            <th class="whitespace-pre px-20 py-4"> <a href="/surveyform/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Test Answer Question </th> </button> </a>
             <th class="whitespace-pre px-20 py-4"> <a href="/surveyeditor/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Survey </th> </button> </a>
             <th class="whitespace-pre px-20 py-4"> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Questions </th> </button> </a>
             <th class="whitespace-pre px-20 py-4"> <a href="/questioncreator/{{$survey->id}}"> <button type="submit" class="bg-gray-300 rounded-xl py-2"> Create Survey Question </th> </button> </a> 
