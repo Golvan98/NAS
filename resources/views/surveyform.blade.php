@@ -11,27 +11,18 @@
 
    
     @foreach($SurveyQuestions as $SurveyQuestion)
+
+     @if($SurveyQuestion->type =='likertscale')
        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
        <div>
      
 
-       @if($SurveyQuestion->type =='likertscale')
+       
                     echo likertscale
-       @endif
-       @if($SurveyQuestion->type =='ratingscale')
-                    echo ratingscale
-       @endif
-       @if($SurveyQuestion->type =='multiplechoice')
-                    echo multiplechoice
-       @endif
-       @if($SurveyQuestion->type =='matrixquestion')
-                    echo matrixquestion
-       @endif
-       @if($SurveyQuestion->type =='openended')
-                    echo openended
-       @endif
+      
+      
 
         </div>
                                       
@@ -64,6 +55,24 @@
                     {{$SurveyQuestions->links()}}
 
                     </form>	
+        @endif
+
+        @if($SurveyQuestion->type =='ratingscale')
+            echo ratingscale
+        @endif
+
+        @if($SurveyQuestion->type =='multiplechoice')
+            echo multiplechoice
+        @endif
+
+        @if($SurveyQuestion->type =='matrixquestion')
+            echo matrixquestion
+        @endif
+
+        @if($SurveyQuestion->type =='openended')
+            echo openended
+        @endif
+
 
     @endforeach           
        

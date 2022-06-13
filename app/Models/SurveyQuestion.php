@@ -19,4 +19,9 @@ class SurveyQuestion extends Model
     {
         return $this->hasMany(SurveyResponseAnswers::class);
     }
+
+    public function Choice()
+    {
+        return $this->hasMany(Choice::class);
+    }
 }

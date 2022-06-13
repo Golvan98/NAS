@@ -12,6 +12,7 @@ use App\Models\SurveyResponseAnswers;
 use App\Models\Department;
 use App\Models\College;
 use App\Models\Course;
+use App\Models\Choice;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Faker\Factory as Faker;
@@ -27,7 +28,9 @@ class DatabaseSeeder extends Seeder
 
       $this->faker = Faker::create();
       $examplefakerofnumber = $this->faker->randomDigit();
-            
+          
+      Choice::factory(2)->create();
+
 
 
       $COE = College::factory()->create([

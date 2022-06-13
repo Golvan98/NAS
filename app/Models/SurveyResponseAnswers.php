@@ -17,5 +17,12 @@ class SurveyResponseAnswers extends Model
     public function SurveyQuestion()
     {
         return $this->belongsTo(SurveyQuestion::class);
+
     }
+
+    public function Choice()
+    {
+        return $this->hasMany(Choice::class);
+    }
+
 }
