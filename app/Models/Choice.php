@@ -9,6 +9,9 @@ class Choice extends Model
 {
     use HasFactory;
 
+
+    protected $fillable =[  'survey_response_answer_id', 'survey_question_id', 'choice'];
+
     public function SurveyQuestion()
     {
         return $this->belongsTo(SurveyQuestion::class);
