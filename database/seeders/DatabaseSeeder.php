@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
       $this->faker = Faker::create();
       $examplefakerofnumber = $this->faker->randomDigit();
           
-      Choice::factory(2)->create();
+     
 
 
 

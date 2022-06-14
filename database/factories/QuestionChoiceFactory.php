@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Choice>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\QuestionChoice>
  */
-class ChoiceFactory extends Factory
+class QuestionChoiceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class ChoiceFactory extends Factory
     public function definition()
     {
         return [
-            'choice' => $this->faker->word()
+            'question_choice' => $this->faker->word()
         ];
     }
 }
