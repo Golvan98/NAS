@@ -96,7 +96,7 @@ class SurveyQuestionController extends Controller
 
         $survey = survey::where('id', $survey->id)->pluck('id');
 
-        
+       
        
         $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
 

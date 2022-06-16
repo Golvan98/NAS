@@ -17,22 +17,14 @@
        @csrf
        @method('POST')
        <div>
-     
-
        
                     echo likertscale
       
-      
-
-        </div>
-                                      
+        </div>                                      
                     <div class="flex-auto space-y-2"> 
-                    
-                    
+                                       
                     {{$SurveyQuestion->question}} 
-                   
-                   
-                    
+                                                          
 
                     <input class="border border-gray-400 p-0.5 w-full"
 			        type="text"
@@ -42,10 +34,7 @@
                     value="{{old('answer')}}"
 			        >
                    
-                   
-                    
-
-						
+                                       						
             <button type="submit" 
                     
                     class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
