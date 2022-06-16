@@ -17,30 +17,17 @@
        @csrf
        @method('POST')
        <div>
-       
-       
-      
+            
         </div>                                      
                     <div class="flex-auto space-y-2"> 
                                        
-                    {{$SurveyQuestion->question}} Multiple Choice ni gilvs @foreach ($choices as $choice)
-                    {{$choice->choice}}
-                
-                @endforeach
-                                            
+                    {{$SurveyQuestion->question}} (Multiple Choice)
                     
-              
-                
-               
-
-                    <input type="checkbox" name="pets" value="Dog"> Dog<br>
-                    <input type="checkbox" name="pets" value="Cat"> Cat<br>
-                    <input type="checkbox" name="pets" value="Bird"> Bird<br>
-                    <input type="checkbox" name="pets" value="Mouse"> Mouse<br>
-                    <input type="checkbox" name="pets" value="Hamster"> Hamster<br>
-                    <input type="checkbox" name="pets" value="Alligator"> Alligator<br>
-                    <input type="checkbox" name="pets" value="Other"> Other<br>
-                                  						
+                    @foreach($choices as $choice)
+                    <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}}<br>
+                  
+                    @endforeach
+                                                                         						
             <button type="submit" 
                     
                     class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
@@ -59,23 +46,17 @@
        @csrf
        @method('POST')
        <div>
-       
-                    
-      
+           
         </div>                                      
                     <div class="flex-auto space-y-2"> 
                                        
-                    {{$SurveyQuestion->question}} 
+                    {{$SurveyQuestion->question}} (Likert Scale)
                                                           
 
-                    <input class="border border-gray-400 p-0.5 w-full"
-			        type="text"
-			        name="answer"
-			        id="answer"
-		        	required
-                    value="{{old('answer')}}"
-			        >
-                   
+                    @foreach($choices as $choice)
+                    <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}}<br>
+                  
+                    @endforeach
                                        						
             <button type="submit" 
                     
@@ -89,17 +70,98 @@
         @endif
 
         @if($SurveyQuestion->type =='ratingscale')
-            echo ratingscale
+        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+       @csrf
+       @method('POST')
+       <div>
+           
+        </div>                                      
+                    <div class="flex-auto space-y-2"> 
+                                       
+                    {{$SurveyQuestion->question}} (Rating Scale)
+                                                          
+
+                    @foreach($choices as $choice)
+                    <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}}<br>
+                  
+                    @endforeach
+                                       						
+            <button type="submit" 
+                    
+                    class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
+                     Submit Answer 
+                     </button>  
+                    </div>
+                    {{$SurveyQuestions->links()}}
+
+                    </form>	
         @endif
-
-        
-
+       
         @if($SurveyQuestion->type =='matrixquestion')
-            echo matrixquestion
+        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+       @csrf
+       @method('POST')
+       <div>
+           
+        </div>                                      
+                    <div class="flex-auto space-y-2"> 
+                                       
+                    {{$SurveyQuestion->question}}  (Matrix Question)
+                                                          
+
+                    @foreach($choices as $choice)
+                    <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}}<br>
+                  
+                    @endforeach
+                                       						
+            <button type="submit" 
+                    
+                    class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
+                     Submit Answer 
+                     </button>  
+                    </div>
+                    {{$SurveyQuestions->links()}}
+
+                    </form>	
         @endif
 
         @if($SurveyQuestion->type =='openended')
-            echo openended
+        
+<form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+       @csrf
+       @method('POST')
+    
+                                      
+                    <div class="flex-auto space-y-2"> 
+                    
+                    
+                    {{$SurveyQuestion->question}} (Open Ended)
+                   
+                   
+                    
+
+                    <input class="border border-gray-400 p-0.5 w-full"
+			        type="text"
+			        name="answer"
+			        id="answer"
+		        	required
+                    value="{{old('answer')}}"
+			        >
+                   
+                   
+                    
+
+						
+            <button type="submit" 
+                    
+                    class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
+                     Submit Answer 
+                     </button>  
+                    </div>
+                    {{$SurveyQuestions->links()}}
+
+                    </form>	
+         
         @endif
 
 
