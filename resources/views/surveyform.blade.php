@@ -12,13 +12,55 @@
    
     @foreach($SurveyQuestions as $SurveyQuestion)
 
+    @if($SurveyQuestion->type =='multiplechoice')
+    <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+       @csrf
+       @method('POST')
+       <div>
+       
+       
+      
+        </div>                                      
+                    <div class="flex-auto space-y-2"> 
+                                       
+                    {{$SurveyQuestion->question}} Multiple Choice ni gilvs @foreach ($choices as $choice)
+                    {{$choice->choice}}
+                
+                @endforeach
+                                            
+                    
+              
+                
+               
+
+                    <input type="checkbox" name="pets" value="Dog"> Dog<br>
+                    <input type="checkbox" name="pets" value="Cat"> Cat<br>
+                    <input type="checkbox" name="pets" value="Bird"> Bird<br>
+                    <input type="checkbox" name="pets" value="Mouse"> Mouse<br>
+                    <input type="checkbox" name="pets" value="Hamster"> Hamster<br>
+                    <input type="checkbox" name="pets" value="Alligator"> Alligator<br>
+                    <input type="checkbox" name="pets" value="Other"> Other<br>
+                                  						
+            <button type="submit" 
+                    
+                    class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
+                     Submit Answer 
+                     </button>  
+                    </div>
+                    {{$SurveyQuestions->links()}}
+
+                    </form>	
+        @endif
+
+
+
      @if($SurveyQuestion->type =='likertscale')
        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
        <div>
        
-                    echo likertscale
+                    
       
         </div>                                      
                     <div class="flex-auto space-y-2"> 
@@ -50,9 +92,7 @@
             echo ratingscale
         @endif
 
-        @if($SurveyQuestion->type =='multiplechoice')
-            echo multiplechoice
-        @endif
+        
 
         @if($SurveyQuestion->type =='matrixquestion')
             echo matrixquestion

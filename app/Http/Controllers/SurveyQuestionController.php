@@ -8,6 +8,7 @@ use App\Models\SurveyQuestion;
 use App\Models\SurveyResponseAnswers;
 use App\Models\Student;
 use App\Models\SurveyResponses;
+use App\Models\QuestionChoice;
 use App\Http\Controllers\SurveyResponsesController;
 use Illuminate\Support\Facades\DB;
 
@@ -96,9 +97,21 @@ class SurveyQuestionController extends Controller
 
         $survey = survey::where('id', $survey->id)->pluck('id');
 
-       
+        
        
         $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
+
+        $id = $SurveyQuestions->pluck('id');
+        
+        $choices = QuestionChoice::all()->whereIn('survey_question_id', $id);
+
+        dd($choices);
+
+
+
+       
+
+        
 
         $nextpage = $SurveyQuestions->nextPageURL();
 
