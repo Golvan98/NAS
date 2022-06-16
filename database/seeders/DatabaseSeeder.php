@@ -519,58 +519,58 @@ class DatabaseSeeder extends Seeder
       $ratingscalequestions = SurveyQuestion::all()->where('type', 'ratingscale');
 
 
-      foreach($ratingscalequestions as $ratingscalequestion)
-      {
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['1'])
-        ]);
+          foreach($ratingscalequestions as $ratingscalequestion)
+          {
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['1'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['2'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['2'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['3'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['3'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['4'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['4'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['5'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['5'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['6'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['6'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['7'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['7'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['8'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['8'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['9'])
-        ]);
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['9'])
+            ]);
 
-        QuestionChoice::factory(1)->create([
-          'survey_question_id' => $ratingscalequestion,
-          'question_choice' => $this->faker->randomelement(['10'])
-        ]);
-      }
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $ratingscalequestion,
+              'question_choice' => $this->faker->randomelement(['10'])
+            ]);
+          }
 
 
           foreach($matrixquestions as $matrixquestion)
@@ -601,21 +601,51 @@ class DatabaseSeeder extends Seeder
             ]);
           }
 
-      foreach($multiplechoicequestions as $multiplechoicequestion)
-      {
-        QuestionChoice::factory(3)->create([
-          'survey_question_id' => $multiplechoicequestion->id,
-          'question_choice' => $this->faker->randomElement(['mcchoice1', 'mcchoice2', 'mcchoice3'])
-        ]);
-      }
+          foreach($multiplechoicequestions as $multiplechoicequestion)
+          {
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $multiplechoicequestion->id,
+              'question_choice' => $this->faker->randomElement(['mcchoice1'])
+            ]);
 
-      foreach($likertscalequestions as $likertscalequestion)
-      {
-        QuestionChoice::factory(5)->Create([
-          'survey_question_id' => $likertscalequestion->id,
-          'question_choice' => $this->faker->randomElement(['1', '2', '3', '4', '5',])
-        ]);
-      }
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $multiplechoicequestion->id,
+              'question_choice' => $this->faker->randomElement(['mcchoice2'])
+            ]);
+
+            QuestionChoice::factory(1)->create([
+              'survey_question_id' => $multiplechoicequestion->id,
+              'question_choice' => $this->faker->randomElement(['mcchoice3'])
+            ]);
+          }
+
+          foreach($likertscalequestions as $likertscalequestion)
+          {
+            QuestionChoice::factory(1)->Create([
+              'survey_question_id' => $likertscalequestion->id,
+              'question_choice' => $this->faker->randomElement(['1'])
+            ]);
+
+            QuestionChoice::factory(1)->Create([
+              'survey_question_id' => $likertscalequestion->id,
+              'question_choice' => $this->faker->randomElement(['2'])
+            ]);
+
+            QuestionChoice::factory(1)->Create([
+              'survey_question_id' => $likertscalequestion->id,
+              'question_choice' => $this->faker->randomElement(['3'])
+            ]);
+
+            QuestionChoice::factory(1)->Create([
+              'survey_question_id' => $likertscalequestion->id,
+              'question_choice' => $this->faker->randomElement(['4'])
+            ]);
+
+            QuestionChoice::factory(1)->Create([
+              'survey_question_id' => $likertscalequestion->id,
+              'question_choice' => $this->faker->randomElement(['5'])
+            ]);
+          }
 
 
     }
