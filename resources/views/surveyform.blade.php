@@ -1,11 +1,11 @@
 <x-layout>
 
 
-<div id="body" class="bg-gray-300 flex-auto border border-green-500"> 
+<article id="body" class="bg-gray-300 flex-auto border border-green-500"> 
 
 
-        <article class="bg-gray-300 p-24 border border-red-500 place-self-start text-left place-content-start place-items-start justify-items-start justify-self-start content-start items-start self-start bottom-3">
-             <strong>   Good Evening, Counselor! </strong>
+        <article class="bg-gray-300 p-12 border border-white flex text-align-bottom">
+            <div class ="fixed inline-block align-baseline px-12 py-6"> <strong> Good Evening, Counselor! </div> </strong> 
         </article>
 
 
@@ -25,7 +25,7 @@
   
                         <table class="border border-black text-black">                     
                                 <tr class="border border-black" >  
-                                        <th class="px-24"> {{$SurveyQuestion->question}} (Multiple Choice) </th> </tr>
+                                        <th class="px-24 text-center"> {{$SurveyQuestion->question}} (Multiple Choice) </th> </tr>
                                 @foreach($choices as $choice)
                         
                                 <th class="px-24"> <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}} </th> 
@@ -34,9 +34,9 @@
                                         @endif
                                 @endforeach
                         </table>
-                                                                                						
-                <button type="submit" class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500"> Submit Answer </button>  
-                                 
+                <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                                                       						
+                <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
+                            
                 </div>
                         
                    
@@ -45,7 +45,7 @@
                     
                 
         </article>
-{{$SurveyQuestions->links()}}  
+                        {{$SurveyQuestions->links()}}  
         @endif
                 
 
@@ -158,6 +158,6 @@
                        
     </article>
         
-</div>
+</article>
 
 </x-layout>
