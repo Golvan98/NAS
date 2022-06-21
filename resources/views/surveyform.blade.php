@@ -5,7 +5,7 @@
 
 
         <article class="bg-gray-300 p-12 border border-white flex text-align-bottom">
-            <div class ="fixed inline-block align-baseline px-12 py-6"> <strong> Good Evening, Counselor! </div> </strong> 
+            <div class ="absolute inline-block align-baseline px-12 py-6"> <strong> Good Evening, Counselor! </div> </strong> 
         </article>
 
 
@@ -20,7 +20,7 @@
        @csrf
        @method('POST')
                                           
-                <div class="flex-auto bg-white"> 
+                <div class="flex-auto bg-white p-36"> 
 
   
                         <table class="border border-black text-black">                     

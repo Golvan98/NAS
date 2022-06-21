@@ -583,6 +583,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-12 {
   margin-top: 3rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -849,6 +852,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-12 {
   padding: 3rem;
 }
+.p-36 {
+  padding: 9rem;
+}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -926,6 +932,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .align-baseline {
   vertical-align: baseline;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-bottom {
+  vertical-align: bottom;
 }
 .align-text-bottom {
   vertical-align: text-bottom;
