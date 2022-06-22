@@ -25,8 +25,8 @@
                         <div class="px-48 flex-auto bg-gray-300 border border-white">
 
                         <table class="border border-red-500 mt-2 bg-white text-black">                     
-                                <tr class="px-48 bg-red-500">  
-                                        <td colspan="2"class="px-48 whitespace-pre text-white text-start mx-24 flex-auto"> {{$SurveyQuestion->question}} (Multiple Choice) </td> 
+                                <tr class="px-48 bg-white">  
+                                        <td colspan="2"class="px-48 whitespace-pre font-bold text-start mx-24 flex-auto"> {{$SurveyQuestion->question}} (Multiple Choice) </td> 
                                         <td> </td>
                                 </tr>
                         
@@ -34,7 +34,7 @@
                                 <tr>
                                 @foreach($choices as $choice)
                                 <td class="px-6 whitespace-pre "> <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}} </td>  
-                                @if($loop->iteration %2 ==0)  
+                                @if($loop->iteration %3 ==0)  
                                 </tr>
                                 <tr>
                                 @endif
