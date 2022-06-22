@@ -90,22 +90,26 @@
        @csrf
        @method('POST')
                                           
-                    <div class="flex-auto space-y-2"> 
-                                       
-                    {{$SurveyQuestion->question}} (Rating Scale)
-                                                          
-                    @foreach($choices as $choice)
-                    <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}}<br>
-                  
-                    @endforeach
-                                       						
-            <button type="submit" 
+                    <div class="flex-auto bg-gray-300"> 
+
+                <div class="flex-auto bg-gray-300 border border-red-500">
+
+                <table class="ml-4 mr-4 border border-black mt-2 bg-white text-black">                
                     
-                    class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
-                     Submit Answer 
-                     </button>  
-                    </div>
-                    {{$SurveyQuestions->links()}}
+                        <tr class="">  
+                               <td class="px-1">  <strong> {{$SurveyQuestion->question}} (Rating Scale Scale) lores epsum lores epsum lores epsum </strong> </td> 
+                        @foreach($choices as $choice)
+                                <td colspan="1"class="px-4 py-4 border border-black whitespace-pre font-bold text-start flex-auto"> <input type="checkbox" name="pes" value=""> {{$choice->question_choice}} </input></td>                               
+                        @endforeach
+                      
+                                       
+                </table>
+                <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                 
+
+                <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
+
+                </div>    
+        </div>
 
                     </form>	
         @endif
