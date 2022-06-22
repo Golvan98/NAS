@@ -16,7 +16,7 @@
 
     @if($SurveyQuestion->type =='multiplechoice')
        <article class="bg-gray-300 border border-red-500 mt-2">   
-    <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
                                           
@@ -33,7 +33,7 @@
                                 
                                 <tr>
                                 @foreach($choices as $choice)
-                                <td class="px-6 whitespace-pre "> <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}} </td>  
+                                <td class="px-6 whitespace-pre "> <input type="checkbox" name="" value=""> {{$choice->question_choice}} </td>  
                                 @if($loop->iteration %3 ==0)  
                                 </tr>
                                 <tr>
@@ -52,7 +52,7 @@
                 
         </article>
                         {{$SurveyQuestions->links()}}  
-        @endif
+    @endif
                 
 
      @if($SurveyQuestion->type =='likertscale')
@@ -60,24 +60,29 @@
        @csrf
        @method('POST')
                                         
-                    <div class="flex-auto space-y-2"> 
-                                       
-                    {{$SurveyQuestion->question}} (Likert Scale)
-                                                          
-                    @foreach($choices as $choice)
-                    <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}}<br>
-                  
-                    @endforeach
-                                       						
-            <button type="submit" 
-                    
-                    class="bg-red-300 text-white rounded ml-1 py-4 px-2 hover:bg-red-500">
-                     Submit Answer 
-                     </button>  
-                    </div>
-                    {{$SurveyQuestions->links()}}
+        <div class="flex-auto bg-gray-300"> 
 
-                    </form>	
+                <div class="flex-auto bg-gray-300 border border-red-500">
+
+                <table class="ml-20 mr-4 border border-black mt-2 bg-white text-black">                
+                    
+                        <tr class="">  
+                               <td class="px-4">  <strong> {{$SurveyQuestion->question}} (Likert Scale) lores epsum lores epsum lores epsum </strong> </td> 
+                        @foreach($choices as $choice)
+                                <td colspan="1"class="px-4 py-4 border border-black whitespace-pre font-bold text-start flex-auto"> <input type="checkbox" name="pes" value=""> {{$choice->question_choice}} </input></td>                               
+                        @endforeach
+                      
+                                       
+                </table>
+                <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                 
+
+                <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
+
+                </div>    
+        </div>
+
+                    </form>
+                    {{$SurveyQuestions->links()}}  	
         @endif
 
         @if($SurveyQuestion->type =='ratingscale')

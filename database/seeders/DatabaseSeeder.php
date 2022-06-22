@@ -623,27 +623,27 @@ class DatabaseSeeder extends Seeder
           {
             QuestionChoice::factory(1)->Create([
               'survey_question_id' => $likertscalequestion->id,
-              'question_choice' => $this->faker->randomElement(['1'])
+              'question_choice' => $this->faker->randomElement(['Strongly Disagree'])
             ]);
 
             QuestionChoice::factory(1)->Create([
               'survey_question_id' => $likertscalequestion->id,
-              'question_choice' => $this->faker->randomElement(['2'])
+              'question_choice' => $this->faker->randomElement(['Disagree'])
             ]);
 
             QuestionChoice::factory(1)->Create([
               'survey_question_id' => $likertscalequestion->id,
-              'question_choice' => $this->faker->randomElement(['3'])
+              'question_choice' => $this->faker->randomElement(['Neither Agree nor Disagree'])
             ]);
 
             QuestionChoice::factory(1)->Create([
               'survey_question_id' => $likertscalequestion->id,
-              'question_choice' => $this->faker->randomElement(['4'])
+              'question_choice' => $this->faker->randomElement(['Agree'])
             ]);
 
             QuestionChoice::factory(1)->Create([
               'survey_question_id' => $likertscalequestion->id,
-              'question_choice' => $this->faker->randomElement(['5'])
+              'question_choice' => $this->faker->randomElement(['Strongly Agree'])
             ]);
           }
 
