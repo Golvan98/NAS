@@ -15,28 +15,34 @@
     @foreach($SurveyQuestions as $SurveyQuestion)
 
     @if($SurveyQuestion->type =='multiplechoice')
-       <article class="bg-gray-300 border border-red-500 p-48">   
+       <article class="bg-gray-300 border border-red-500 mt-2">   
     <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
                                           
-                <div class="flex-auto bg-white p-36"> 
+                <div class="flex-auto bg-gray-300"> 
 
-  
-                        <table class="border border-black text-black">                     
-                                <tr class="border border-black" >  
-                                        <th class="px-24 text-center"> {{$SurveyQuestion->question}} (Multiple Choice) </th> </tr>
-                                @foreach($choices as $choice)
+                        <div class="px-48 flex-auto bg-gray-300 border border-white">
+
+                        <table class="border border-red-500 mt-2 bg-white text-black">                     
+                                <tr class="px-48 bg-red-500">  
+                                        <td colspan="2"class="px-48 whitespace-pre text-white text-start mx-24 flex-auto"> {{$SurveyQuestion->question}} (Multiple Choice) </td> 
+                                        <td> </td>
+                                </tr>
                         
-                                <th class="px-24"> <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}} </th> 
-                                @if($loop->iteration %2 ==0)         
+                                
                                 <tr>
-                                        @endif
+                                @foreach($choices as $choice)
+                                <td class="px-6 whitespace-pre "> <input type="checkbox" name="pets" value="Dog"> {{$choice->question_choice}} </td>  
+                                @if($loop->iteration %2 ==0)  
+                                </tr>
+                                <tr>
+                                @endif
                                 @endforeach
                         </table>
                 <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                                                       						
                 <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
-                            
+                        </div>    
                 </div>
                         
                    
