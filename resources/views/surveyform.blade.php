@@ -47,15 +47,14 @@
                         
                    
                         
-                    </form>	
-                    
-                
+        </form>	              
         </article>
                         {{$SurveyQuestions->links()}}  
     @endif
                 
 
      @if($SurveyQuestion->type =='likertscale')
+     <article class="bg-gray-300 border border-red-500 mt-2"> 
        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
@@ -81,11 +80,14 @@
                 </div>    
         </div>
 
-                    </form>
+        </form>
+        </article>
+        
                     {{$SurveyQuestions->links()}}  	
         @endif
 
         @if($SurveyQuestion->type =='ratingscale')
+        <article>
         <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
@@ -111,17 +113,18 @@
                 </div>    
         </div>
 
-                    </form>	
-
+        </form>	
+        </article>
                     {{$SurveyQuestions->links()}}       
         @endif
        
         @if($SurveyQuestion->type =='matrixquestion')
+        <article>
         <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
                                             
-       <div class="flex-auto bg-gray-300"> 
+         <div class="flex-auto bg-gray-300"> 
 
                 <div class="flex-auto bg-gray-300 border border-red-500">
 
@@ -141,16 +144,16 @@
 
                 </div>   
 
-        </div>
-  
+         </div>
 
-                    </form>
+        </form>
+        </article>
                     {{$SurveyQuestions->links()}} 	
         @endif
 
         @if($SurveyQuestion->type =='openended')
-        
-<form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+        <article>
+        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
        @csrf
        @method('POST')
 
@@ -159,24 +162,28 @@
                 <div class="flex-auto bg-gray-300 border border-red-500">
                 
 
-                <div class="bg-white content-center items-center text-center border border-black mx-4 my-2">
-            <label for="answer" class="content-center items-center block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> <strong> {{$SurveyQuestion->question}} (Open Ended)  </strong> </label>
-            <input type="text" id="answer" class="my-1 px-2 content-center items-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block hover w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value="{{old('answer')}}"> 
-                </div>
+                   <div class="bg-white content-center items-center text-center border border-black mx-4 my-2">
+
+                        <label for="answer" class="content-center items-center block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> <strong> {{$SurveyQuestion->question}} (Open Ended)  </strong> </label>
+                        <input type="text" id="answer" class="my-1 px-2 content-center items-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block hover w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value="{{old('answer')}}"> 
+                  
+                   </div>
+
                         <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                 
                         <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
 
-                </div>  
+                   </div>  
 
         </div>
 
-                    </form>	
+        </form>	
+        </article>
                     {{$SurveyQuestions->links()}}
         @endif
 
     @endforeach           
                        
-    </article>
+    
         
 </article>
 
