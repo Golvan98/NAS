@@ -39,10 +39,17 @@
                                 <tr>
                                 @endif
                                 @endforeach
+                                <tr class="w-full">
+                                        <td colspan="3" class="border border-red-500">
+                                
+                                        <button class="bg-green-500 text-white rounded ml-1 py-1 px-3 hover:bg-green-700 border border-green-500 text-left"> Back </button>    
+                                        <button class="bg-blue-500 text-white rounded ml-1 py-1 px-3 hover:bg-blue-700 text-center border-green-500"> Edit </button>                                                          						
+                                        <button type="submit" class="bg-red-500 text-white rounded ml-1 py-1 px-2 hover:bg-red-700 text-end border-green-500"> Submit Answer </button>  
+                                        
+                                </td>
+                                   
                         </table>
-                <button class="bg-green-500 text-white rounded ml-1 py-1 px-3 hover:bg-green-700"> Back </button>    
-                <button class="bg-blue-500 text-white rounded ml-1 py-1 px-3 hover:bg-blue-700"> Edit </button>                                                          						
-                <button type="submit" class="bg-red-500 text-white rounded ml-1 py-1 px-2 hover:bg-red-700"> Submit Answer </button>  
+                   
                         </div>    
                 </div>
                         
