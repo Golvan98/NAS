@@ -40,8 +40,9 @@
                                 @endif
                                 @endforeach
                         </table>
-                <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                                                       						
-                <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
+                <button class="bg-green-500 text-white rounded ml-1 py-1 px-3 hover:bg-green-700"> Back </button>    
+                <button class="bg-blue-500 text-white rounded ml-1 py-1 px-3 hover:bg-blue-700"> Edit </button>                                                          						
+                <button type="submit" class="bg-red-500 text-white rounded ml-1 py-1 px-2 hover:bg-red-700"> Submit Answer </button>  
                         </div>    
                 </div>
                         
