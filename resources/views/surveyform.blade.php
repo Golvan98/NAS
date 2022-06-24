@@ -39,14 +39,13 @@
                                 <tr>
                                 @endif
                                 @endforeach
-                                <tr class="w-full">
-                                        <td colspan="3" class="border border-red-500">
-                                
-                                        <button class="bg-green-500 text-white rounded ml-1 py-1 px-3 hover:bg-green-700 border border-green-500 text-left"> Back </button>    
-                                        <button class="bg-blue-500 text-white rounded ml-1 py-1 px-3 hover:bg-blue-700 text-center border-green-500"> Edit </button>                                                          						
-                                        <button type="submit" class="bg-red-500 text-white rounded ml-1 py-1 px-2 hover:bg-red-700 text-end border-green-500"> Submit Answer </button>  
+                                <tr class="">
                                         
-                                </td>
+                                
+                                <td class="items-start  w-full"> <button class="items-start bg-green-500 text-white  rounded ml-7 py-1 px-6 hover:bg-green-700 t"> Back </button> </td> 
+                                <td class="items-center  w-full"> <button class="items-start bg-blue-500 text-white  rounded ml-7 py-1 px-8 hover:bg-blue-700 "> Edit </button> </td>                                                          						
+                                <td class="items-end  w-full"> <button type="submit" class="items-start bg-red-500  text-white rounded ml-4 mr-2 py-2 px-4 whitespace-pre mb-2 hover:bg-red-700"> Submit Answer </button> </td>  
+                                        
                                    
                         </table>
                    
