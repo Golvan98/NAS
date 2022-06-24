@@ -562,6 +562,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-7 {
   margin-left: 1.75rem;
 }
+.ml-10 {
+  margin-left: 2.5rem;
+}
+.ml-12 {
+  margin-left: 3rem;
+}
+.ml-5 {
+  margin-left: 1.25rem;
+}
 .block {
   display: block;
 }
@@ -603,6 +612,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-5 {
   height: 1.25rem;
+}
+.h-full {
+  height: 100%;
 }
 .w-full {
   width: 100%;
@@ -816,6 +828,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-green-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 .object-cover {
   -o-object-fit: cover;

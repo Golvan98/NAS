@@ -41,11 +41,11 @@
                                 @endforeach
                                 <tr class="">
                                         
-                                
                                 <td class="items-start  w-full"> <button class="items-start bg-green-500 text-white  rounded ml-7 py-1 px-6 hover:bg-green-700 t"> Back </button> </td> 
                                 <td class="items-center  w-full"> <button class="items-start bg-blue-500 text-white  rounded ml-7 py-1 px-8 hover:bg-blue-700 "> Edit </button> </td>                                                          						
                                 <td class="items-end  w-full"> <button type="submit" class="items-start bg-red-500  text-white rounded ml-4 mr-2 py-2 px-4 whitespace-pre mb-2 hover:bg-red-700"> Submit Answer </button> </td>  
-                                        
+                                
+                                </tr>
                                    
                         </table>
                    
@@ -77,6 +77,15 @@
                         @foreach($choices as $choice)
                                 <td colspan="1"class="px-4 py-4 border border-black whitespace-pre font-bold text-start flex-auto"> <input type="checkbox" name="pes" value=""> {{$choice->question_choice}} </input></td>                               
                         @endforeach
+                        </tr>
+
+                        <tr class="">
+                                        
+                                <td colspan="2" class=" items-start w-full"> <button class="items-start bg-green-500 text-white  rounded ml-7 py-1 px-6 hover:bg-green-700 t"> Back </button> </td> 
+                                <td colspan="3" class="items-center w-full"> <button class="items-start bg-blue-500 text-white  rounded ml-7 py-1 px-8 hover:bg-blue-700 "> Edit </button> </td>                                                          						                         
+                                <td colspan="1" class=" items-end w-full"> <button type="submit" class="items-center text-center align-center py-2 ml-5 mt-2 bg-red-500  text-white rounded whitespace-pre mb-2 hover:bg-red-700">  Submit Answer  </td>
+                                
+                        </tr>
                       
                                        
                 </table>
