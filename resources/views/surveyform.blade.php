@@ -15,35 +15,39 @@
     @foreach($SurveyQuestions as $SurveyQuestion)
 
     @if($SurveyQuestion->type =='multiplechoice')
-       <article class="bg-gray-300 border border-red-500 mt-2">   
-        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
+       
        @csrf
        @method('POST')
-                                          
-                <div class="flex-auto bg-gray-300"> 
+       <article class="bg-gray-300 border border-red-500 mt-2">   
+        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/">                         
+                <div class="w-full h-60 flex-auto bg-gray-300 border border-green-500"> 
 
-                        <div class="px-48 flex-auto bg-gray-300 border border-white">
+                        <div class="ml-48 w-4/5 h-4/5 mt-4 bg-white border border-black">
 
-                        <table class="border border-red-500 mt-2 bg-white text-black">                     
-                                <tr class="px-48 bg-white">  
-                                        <td colspan="2"class="px-48 whitespace-pre font-bold text-start mx-24 flex-auto"> {{$SurveyQuestion->question}} (Multiple Choice) </td> 
-                                        <td> </td>
+                        <table class="w-full h-full  border border-red-500 mt-2 bg-gray-500 text-black">      
+
+                                <tr class="bg-white">  
+                                        <th colspan="3"class="whitespace-pre font-bold items-center text-center"> {{$SurveyQuestion->question}} (Multiple Choice) </th>                                         
                                 </tr>
                         
                                 
                                 <tr>
+                                     
                                 @foreach($choices as $choice)
-                                <td class="px-6 whitespace-pre "> <input type="checkbox" name="" value=""> {{$choice->question_choice}} </td>  
+                                <td class="1/3 bg-red-100" colspan="1"> <div class="w-full">   <input type="checkbox" name="" value="">  {{$choice->question_choice}}  </div> </td>
+                                <td> yawa </td>
                                 @if($loop->iteration %3 ==0)  
-                                </tr>
-                                <tr>
+                                </div>
+
+                                <div class="w-full">
+                                
                                 @endif
                                 @endforeach
                                 <tr class="">
                                         
-                                <td class="items-start  w-full"> <button class="items-start bg-green-500 text-white  rounded ml-7 py-1 px-6 hover:bg-green-700 t"> Back </button> </td> 
-                                <td class="items-center  w-full"> <button class="items-start bg-blue-500 text-white  rounded ml-7 py-1 px-8 hover:bg-blue-700 "> Edit </button> </td>                                                          						
-                                <td class="items-end  w-full"> <button type="submit" class="items-start bg-red-500  text-white rounded ml-4 mr-2 py-2 px-4 whitespace-pre mb-2 hover:bg-red-700"> Submit Answer </button> </td>  
+                                <td class="items-start bg-gray-100 w-full"> <button class="items-start bg-green-500 text-white  rounded ml-7 py-1 px-6 hover:bg-green-700 t"> Back </button> </td> 
+                                <td class="items-center bg-gray-300 w-full"> <button class="items-start bg-blue-500 text-white py-1 px-8 hover:bg-blue-700 "> Edit </button> </td>                                                          						
+                                <td class="items-end bg-gray-500  w-full"> <button type="submit" class="items-start bg-red-500  text-white rounded ml-4 mr-2 py-2 px-4 whitespace-pre mb-2 hover:bg-red-700"> Submit Answer </button> </td>  
                                 
                                 </tr>
                                    
