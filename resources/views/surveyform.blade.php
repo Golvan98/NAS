@@ -24,34 +24,27 @@
 
                         <div class="ml-48 w-4/5 h-4/5 mt-4 bg-white border border-black">
 
-                        <table class="w-full h-full  border border-red-500 mt-2 bg-gray-500 text-black">      
+                                <table class="border border-black mt-2 bg-gray-300 text-black">      
 
-                                <tr class="bg-white">  
-                                        <th colspan="3"class="whitespace-pre font-bold items-center text-center"> {{$SurveyQuestion->question}} (Multiple Choice) </th>                                         
-                                </tr>
-                        
-                                
-                                <tr>
-                                     
-                                @foreach($choices as $choice)
-                                <td class="1/3 bg-red-100" colspan="1"> <div class="w-full">   <input type="checkbox" name="" value="">  {{$choice->question_choice}}  </div> </td>
-                                <td> yawa </td>
-                                @if($loop->iteration %3 ==0)  
-                                </div>
-
-                                <div class="w-full">
-                                
-                                @endif
-                                @endforeach
-                                <tr class="">
+                                   <tr> 
+                                       <div class="flex">         
+                                                <div class="text-center flex-row bg-green-100 w-full h-full"> {{$SurveyQuestion->question}} (Multiple Choice) </div>         
+                                        </div>
+                                   </tr>  
+                                   <tr> 
+                                       <div class="flex mt-4">     
+                                       @foreach($choices as $choice)
+                                                <div class="grow-0 mt-2 text-center flex-row bg-green-100 w-1/3 h-1/3 border border-black"> <input type="checkbox"> {{$choice->question_choice}}</div> </input>
+                                        @if($loop->iteration %3 ==0)
+                                        </div>
+                                            
+                                                <div class="flex">                                           
+                                        @endif
+                                       @endforeach        
+                                        </div>
+                                   </tr>  
                                         
-                                <td class="items-start bg-gray-100 w-full"> <button class="items-start bg-green-500 text-white  rounded ml-7 py-1 px-6 hover:bg-green-700 t"> Back </button> </td> 
-                                <td class="items-center bg-gray-300 w-full"> <button class="items-start bg-blue-500 text-white py-1 px-8 hover:bg-blue-700 "> Edit </button> </td>                                                          						
-                                <td class="items-end bg-gray-500  w-full"> <button type="submit" class="items-start bg-red-500  text-white rounded ml-4 mr-2 py-2 px-4 whitespace-pre mb-2 hover:bg-red-700"> Submit Answer </button> </td>  
-                                
-                                </tr>
-                                   
-                        </table>
+                                </table>
                    
                         </div>    
                 </div>
