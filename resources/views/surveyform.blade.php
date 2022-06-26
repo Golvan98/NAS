@@ -46,21 +46,11 @@
                                         
                                 </table>
                         
-                          <div class="inline-flex bg-gray-300">
-                                <div class="flex justify-start">
-                                        <div> 01 </div>
-                                </div>
-
-                                <div class="flex justify-center">
-                                        <div> 01yawaaaaaaaaaaaaaaaaaaaaaa </div>
-                                </div>
-
-                                
-                                <div class="flex justify-end">
-                                        <div> 01 </div>
-                                </div>
-
-                           </div>        
+                                <div class="flex justify-between ...">
+  <div> <button class="bg-green-500 px-6 py-1 rounded-xl"> Back </button> </div>
+  <div>02</div>
+  <div>03</div>
+</div>        
                         </div>    
                 </div>  
                 
