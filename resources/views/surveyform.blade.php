@@ -20,9 +20,9 @@
        @method('POST')
        <article class="bg-gray-300 border border-red-500 mt-2">   
         <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/">                         
-                <div class="w-full h-60 flex-auto bg-gray-300 border border-green-500"> 
+                <div class="w-4/5 h-60 flex-auto bg-gray-300 border border-green-500"> 
 
-                        <div class="ml-48 w-4/5 h-4/5 mt-4 bg-white border border-black">
+                        <div class="ml-48 w-4/5 h-4/5 mt-4 bg-white border border-red-500">
 
                                 <table class="border border-black mt-2 bg-gray-300 text-black">      
 
@@ -33,22 +33,41 @@
                                    </tr>  
                                    <tr> 
                                        <div class="flex mt-4">     
-                                       @foreach($choices as $choice)
-                                                <div class="grow-0 mt-2 text-center flex-row bg-green-100 w-1/3 h-1/3 border border-black"> <input type="checkbox"> {{$choice->question_choice}}</div> </input>
-                                        @if($loop->iteration %3 ==0)
-                                        </div>
-                                            
-                                                <div class="flex">                                           
-                                        @endif
-                                       @endforeach        
+                                                @foreach($choices as $choice)
+                                                                <div class="grow-0 mt-2 text-center flex-row bg-green-100 w-1/3 h-1/3 border border-black"> <input type="checkbox"> {{$choice->question_choice}}</div> </input>
+                                                        @if($loop->iteration %3 ==0)
+                                                        </div>
+                                                        
+                                                                <div class="flex">                                           
+                                                        @endif
+                                                @endforeach        
                                         </div>
                                    </tr>  
                                         
                                 </table>
-                   
-                        </div>    
-                </div>
                         
+                          <div class="inline-flex bg-gray-300">
+                                <div class="flex justify-start">
+                                        <div> 01 </div>
+                                </div>
+
+                                <div class="flex justify-center">
+                                        <div> 01yawaaaaaaaaaaaaaaaaaaaaaa </div>
+                                </div>
+
+                                
+                                <div class="flex justify-end">
+                                        <div> 01 </div>
+                                </div>
+
+                           </div>        
+                        </div>    
+                </div>  
+                
+                
+                <div class="w-4/5 bg-yellow-300">
+                                <button class="bg-green-500"> Back </button>
+                </div>
                    
                         
         </form>	              
