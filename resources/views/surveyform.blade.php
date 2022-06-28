@@ -22,7 +22,7 @@
         <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/">                         
                 <div class="w-4/5 h-60 flex-auto bg-gray-300 border border-green-500"> 
 
-                        <div class="ml-48 w-4/5 h-4/5 mt-4 bg-white border border-red-500">
+                        <div class="ml-48 w-4/5 h-4/5 mt-4 content-between bg-white border border-red-500">
 
                                 <table class="border border-black mt-2 bg-gray-300 text-black">      
 
@@ -31,26 +31,27 @@
                                                 <div class="text-center flex-row bg-green-100 w-full h-full"> {{$SurveyQuestion->question}} (Multiple Choice) </div>         
                                         </div>
                                    </tr>  
-                                   <tr> 
+                                   <tr>         
                                        <div class="flex mt-4">     
                                                 @foreach($choices as $choice)
-                                                                <div class="grow-0 mt-2 text-center flex-row bg-green-100 w-1/3 h-1/3 border border-black"> <input type="checkbox"> {{$choice->question_choice}}</div> </input>
+                                                                <div class="grow-0 mt-2 text-center flex-row w-1/3 h-1/3"> <input type="checkbox"> {{$choice->question_choice}}</div> </input>
                                                         @if($loop->iteration %3 ==0)
-                                                        </div>
+                                                                </div>
                                                         
                                                                 <div class="flex">                                           
                                                         @endif
                                                 @endforeach        
-                                        </div>
-                                   </tr>  
+                                                 </div>
+                                   </tr>
+                                   <div class="items-end justify-between flex">
+                                        <div class="bg-red-500 px-6 py-1 rounded-xl"> Back </button> </div>
+                                        <div class="bg-blue-500 px-6 py-1 rounded-xl">Edit</div>
+                                        <div class="bg-green-500 px-6 py-1 rounded-xl">Next</div>
+                                   </div>          
                                         
                                 </table>
                         
-                                <div class="flex justify-between ...">
-  <div> <button class="bg-green-500 px-6 py-1 rounded-xl"> Back </button> </div>
-  <div>02</div>
-  <div>03</div>
-</div>        
+                       
                         </div>    
                 </div>  
                 
