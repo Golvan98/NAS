@@ -51,6 +51,10 @@ Route::delete('/deletequestion/{surveyquestion}', [SurveyQuestionController::cla
 
 Route::delete('/deletesurvey/{survey}', [SurveyController::class, 'deletesurvey']);
 
+Route::get('/divtestpage', function()
+{
+    return view('divtestpage');
+});
 
 Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 

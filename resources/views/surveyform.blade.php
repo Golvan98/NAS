@@ -43,11 +43,7 @@
                                                 @endforeach        
                                                  </div>
                                    </tr>
-                                   <div class="items-end justify-between flex">
-                                        <div class="bg-red-500 px-6 py-1 rounded-xl"> Back </button> </div>
-                                        <div class="bg-blue-500 px-6 py-1 rounded-xl">Edit</div>
-                                        <div class="bg-green-500 px-6 py-1 rounded-xl">Next</div>
-                                   </div>          
+                                        
                                         
                                 </table>
                         
