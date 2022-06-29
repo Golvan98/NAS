@@ -1,65 +1,64 @@
 <x-layout>
 
-
-<article id="body" class="bg-gray-300 flex-auto border border-green-500"> 
-
-
-        <article class="bg-gray-300 p-12 border border-white flex text-align-bottom">
-            <div class ="absolute inline-block align-baseline px-12 py-6"> <strong> Good Evening, Counselor! </div> </strong> 
-        </article>
-
-
-   <!--  @foreach($survey as $survey)
-    <a href="/createanswer/{{$survey}}"> <button class="bg-yellow-300"> Die and Dump </button> </a>
-    @endforeach -->  
-    @foreach($SurveyQuestions as $SurveyQuestion)
+   
+@foreach($SurveyQuestions as $SurveyQuestion)
 
     @if($SurveyQuestion->type =='multiplechoice')
-       
-       @csrf
-       @method('POST')
-       <article class="bg-gray-300 border border-red-500 mt-2">   
-        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/">                         
-                <div class="w-4/5 h-60 flex-auto bg-gray-300 border border-green-500"> 
 
-                        <div class="ml-48 w-4/5 h-4/5 mt-4 content-between bg-white border border-red-500">
+    
+<div class="w-full bg-gray-300 border border-red-500">
 
-                                <table class="border border-black mt-2 bg-gray-300 text-black">      
+        <div class="flex justify-start w-full h-1/4 items-end bg-gray-300 border border-red-500">
+           <div class="ml-12">Good Day, Counselor! </div>
+        </div>
 
-                                   <tr> 
-                                       <div class="flex">         
-                                                <div class="text-center flex-row bg-green-100 w-full h-full"> {{$SurveyQuestion->question}} (Multiple Choice) </div>         
-                                        </div>
-                                   </tr>  
-                                   <tr>         
-                                       <div class="flex mt-4">     
-                                                @foreach($choices as $choice)
-                                                                <div class="grow-0 mt-2 text-center flex-row w-1/3 h-1/3"> <input type="checkbox"> {{$choice->question_choice}}</div> </input>
-                                                        @if($loop->iteration %3 ==0)
-                                                                </div>
-                                                        
-                                                                <div class="flex">                                           
-                                                        @endif
-                                                @endforeach        
-                                                 </div>
-                                   </tr>
-                                        
-                                        
-                                </table>
-                        
-                       
-                        </div>    
-                </div>  
-                
-                
-                <div class="w-4/5 bg-yellow-300">
-                                <button class="bg-green-500"> Back </button>
+   <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+        
+        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/">
+        <div class="mt-4 mr-4 flex-nowrap w-full h-5/6 bg-white border border-yellow-500">  
+           @csrf @method('POST')  
+
+        <table>
+
+                <div class="flex justify-center items-center bg-gray-500 w-full h-1/6">
+                   <div class="">  {{$SurveyQuestion->question}} Multiple Choice ni Sir </div> 
                 </div>
-                   
+
+               
+                <div class="flex justify-between w-full h-auto bg-red-100">
+                @foreach($choices as $choice)    <div class=""> <input type="checkbox"> {{$choice->question_choice}} </div>
+                
+                @if($loop->iteration %3==0)
+                </div> 
+                 <div class="flex justify-between w-full h-auto bg-red-100">
+                @endif
+                @endforeach  
+                </div>
+                
+               
                         
-        </form>	              
-        </article>
-                        {{$SurveyQuestions->links()}}  
+
+               
+
+                <div class="flex justify-between w-full h-auto bg-red-100">
+                        <div class=""> <input type="checkbox"> 02 </div> 
+                        <div class="">  <input type="checkbox"> 02 </div> 
+                        <div class="">  <input type="checkbox"> 02 </div> 
+                </div>
+
+        <table>
+        </div>
+        </form>
+
+       
+
+   </div>
+
+      
+</div>
+
+        
+
     @endif
                 
 
@@ -204,6 +203,5 @@
                        
     
         
-</article>
 
 </x-layout>
