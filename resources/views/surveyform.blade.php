@@ -35,11 +35,7 @@
                 @endforeach  
                 </div>
                 
-               
-                        
-
-               
-
+        
                 <div class="flex justify-between w-full h-auto bg-red-100">
                         <div class=""> <input type="checkbox"> 02 </div> 
                         <div class="">  <input type="checkbox"> 02 </div> 

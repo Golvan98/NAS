@@ -11,19 +11,40 @@
         <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
             @csrf @method('POST')  
 
-        <table>
+        
 
-          <div class="flex justify-center items-center bg-gray-500 w-full h-1/6">
-           <div class="">  Lores Epsum MOthaFUCKAAA </div> 
+
+         
+          <div class="flex-nowrap bg-white w-full h-5/6">
+            <table>
+
+               <tr>
+                <div class="flex justify-center items-center bg-white w-full h-auto h-2/6 "> MipMerp </div>
+
+                  <div class="flex bg-gray-300 h-1/6"> 
+                    <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
+                    <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
+                    <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
+                  </div>
+
+                  <div class="flex bg-gray-300 h-1/6">   
+                    <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
+
+                    <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
+                  </div>
+
+
+
+            </table>
           </div>
 
-          <div class="flex justify-between w-full h-auto bg-red-100">
-           <div class=""> <input type="checkbox"> 02 </div> 
-           <div class="">  <input type="checkbox"> 02 </div> 
-           <div class="">  <input type="checkbox"> 02 </div> 
+          <div class="flex justify-between w-full h-1/6 bg-red-100">
+           <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl"> Back </div> 
+           <div class=""> <button class="px-8 py-2 bg-blue-300 rounded-xl"> Edit </div> 
+           <div class=""> <button class="px-8 py-2 bg-green-500 rounded-xl"> Next </div> 
           </div>
         
-        <table>
+        
          
         </div>
 
