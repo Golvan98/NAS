@@ -22,22 +22,28 @@
     <table>
 
        <tr>
-        <div class="flex justify-center items-center bg-white w-full h-auto h-2/6 "> {{$SurveyQuestion->question}} (Multiple Choice) </div>
+        <div class="flex justify-center items-center bg-white w-full h-auto h-1/6"> {{$SurveyQuestion->question}} (Multiple Choice) </div>
 
         <div class="flex bg-gray-300 h-1/6"> 
 
           @foreach($choices as $choice)
-        <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> {{$choice->question_choice}} </div> 
+          <div class="flex justify-center items-center bg-white px-4 py-1 w-1/3 h-auto border border-black"> <input type="checkbox"> {{$choice->question_choice}} </div> 
+          
+          @if($loop->iteration %5 ==0)
+        </div>
+
+        <div class="flex bg-gray-700 h-1/6 mt-0.5"> 
+
+          
+
+        
+          @endif
+          
           @endforeach          
+        </div>  
+          
 
-        </div>
-
-        <div class="flex bg-gray-300 h-1/6">   
-            <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
-
-            <div class="flex justify-center items-center bg-red-300 px-4 py-1 w-1/3 h-auto border border-white"> <input type="checkbox"> MipMerp </div>
-        </div>
-
+        
 
 
     </table>
