@@ -226,38 +226,56 @@
         @endif
 
         @if($SurveyQuestion->type =='openended')
-        <article>
-        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
-       @csrf
-       @method('POST')
+        
+<div class="w-full bg-gray-300">
 
-       <div class="flex-auto bg-gray-300"> 
-
-                <div class="flex-auto bg-gray-300 border border-red-500">
-                
-
-                   <div class="bg-white content-center items-center text-center border border-black mx-4 my-2">
-
-                        <label for="answer" class="content-center items-center block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> <strong> {{$SurveyQuestion->question}} (Open Ended)  </strong> </label>
-                        <input type="text" id="answer" class="my-1 px-2 content-center items-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block hover w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value="{{old('answer')}}"> 
-                  
-                   </div>
-
-                        <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                 
-                        <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
-
-                   </div>  
-
+        <div class="flex justify-start w-full h-1/4 items-end bg-gray-300 border border-red-500">
+                <div class="ml-12">Good Day, Counselor! </div>
         </div>
 
-        </form>	
-        </article>
-                    {{$SurveyQuestions->links()}}
+
+        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+        @csrf @method('POST')  
+
+ 
+   <div class="flex-nowrap bg-white w-full h-2/6">
+        <table>
+
+        <tr>
+                <div class="flex justify-center items-center bg-white w-full h-full"> <strong> {{$SurveyQuestion->question}} Open Ended </strong> </div>
+
+                <div class="flex bg-gray-300 h-full"> 
+
+                
+                <input type="text" class="mx-2 bg-gray-300 w-full h-full" placeholder="Answer Here"> </input>
+                
+
+                </div>  
+                
+        </table>
+        </div>
+
+        <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
+
+                <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl ml-2 mb-2"> Back </div> 
+                <div class=""> <button class="px-8 py-2 bg-blue-300 rounded-xl mb-2"> Submit </div> 
+                <div class=""> <button class="px-8 py-2 bg-green-500 rounded-xl mr-2 mb-2"> Next </div> 
+                
+        </div>
+         
+        
+
+        <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
+        </div>
+        
+   </form>
+       
+</div> 	
+
         @endif
 
     @endforeach           
                        
     
-        
-
 </x-layout>
