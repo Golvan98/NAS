@@ -85,7 +85,7 @@
         <div class="flex bg-gray-300 h-full"> 
 
           @foreach($choices as $choice)
-          <div class="flex justify-center items-center bg-white px-4 py-1 w-1/3 h-full border border-black"><input type="checkbox" name="answer" id="answer" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
+          <div class="flex justify-center items-center bg-white px-4 py-1 w-1/3 h-full border border-black"> <input type="checkbox" name="answer" id="answer" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
           @endforeach 
 
         </div>  
@@ -188,7 +188,7 @@
         <div class="flex bg-gray-300 h-full"> 
 
           @foreach($choices as $choice)
-          <div class="flex justify-center items-center bg-white px-2 py-1 w-1/3 h-full border border-black"> <input type="checkbox" name="question_choice" id="question_choice"> &nbsp  {{$choice->question_choice}} </div> 
+          <div class="flex justify-center items-center bg-white px-2 py-1 w-1/3 h-full border border-black"> <input type="checkbox" name="answer" id="answer" value="{{$choice->question_choice}}"> &nbsp  {{$choice->question_choice}} </div> 
           @endforeach 
 
         </div>  
