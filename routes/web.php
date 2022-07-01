@@ -56,7 +56,7 @@ Route::get('/divtestpage', function()
     return view('divtestpage');
 });
 
-Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
+Route::post('/createanswer/[{survey}]/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
 Route::get('/surveyform/{survey}', [SurveyQuestionController::class, 'surveyform']);
 
