@@ -115,68 +115,114 @@
         @endif
 
         @if($SurveyQuestion->type =='ratingscale')
-        <article>
-        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
-       @csrf
-       @method('POST')
-                                          
-                    <div class="flex-auto bg-gray-300"> 
+     
+<div class="w-full bg-gray-300">
 
-                <div class="flex-auto bg-gray-300 border border-red-500">
-
-                <table class="ml-4 mr-4 border border-black mt-2 bg-white text-black">                
-                    
-                        <tr class="">  
-                               <td class="px-1">  <strong> {{$SurveyQuestion->question}} (Rating Scale Scale) lores epsum lores epsum lores epsum </strong> </td> 
-                        @foreach($choices as $choice)
-                                <td colspan="1"class="px-4 py-4 border border-black whitespace-pre font-bold text-start flex-auto"> <input type="checkbox" name="pes" value=""> {{$choice->question_choice}} </input></td>                               
-                        @endforeach
-                      
-                                       
-                </table>
-                <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                 
-
-                <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
-
-                </div>    
+        <div class="flex justify-start w-full h-1/4 items-end bg-gray-300 border border-red-500">
+                <div class="ml-12">Good Day, Counselor! </div>
         </div>
 
-        </form>	
-        </article>
-                    {{$SurveyQuestions->links()}}       
+
+        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+        @csrf @method('POST')  
+
+ 
+  <div class="flex-nowrap bg-white w-full h-2/6">
+    <table>
+
+       <tr>
+        <div class="flex justify-center items-center bg-white w-full h-full"> <strong> {{$SurveyQuestion->question}} (Rating Scale) </strong> </div>
+
+        <div class="flex bg-gray-300 h-full"> 
+
+          @foreach($choices as $choice)
+          <div class="flex justify-center items-center bg-white px-2 py-1 w-1/3 h-full border border-black"> <input type="checkbox"> {{$choice->question_choice}} </div> 
+          @endforeach 
+
+        </div>  
+          
+    </table>
+  </div>
+
+        <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
+
+                <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl ml-2 mb-2"> Back </div> 
+                <div class=""> <button class="px-8 py-2 bg-blue-300 rounded-xl mb-2"> Edit </div> 
+                <div class=""> <button class="px-8 py-2 bg-green-500 rounded-xl mr-2 mb-2"> Next </div> 
+                
+        </div>
+         
+        
+
+        <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
+        </div>
+        
+        </form>
+       
+</div> 	
+
         @endif
        
+
+
         @if($SurveyQuestion->type =='matrixquestion')
-        <article>
-        <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/"> 
-       @csrf
-       @method('POST')
-                                            
-         <div class="flex-auto bg-gray-300"> 
+        
+        
+<div class="w-full bg-gray-300">
 
-                <div class="flex-auto bg-gray-300 border border-red-500">
+        <div class="flex justify-start w-full h-1/4 items-end bg-gray-300 border border-red-500">
+                <div class="ml-12">Good Day, Counselor! </div>
+        </div>
 
-                        <table class="ml-4 mr-4 border border-black mt-2 bg-white text-black">                
+
+        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+        @csrf @method('POST')  
+
+ 
+  <div class="flex-nowrap bg-white w-full h-2/6">
+    <table>
+
+       <tr>
+        <div class="flex justify-center items-center bg-white w-full h-full"> <strong> {{$SurveyQuestion->question}} (Matrix Question) </strong> </div>
+
+        <div class="flex bg-gray-300 h-full"> 
+
+          @foreach($choices as $choice)
+          <div class="flex justify-center items-center bg-white px-2 py-1 w-1/3 h-full border border-black"> <input type="checkbox"> {{$choice->question_choice}} </div> 
+          @endforeach 
+
+        </div>  
+          
+    </table>
+  </div>
+
+        <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
+
+                <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl ml-2 mb-2"> Back </div> 
+                <div class=""> <button class="px-8 py-2 bg-blue-300 rounded-xl mb-2"> Edit </div> 
+                <div class=""> <button class="px-8 py-2 bg-green-500 rounded-xl mr-2 mb-2"> Next </div> 
                 
-                        <tr class="">  
-                        <td class="px-1">  <strong> {{$SurveyQuestion->question}} (matrixquestion) lores epsum lores epsum lores epsum </strong> </td> 
-                        @foreach($choices as $choice)
-                                <td colspan="1"class="px-4 py-4 border border-black whitespace-pre font-bold text-start flex-auto"> <input type="checkbox" name="pes" value=""> {{$choice->question_choice}} </input></td>                               
-                        @endforeach
-                        
-                                
-                        </table>
-                        <button class="bg-green-300 text-white rounded ml-1 py-1 px-3 hover:bg-green-500"> Back </button>                 
+        </div>
+         
+        
 
-                        <button type="submit" class="bg-red-300 text-white rounded ml-1 py-1 px-2 hover:bg-red-500"> Submit Answer </button>  
-
-                </div>   
-
-         </div>
-
+        <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
+        </div>
+        
         </form>
-        </article>
-                    {{$SurveyQuestions->links()}} 	
+       
+</div> 	
+
+
+
+
+
+
+
+
+
         @endif
 
         @if($SurveyQuestion->type =='openended')
