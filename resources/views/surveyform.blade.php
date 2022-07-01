@@ -13,13 +13,13 @@
         </div>
 
 
-        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
-        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+  <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+  <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
         @csrf @method('POST')  
 
  
-  <div class="flex-nowrap bg-white w-full h-5/6">
-    <table>
+     <div class="flex-nowrap bg-white w-full h-5/6">
+        <table>
 
        <tr>
         <div class="flex justify-center items-center bg-white w-full h-auto h-1/6"> {{$SurveyQuestion->question}} (Multiple Choice) </div>
@@ -32,18 +32,17 @@
           @if($loop->iteration %5 ==0)
         </div>
 
-        <div class="flex bg-gray-700 h-1/6 mt-0.5"> 
+        
 
           
-
         
           @endif
           
           @endforeach          
-        </div>  
+        
           
-    </table>
-  </div>
+        </table>
+     </div>
 
         <div class="flex justify-between w-full h-1/6 bg-red-100 items-center">
                 <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl"> Back </div> 
@@ -55,13 +54,12 @@
          <div class="mt-1"> {{$SurveyQuestions->links()}}  </div>
 
  
-        </div>
-        </form>
+  </div>
+  </form>
        
 </div>
 
-        
-        
+         
 
     @endif
                 
@@ -74,13 +72,13 @@
         </div>
 
 
-        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
-        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+  <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+  <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
         @csrf @method('POST')  
 
  
-  <div class="flex-nowrap bg-white w-full h-2/6">
-    <table>
+     <div class="flex-nowrap bg-white w-full h-2/6">
+        <table>
 
        <tr>
         <div class="flex justify-center items-center bg-white w-full h-full"> <strong> {{$SurveyQuestion->question}} (Likert Scale) </strong> </div>
@@ -93,8 +91,8 @@
 
         </div>  
           
-    </table>
-  </div>
+        </table>
+     </div>
 
         <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
 
@@ -107,9 +105,9 @@
         
 
         <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
-        </div>
-        
-        </form>
+
+  </div> 
+  </form>
        
 </div> 	
         @endif
@@ -123,13 +121,13 @@
         </div>
 
 
-        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
-        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+  <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+  <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
         @csrf @method('POST')  
 
  
-  <div class="flex-nowrap bg-white w-full h-2/6">
-    <table>
+     <div class="flex-nowrap bg-white w-full h-2/6">
+        <table>
 
        <tr>
         <div class="flex justify-center items-center bg-white w-full h-full"> <strong> {{$SurveyQuestion->question}} (Rating Scale) </strong> </div>
@@ -142,8 +140,8 @@
 
         </div>  
           
-    </table>
-  </div>
+        </table>
+     </div>
 
         <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
 
@@ -156,9 +154,10 @@
         
 
         <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
-        </div>
+
+  </div>
         
-        </form>
+  </form>
        
 </div> 	
 
@@ -176,13 +175,13 @@
         </div>
 
 
-        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
-        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+  <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+  <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
         @csrf @method('POST')  
 
  
-  <div class="flex-nowrap bg-white w-full h-2/6">
-    <table>
+     <div class="flex-nowrap bg-white w-full h-2/6">
+        <table>
 
        <tr>
         <div class="flex justify-center items-center bg-white w-full h-full"> <strong> {{$SurveyQuestion->question}} (Matrix Question) </strong> </div>
@@ -195,8 +194,8 @@
 
         </div>  
           
-    </table>
-  </div>
+        </table>
+     </div>
 
         <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
 
@@ -209,18 +208,11 @@
         
 
         <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
-        </div>
-        
-        </form>
+
+  </div> 
+  </form>
        
 </div> 	
-
-
-
-
-
-
-
 
 
         @endif
@@ -234,8 +226,8 @@
         </div>
 
 
-        <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
-        <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+  <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
+  <form method="POST" action="" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
         @csrf @method('POST')  
 
  
@@ -267,9 +259,9 @@
         
 
         <div class="items-end my-0.5"> {{$SurveyQuestions->links()}}  </div>
-        </div>
-        
-   </form>
+
+  </div>      
+  </form>
        
 </div> 	
 
