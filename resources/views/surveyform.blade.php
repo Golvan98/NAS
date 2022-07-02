@@ -14,9 +14,9 @@
 
 
   <div class="flex justify-center w-full h-3/4 bg-gray-300 border border-green-500"> 
-  <form method="POST" action="/createanswer/{{$survey}}/{{$SurveyQuestion->id}}/" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
+  <form method="POST" action="/createmultiplechoiceanswer/{{$survey}}/{{$SurveyQuestion->id}}/" class=" mt-4 mx-4 flex-nowrap w-full h-5/6 bg-white border border-green-500">  
         @csrf @method('POST')  
-
+        
  
      <div class="flex-nowrap bg-white w-full h-5/6">
         <table>
@@ -27,7 +27,7 @@
         <div class="flex bg-white h-1/6"> 
 
           @foreach($choices as $choice)
-          <div class="flex justify-center items-center bg-white px-4 py-1 w-1/3 h-auto border border-black"> <input type="checkbox" name="question_choice" id="question_choice"> &nbsp {{$choice->question_choice}} </div> 
+          <div class="flex justify-center items-center bg-white px-4 py-1 w-1/3 h-auto border border-black"> <input type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}">  &nbsp {{$choice->question_choice}} </div> 
           
           @if($loop->iteration %5 ==0)
         </div>

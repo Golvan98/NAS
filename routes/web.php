@@ -7,6 +7,7 @@ use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\SurveyQuestionController;
 use App\Http\Controllers\SurveyResponsesController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\QuestionChoiceController;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
 use App\Models\SurveyResponseAnswer;
@@ -57,6 +58,8 @@ Route::get('/divtestpage', function()
 });
 
 Route::post('/createanswer/[{survey}]/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
+
+Route::post('/createmultiplechoiceanswer/[{survey}]/{SurveyQuestion}', [QuestionChoiceController::class, 'createanswerchoice']);
 
 Route::get('/surveyform/{survey}', [SurveyQuestionController::class, 'surveyform']);
 
