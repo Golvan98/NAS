@@ -8,9 +8,20 @@ class QuestionChoiceController extends Controller
 {
     public function createanswerchoice()
     {
-        $array = request()->get('question_choice');
+        $questionchoices = request()->get('question_choice');
 
-        dd($array);
+        dd($questionchoices);
+
+        foreach($questionchoices as $questionchoice)
+        {
+           $newanswerchoice = AnswerChoice::create();
+
+           $newanswerchoice->update([
+            'answer_choice' => $questionchoice,
+            'survey_question_id' => $SurveyQuestion->id          
+           ]);
+        }
+
 
     }
 }
