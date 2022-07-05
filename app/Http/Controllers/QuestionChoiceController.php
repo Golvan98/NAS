@@ -1,16 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Survey;
+use App\Models\SurveyQuestion;
+use App\Models\QuestionChoice;
+use App\Models\AnswerChoice;
 
 use Illuminate\Http\Request;
 
 class QuestionChoiceController extends Controller
 {
-    public function createanswerchoice()
+    public function createanswerchoice(Survey $survey, SurveyQuestion $SurveyQuestion)
     {
         $questionchoices = request()->get('question_choice');
 
-        dd($questionchoices);
+      
 
         foreach($questionchoices as $questionchoice)
         {
@@ -22,6 +26,9 @@ class QuestionChoiceController extends Controller
            ]);
         }
 
+        $wew = AnswerChoice::all();
+
+        dd($wew);
 
     }
 }
