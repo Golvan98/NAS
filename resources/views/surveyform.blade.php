@@ -9,7 +9,7 @@
 <div class="w-full bg-gray-300">
 
         <div class="flex justify-start w-full h-1/4 items-end bg-gray-300 border border-red-500">
-                <div class="ml-12"> <strong> Good Day, Counselor! </strong> </div>
+                <div class="ml-12"> <strong> Good Day, Counselor! Welcome {{ auth()->user()->id }} !  </strong> </div>
         </div>
 
 

@@ -18,6 +18,23 @@ class QuestionChoiceController extends Controller
 
         foreach($questionchoices as $questionchoice)
         {
+
+            $StudentId = auth()->user()->id;
+            
+            
+
+            $responsedata = [
+                'survey_id' => $survey->id,
+                'student_id' => $StudentId,
+                
+            ];
+
+            $NewResponse = SurveyResponse::create($responsedata);
+
+            dd($NewResponse);
+
+
+
            $newanswerchoice = AnswerChoice::create();
             $newanswer = Answer::create();
 
