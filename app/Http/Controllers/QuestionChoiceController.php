@@ -36,31 +36,22 @@ class QuestionChoiceController extends Controller
             
             $NewAnswerData = [
                 'survey_question_id' => $SurveyQuestion->id,
-                'survey_response_id' => $NewResponse->id
-
+                'survey_response_id' => $NewResponse->id,
+                'answer' => 'multiple_choice'
             ];
 
-
-            
-            $NewAnswer = SurveyResponseAnswers::updateOrCreate($NewAnswerData);
-
+            $NewAnswer = SurveyResponseAnswers::firstOrCreate($NewAnswerData);
 
            $NewAnswerChoiceData = [
-            'survey_response_answer_id' => $newanser->id,
-            'answer_choice' => $questionchoice,
-            'survey_question_id' => $SurveyQuestion->id          
+            'survey_response_answer_id' => $NewAnswer->id,
+            'answer_choice' => $questionchoice,      
            ];
 
-           $NewAnswerChoice = AnswerChoice::firstOrCreate($NewAnswerChoiceData);
+           $NewAnswerChoice = AnswerChoice::updateOrCreate($NewAnswerChoiceData);
 
 
-            dd($NewAnswer);
+            dd($NewAnswerChoice);
 
-           $newanswerchoice->update([
-            'survey_response_answer_id' => $newanser->id,
-            'answer_choice' => $questionchoice,
-            'survey_question_id' => $SurveyQuestion->id          
-           ]);
         }
 
         $wew = AnswerChoice::all();
