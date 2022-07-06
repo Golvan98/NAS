@@ -16,14 +16,15 @@ class QuestionChoiceController extends Controller
     {
         $questionchoices = request()->get('question_choice');
 
-      
+    
 
         foreach($questionchoices as $questionchoice)
         {
 
             $StudentId = auth()->user()->id;
-            
-            
+
+            $SurveyQuestionId = $SurveyQuestion->id;
+
 
             $ResponseData = [
                 'survey_id' => $survey->id,
@@ -32,16 +33,17 @@ class QuestionChoiceController extends Controller
             ];
 
             $NewResponse = SurveyResponses::firstOrCreate($ResponseData);
-
+        
             
             $NewAnswerData = [
-                'survey_question_id' => $SurveyQuestion->id,
                 'survey_response_id' => $NewResponse->id,
+                'survey_question_id' => $SurveyQuestionId,
                 'answer' => 'multiple_choice'
             ];
 
+    
             $NewAnswer = SurveyResponseAnswers::firstOrCreate($NewAnswerData);
-
+   
            $NewAnswerChoiceData = [
             'survey_response_answer_id' => $NewAnswer->id,
             'answer_choice' => $questionchoice,      
@@ -49,8 +51,6 @@ class QuestionChoiceController extends Controller
 
            $NewAnswerChoice = AnswerChoice::updateOrCreate($NewAnswerChoiceData);
 
-
-            dd($NewAnswerChoice);
 
         }
 
