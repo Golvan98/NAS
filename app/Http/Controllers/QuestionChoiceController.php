@@ -19,8 +19,14 @@ class QuestionChoiceController extends Controller
         foreach($questionchoices as $questionchoice)
         {
            $newanswerchoice = AnswerChoice::create();
+            $newanswer = Answer::create();
+
+            $newanswer->update([
+                'survey_question_id' => $SurveyQuestion->id
+            ]);
 
            $newanswerchoice->update([
+            'survey_response_answer_id' => $newanser->id,
             'answer_choice' => $questionchoice,
             'survey_question_id' => $SurveyQuestion->id          
            ]);
