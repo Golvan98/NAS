@@ -54,9 +54,7 @@ class QuestionChoiceController extends Controller
 
         }
 
-        $wew = AnswerChoice::all();
-
-        dd($wew);
-
+        return redirect()->back()->withInput()->withSuccess('Answer Saved Successfully');
+        
     }
 }
