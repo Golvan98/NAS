@@ -55,6 +55,14 @@ class QuestionChoiceController extends Controller
         }
 
         return redirect()->back()->withInput()->withSuccess('Answer Saved Successfully');
-        
+
+    }
+
+
+    public function questionchoiceeditor(SurveyQuestion $SurveyQuestion, QuestionChoice $QuestionChoice)
+    {
+
+        return view('questionchoiceeditor');
+
     }
 }

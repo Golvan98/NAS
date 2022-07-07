@@ -7,7 +7,7 @@
    <tr>              
    <th class="whitespace-pre px-20 py-4"> {{$questions->question}} </th>  
    <th class="whitespace-pre px-20 py-4"> <a href="/questioneditor/{{$questions->id}}"> <button class="bg-gray-500 rounded-xl py-2"> Edit Question </th> </button> </a>
-   <th class="whitespace-pre px-20 py-4"> <a href=""> <button class="bg-gray-500 rounded-xl py-2"> Edit Question Choices </th> </button> </a>  
+   <th class="whitespace-pre px-20 py-4"> <a href="/questionchoiceeditor"> <button class="bg-gray-500 rounded-xl py-2"> Edit Question Choices </th> </button> </a>  
    <th class="">
    
 <form method="POST" class="border border-green-500 mr-12" action="/deletequestion/{{$questions->id}}">
