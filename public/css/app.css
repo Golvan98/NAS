@@ -632,6 +632,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-5 {
   height: 1.25rem;
 }
+.h-1\/2 {
+  height: 50%;
+}
 .w-full {
   width: 100%;
 }
@@ -655,6 +658,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-5 {
   width: 1.25rem;
+}
+.w-1\/2 {
+  width: 50%;
+}
+.w-3\/4 {
+  width: 75%;
+}
+.w-auto {
+  width: auto;
 }
 .flex-auto {
   flex: 1 1 auto;

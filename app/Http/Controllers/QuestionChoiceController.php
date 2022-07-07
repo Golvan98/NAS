@@ -7,6 +7,7 @@ use App\Models\SurveyResponses;
 use App\Models\QuestionChoice;
 use App\Models\SurveyResponseAnswers;
 use App\Models\AnswerChoice;
+use Illuminate\Pagination\Paginator;
 
 use Illuminate\Http\Request;
 
@@ -61,8 +62,16 @@ class QuestionChoiceController extends Controller
 
     public function questionchoiceeditor(SurveyQuestion $SurveyQuestion, QuestionChoice $QuestionChoice)
     {
+        
 
-        return view('questionchoiceeditor');
+        $SurveyQuestionId = $SurveyQuestion->pluck('id');
+
+
+        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(5);
+
+        
+
+        return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices]);
 
     }
 }
