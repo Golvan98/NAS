@@ -62,14 +62,15 @@ class QuestionChoiceController extends Controller
 
     public function questionchoiceeditor(SurveyQuestion $SurveyQuestion, QuestionChoice $QuestionChoice)
     {
-        
+       
 
-        $SurveyQuestionId = $SurveyQuestion->pluck('id');
+      
 
+        $SurveyQuestionId = SurveyQuestion::where('id', $SurveyQuestion->id)->pluck('id');
 
-        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(5);
+        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(3);
 
-        
+     
 
         return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices]);
 
