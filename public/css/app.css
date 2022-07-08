@@ -530,6 +530,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-4 {
   margin-left: 1rem;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -569,8 +572,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-ml-px {
   margin-left: -1px;
 }
-.mt-5 {
-  margin-top: 1.25rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .inline-block {
   display: inline-block;
@@ -608,6 +611,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-1\/6 {
   height: 16.666667%;
 }
+.h-1\/2 {
+  height: 50%;
+}
 .h-12 {
   height: 3rem;
 }
@@ -635,14 +641,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-5 {
   height: 1.25rem;
 }
-.h-1\/2 {
-  height: 50%;
-}
 .w-full {
   width: 100%;
 }
 .w-1\/3 {
   width: 33.333333%;
+}
+.w-3\/4 {
+  width: 75%;
 }
 .w-48 {
   width: 12rem;
@@ -661,15 +667,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-5 {
   width: 1.25rem;
-}
-.w-1\/2 {
-  width: 50%;
-}
-.w-3\/4 {
-  width: 75%;
-}
-.w-auto {
-  width: auto;
 }
 .flex-auto {
   flex: 1 1 auto;

@@ -68,7 +68,7 @@ class QuestionChoiceController extends Controller
 
         $SurveyQuestionId = SurveyQuestion::where('id', $SurveyQuestion->id)->pluck('id');
 
-        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(3);
+        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(7);
 
      
 
