@@ -75,4 +75,13 @@ class QuestionChoiceController extends Controller
         return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices]);
 
     }
+
+    public function questionchoiceedit(SurveyQuestion $SurveyQuestion, QuestionChoice $QuestionChoice)
+    {
+
+
+        return view('questionchoiceedit');
+
+
+    }
 }

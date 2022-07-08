@@ -16,9 +16,9 @@
             
             <div class="w-full flex justify-between mt-2">
 
-             <div class="w-1/3 text-center"> <button class="bg-gray-300 px-4 py-1 rounded-xl">   {{ $QuestionChoice->question_choice }}  </button> </div>
-             <div class="w-1/3 text-center"><button class="bg-gray-300 px-4 py-1 rounded-xl">   Edit  </button> </div>
-             <div class="w-1/3 text-center"><button class="bg-gray-300 px-4 py-1 rounded-xl">   Delete </button> </div> 
+             <div class="w-1/3 text-center"> <a href="#"> <button class="bg-gray-300 px-4 py-1 rounded-xl">   {{ $QuestionChoice->question_choice }}  </button> </a> </div>
+             <div class="w-1/3 text-center"> <a href="/questionchoiceedit/{{$QuestionChoice->id}}> <button class="bg-gray-300 px-4 py-1 rounded-xl">   Edit  </button> </a> </div>
+             <div class="w-1/3 text-center"> <a href="#"> <button class="bg-red-300 px-4 py-1 rounded-xl">   Delete </button> </a> </div> 
 
              
              
