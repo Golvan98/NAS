@@ -26,6 +26,13 @@
 
             
 
+            <div class="w-full h-full flex flexitems-end mt-6 mr-2"> 
+
+            <div class=""> <a href="#"> <button class="px-8 py-2 bg-red-500 rounded-xl ml-2 mb-2"> Back </button> </a> </div> 
+            
+            </div>
+
+            
             <div class="w-full h-full flex items-end mt-6 mr-2"> 
 
               <div class="w-full bg-gray-300"> {{$QuestionChoices->links()}} </div>

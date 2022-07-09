@@ -80,7 +80,11 @@ class QuestionChoiceController extends Controller
     {
 
 
-        return view('questionchoiceedit');
+           
+
+            
+
+        return view('questionchoiceedit')->with(['QuestionChoice' => $QuestionChoice, 'QuestionChoice' => $QuestionChoice]);
 
 
     }

@@ -641,6 +641,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-5 {
   height: 1.25rem;
 }
+.h-1\/2 {
+  height: 50%;
+}
 .w-full {
   width: 100%;
 }
@@ -667,6 +670,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-5 {
   width: 1.25rem;
+}
+.w-1\/2 {
+  width: 50%;
 }
 .flex-auto {
   flex: 1 1 auto;
@@ -910,6 +916,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-72 {
   padding-left: 18rem;
   padding-right: 18rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 .pr-48 {
   padding-right: 12rem;
