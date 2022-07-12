@@ -60,6 +60,8 @@ Route::get('/questionchoiceedit/{QuestionChoice}', [QuestionChoiceController::cl
 
 Route::patch('/updatequestionchoice/{QuestionChoice}', [QuestionChoiceController::class, 'updatequestionchoice']);
 
+Route::delete('/deletequestionchoice/{QuestionChoice}', [QuestionChoiceController::class, 'destroyquestionchoice']);
+
 Route::get('/divtestpage', function()
 {
     return view('divtestpage');

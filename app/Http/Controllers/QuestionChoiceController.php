@@ -102,9 +102,11 @@ class QuestionChoiceController extends Controller
         return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Edited Successfully');
     }
 
-    public function destroyquestinchoice(QuestionChoice $QuestionChoice)
+    public function destroyquestionchoice(QuestionChoice $QuestionChoice)
     {
         
+        $SurveyQuestion = $QuestionChoice->survey_question_id;
+
         $QuestionChoice->delete();
 
         return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Deleted Successfully');
