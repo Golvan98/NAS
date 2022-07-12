@@ -86,7 +86,7 @@ class QuestionChoiceController extends Controller
     public function updatequestionchoice(QuestionChoice $QuestionChoice)
     {
     
-        $SurveyQuestionId = $QuestionChoice->survey_question_id;
+        $SurveyQuestion = $QuestionChoice->survey_question_id;
 
       
 
@@ -97,8 +97,17 @@ class QuestionChoiceController extends Controller
 
         $QuestionChoice->update($data);
 
-        
 
-        return redirect()->route('/questionchoiceedit/$SurveyQuestionId')->with('success', 'QuestionChoice Edited Successfully');
+
+        return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Edited Successfully');
+    }
+
+    public function destroyquestinchoice(QuestionChoice $QuestionChoice)
+    {
+        
+        $QuestionChoice->delete();
+
+        return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Deleted Successfully');
+
     }
 }

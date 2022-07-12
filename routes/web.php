@@ -54,7 +54,7 @@ Route::delete('/deletequestion/{surveyquestion}', [SurveyQuestionController::cla
 
 Route::delete('/deletesurvey/{survey}', [SurveyController::class, 'deletesurvey']);
 
-Route::get('/questionchoiceeditor/{SurveyQuestion}', [QuestionChoiceController::class, 'questionchoiceeditor']);
+Route::get('/questionchoiceeditor/{SurveyQuestion}', [QuestionChoiceController::class, 'questionchoiceeditor'])->name('questionchoiceeditor');
 
 Route::get('/questionchoiceedit/{QuestionChoice}', [QuestionChoiceController::class, 'questionchoiceedit']);
 
