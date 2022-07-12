@@ -168,7 +168,7 @@ class SurveyQuestionController extends Controller
             }
                
 
-        return redirect()->back()->withInput()->withSuccess('Answer Saved Successfully');
+        
 
 
         

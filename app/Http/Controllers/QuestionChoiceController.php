@@ -79,13 +79,26 @@ class QuestionChoiceController extends Controller
     public function questionchoiceedit(SurveyQuestion $SurveyQuestion, QuestionChoice $QuestionChoice)
     {
 
-
-           
-
-            
-
         return view('questionchoiceedit')->with(['QuestionChoice' => $QuestionChoice, 'QuestionChoice' => $QuestionChoice]);
 
+    }
 
+    public function updatequestionchoice(QuestionChoice $QuestionChoice)
+    {
+    
+        $SurveyQuestionId = $QuestionChoice->survey_question_id;
+
+      
+
+        $data = request()->validate([
+            'question_choice' => 'required',           
+        ]);
+
+
+        $QuestionChoice->update($data);
+
+        
+
+        return redirect()->route('/questionchoiceedit/$SurveyQuestionId')->with('success', 'QuestionChoice Edited Successfully');
     }
 }

@@ -10,6 +10,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\QuestionChoiceController;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
+use App\Models\QuestionChoice;
+use App\Models\AnswerChoice;
 use App\Models\SurveyResponseAnswer;
 use App\Models\SurveyResponses;
 use App\Models\Student;
@@ -55,6 +57,8 @@ Route::delete('/deletesurvey/{survey}', [SurveyController::class, 'deletesurvey'
 Route::get('/questionchoiceeditor/{SurveyQuestion}', [QuestionChoiceController::class, 'questionchoiceeditor']);
 
 Route::get('/questionchoiceedit/{QuestionChoice}', [QuestionChoiceController::class, 'questionchoiceedit']);
+
+Route::patch('/updatequestionchoice/{QuestionChoice}', [QuestionChoiceController::class, 'updatequestionchoice']);
 
 Route::get('/divtestpage', function()
 {
