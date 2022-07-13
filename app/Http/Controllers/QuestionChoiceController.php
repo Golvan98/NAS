@@ -63,16 +63,13 @@ class QuestionChoiceController extends Controller
     public function questionchoiceeditor(SurveyQuestion $SurveyQuestion, QuestionChoice $QuestionChoice)
     {
        
-
-      
+        $SurveyId = $SurveyQuestion->survey_id;
 
         $SurveyQuestionId = SurveyQuestion::where('id', $SurveyQuestion->id)->pluck('id');
 
         $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(7);
 
-     
-
-        return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices]);
+        return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices, 'SurveyId' => $SurveyId]);
 
     }
 
@@ -88,7 +85,7 @@ class QuestionChoiceController extends Controller
     
         $SurveyQuestion = $QuestionChoice->survey_question_id;
 
-      
+        
 
         $data = request()->validate([
             'question_choice' => 'required',           
@@ -106,6 +103,7 @@ class QuestionChoiceController extends Controller
     {
         
         $SurveyQuestion = $QuestionChoice->survey_question_id;
+
 
         $QuestionChoice->delete();
 

@@ -25,7 +25,8 @@
                     </div> 
 
                     <div class="flex justify-between px-12 py-0.5 mt-2 h-1/4 bg-gray-300"> 
-                      <a href="#">  <button class="bg-red-500 px-4 py-0.5 text-white text-center items-center flex justify-center"> Back </button> </a>
+                      <button class="bg-red-500 px-4 py-0.5 text-white text-center items-center flex justify-center"> <a href="/questionchoiceeditor/{{$QuestionChoice->survey_question_id}}">   Back </button> </a>
+
                     <button type="submit" class="bg-amber-900 px-4 py-0.5 text-white text-center items-center flex justify-center"> Submit </button> </a>
                     </div> 
             

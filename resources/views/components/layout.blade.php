@@ -90,9 +90,10 @@
 </div>
 
 <footer class="bg-gray-500 flex">
-    <div class="px-72 bg-white">  </div>
-    <div class="px-72 bg-white">  </div>
 
+
+    <div class="px-72 bg-white">  </div>
+    <div class="px-72 bg-white">  </div>
 
     
 </footer>
