@@ -28,6 +28,9 @@ use App\Models\Student;
 |
 */
 
+
+
+
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 
 Route::get('/createsurveyquestion/{survey}', [SurveyQuestionController::class, 'createquestion']);
@@ -61,6 +64,8 @@ Route::get('/questionchoiceedit/{QuestionChoice}', [QuestionChoiceController::cl
 Route::patch('/updatequestionchoice/{QuestionChoice}', [QuestionChoiceController::class, 'updatequestionchoice']);
 
 Route::delete('/deletequestionchoice/{QuestionChoice}', [QuestionChoiceController::class, 'destroyquestionchoice']);
+
+Route::post('/createquestionchoice/[{SurveyQuestion}]', [QuestionChoiceController::class, 'createquestionchoice']);
 
 Route::get('/divtestpage', function()
 {

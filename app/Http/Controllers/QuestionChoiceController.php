@@ -69,7 +69,7 @@ class QuestionChoiceController extends Controller
 
         $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(7);
 
-        return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices, 'SurveyId' => $SurveyId]);
+        return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices, 'SurveyId' => $SurveyId, 'SurveyQuestionId' => $SurveyQuestionId ]);
 
     }
 
@@ -107,7 +107,29 @@ class QuestionChoiceController extends Controller
 
         $QuestionChoice->delete();
 
+        dd($SurveyQuestion);
+
         return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Deleted Successfully');
+
+    }
+
+    public function createquestionchoice(SurveyQuestion $SurveyQuestion)
+    {
+
+        $SurveyQuestionId = $SurveyQuestion->id;       
+
+            $data = request()->validate([
+                'question_choice' => 'required',
+            ]);
+
+            $newqc = QuestionChoice::create($data);
+
+            $newqc->update([
+                'survey_question_id' => $SurveyQuestionId
+            ]);
+        
+        return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestionId])->with('success', 'New Question Choice Added');
+
 
     }
 }
