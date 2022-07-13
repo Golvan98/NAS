@@ -1,5 +1,5 @@
 <x-layout>
-
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
 
 
@@ -45,7 +45,7 @@
                               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                           </button>
                           <div class="px-6 py-6 lg:px-8">
-                              <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
+                              <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white"> Add a Question Choice</h3>
                               <form class="space-y-6" action="#">
                                   <div>
                                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
@@ -64,10 +64,7 @@
                                       </div>
                                       <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
                                   </div>
-                                  <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
-                                  <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                                      Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
-                                  </div>
+                                  <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Question Choice</button>                                 
                               </form>
                           </div>
                       </div>

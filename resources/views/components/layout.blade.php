@@ -7,6 +7,9 @@
   <script src ="app.js"> </script>
   <script src ="public/app.js"> </script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="../path/to/flowbite/dist/flowbite.js"></script>
+  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+  <link href="/css/app.css" rel="stylesheet">
 </head>
 
 <div id="main" class="flex-no-wrap bg-gray-300">
@@ -82,8 +85,9 @@
                     
             </nav>
         </div>
-        
+        <body>
         {{ $slot }}
+        </body>
     </div>
         
 
