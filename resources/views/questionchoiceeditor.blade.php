@@ -35,16 +35,17 @@
                           </button>
                           <div class="px-6 py-6 lg:px-8">
                               <h3 class="mb-4 text-xl text-center font-medium text-gray-900 dark:text-white"> Edit Question Choice</h3>
-                              <form method ="POST"class="space-y-6" action="/createquestionchoice/{{$SurveyQuestionId}}">
+                              <form method ="POST"class="space-y-6" action="/updatequestionchoice/{{$QuestionChoice->id}}">
                                 @csrf
+                                @method('PATCH')
                                   <div>
-                                    @foreach($QuestionChoices->SurveyQuestion as $SurveyQuestionChoice)
+                                    
                                       <label for="question_choice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question Choice</label>
-                                      <input type="question_choice" name="question_choice" id="question_choice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="{{$SurveyQuestionChoice->question}}" required>
-                                    @endforeach
-                                    </div>
+                                      <input type="question_choice" name="question_choice" id="question_choice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="{{$QuestionChoice->question_choice}}" required>
+                                    
+                                  </div>
 
-                                  <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Question Choice</button>                                 
+                                  <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Question Choice</button>                               +  
                               </form>
                           </div>
                       </div>

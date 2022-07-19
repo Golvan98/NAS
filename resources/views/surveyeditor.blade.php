@@ -1,5 +1,6 @@
 <x-layout>
 
+
 <form method="POST" action="/updatesurvey/{{$survey->id}}" class="px-6 py-4 rounded-xl text-black">
                             @csrf
 							@method('patch')
@@ -17,13 +18,10 @@
                     
                                        
                         <div class="flex justify-center">
-                        <button type="submit" class="bg-black justify-center rounded-full text-xs font-semibold text-white uppercase py-2 px-3"> Edit </button>
-                        
+                        	<button type="submit" class="bg-black justify-center rounded-full text-xs font-semibold text-white uppercase py-2 px-3"> Edit </button>
                         </div>
                           
 </form>
-
-
 
 
 </x-layout>

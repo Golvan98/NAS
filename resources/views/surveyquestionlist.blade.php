@@ -10,10 +10,10 @@
    <th class="whitespace-pre px-20 py-4"> <a href="/questionchoiceeditor/{{$questions->id}}"> <button class="bg-gray-500 rounded-xl py-2"> Edit Question Choices </th> </button> </a>  
    <th class="">
    
-<form method="POST" class="border border-green-500 mr-12" action="/deletequestion/{{$questions->id}}">
+<form method="POST" class="mr-12" action="/deletequestion/{{$questions->id}}">
     @csrf
     @method('DELETE')
-   <button type="submit" class="bg-red-300 rounded-xl py-2"> Delete Questionz   </form> </th> </button> 
+   <button type="submit" class="bg-red-300 rounded-xl px-2 py-2"> Delete Question   </form> </th> </button> 
  
    
    </tr> 

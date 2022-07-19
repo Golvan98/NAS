@@ -939,23 +939,23 @@ input:checked + .toggle-bg {
 .mb-12 {
   margin-bottom: 3rem;
 }
-.mt-6 {
-  margin-top: 1.5rem;
-}
-.mr-2 {
-  margin-right: 0.5rem;
-}
 .ml-2 {
   margin-left: 0.5rem;
 }
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mr-2 {
+  margin-right: 0.5rem;
+}
 .ml-auto {
   margin-left: auto;
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mr-12 {
   margin-right: 3rem;
