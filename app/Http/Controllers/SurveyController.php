@@ -78,7 +78,7 @@ class SurveyController extends Controller
 
         $survey = survey::all();
 
-        return view('/surveylist')->with(['surveys' =>$survey]);
+        return view('/divtestpage')->with(['surveys' =>$survey]);
     }
     
 

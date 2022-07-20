@@ -11,8 +11,13 @@
         
 
 
-          
+    <div class="w-full py-4  flex justify-center mt-4">
+         <strong>   <div>     {{$SurveyQuestion->question }} </div> </strong>
+    </div>  
+
             @foreach($QuestionChoices as $QuestionChoice)
+
+           
             
             <div class="w-full  flex justify-between mt-4">
 

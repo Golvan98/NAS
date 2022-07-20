@@ -1,6 +1,6 @@
 <x-layout>
 
-<div class="w-full bg-red-300 flex-nowrap justify-center items-center border border-red-500">
+<div class="w-full bg-gray-300 flex-nowrap justify-center items-center border border-red-500">
 
     
     <div class="flex-nowrap justify-center items-center w-full h-3/4 bg-gray-100 border border-black px-8 py-2" >
@@ -8,7 +8,7 @@
         <div class="w-full h-full bg-gray-300 "> 
 
         <div class="w-full text-center">
-            
+
                 <div class="w-full border border-black"> {{$survey->name}} </div>
         </div>
         
@@ -54,7 +54,7 @@
 
 
 
-                <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <div class="w-1/3 text-center text-center ml-8 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  py-2 rounded-xl ml-2  mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> Edit Question Choices </a> </div> 
+                <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <div class="w-1/3 text-center text-center block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  py-2 rounded-xl text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-4"> Edit Question Choices </a> </div> 
                     
             </div>
             @endforeach
@@ -66,11 +66,11 @@
 
      </div>
 
-     <div class="flex-nowrap w-full h-1/4 bg-gray-700 mt-2" >
+     <div class="flex-nowrap w-full h-1/4 bg-gray-300 border mt-2" >
                     
         <div class="w-full flex justify-between items-center"> 
                         
-            <div class="text-center mt-8 flex items-center"> <button class="bg-red-300 px-6 py-2 rounded-xl ml-4"> Back </div> </button>
+            <div class="text-center mt-8 flex items-center"> <a href="/surveylist"> <button class="bg-red-300 px-6 py-2 rounded-xl ml-4"> Back </div> </a> </button>
                         
             <div class="text-center mt-8 flex items-center"> <button class="bg-blue-300 px-6 py-2 rounded-xl mr-4 mb-1"> Add Survey Question </div> </button>
 
