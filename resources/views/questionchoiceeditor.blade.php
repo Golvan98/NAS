@@ -14,7 +14,7 @@
           
             @foreach($QuestionChoices as $QuestionChoice)
             
-            <div class="w-full flex justify-between mt-4">
+            <div class="w-full  flex justify-between mt-4">
 
              <div class="w-1/3 text-center"> <button class="bg-gray-300 px-4 py-1 rounded-xl">   {{ $QuestionChoice->question_choice }}  </button> </div>
              
