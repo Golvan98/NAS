@@ -1,11 +1,11 @@
-@props(['survey'])
+@props(['survey', 'surveyname'])
 
 <button class="bg-gray-400 px-4 py-2 rounded-xl modal" type="button" data-modal-toggle="{{ $survey }}">
-            Manage Survey hehe {{$slot}}
+            Manage Survey 
 </button>
             
               
-<form method ="POST" action="#"  id="{{ $survey }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+<form method ="POST" action="/updatesurvey/{{$survey}}"  id="{{ $survey }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
                   <div class="relative w-full h-full max-w-md p-4 md:h-auto">
                       <!-- Modal content -->
                       <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -18,8 +18,8 @@
                                 @csrf
                                 @method('PATCH')
                                   <div>
-                                      <label for="survey" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question Choice</label>
-                                      <input type="text" name="survey" id="survey" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="#" required>
+                                      <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question Choice</label>
+                                      <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="{{$surveyname}}" required>
                                   </div>
 
                                   <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" > Edit Survey</button>                                

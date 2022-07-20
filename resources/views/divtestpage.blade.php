@@ -15,7 +15,7 @@
 
       <div class="w-1/5 flex justify-center "> <button class="bg-gray-100 px-4 py-2 rounded-xl">  {{$survey->name}}</button> </div> 
       <div class="w-1/5 flex justify-center "> <a href="/surveyform/{{$survey->id}}"> <button class="bg-gray-200 px-4 py-2 rounded-xl">  Answer Survey </button> </a> </div>
-      <div class="w-1/5 flex justify-center "> <x-surveymodal survey="{{$survey->id}}"> </x-surveymodal> </div>
+      <div class="w-1/5 flex justify-center "> <x-surveymodal survey="{{$survey->id}}" surveyname="{{$survey->name}}"> </x-surveymodal> </div>
       <div class="w-1/5 flex justify-center "> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-400 px-4 py-2 rounded-xl">  Edit Questions </button> </a> </div>
       <div class="w-1/5 flex justify-center "> <button class="bg-gray-500 px-4 py-2 rounded-xl">  Create Survey </button> </div>
 
