@@ -1,23 +1,74 @@
 <x-layout>
 
+<div class="w-full bg-red-300 flex-nowrap justify-center items-center border border-red-500">
 
-<table class="text-black grid place-items-center m-2 text-center text-left mt-8 border border-black mb-4 ">
-
-@foreach($survey->surveyquestion as $questions)
-   <tr>              
-   <th class="whitespace-pre px-20 py-4"> {{$questions->question}} </th>  
-   <th class="whitespace-pre px-20 py-4"> <a href="/questioneditor/{{$questions->id}}"> <button class="bg-gray-500 rounded-xl py-2"> Edit Question </th> </button> </a>
-   <th class="whitespace-pre px-20 py-4"> <a href="/questionchoiceeditor/{{$questions->id}}"> <button class="bg-gray-500 rounded-xl py-2"> Edit Question Choices </th> </button> </a>  
-   <th class="">
+    
+<div class="flex-nowrap justify-center w-full h-3/4 bg-gray-100 border border-black px-8 py-2" >
+         
+   <div class="w-full h-full bg-gray-300 "> 
    
-<form method="POST" class="mr-12" action="/deletequestion/{{$questions->id}}">
-    @csrf
-    @method('DELETE')
-   <button type="submit" class="bg-red-300 rounded-xl px-2 py-2"> Delete Question   </form> </th> </button> 
+      @foreach($SurveyQuestions as $SurveyQuestion)
+      <div class="w-full flex justify-between items-end">
+        
+        <div class="w-1/3 text-center mt-8 py-1 px-8 bg-gray-100 rounded-xl">  {{$SurveyQuestion->question}} </div>
+
+        <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-8 py-2 rounded-xl ml-2  mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 modal" type="button" data-modal-toggle="{{ $SurveyQuestion->id }}">
+                Edit Question 
+        </button>
+            
+              
+              <form method ="POST" action="/updatequestion/{{$SurveyQuestion->id}}"  id="{{ $SurveyQuestion->id }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                  <div class="relative w-full h-full max-w-md p-4 md:h-auto">
+                      <!-- Modal content -->
+                      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                          <button type="button" class="bg-red-200 close absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="{{ $SurveyQuestion->id }}" data-dismiss="{{ $SurveyQuestion->id }}">
+                              <svg class="w-5 h-5 close"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                          </button>
+                          <div class="px-6 py-6 lg:px-8">
+                              <h3 class="mb-4 text-xl text-center font-medium text-gray-900 dark:text-white"> Edit Question Choice</h3>
+                              <div class="space-y-6">   
+                                @csrf
+                                @method('PATCH')
+                                  <div>
+                                      <label for="question" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question </label>
+                                      <input type="text" name="question" id="question" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="{{ $SurveyQuestion->question }}" required>
+                                  </div>
+
+                                  <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Edit Question Choice</button>                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <div class="w-1/3 text-center mt-8"> Edit Question Choices </a> </div> 
+        
+      </div>
+      @endforeach
+      
+   </div>
+   
+
+   <div class="flex justify-center w-full h-1/4 bg-gray-700 border border-black px-8 py-2" >
+         
+   <div class="w-3/4 bg-red-500 "> wew </div>
  
+   </div>
+
    
-   </tr> 
-   @endforeach   
-   </table>
+
+</div>
 
 </x-layout>

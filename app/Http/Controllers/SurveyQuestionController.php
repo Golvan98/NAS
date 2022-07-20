@@ -17,9 +17,19 @@ class SurveyQuestionController extends Controller
 {
 
 
-    public function questionlist(Survey $survey)
+    public function questionlist(Survey $survey, SurveyQuestion $SurveyQuestion)
     {
-        return view('surveyquestionlist')->with(['survey' => $survey]);
+        
+
+
+       
+
+        $SurveyQuestions = SurveyQuestion::where('survey_id', $survey->id)->paginate(5);
+
+
+    
+      
+        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions]);
     }
 
 
@@ -41,7 +51,7 @@ class SurveyQuestionController extends Controller
    
         $surveyquestion->update($data);
         
-       return redirect()->route('surveyquestionlist', [$survey])->with('success', 'Question Edited Successfully');
+       return redirect()->route('surveyquestionlist', ['survey' => $survey])->with('success', 'Question Edited Successfully');
 
           // return redirect('/home')->with('success', 'Question Edited Successfully');
     }
