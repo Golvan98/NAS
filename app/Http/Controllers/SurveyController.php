@@ -10,6 +10,7 @@ use App\Models\SurveyResponses;
 use App\Models\Student;
 use App\Models\Course;
 use App\Models\Department;
+use Illuminate\Pagination\Paginator;
 
 class SurveyController extends Controller
 {
@@ -76,7 +77,12 @@ class SurveyController extends Controller
     public function listsurvey(Survey $survey)
     {
 
-        $survey = survey::all();
+
+
+       
+
+        $survey = survey::where('id', '<>', 0 )->paginate(4);
+
 
         return view('/divtestpage')->with(['surveys' =>$survey]);
     }
