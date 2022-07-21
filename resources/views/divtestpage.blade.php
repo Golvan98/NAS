@@ -24,8 +24,8 @@
 
     <div class="w-full h-1/6 flex justify-between bg-gray-300 items-center ">
 
-      <div class="w-1/5 flex justify-center "> <button class="bg-red-500 px-8 py-2 rounded-xl">  Back </button> </div> 
-      <div class="w-1/5 flex justify-center "> <button class="bg-blue-500 px-8 py-2 rounded-xl">  Add Survey </button> </div> 
+      <div class="w-1/5 flex justify-center "> <a href="/home"> <button class="bg-red-500 px-8 py-2 rounded-xl">  Back </button> </a> </div> 
+      <div class="w-1/5 flex justify-center "> <x-createsurveymodal> </x-createsurveymodal> </div> 
 
     </div> 
       
