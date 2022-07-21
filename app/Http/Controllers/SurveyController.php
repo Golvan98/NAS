@@ -38,6 +38,17 @@ class SurveyController extends Controller
     public function updatesurvey(Survey $survey)
     {
         
+        if(request()->has('delete'))
+        {
+           $survey->delete();
+
+           
+           return redirect()->back()->with('success' , 'Survey Deleted Successfully');
+     
+
+        }
+
+
         $data = request()->validate([
             'name' => 'required'
         ]);
