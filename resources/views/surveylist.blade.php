@@ -6,7 +6,7 @@
 
     <div class="w-full h-1/6 flex justify-center bg-gray-300 items-center "> 
       
-      <div> Good Day, Counselor! </div>
+      <div> <strong> Good Day, Counselor! </strong> </div>
 
     </div>
 
