@@ -95,7 +95,7 @@ class SurveyController extends Controller
         $survey = survey::where('id', '<>', 0 )->paginate(4);
 
 
-        return view('/divtestpage')->with(['surveys' =>$survey]);
+        return view('/surveylist')->with(['surveys' =>$survey]);
     }
     
 

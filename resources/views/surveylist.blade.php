@@ -1,60 +1,44 @@
 <x-layout>
 
+<div class="w-full bg-gray-300 flex justify-center items-center ">
 
-<div id="body" class="bg-gray-300 flex-auto my-auto "> 
+  <div class="flex-nowrap w-4/5 h-3/4 bg-gray-300 border border-black">
 
+    <div class="w-full h-1/6 flex justify-center bg-gray-300 items-center "> 
+      
+      <div> Good Day, Counselor! </div>
 
-    <article class="bg-gray-500 flex">     
+    </div>
 
-    <article class="flex-auto bg-gray-300 flex-auto font-bold border border-red-500">
+    @foreach($surveys as $survey)
+    <div class="w-full h-1/6 flex justify-between bg-gray-300 items-center space-y-1 "> 
 
+      <div class="w-1/5 flex justify-center "> <button class="bg-gray-100 px-4 py-1 rounded-xl">  {{$survey->name}}</button> </div> 
+      <div class="w-1/5 flex justify-center "> <a href="/surveyform/{{$survey->id}}"> <button class="bg-gray-200 px-4 py-1 rounded-xl">  Answer Survey </button> </a> </div>
+      <div class="w-1/5 flex justify-center "> <x-surveymodal survey="{{$survey->id}}" surveyname="{{$survey->name}}"> </x-surveymodal> </div>
+      <div class="w-1/5 flex justify-center "> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-400 px-4 py-1 rounded-xl">  Edit Questions </button> </a> </div>
+     
+    </div>
+    @endforeach
 
-        
+    <div class="w-full h-1/6 flex justify-between bg-gray-300 items-center ">
 
-         <div class=" ml-4 pr-48 border border-green-500 place-content-center place-items-center place-self-center">
-         
+      <div class="w-1/5 flex justify-center "> <a href="/home"> <button class="bg-red-500 px-8 py-2 rounded-xl">  Back </button> </a> </div> 
+      <div class="w-1/5 flex justify-center "> <x-createsurveymodal> </x-createsurveymodal> </div> 
 
-            <div class="text-white  bg-gray-500 justify-items-center grid place-items-center">
-                                All Surveys
+    </div> 
 
-                           <p class="text-end bg-gray-300 text-black font-bold px-2 rounded-xl">  <a href="/surveycreator">   Create Survey   </button> </a> </p>
-            <table class="text-black grid place-items-center m-2 text-center text-left mt-8 border border-black mb-4 ">
+    <div class="w-full h-1/7 items-center mt-1">
 
-         @foreach($surveys as $survey)
-            <tr>              
-            <th class="whitespace-pre px-20 py-4"> {{$survey->name}} </th>  
-            <th class="whitespace-pre px-20 py-4"> <a href="/surveyform/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Test Answer Question </th> </button> </a>
-            <th class="whitespace-pre px-20 py-4"> <a href="/surveyeditor/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Survey </th> </button> </a>
-            <th class="whitespace-pre px-20 py-4"> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-300 rounded-xl py-2"> Edit Questions </th> </button> </a>
-            <th class="whitespace-pre px-20 py-4"> <a href="/questioncreator/{{$survey->id}}"> <button type="submit" class="bg-gray-300 rounded-xl py-2"> Create Survey Question </th> </button> </a> 
-            <th class=""> 
-            <form method="POST" class="border border-green-500 mr-12" action="/deletesurvey/{{$survey->id}}">
-             @csrf
-            @method('DELETE')
-            <button type="submit" class="bg-red-300 rounded-xl px-4"> Delete Survey </th> </button> </form> 
-           
-            </tr> 
-            @endforeach   
-            </table>
-            </div>
-
-         </div>
-
-        
-            
-   </article>
-       
-       
-   </article>
-        
+       {{$surveys->links()}} 
+  
+    </div> 
       
 
-    
+  </div>
+  
 
+     
 </div>
-
-
-
-
-
+    
 </x-layout>
