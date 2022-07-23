@@ -1,21 +1,21 @@
 <x-layout>
 
-<div class="w-full bg-red-300 flex-nowrap">
+<div class="w-full bg-gray-300 flex-nowrap">
 
-  <div class="w-full bg-blue-400 flex justify-center items-center h-5/6">
+  <div class="w-full bg-gray-300 flex justify-center items-center h-5/6">
 
-    <div class="w-4/5 bg-gray-500 flex-nowrap justify-center h-5/6 ">
+    <div class="w-4/5 bg-gray-500 flex-nowrap justify-center h-5/6  border border-black">
       
-        <div class="w-full bg-red-300 h-1/6 flex justify-center items-center"> 
+        <div class="w-full bg-gray-500 h-1/6 text-white flex justify-center items-center"> 
           
           <div> <strong> {{$survey->name}} </strong> </div>
 
         </div>
 
         @foreach($SurveyQuestions as $SurveyQuestion)
-        <div class="w-full bg-red-500 text-white h-1/6 flex justify-between items-center"> 
+        <div class="w-full bg-gray-300 text-white h-1/6 flex justify-between items-center"> 
           
-        <div class="w-1/3 text-center mx-4 mt-4 py-1 bg-red-500 rounded-xl"> <button class="bg-red-300 text-black px-4 py-1 rounded-xl ml-4">  {{$SurveyQuestion->question}} </button> </div>
+        <div class="w-1/3 text-center mx-4 mt-4 py-1 bg-gray-300 rounded-xl"> <button class="bg-gray-300 text-black px-4 py-1 rounded-xl ml-4"> <strong> {{$SurveyQuestion->question}} </strong> </button> </div>
 
         <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}"> </x-editquestionmodal> 
 
@@ -23,7 +23,7 @@
         </div>
         @endforeach
 
-        <div class="w-full bg-red-500 text-black h-1/6 flex justify-between items-center"> 
+        <div class="w-full bg-gray-300 text-black h-1/6 flex justify-between items-center"> 
           
           <div> <a href="/surveylist"> <button class="bg-red-300 text-black px-4 py-1 rounded-xl ml-4"> Back Ni Bitch </button> </a> </div>
   
@@ -37,9 +37,17 @@
 
   
 
-  <div class="w-full bg-red-300 h-1/6 flex justify-center items-center">
- oten
-  </div>
+  <div class="w-full bg-red-300 h-1/6 flex-nowrap">
+
+    <div class="w-full h-full flex justify-center items-center bg-gray-500">
+
+      <div class="w-4/5 h-1/2 text-white">
+      {{$SurveyQuestions->links()}} 
+      </div>
+    
+    </div>
+
+</div>
      
 </div>
     
