@@ -1,7 +1,8 @@
 @props(['SurveyQuestionId', 'SurveyQuestionName'])
-<div class="w-1/3 text-center text-center ml-8 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  py-2 rounded-xl ml-2  mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 modal" type="button" data-modal-toggle="{{ $SurveyQuestionId }}">
-                        Edit Question 
-                </div>
+<div class="w-1/3 flex justify-center items-center">  <button class="bg-red-300 text-black px-4 py-1 rounded-xl ml-4" type="button" data-modal-toggle="{{ $SurveyQuestionId }}"> 
+                        Edit Question
+                     </button> 
+</div>
                 
                     
                     
