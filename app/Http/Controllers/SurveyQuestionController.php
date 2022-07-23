@@ -24,12 +24,12 @@ class SurveyQuestionController extends Controller
 
        
 
-        $SurveyQuestions = SurveyQuestion::where('survey_id', $survey->id)->paginate(5);
+        $SurveyQuestions = SurveyQuestion::where('survey_id', $survey->id)->paginate(4);
 
 
     
       
-        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions]);
+        return view('divtestpage')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions]);
     }
 
 
