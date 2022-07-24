@@ -29,7 +29,7 @@ class SurveyQuestionController extends Controller
 
     
       
-        return view('divtestpage')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions]);
+        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions]);
     }
 
 
