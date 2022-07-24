@@ -18,6 +18,7 @@
       <div class="w-1/5 flex justify-center "> <x-surveymodal survey="{{$survey->id}}" surveyname="{{$survey->name}}"> </x-surveymodal> </div>
       <div class="w-1/5 flex justify-center "> <a href="/questionlist/{{$survey->id}}"> <button class="bg-gray-400 px-4 py-1 rounded-xl">  Edit Questions </button> </a> </div>
      
+      
     </div>
     @endforeach
 
