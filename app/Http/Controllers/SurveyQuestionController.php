@@ -42,6 +42,18 @@ class SurveyQuestionController extends Controller
 
     public function updatequestion(SurveyQuestion $surveyquestion)
     {
+        if(request()->has('delete'))
+        {
+           $surveyquestion->delete();
+
+           
+           return redirect()->back()->with('success' , 'Survey Question Successfully');
+     
+
+        }
+
+
+
         $data = request()->validate(
             [
                'question' => 'required',
@@ -88,7 +100,7 @@ class SurveyQuestionController extends Controller
 
         $survey = $newquestion->survey_id;
 
-        return redirect()->route('surveyquestionlist', [$survey])->with('success', 'Question Created Successfully');
+        return redirect()->back()->with('success', 'Question Created Successfully');
         
     }
 
