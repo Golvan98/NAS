@@ -1,8 +1,8 @@
 <x-layout>
 
-<div class="w-full bg-gray-300 flex justify-center items-center ">
+<div class="w-full bg-gray-300 flex justify-center items-center  ">
 
-  <div class="flex-nowrap w-4/5 h-3/4 bg-gray-300 border border-black">
+  <div class="flex-nowrap w-4/5 h-4/5 bg-gray-300 border border-black">
 
     <div class="w-full h-1/6 flex justify-center bg-gray-300 items-center "> 
       
@@ -29,11 +29,17 @@
 
     </div> 
 
-    <div class="w-full h-1/7 items-center mt-1">
+    <div class="w-full bg-transparent h-1/6 flex-nowrap">
 
-       {{$surveys->links()}} 
-  
-    </div> 
+    <div class="w-full h-4/5 flex justify-center items-center bg-transparent">
+
+      <div class="w-full h-3/4 text-white">
+      {{$surveys->links()}} 
+      </div>
+    
+    </div>
+
+  </div>
       
 
   </div>
