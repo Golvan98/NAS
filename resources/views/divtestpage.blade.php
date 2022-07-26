@@ -12,7 +12,7 @@
 
 
         <div class="w-full py-4  flex justify-center mt-4">
-            <strong>   <div>     {{$SurveyQuestion->question }} test </div> </strong>
+            <strong>   <div>     {{$SurveyQuestion->question }} test awe </div> </strong>
         </div>  
 
                 @foreach($QuestionChoices as $QuestionChoice)
