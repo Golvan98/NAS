@@ -65,10 +65,10 @@ class QuestionChoiceController extends Controller
 
         $SurveyQuestionId = SurveyQuestion::where('id', $SurveyQuestion->id)->pluck('id');
 
-        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(7);
+        $QuestionChoices = QuestionChoice::whereIn('survey_question_id', $SurveyQuestionId)->paginate(4);
 
 
-        return view('questionchoiceeditor')->with(['QuestionChoices' => $QuestionChoices, 'SurveyId' => $SurveyId, 'SurveyQuestionId' => $SurveyQuestionId, 'SurveyQuestion' => $SurveyQuestion ]);
+        return view('divtestpage2')->with(['QuestionChoices' => $QuestionChoices, 'SurveyId' => $SurveyId, 'SurveyQuestionId' => $SurveyQuestionId, 'SurveyQuestion' => $SurveyQuestion ]);
 
     }
 
