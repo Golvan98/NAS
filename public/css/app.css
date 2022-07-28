@@ -1072,6 +1072,9 @@ input:checked + .toggle-bg {
   height: -moz-fit-content;
   height: fit-content;
 }
+.h-3\/6 {
+  height: 50%;
+}
 .w-full {
   width: 100%;
 }
