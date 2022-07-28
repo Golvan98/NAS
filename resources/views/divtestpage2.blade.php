@@ -53,14 +53,9 @@
             </div>
             @endforeach
 
-            <div class="w-full h-1/6 flex justify-between items-center"> 
+            
 
-                <div class="w-full h-4/6 bg-red-300 flex justify-between">
-                    <div> Back ni Buie </div>    
-                    <div> Next ni Buie </div>
-                </div>
-
-            </div>
+            
 
 
         </div>
@@ -71,11 +66,16 @@
 
         <div class="w-full h-1/2 bg-gray-300 flex justify-center items-center"> 
 
+        <div class="w-5/6 h-full bg-red-500 flex justify-between items-center">
+                    <div> <button class="px-6 py-1 ml-2 rounded-xl bg-gray-300"> Back <button> </div>    
+                    <div> <button class="px-2 py-1 mr-2 rounded-xl bg-gray-300"> Add Survey <button> </div>
+        </div>
+
         </div>
 
 
-        <div class="w-full h-1/2 bg-red-300 flex justify-center items-center">
-
+        <div class="w-full h-1/2 bg-transparent">
+            {{$QuestionChoices->links()}} 
         </div>
 
     </div>

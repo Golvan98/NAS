@@ -109,6 +109,8 @@
                       <div class="w-full h-full text-white">
                       {{$QuestionChoices->links()}} 
                       </div>
+                      
+                    </div>
 
                   </div>
 
