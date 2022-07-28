@@ -130,7 +130,7 @@ class QuestionChoiceController extends Controller
                 'survey_question_id' => $SurveyQuestionId
             ]);
         
-        return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestionId])->with('success', 'New Question Choice Added');
+        return redirect()->back()->with('success', 'New Question Choice Added');
 
 
     }
