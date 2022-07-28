@@ -1019,14 +1019,20 @@ input:checked + .toggle-bg {
 .h-1\/6 {
   height: 16.666667%;
 }
+.h-4\/6 {
+  height: 66.666667%;
+}
+.h-5\/6 {
+  height: 83.333333%;
+}
+.h-1\/5 {
+  height: 20%;
+}
 .h-1\/2 {
   height: 50%;
 }
 .h-1\/4 {
   height: 25%;
-}
-.h-5\/6 {
-  height: 83.333333%;
 }
 .h-12 {
   height: 3rem;
@@ -1042,9 +1048,6 @@ input:checked + .toggle-bg {
 }
 .h-2\/6 {
   height: 33.333333%;
-}
-.h-4\/6 {
-  height: 66.666667%;
 }
 .h-4\/5 {
   height: 80%;
@@ -1064,8 +1067,10 @@ input:checked + .toggle-bg {
 .h-4 {
   height: 1rem;
 }
-.h-1\/5 {
-  height: 20%;
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .w-full {
   width: 100%;
@@ -1078,6 +1083,9 @@ input:checked + .toggle-bg {
 }
 .w-5 {
   width: 1.25rem;
+}
+.w-4\/6 {
+  width: 66.666667%;
 }
 .w-1\/2 {
   width: 50%;
@@ -1108,9 +1116,6 @@ input:checked + .toggle-bg {
 }
 .w-4 {
   width: 1rem;
-}
-.w-4\/6 {
-  width: 66.666667%;
 }
 .max-w-md {
   max-width: 28rem;
@@ -1286,6 +1291,10 @@ input:checked + .toggle-bg {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
@@ -1293,10 +1302,6 @@ input:checked + .toggle-bg {
 .border-green-500 {
   --tw-border-opacity: 1;
   border-color: rgb(14 159 110 / var(--tw-border-opacity));
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 .border-blue-700 {
   --tw-border-opacity: 1;
@@ -1345,6 +1350,10 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(240 82 82 / var(--tw-bg-opacity));
 }
+.bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(164 202 254 / var(--tw-bg-opacity));
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1368,10 +1377,6 @@ input:checked + .toggle-bg {
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-.bg-blue-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(164 202 254 / var(--tw-bg-opacity));
 }
 .bg-gray-200 {
   --tw-bg-opacity: 1;
@@ -1399,10 +1404,6 @@ input:checked + .toggle-bg {
 }
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-.bg-green-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 225 188 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
