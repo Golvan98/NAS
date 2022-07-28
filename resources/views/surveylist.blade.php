@@ -2,7 +2,7 @@
 
 <div class="w-full bg-gray-300 flex justify-center items-center  ">
 
-  <div class="flex-nowrap w-4/5 h-4/5 bg-gray-300 border border-black">
+  <div class="flex-nowrap w-4/5 h-auto bg-gray-300 border border-black">
 
     <div class="w-full h-1/6 flex justify-center bg-gray-300 items-center "> 
       
@@ -11,7 +11,7 @@
     </div>
 
     @foreach($surveys as $survey)
-    <div class="w-full h-1/6 flex justify-between bg-gray-300 items-center space-y-1 "> 
+    <div class="w-full h-1/6 flex justify-between bg-gray-300 items-center space-y-3 "> 
 
       <div class="w-1/5 flex justify-center "> <button class="bg-gray-100 px-4 py-1 rounded-xl">  {{$survey->name}}</button> </div> 
       <div class="w-1/5 flex justify-center "> <a href="/surveyform/{{$survey->id}}"> <button class="bg-gray-200 px-4 py-1 rounded-xl">  Answer Survey </button> </a> </div>
@@ -24,7 +24,7 @@
 
     <div class="w-full h-1/6 flex justify-between bg-gray-300 items-center ">
 
-      <div class="w-1/5 flex justify-center "> <a href="/home"> <button class="bg-red-500 px-8 py-2 rounded-xl">  Back </button> </a> </div> 
+      <div class="w-1/5 flex justify-center "> <a href="/home"> <button class="bg-red-500 px-8 py-1 rounded-xl">  Back </button> </a> </div> 
       <div class="w-1/5 flex justify-center "> <x-createsurveymodal> </x-createsurveymodal> </div> 
 
     </div> 
@@ -33,7 +33,7 @@
 
     <div class="w-full h-4/5 flex justify-center items-center bg-transparent">
 
-      <div class="w-full h-3/4 text-white">
+      <div class="w-full h-4/6 text-white mt-2">
       {{$surveys->links()}} 
       </div>
     

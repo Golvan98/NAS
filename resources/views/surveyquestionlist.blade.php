@@ -4,7 +4,7 @@
 
   <div class="w-full bg-gray-300 flex justify-center items-center h-5/6">
 
-    <div class="w-4/5 bg-gray-500 flex-nowrap justify-center h-5/6  border border-black">
+    <div class="w-4/5 h-auto bg-gray-500 flex-nowrap justify-center h-5/6  border border-black">
       
         <div class="w-full bg-gray-500 h-1/6 text-white flex justify-center items-center"> 
           
