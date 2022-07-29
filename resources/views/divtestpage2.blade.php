@@ -1,4 +1,4 @@
-<x-layout>
+<x-testlayout>
     <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
 <div class="w-full bg-gray-300 flex-nowrap ">
@@ -15,7 +15,7 @@
             <div class="w-full  flex justify-between mt-3">
 
 
-                <div class="w-1/3 text-center"> <button class="bg-gray-300 px-4 py-1 rounded-xl">   {{ $QuestionChoice->question_choice }}  </button> </div>
+                <div class="w-1/3 text-center"> <button class="bg-gray-300 px-4 py-1 rounded-xl">   {{ $QuestionChoice->question_choice }} Test Version  </button> </div>
 
                 <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-8 py-2 rounded-xl ml-2 mb-2 mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 modal" type="button" data-modal-toggle="{{ $QuestionChoice->id }}">
                       Edit Question Choice 
@@ -113,4 +113,4 @@
    
 </div>
 
-</x-layout>
+</x-testlayout>
