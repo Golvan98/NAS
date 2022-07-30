@@ -59,10 +59,7 @@
                 </div>
                 
                 
-
-
-                
-                <a href="/login"> <button class="bg-red-500 px-2 py-1 m-1 rounded"> loginz </button> </a>
+                <x-loginmodal> login </x-loginmodal> 
                  Counselor
                 </div>
                 @endguest
@@ -77,9 +74,9 @@
 
                 <div class="flex-auto "> 
                     <ul class="py-12"> 
-                    <div class="pb-24">     <a href="/home"><li class="text-gray-100 font-bold"> Home </li> </a> </div>
-                    <div class="pb-24">     <li class="text-gray-100 font-bold"> Grades </li> </div>
-                    <div class="pb-24">     <li> <a href="/surveylist">  Surveys </li> </a> </div>
+                    <div class="pb-24">     <a href="/home"><li class="bg-white px-4 py-1 text-black font-bold rounded-xl flex justify-center items-center "> Home </li> </a> </div>
+                    <div class="pb-24">     <li class="bg-white px-4 py-1 text-black font-bold rounded-xl flex justify-center items-center"> Grades </li> </div>
+                    <div class="pb-24">     <li class="bg-white px-4 py-1 text-black font-bold rounded-xl flex justify-center items-center"> <a href="/surveylist">  Surveys </li> </a> </div>
                     </ul> 
                 </div>
                     

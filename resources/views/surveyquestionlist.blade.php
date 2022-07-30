@@ -8,7 +8,7 @@
       
         <div class="w-full bg-gray-500 h-1/6 text-white flex justify-center items-center"> 
           
-          <div> <strong> {{$survey->name}} </strong> </div>
+          <div> <strong> {{$survey->name}}  </strong> </div>
 
         </div>
 
@@ -17,7 +17,7 @@
           
         <div class="w-1/3 text-center mx-4 mt-4 py-1 bg-gray-300 rounded-xl"> <button class="bg-gray-300 text-black px-4 py-1 rounded-xl ml-4"> <strong> {{$SurveyQuestion->question}} </strong> </button> </div>
 
-        <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}"> </x-editquestionmodal> 
+        <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" types="{{$types}}"> </x-editquestionmodal> 
 
         <div class="w-1/3 flex justify-center items-center"> <button class="text-center text-center block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-4 py-2 rounded-xl text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-4"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}">  Edit Question Choices </button> </a>  </div> 
         </div>

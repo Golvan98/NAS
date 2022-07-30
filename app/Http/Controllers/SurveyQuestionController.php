@@ -22,14 +22,22 @@ class SurveyQuestionController extends Controller
         
 
 
+        $alltypes = SurveyQuestion::select('type')->distinct()->get();
+
+        $types = $alltypes->pluck('type');
+
        
+
+        
+        $categories = SurveyQuestion::select('category')->distinct()->get();
+
 
         $SurveyQuestions = SurveyQuestion::where('survey_id', $survey->id)->paginate(4);
 
 
     
       
-        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions]);
+        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'types' => $types, 'categories' => $categories]);
     }
 
 

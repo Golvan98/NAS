@@ -59,10 +59,7 @@
                 </div>
                 
                 
-
-
-                
-                <a href="/login"> <button class="bg-red-500 px-2 py-1 m-1 rounded"> login </button> </a>
+                <x-loginmodal> login </x-loginmodal> 
                  Counselor
                 </div>
                 @endguest
