@@ -1,4 +1,4 @@
-@props(['SurveyQuestionId', 'SurveyQuestionName', 'SurveyQuestionType'])
+@props(['SurveyQuestionId', 'SurveyQuestionName', 'SurveyQuestionType', 'SurveyQuestionCategory'])
 
 
 @php 
@@ -45,7 +45,7 @@ $types = $alltypes->pluck('type');
 
                                         <div class="w-full bg-gray-300 text-black font-bold flex justify-center items-center space-x-4">
                                         
-                                            <label for="type">Question Type:</label>
+                                            <label for="type">Question Type</label>
                                             <select name="type" id="type">
                                                 
                                                 @foreach($types as $type) 
@@ -56,13 +56,13 @@ $types = $alltypes->pluck('type');
 
                                         </div>
 
-                                        <div class="w-full bg-gray-300 text-black font-bold flex justify-center items-center space-x-4">
+                                        <div class="w-full bg-gray-300 text-black font-bold flex-auto justify-between items-center space-x-4">
                                         
-                                            <label for="category">Question Type:</label>
+                                            <label for="category">Category</label>
                                             <select name="category" id="category">
                                                 
                                                 @foreach($categories as $category) 
-                                                <option hidden> {{$SurveyQuestionType}}</option>
+                                                <option hidden> {{$SurveyQuestionCategory}}</option>
                                                 <option value="{{$category}}">{{$category}}</option>
                                                 @endforeach
                                             </select>

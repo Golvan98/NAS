@@ -11,7 +11,7 @@ class SurveyQuestion extends Model
 
     protected $table = 'survey_questions';
 
-    protected $fillable =['student_id', 'survey_id', 'answer', 'survey_response_id', 'question', 'type'];
+    protected $fillable =['student_id', 'survey_id', 'answer', 'survey_response_id', 'question', 'type', 'category'];
     
     public function Survey ()
     {

@@ -68,6 +68,8 @@ class SurveyQuestionController extends Controller
                'category' => 'required'
             ]);
 
+       
+
             $survey = $surveyquestion->survey_id;
    
 
