@@ -1762,7 +1762,9 @@ DONE:
 - Just did the query inside the view. hope it doesn't backfire to me
 
 To Do Next Session:
+- Fix that Answer Test shit
 - Data VIZ?? (Mao naneH mao NaneH)
 - Find other shits to polish, this is as good as it gets for now
+--------------------------------------------------------------------------------------------------------
 
 

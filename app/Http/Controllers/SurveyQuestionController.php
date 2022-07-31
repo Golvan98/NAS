@@ -59,15 +59,13 @@ class SurveyQuestionController extends Controller
 
         }
 
-
-
         $data = request()->validate(
             [
                'question' => 'required',
                'type' => 'required',
                'category' => 'required'
             ]);
-ewaew
+
        
 
             $survey = $surveyquestion->survey_id;
