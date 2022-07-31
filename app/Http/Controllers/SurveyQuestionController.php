@@ -22,9 +22,8 @@ class SurveyQuestionController extends Controller
         
 
 
-        $alltypes = SurveyQuestion::select('type')->distinct()->get();
-
-        $types = $alltypes->pluck('type');
+      
+        
 
        
 
@@ -37,7 +36,7 @@ class SurveyQuestionController extends Controller
 
     
       
-        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'types' => $types, 'categories' => $categories]);
+        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'categories' => $categories]);
     }
 
 
