@@ -5,6 +5,10 @@
 
 $alltypes = App\Models\SurveyQuestion::select('type')->distinct()->get();
 
+$allcategories = App\Models\SurveyQuestion::select('category')->distinct()->get();
+
+$categories = $allcategories->pluck('category');
+
 $types = $alltypes->pluck('type');
 
 @endphp
@@ -47,6 +51,19 @@ $types = $alltypes->pluck('type');
                                                 @foreach($types as $type) 
                                                 <option hidden> {{$SurveyQuestionType}}</option>
                                                 <option value="{{$type}}">{{$type}}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+
+                                        <div class="w-full bg-gray-300 text-black font-bold flex justify-center items-center space-x-4">
+                                        
+                                            <label for="category">Question Type:</label>
+                                            <select name="category" id="category">
+                                                
+                                                @foreach($categories as $category) 
+                                                <option hidden> {{$SurveyQuestionType}}</option>
+                                                <option value="{{$category}}">{{$category}}</option>
                                                 @endforeach
                                             </select>
 

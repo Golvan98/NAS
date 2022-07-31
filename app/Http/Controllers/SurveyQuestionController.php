@@ -64,7 +64,8 @@ class SurveyQuestionController extends Controller
         $data = request()->validate(
             [
                'question' => 'required',
-               'type' => 'required'
+               'type' => 'required',
+               'category' => 'required'
             ]);
 
             $survey = $surveyquestion->survey_id;
@@ -105,9 +106,11 @@ class SurveyQuestionController extends Controller
                'type' => 'required'
             ]);
 
+        
+
         $newquestion = SurveyQuestion::create($data);
 
-        $newquestion->update(['survey_id' => $survey->id, 'type' => NULL, 'category' => NULL]);
+        $newquestion->update(['survey_id' => $survey->id, 'category' => NULL]);
 
         $survey = $newquestion->survey_id;
 
