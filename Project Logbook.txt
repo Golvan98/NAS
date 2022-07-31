@@ -1,0 +1,1768 @@
+
+============================= THIS IS PROJECT LOGBOOK THE NEEDS-ASSESSMENT-SURVEY=================================
+
+Breaking down of deliverables into increments
+
+- What I thought of so far
+
+1. Front End
+2. Database
+3. Dynamic Form Creation
+4. Linking Forms to DB
+5. Data Viz
+
+Further breaking down of deliverables
+- Fixed Layout
+- Survey Landing Page with Dynamic view of Surveys to test DB (No dynamic creation of surveys YET)
+- Landing/User Page
+- Login/User Function
+
+- protected fillables
+
+
+
+
+- Front End and DB should be done by end of March. Seems Easy since u have experience in
+both already.
+
+Dynamic Form Creation, and Data Viz is the tricky part and you'll only have two months
+for it. Good Luck.
+
+Google search hints: Dynamic input fields?
+-----------------------------------------------------
+
+March 2, 2022
+
+- Created Needs Assessment Survey Project File
+- Bitbucket invite expired, inquiring on Justin and Gerard for bitbucket account
+- Will read on programming jargons today, decided to just put my project on github 
+so I can switch between devices
+
+--------------------------------------------
+
+March 4, 2022
+
+- Trying to review rex's code, dont understand shit except for its db
+- Studying its front end code to instead
+- Studied what "git" and "pull request" means.
+- Reading Dy's code review for my to do app project and to apply it on this project.
+
+Git is basically the tool system that github uses that allows u to store different versions
+of your program.
+
+Pull Request is used when a junior developer is trying to change a source code, 
+what a pull request does is create a copy of the iteration the junior dev made,
+if the source code owner approves it, the copy and the main copy is merged.
+
+NOTE 1: For PHP Class Naming Conventions, follow PascalCasing, where first letter of each word is
+CAPITAL.
+
+PascalCase - ForClass
+
+camelCase - forVariables or forFunctions
+
+snake_case - for_database_fields
+
+kebab-case - for-website-urls
+
+NOTE 2: Mind the indentions
+
+NOTE 3: when settings arrays  and arguements, format them like this
+
+$data = request()->validate(
+[
+	'data1' => 'required',
+	'data2' => 'required',
+]);
+
+public function createMember(
+Project $project,
+User $user,
+ProjectUser $projectUser
+)	{
+$data = [
+	'project_id' => $project->id,
+	'user_id => $user>-id
+	];
+
+	ProjectUser::create($data);
+
+	return view('/about');
+	}
+
+
+NEXT STEP: Currently reviewing rex's DB.
+Will draft a database iteration tomorrow. 
+
+I'll have to read Laravel Documentations as well
+---------------------------------------------------------------------
+
+March 08
+
+- Trying to create a first iteration of UI and Database.
+- Successfully installed Tailwind css after hours. lmao
+- I actually did not install tailwind probably it still has some bugs, Did a crash
+course on CSS today though for 4-5 hours straight. Learning some shit about HTML semantics
+and Divs and flexes. Flexes force divs to be beside each other in one line, divs by default
+skip one line 
+- I can use tailwind resource online but not from installing it locally. sadge.
+
+
+
+---------------------------------------------------------------------
+March 09
+
+- Finally managed on how to install the fucking tailwind css thing, the default route files in the documentations
+compared to the actual directory made in ur pc are all over the place. So you'll have to tweak the installation routes before running
+"npm run watch"
+- U have to constantly use "run npm watch" in terminal watch in order for the tailwind css to compile. weird.
+- Finally getting a gist on how divs on css work. Established a rough first iteration of
+the UI. I think I centered a fokin div, EZIE
+- New schedule for coding 10AM - 1PM, temporary, let's see what I can do with this.
+
+---------------------------------------------
+March 10
+
+- Solidified the UI with sections like articles, headers, navs and shit. Everything is now where I them to be. Nice.
+- UI Layout is basically finished but yet to be polished once I figure out which contents go where (which will be determined when I turn the page dynamic)
+
+- Staring at the db schema right now, currently internalizing it, will start a rough draft tomorrow
+- Created a database "Think Notepad" to wire out the db schema
+
+Next step: first iteration of migrations for database
+
+---------------------------------------------
+March 11
+
+- Trying to create a migration file today. I'mma take a look at Rex's migrations
+- Created a rough first iteration of migrations
+- Is there a need for separate tables for Courses and Colleges? (Courses belongs to college, students belong to college, Students HASONE course/college)
+^maybe not
+- I think it's better to just draw a proper database schema for this, along with its attributes, and then consult Dy about it. That's it.
+That's what you need to do. I'll leave the migrations as it is rn and edit it accordingly to the inquiries' results
+
+Next step: Must create a list of inquiries for Dy to answer, this is beyond your capabilities right now,
+which I hope will be not the case next week
+
+--------------------------------------------
+March 12
+
+- child table must have the parent foreign key
+- Created the first draft for DB Schema, shit's confusing as fuck. Next step is to draft a list of questions/inquiries on DB for Dy.
+- the keyword here is BELONGSTOMANY, not hasmany to hasmany. A Survey can have many questions, but a question cannot have many surveys. 
+Whereas,A survey can belong to many questions, and a question can belong to many surveys. So BelongstoMany is still kinda is the right relationship for these two tables.
+
+
+------------------------------------------
+
+March 13
+
+- Finalized the survey and questions tables to be BELONGSTOMANY.
+- First iteration of db migrations established. There are two pivot tables for survey_question and survey_question_answer.
+- Answer comes in with a student id since, Answer BELONGSTO a student ,Students HASMANY answers
+
+- Trying to establish model relationships now.
+
+- Types BelongsTo Question relationship established
+- Answers BelongsTo Student relationship established
+- Two pivot tables for survey_question and surveyquestion_answer established
+
+- Will test the db soon, scared of bugs rn. Fok
+
+--------------------------------------------
+
+March 15
+
+- bugs are fixed by assigning big increments and unsigned ones for foreign keys, IDK what's the deal with that but ok
+- Completed the first iteration for all db schema
+- Will do a bit of testing before creating a list of inquiries for dy on the db design
+- Downloaded legend for further understanding of Lines for DB Models.
+- Uploaded the fuckin thing to github already. Understood a few points of using git and shit. 
+
+
+NOTE: To test model relationships in php artisan tinker, use
+$variable = App\Models\ModelName
+$variable->OtherModelName();
+
+- Testings are done, it seems everything is fine. SEEMS. DB:Migration Compilation has no error.
+
+
+next steps: 
+
+- Change relationship for Questions->Type to HasOne and BelongsTo instead of HasMany and BelongsTo?
+- DB factory and seedings, fill the tables with db elements so you can tinker with them using controllers and features. The fun begins. Fuck
+- Draw lines for ur DB Schema. I think the first iteration for db is solid and done, to my understanding at least. 
+
+IMPORTANT NOTE!!!!!!!!!!!!!!!!! : new main repository file is now in Desktop since I fucked up the original one at HP\users
+--------------------------------------------
+March 16
+
+- Finished creating factory and seeders for the 4 non pivot tables
+- Still trying to figure out how to to automate pivot tables
+- I think I did one for the pivot tables, IDK if I did them right though, still, the more you tinker the more you'll learn
+
+
+Next step: tinkering with it through blade, and then by the end of week, the list of inquiries for dy .
+--------------------------------------------
+March 18
+
+- Factory Seeding now includes college's middle Initial and College
+- Survey landing page is now dynamic (Form look is not achieved yet)
+- Encountered an issue with the naming scheme, laravel Forcefully guesses the tablename for pivot tables, u got lucky with the project_user, now it's this.
+- ^entered "composer dump-autoload" to try and solve this issue. idk what it'll do tbh
+- Undid the composer dump-autoload thingy
+- Synced the database naming conventions for database tables. That was fokin annoying. question_survey is now the name of pivot table for question and survey
+- Survey pages now have a view for survey holder and a survey questions holder(for editing)
+- Home page template for admin is now present.
+
+
+Next steps: 
+- Hit a huge pickle problem here, how do you code something that submits all answers at once for a survey data?
+- Also, how do you hard core that shit when the answers are categorized, maybe it depends on how u code data viz? like
+show all answers of question 1 in survey 1 where student's college id is this bla bla. I think it's viable. Then u go if "type is this, format this bla bla". U then paginate
+for each question. nice.
+- Adding another table that adds a foreign key for students table. The "College" Table. It will be useful for the data vizualization part.
+- CREATE THE DAMN DATABASE RESHIP DIAGRAM, U NEED DY's insights now for the multiple form data submissions
+
+
+-----------------------------------------------------------------------------------------
+
+March 22
+
+NOTE: trying to do the style="background-image: url({{asset('/storage/images/office.jpg')}});
+
+- First iteration and DB SCHEMA/ERD Finalized. Submitting Dy for review.
+
+- First Item of Business : Homepage 
+
+
+
+Next Steps:
+- Make UI for Admin Home Landing Page
+- Image Storage file
+- List of Inquiries for Dy
+
+
+-----------------------------------------------------------------------------------------
+
+
+March 29
+
+- Took A Hiatus, burnt out idk but now I'm back
+
+- Figured out how to upload via asset mode. CODE SNIPPET is
+ <img src="{{ asset('storage/manage.png') }}" alt="description of myimage">
+
+- Addming image as bacgkround CODE SNIPPET is:
+ style="background-image: url('{{ asset('storage/manage.png')}}');">
+
+- Centered an image using CODE SNIPPET
+<section class="hero container mx-auto flex justify-center">
+                        <img src="{{ asset('storage/manage.png') }}" alt="description of myimage"> 
+</section>
+
+- Admin landing page UI done. 
+
+- New Way of thinking: pb-24 is 1/4 of the total REM which is 96, REM means "ROOT ELEMENT FONT SIZE". some kind of percentage shit.
+-----------------------------------------------------------------------------------------
+
+March 30
+
+- adding more UIs
+
+- Layout page now has Hamburger Icon.
+
+- Layout now looks 90% accurate as the planned UI
+
+- New Discovery-ish? , hamburger snippets didnt show properly until I ran "npm install tailwind-hamburgers" in terminal.
+
+- Layout now has that avatar circle profile pic thingy. 
+
+- For the data vizualization part, you added a new db column in the db table "question" and the column is named "category"  
+THE IDEA here is that you'll query it by "GET ALL ANSWERS FROM" survey_question where categoryname = "this".
+
+- Survey List UI is modernized, it now adjusts its margins accordingly. I tinkered with the flex-auto mx-auto my-auto justify center function.  I have not
+yet fully familiarized these functions but it revolves around playing with em.
+
+
+Next steps: Admin side where for each category you'll display a selection box
+(and maybe paginate the selection boxes). And maybe you'll have to tweak your Database accordingly.
+^I'm not sure about this part, but it seems to be the case?
+
+-----------------------------------------------------------------------------------------
+
+- March 31
+
+- Trying to  add the results page but I'm kind of stuck with the div/article shits
+
+- Stuck today. Divs are not responding to my paddings and shit. Will try to learn grids tomorrow.
+
+- Err. some values register and some does not. My first attempt is too spread out, will try to tweak with it again.
+
+
+------------------------------------------------------------------------------------------
+
+April 4
+
+- FuCk. No idea about this shit
+
+- Tabled them, works so far, you must run "NPM RUN WATCH" for classes to work sometimes
+
+- Got it, rectangles as well, u need "NPM RUN WATCH" for basically these fuckin tailwind css margin padding shits to work. U didnt understand wrong, That's goodddd
+EZ
+
+Next steps: table for the data viz counting shits, also, u might not need to do multiple form submissions but JEsus how do U get that stuff to work
+
+
+--------------------------------------------------------------------------------------------------
+
+April 5
+
+- Decided to just do some cleaning today. 
+
+- Also, when downloading source code, environment files such as composer vendors and npm environments will have to be updated. 
+
+- Cloned this project to my main pc. Hopefully Dy checks em tonight so I have a clearer direction to go in this project
+
+- Codes to run in a new environment(PC) is messaged in FB. Will paste it here tomorrow,
+
+!!!!!IMPORTANT!!!!! Codes to run in a new environment: 
+
+composer install 
+mv .env.example .env 
+php artisan cache:clear 
+composer dump-autoload 
+php artisan key:generate
+
+Next steps: Still the UI tables for data viz. Idea for multiple survey page is where u query survey question where this id and that ID is survey id = 1. Will test it soon
+
+---------------------------------------------------------------------------------------------------
+
+April 6
+
+- Dy's insights received. A shitload of info to take in but I'll take on this one by one.
+
+- naming conventions are fine as it is, I don't want revisions to mess up with my head.
+
+- Created db schema for Dy's revisions, will rewire them tomorrow and send it.
+
+- Table UI for Data Table Viz done.
+
+Next steps: Revisions of DB so you can start on the functionalities, Good Luck.
+
+---------------------------------------------------------------------------------------------------- 
+
+April 7
+
+- Consulted mentor about DB and job connections, will push through the DB Schema tomorrow
+
+---------------------------------------------------------------------------------------------------
+
+April 19
+
+- Took an 11 day break. My bad, I will succumb tu burnout and rest no more
+- Added a new repository for Needs App, called Needs-Assessment-Survey. A Testing ground for dy's database tweaks
+- To compensate for lost time, I'mma code the second half of my work (9am-12noon). It's doable even when alone,
+tf was I paying my couzin for xD
+Next steps : White monitor for better comfort in coding, and reorganizing my naming conventions for models
+
+---------------------------------------------------------------------------------------------------
+
+April 20
+
+
+- naming conventions for models and factories tweaked. only the database tables are snake_cased for now.
+- seeding for first iteration of factories complete. 
+- realigned the dynamic contents in php
+
+IMPORTANT NOTE!!!!!!!!!!!: 
+- u can specify ur table in the model if laravel is having trouble guessing the table names. 
+- camelcase should only be applied on php variables.
+
+Next steps: 
+- adding more values for factories and seeding.
+^set a factory for survey answer, and then call it in the for loop in seed.php
+- looping the input field for survey question
+- shit tons of UI 
+--------------------------------------------------------------------------------------------------
+
+
+April 21
+
+IN PROGRESS:
+
+- adding more values for factoring and seeding
+
+- created an automated seeder with connections, although it's clunky I'll improvize it a bit.
+- Not clunky anymore-ish? will review tomorrow.
+
+
+-------------------------------------------------------------------------------------------------
+
+April 22 
+
+IN PROGRESS:
+
+- input field loop, seeders
+
+- updated seeder, only stable when using factory(1) for survey_response_answers
+
+
+-------------------------------------------------------------------------------------------------
+April 27
+
+- Finalized the seeders with relations and shit. Finally
+- Survey Results by Category is now dynamic, with proper dynamic formatting as well.
+- Table Data is Dynamic, but has an overlapping route bug. Here we go againn
+
+next steps (In Prioritied Order): 
+1. - Fixing this fuckin overlapping route bug again
+2. - looped input fields, UIs. Probably gonna go for the UIs first
+3. - Testing the DB seeders. Seems good so far.
+4. - Data Capture and Visualization
+5. - Reevaluating the relationship with survey answer and survey response, 
+it may be hasOne and BelongsTo instead of hasMany and BelongsTo
+
+NOTE: U can pass a variable from route to controller via declaring it in public function($variablefromroute)
+
+-------------------------------------------------------------------------------------------------
+April 28
+
+- Got data for all courses from shealtiel
+- Overlapping route bug is fixed???? Apparently the url for back button didn't save
+- Seeder is fixed to creating ONLY FOUR (4) surveys
+- Table view for survey result now has some dynamic parts
+- Created DB ERD/Schema for intended new db tweak for College and Department Table.
+
+Next steps:
+1. New established relationships for college->department->student table
+2. New factory and seeder for new Database.
+2. Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+3. Looped input fields
+4. Data Capture and Visualization
+5. Reevaluating the relationship with survey answer and survey response
+it may be hasOne and BelongsTo instead of hasMany and BelongsTo
+
+
+NOTE: Use this syntax for syncing college code and collegename in DB factories
+
+ $product = [
+            'type_id'=>$productType,
+            'name'=>$this->faker->catchPhrase,
+            'description'=>$this->faker->paragraph (2, true),
+            'price'=>$this->faker->randomFloat(2,5,20),
+            'stock'=>$this->faker->numberBetween(1,100),
+
+        ];
+        
+        if($productType === 1) {
+            $product['pagelength'] = $this->faker->randomFloat(3,100,500);
+        }
+
+so maybe if(collegename = College of Engineering) faker->('COE') or some shit.
+
+
+----------------------------------------------------------------------------------------------------
+
+May 2
+
+IN PROGRESS:
+
+- integrating department and college table into db seeder.
+- U made these migrations due to the fact that we must group the data by categories and Colleges, departments are considered as significant Data to just put as "attributes" for the college table.
+
+DONE:
+- created migrations with new Department, & College Table
+
+1. Create another fokin table that belongsto Department called "Courses"
+2. Improve New factory and seeder for new Database.
+3. Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+4. Looped input fields
+5. Data Capture and Visualization
+6. Reevaluating the relationship with survey answer and survey response
+it may be hasOne and BelongsTo instead of hasMany and BelongsTo
+
+-------------------------------------------------------------------------------------------------
+
+May 3
+
+IN PROGRESS:
+
+- New Seeder that links every fuckin thing
+
+DONE:
+
+- New Course table, student is now belonging to course, and course belonging to College.
+- Tested the new db tables, it works. so far.
+
+next steps:
+
+1. New Seeder that links every fuckin thing
+2. Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+3. Looped input fields
+4. Data Capture and Visualization
+5. Reevaluating the relationship with survey answer and survey response
+it may be hasOne and BelongsTo instead of hasMany and BelongsTo
+
+-------------------------------------------------------------------------------------------------
+
+May 5
+
+IN PROGRESS:
+
+- fucking seeders man
+
+DONE:
+- Seeders on the college part with fixed college names and codes.
+- Seeders for College parts, in syc with department allocations and names.
+
+NOTE!!!!!!!!!!!!!!!!!!!
+
+		Use this as a reference guide with ur DB seeding problems
+
+		$user = User::factory()->create([
+		'name' => 'John Doe
+		]);
+
+		Post::factory(5)->create([
+		'user_id' => $user->id
+		]);
+
+next steps:
+
+1. Finish off seeder for college department, and work on seeder that links to courses and departments (College and departments' algorithm is essentially done)
+2. Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+3. Looped input fields
+4. Data Capture and Visualization
+5. Reevaluating the relationship with survey answer and survey response
+it may be hasOne and BelongsTo instead of hasMany and BelongsTo
+
+---------------------------------------------------------------------------------------------------
+
+May 6
+
+IN PROGRESS:
+
+- Seeders linked for course->department
+
+DONE
+
+- Seeders on all colleges and departments
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+
+May 10
+
+IN PROGRESS:
+
+- Seeders for course department
+
+
+DONE:
+
+Seeders for courses linked with departments
+
+Next steps:
+
+1. Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+2. Looped input fields
+3. Data Capture and Visualization
+4. Reevaluating the relationship with survey answer and survey response (it may be hasOne and BelongsTo instead of hasMany and BelongsTo)
+
+
+
+------------------------------------------------------------------------------------------------
+
+May 11
+
+IN PROGRESS:
+
+- CBAA courses and Gen ED,  forgout about them lmao
+- Create students with courses
+- Testing Student-> College query
+
+DONE:
+- Students are now seeded with courses
+- Testing Student-> College query
+
+Next steps: 
+
+1. CBAA courses and Gen ED,  forgout about them lmao
+2. Looped input fields
+3. Data Capture and Visualization
+4. Reevaluating the relationship with survey answer and survey response (it may be hasOne and BelongsTo instead of hasMany and BelongsTo)
+5. Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+
+NOTE!!!
+
+- U can try to insert @php, and @endphp, declare variables IN LARAVEL BLADE to avoid long lists of variables in controller. AND IT WORKS.
+- Use App\Models\Modelname:: when calling models IN LARAVEL BLADE
+
+------------------------------------------------------------------------------------------------
+
+May 12
+
+IN PROGRESS:
+
+- CBAA courses and Gen EDz
+
+DONE:
+
+- CBAA courses, ignore gen ed lul
+- Testing ground for looped input fields created, 
+
+NOTE!!! : --------- Querying Student->College relationships can be done in this manner, '=', and not adding a '=' works sometimes, idk y, gotta take a look.
+	  --------- Code doesnt recognize variables in line order, u cant call variables from line 3 on line 2
+
+$CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
+       
+$CoeCourses = Course::all()->whereIn('department_id', $CoeDepartments)->pluck('id');
+
+$CoeStudents = Student::all()->whereIn('course_id', $CoeCourses)->pluck('firstname');
+
+1. Looped input fields
+2. Data Capture and Visualization
+3. Completion of Dynamic UI for survey results (specifically sorting via college, and then course). Perhaps if needed, u need to move the college and course attribute to new different table.
+4. Edit/Seeder Creation for Survey Questions. Sheesh. 
+------------------------------------------------------------------------------------------------
+
+
+May 13
+
+IN PROGRESS:
+
+- testing looped input fields
+- Posting/Capturing data from survey form
+- Student side login and shit
+- Currently tweaking the auth.php file in config so I can use the students table as login material
+
+DONE: 
+
+- looped input fields
+- tweaked all student named to be "zalsos", will be used as a login tool
+- login page is created but currently not working
+- Tweaked the auth.php in Config file to suit for student table since auth() FUNCTION DEFAULTS TO USER MODEL
+
+Next steps:
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Data
+6. Login System
+
+
+NOTE!!!!!!!!!!!!!!!!!!!!!!!
+
+- Decided to add the login feature early since You'll need it for data manipulation on the survey tables later on
+------------------------------------------------------------------------------------------------
+
+May 16
+
+IN PROGRESS:
+- Student Login
+
+DONE:
+- further tweaking of auth.
+
+Next steps:
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Data
+6. Login System
+
+------------------------------------------------------------------------------------------------
+
+May 18
+
+IN PROGRESS:
+
+- Student LOGIN
+
+DONE:
+- Massive tweaking of auth, creation of controllers that work, need to fuckin know how to decrypt bcrypted passwords lul
+
+Next steps:
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Data
+6. Login System
+
+------------------------------------------------------------------------------------------------
+
+May 21
+
+IN PROGRESS:
+- Polishing this fokin login shit
+
+DONE:
+- DB Authenticating part. FUCK YEA, AFTER HOW MANY FUCKIN DAYS
+
+
+
+Next steps:
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+
+--------------------------------------------------------------------------------------------------
+
+May 24
+
+IN PROGRESS:
+- Algo for input form
+- Pagination for survey questions
+DONE:
+- paginating query for survey questions
+
+Next steps:
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+	: 
+- For uhm.. this student answer shit. Upon answering a survey, you create a survey response with the student and survey id, then create a finder in the controller ? 
+where if a survey response where a student id and survey id already exists, u just "add" or edit survey response answer values to it. This way
+your pagination erasing the previous input data problem is no longer a problem, you'll be tweaking the student to be sending one data at a time, instead of not all the data at one submit button.
+
+^THIS SHIT MIGHT BE FEASIBLE. LOOKIE HERE, a FirstorCreate and UpdateorCreate function https://laravel.com/docs/5.7/eloquent#other-creation-methods. You're on to something gilvs.
+
+- For Question category type, try this. maybe a yes or no attribute for answers?  Then for the frontend type, do the formating with if(category=bullet choice) yada yada.
+IDK how i'll code this one out. Since some questions are fixed and others are fluid.
+
+- https://www.dofactory.com/html/input THIS WILL BE YOUR BREAD AND BUTTER FOR THEM SURVEY QUESTION SHITS FORMATTING
+
+- There's that vendor shit you'd have to dl to smoothen the pagination UI. See laravel 8 from scratch pagination vid
+
+!!!!!!!!!!I Think you gotta prioritize data viz first since it's the best and main functionality of your Software.
+--------------------------------------------------------------------------------------------------
+
+May 25
+
+IN PROGRESS:
+- Algo for creating survey response and answer
+
+- input field to create the answer attribute for surveyquestion
+
+NOTE: 
+
+- You can mutate the name of the variable as you pass it from blade->route to another controller. Example, "$surveys" became "$survey" in creating the Createresponse function in SurveyQuestionController
+by changing the name from route and then passing it along to the new controller
+- You call the currently logged in user using auth()->user()->firstname
+
+- When naming arguement variables in public functions, u need to arrange them in order as the same way you call them. Example, public function(Model1 $Model1, Model2 $Model2)
+  $Model1 = this;
+  $Model2 = this;	
+
+DONE:
+
+- Calling survey question
+
+Next steps:
+
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+
+----------------------------------------------------------------------------------------------------
+
+May 27 
+
+IN PROGRESS:
+- Algo for creating survey response and answer
+- input field to create the answer attribute for surveyquestion
+- Trying to loop paginate the survey for every submission of answer for reiterations of creating answer
+
+DONE:
+- Algo for creating survey response and answer
+- input field to create the answer attribute for surveyquestion
+
+
+Next steps:
+
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+NOTE: Stuck in next page paginating after form submission, here's a thread that might help you out tomorrow https://stackoverflow.com/questions/41466153/how-to-use-variables-in-routes-in-laravel
+
+----------------------------------------------------------------------------------------------------
+
+May 28
+
+IN Progress:
+
+- Redirecting to next question every submission of button
+
+DONE:
+- testing out new approaches for this shit, I need to reflect the currentpage to add + 1 every change
+
+
+NOTE: in case u get fully stuck, use the pragmatic way of creating the post forms for each survey question individually, 
+and just add a constraint where if the given survey id is not equal to the survey question's foreign survey id value. Don't fuckin show it.
+
+
+Next steps:
+
+1. Algorithm to store data for multiple tables in a single form
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+NOTE: hmm. sad. if the next day I wont be able to do this, I'll resort to that simplification approach of assigning a simple route for every question, with a condition that if survey-> id is not matching the survey question, u abort 
+the route and redirect to homepage.
+
+
+
+------------------------------------------------------------------------------------------------------
+
+May 31
+
+- IN Progress:
+
+- redirect to next question after submission
+
+DONE:
+- found alternative for step 1, just return back()->withinput() and flash a message saying "Successfully created/edited answer. YOU NEED A javascript for flash though. Should be ez
+- fuckin 7 hours of coding in 1 day. Got the part where you redirect back to the question, just add some jscript (successfully save shit) and then you're good to go
+- Answer updates existing records in case the student resends another submission form for survey question answer. 
+- Survey response is isolated for every student now. ez.
+
+Next steps:
+1. Java script for every surveyquestion answered interaction
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+NOTE: paginated path from view/route to another controller seems impossible until u learn that request next()path thingy. This'll work for now.
+------------------------------------------------------------------------------------------------------
+
+June 2
+
+In Progress:
+
+- adding flash message for answering survey
+
+DONE:
+- Flash message upon login and logout, but not yet set to timeout after a few seconds
+
+Next steps:
+1. Flash message for survey question and setting flash messages to timeout
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Edit/Seeder Creation for Survey Questions. Sheesh.
+5. Storing and Editing Survey Questions Data
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+June 6
+
+IN PROGRESS:
+
+- flash message timeout after few seconds of login
+- edit and creation algorithm for survey questions
+- edit question feature
+
+DONE:
+- algorithm for show success flash message in bottom right
+- Success flash message for answering survey questions
+- questiion editing landing page.
+
+Next steps:
+1. Edit and Creation for Survey Questions. Sheesh.
+2. First Survey DB Seeder
+3. Subtypes for survey question, algorithm in views like if(type==select, form input type ="select type shit"
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+
+
+NOTES:
+- bottom-3 right-3 are helpful tools for absolute positioning of divs
+
+---------------------------------------------------------------------------------------------------------
+
+June 7
+
+IN PROGRESS:
+
+- Edit Function for Survey Question
+- Delete Function for Survey Question
+- Create Function for Survey Question
+
+
+DONE:
+- Edit Function for Survey Question
+- Delete Function for Survey Question
+- Create Function for Survey Question
+- Delete Function for Survey
+
+Next steps:
+1. CRUD for Survey. Survey Questions Done.
+2. First Survey DB Seeder
+3. Subtype format for survey questions, algorithm in views like if(type==select, form input type ="select type shit"
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+-------------------------------------------------------------------------------------------------------
+
+June 8
+
+IN PROGRESS:
+
+- Edit and Create Function for survey
+
+DONE:
+- Create Function for Survey
+- Edit Function for Survey
+
+Next steps:
+1. First Survey DB Seeder
+2. Subtype format for survey questions, algorithm in views like if(type==select, form input type ="select type shit"
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+--------------------------------------------------------------------------------------------------------
+
+June 9
+
+IN PROGRESS:
+
+- Found an overlooked feature, answer feature for survey question is missing lol
+- algorithm to show different kind of UI format depending on the survey question type.
+- Address an unintended feature in ur db seeder wherein only 1 question is answered per seeding.
+- Integrating Different formats for the 5 types of Survey Questions
+Multiple Choice - Rating Scale - Likert Scale - Matrix Question - Open Ended
+
+DONE
+- If statements to fill in new formats of survey form
+- New DB Seeder with category
+- Fixed the survey question losing the "answer page"
+
+Next Steps:
+1. Different Survey Form Formats for each type of question
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+NOTE: Creating a new database table might be needed. for "Choices" in case the question type is likertscale,ratingscale, matrix, and multiple choice. Choices can be
+used for these types of questions but you might need to pack it in many If statements. 
+
+So in hindsight, use the "Choice" as references for all 4. And for data vizualization.. well.. select all answers where answer => 50% upper. shit.
+
+--------------------------------------------------------------------------------------------------------
+
+June 13
+
+IN PROGRESS:
+- Thinking of how to do this different format type shit. 
+
+- Holy shit. how do you actually code that multiple choice with multiple answer shit
+
+- Hmmm. add a new database table named "Choice" that belongs to questions group? then the Answer has Choices, and those choices belongs to both Question and Answer?
+
+
+DONE:
+
+- New table called choice, might need to pivot table this. Not sure yet. 
+
+Next steps:
+1. First Survey DB Seeder
+2. Subtype format for survey questions, algorithm in views like if(type==select, form input type ="select type shit". 
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+4. Pivot the Choice table for Survey Questions and Survey Response Answers??????
+
+
+---------------------------------------------------------------------------------------------------------
+
+June 14
+
+IN PROGRESS:
+- Drafting schema tables for the choices option in surveys. Decided with the two separate tables for answer choices and question choices, as they can not be intertwined to my knowledge.
+- How the fuck do u enter all data at once? 
+^ Maybe pass all the selected choices as array, and then code in the controller, for each(array from form of choices, create answer_choice)
+
+DONE
+- QuestionChoice Table that belongs to Question Table
+- AnswerChoice Table that belongs to Answer Table
+- Testing DB Relationship of the two new tables.
+
+Next Steps:
+1. First Survey DB Seeder
+2. Backend and Frontend coding of the submit multiple data and question survey according to question types. Good Luck. 
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+---------------------------------------------------------------------------------------------------------
+
+June 16
+
+IN PROGRESS:
+- Factory seeder choice for every question with multiple choice
+- Factory seeder choice for every likertscale typed question
+- Ah shit. Dunno what the fuck to do actually. Guess I'll err.. code the frontend part of the each statements for now then do the array later on. Wish me Luck
+- Frontend part for each question type
+
+DONE:
+- Factory seeders for all likertscale question types
+- Factory seeders for all ratingscale question types
+- Factory seeders for all matrixscale question types
+- Factory seeders for all multiplechoice question types
+- Backbone structure for each question type. Now you gotta style it with css tailwind. Good Luck
+
+Next Steps/Deliverables To be Worked on:
+
+1. Backend and Frontend coding of the submit multiple data and question survey according to question types. Good Luck.
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+To do next session:
+
+- One problem at a time, Tailwind that shit first. The answer to ur multiple inputs problem will come up one everything is set and done
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+----------------------------------------------------------------------------------------------------------	
+
+June 17
+
+IN PROGRESS:
+- Front end part for the questions
+
+DONE
+- Connected pagination format to tailwind using php artisan vendor:publish
+- First draft for multiple choice
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+To do next session:
+- FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- One problem at a time, Tailwind that shit first. The answer to ur multiple inputs problem will come up one everything is set and done
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+---------------------------------------------------------------------------------------------------------
+
+June 22
+
+IN PROGRESS:
+- Front-end part for multiple choice
+
+DONE: 
+- Aligning text for multiple choice format
+- Multiple Choice UI is now complete and dynamic,
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+NOTE: 
+- Maybe the text won't align since u put the "align shits" class in article.
+- what FIXED does is it forces the content to be in the exact position regardless of scrolling down or upwards
+^ABSOLUTE HOWEVER, forces the content in the exact position but doesnt effect it while scrolling down or upwards.
+- u can merge two data cells using "<td class="colspan2">"
+
+To do next session:
+- Likert Scale
+
+- FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+one problem at a time gilvs ^^
+
+---------------------------------------------------------------------------------------------------------
+June 23
+
+IN PROGRESS:
+- Front end part template for each question type
+
+DONE:
+
+- TEMPLATES FOR THESE QUESTION TYPES
+~ Likert Scale
+~Matrix
+~Ratingscale
+~Open Ended
+
+NOTE: 
+
+- make use of <label> more often, its position is designed so that it becomes the holder of the survey question itself.
+It's also used for that Username/Password/Email Label Indicator for login thingy.
+
+To do next session:
+
+- Back Next Edit button on question page. MUST GET THE LEFt-CEnTER-END Right for fuck's sake. maybe put it in divs.
+DIVS are like bricks in this front-end thing smh.
+
+- FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+ONE PROBLEM AT A TIME GILV ^^
+
+---------------------------------------------------------------------------------------------------------
+June 24
+
+IN PROGRESS:
+- Formatting of buttons for every question type
+- Rating Scale
+
+DONE:
+- Havent done shit. Except Figuring out how to properly assign and format boxes and squares
+- Yep, I know what to do now to deal with this formatting shit. Table formats suck. Divs ftw
+- Rearranged the main format for question template, it's gonna be divs now. abuse the w-1/3 thingy.
+- I'll be coding while working from now on. ez pz lemon skweezy. Everyday coding it is, to make up for the upcoming deadline.
+
+To do next session:
+- re do all survey question type templates, this time it'll work though.
+
+FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+ONE PROBLEM AT A TIME GILV ^^
+
+NOTE: W-Full and H-Full or W-3/4 H-1/3 is more reliable instead of using Padding for box anda square formats
+
+---------------------------------------------------------------------------------------------------------
+
+June 25
+
+IN PROGRESS:
+- justifying x and y axis
+
+DONE:
+- learned about justify-between and all that, Will try to use GRIDS today.
+
+To do next session:
+- re do all survey question type templates, this time it'll work though.
+
+FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+ONE PROBLEM AT A TIME GILV ^^
+
+NOTE: W-Full and H-Full or W-3/4 H-1/3 is more reliable instead of using Padding for box anda square formats
+
+---------------------------------------------------------------------------------------------------------
+June 29
+
+IN PROGRESS:
+- experimenting with this div shit. Fuckin tired, items-end pulls dem down the y axis, flex justify-center for the middle axis, but
+YOU NEED THE FLEX??? idk yet.
+
+DONE:
+- table is much better for the automated UI. Confirmed.
+
+To do next session:
+- re do all survey question type templates, this time it'll work though.
+
+FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+ONE PROBLEM AT A TIME GILV ^^
+
+
+---------------------------------------------------------------------------------------------------------
+June 30
+
+IN PROGRESS:
+- PROPEREST PROPER Template for all question type
+
+DONE:
+- Multiple CHOICE PROPERIZED keK
+
+To do next session:
+- re do all survey question type templates, this time it'll work though.
+
+FUCKING LEFT -> Center - End Div positioning shit. annoyingly inconsistent as fuck. gotta read documentary.
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+
+Next Steps/Deliverables To be Worked on:
+
+1. Front-end part of Survey Question
+2. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+3. First Survey DB Seeder
+4. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+ONE PROBLEM AT A TIME GILV ^^
+
+---------------------------------------------------------------------------------------------------------
+
+July 1
+
+IN PROGRESS:
+- Polishing of all Frontend UI for Survey Questions
+
+DONE:
+- Multiple Choice Survey Question Template
+- Matrix Question Survey Question Template
+- Rating Scale Survey Question Template
+- Likert Scale Survey Question Template
+- Open Ended Survey Question Template
+- Finally got the hang of centering and lining up divs. Group up divs and the parent got most of the say on where the 
+contents are gonna be placed.
+- Rewired & Tested 	the backend for the submit answer button. Somehow it needs a fuckin [] in the route. wtf.
+- Tested the answer thingy for single answer checkboxed questions on Likert Scale. It works somehow. So only multiple choice
+will need an arrayed value for catching question & answer_choices.
+
+To Do Next Session:
+- Ah shit. Capturing data for all these question choices selected. It's literally all you need tho then ure on data viz. 
+GOODLUCK!!! YER FOKIN CLOSE BOIE
+- Your current theory is the submit button submits an array of values, maybe you can catch that array in the controller and 
+associate every input to the answer_Choices table
+- HERE, This thread might help you out https://www.phptutorial.net/php-tutorial/php-multiple-checkboxes/
+- AND HERE. https://laracasts.com/discuss/channels/laravel/inputgetarray-with-form-request
+
+Next Steps/Deliverables To be Worked on:
+
+1. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+ONE PROBLEM AT A TIME GILV ^^
+
+---------------------------------------------------------------------------------------------------------
+
+July 2
+
+IN PROGRESS:
+- Submit function for Likert scale
+- Submit Function for Matrix Question
+- Submit Function for Multiple Choice(Hard one, array of answers->question_choices)
+
+DONE: 
+- Submit function for Likert scale
+- Submit Function for Matrix Question
+- Capturing all the choices for multiple choice question. THIS IS IT BOIE. Write the algo for saving answer choices and 
+yer FUCKIN GOOD. EZ.
+- First attempt of Algorithm to create answer choices
+
+To Do Next Session:
+- Write algorithm to save every choices submitted into answer->answer_choices
+
+foreach(array)
+
+Create::answer_choice
+
+"answer_choice' => "question_choice"
+
+Next Steps/Deliverables To be Worked on:
+
+1. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+---------------------------------------------------------------------------------------------------------
+
+July 5
+
+IN PROGRESS:
+- Working backend algorithm for submission of ansers
+
+DONE:
+- Answer Choice Creator
+- Blank Answer Creator for answer choices
+
+
+To Do Next Session:
+- Write algorithm to save every choices submitted into answer->answer_choices
+^Test ur code for this one
+
+foreach(array)
+
+Create::answer_choice
+
+"answer_choice' => "question_choice"
+
+Next Steps/Deliverables To be Worked on:
+
+1. Back-end (submission of array from forms) part where u send a lot of choices for 1 survey question as One Answer (for multiple choice questions)
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+---------------------------------------------------------------------------------------------------------
+July 6
+
+IN PROGRESS:
+- Testing algo for firstorcreating the required response answers, answers, and answer choices for 
+multiple choice submission button	
+
+DONE:
+- Template for the functionality above.
+- Debugging the controller code snippet for FirstOrCreating survey answers. It works now.
+- FIrstorCreate function for survey response answers and survey response answer choices
+
+To Do Next Session:
+- idk...
+
+Next Steps/Deliverables To be Worked on:
+
+1. Polishing. CRUD functions for Survey Questions and Choices Along with Question Creation (To be done in the end)
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+OH SYEEET ALMOST DONE BOIE
+---------------------------------------------------------------------------------------------------------
+July 7 
+
+IN PROGRESS:
+- Create Survey, Survey Question, and SurveyQuestion->Choices CRUD
+- Maybe Redraft dem UI
+
+DONE:
+- Landing Page for Question Choice List
+- Question Choice editor landing page
+
+To Do Next Session:
+- Polishing the editor landing page
+
+Next Steps/Deliverables To be Worked on:
+
+1. Polishing. CRUD functions for Survey Questions and Choices Along with Question Creation (To be done in the end)
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+---------------------------------------------------------------------------------------------------------
+July 9
+
+IN PROGRESS:
+- Polishing UI For question choice editor
+
+DONEL
+- Landing page for choice editor
+
+NOTE: 
+- Form acts as some sort of a div. It messes up ur divs if u dont create the fuckin form first.
+- Also flex-nowrap is a useful tool for making lines/rows of divs.
+
+---------------------------------------------------------------------------------------------------------
+July 12
+
+IN PROGRESS:
+- Polishing UI For question choice editor
+- Edit Functionality for Question_Choice
+- Delete Functionality for Question_Choice
+
+DONE:
+- Polishing UI For question choice editor
+- Edit Functionality for Question_Choice
+- Delete Functionality for Question_Choice
+
+To Do Next Session:
+- Modal For adding/creating question Choice (why not)
+- Working Back button that redirects to routes
+
+Next Steps/Deliverables To be Worked on:
+
+1. Polishing. CRUD functions for Survey Questions and Choices Along with Question Creation (To be done in the end)
+2. First Survey DB Seeder
+3. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+
+
+---------------------------------------------------------------------------------------------------------
+July 13
+
+IN PROGRESS:
+- Back Button working that redirects	
+- Modal For adding/creating question Choice (why not)
+
+DONE
+- Back buttons for question editor
+- Adding NPM Flowbite (The Local Installation failed but the CDN source works. Guess U have to install tailwind, alpine on at the same time
+if you want ur npm packages to be stable)
+- Modal For adding/creating question Choice (why not)
+
+
+To Do Next Session:
+- sort that bug out on the answering part
+- Modal the fuck out of all editing options
+
+NOTE:
+- Adding NPMs like TAILWINDCSS,ALPINE, & FLOWBITE (The Local Installation failed but the CDN source works. Guess U have to install tailwind, alpine on at the same time
+if you want ur npm packages to be stable)
+
+
+Next Steps/Deliverables To be Worked on:
+
+1. First Survey DB Seeder
+2. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+3. Polishing the UI and backend of all CRUD functions (UI part is optional, and can be done in the end)
+
+
+---------------------------------------------------------------------------------------------------------
+July 16
+
+IN PROGRESS:
+- fixing Modal of QuestionChoice's update
+
+
+DONE:
+- fixed the passing of values in the editor issue, Modal should recognize the variable now
+- Modal Editing of QuestionChoices
+
+To do Next Session: Modal the fuck out of all editing options 
+
+NOTE: U were on the fokin mountains, u realized there what you had to do. Finish this shit.
+
+To Do Next Session:
+- Modal the fuck out of all editing options
+
+
+Next Steps/Deliverables To be Worked on: 
+1. First Survey DB Seeder
+2. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+3. Polishing the UI and backend of all CRUD functions (UI part is optional, and can be done in the end)
+--------------------------------------------------------------------------------------------------------
+
+July 19
+
+IN PROGRESS:
+- Fixing bug for modal where it only edits the first QuestionChoice of the paginated page.
+- Modal the fuck out of all editing options
+
+DONE
+- QuestionChoce Bug Fixing
+
+To Do Next Session:
+- Modal the fuck out of all editing options
+- Bug Fixing on Closing Modal
+
+Next Steps/Deliverables To be Worked on: 
+1. First Survey DB Seeder
+2. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+3. Polishing the UI and backend of all CRUD functions (UI part is optional, and can be done in the end)
+
+--------------------------------------------------------------------------------------------------------
+
+July 20
+
+IN PROGRESS:
+- Bug Fixing on Closing Modal
+- Modal the fuck out of all editing options (oh Boie here We Go)
+
+IN PROGRESS 2:
+- Modal for Survey Question Edit.
+- Fixing UI for Survey Question Edit with Modal. Last stable version from github is July 20 12AM Commit.
+
+DONE:
+- Bug Fixed on Closing Modal
+- Working Modal for Survey Question Edit
+
+To Do Next Session:
+- Data Visualization (AH ShiYet)
+
+Next Steps/Deliverables To be Worked on: 
+
+1. First Survey DB Seeder
+2. Data Capture, Visualization, and Completion of Dynamic UI for survey results
+3. Polishing the UI and backend of all CRUD functions (UI part is optional, and can be done in the end)
+
+--------------------------------------------------------------------------------------------------------
+
+July 21
+
+IN PROGRESS:
+- Modal for Survey Question Edit.
+- Fixing UI for Survey Question Edit with Modal. Last stable version from github is July 20 12AM Commit.
+- Survey Edit Modal
+- Survey Create Modal
+
+DONE:
+
+- Survey Edit Modal
+- Survey Create Modal
+
+To Do Next Session:
+- Polishing of Survey Create Modals
+- Inserting Delete Function in Survey Edit Modal
+- Look for other parts in the UI to polish for documentation
+
+
+Next Steps/Deliverables To be Worked on: 
+
+2. Data Visualization (Ah SHiyEEET)
+3. First Survey DB Seeder
+
+--------------------------------------------------------------------------------------------------------
+
+July 22
+
+IN PROGRESS:
+
+- Polishing of Survey Create Modals
+- Paginated UI back and next buttons for Survey Create
+- Inserting Delete Function in Survey Edit Modal
+- Look for other parts in the UI to polish for documentation
+
+DONE
+- Polishing of Survey Create Modals
+- Paginated UI back and next buttons for Survey Create
+- Inserting Delete Function in Survey Edit Modal
+
+To Do Next Session:
+- Fix this disgrace of a question list UI
+- Find a way for that link bar div to erm.. be justified with flex-nowrap
+- Look for other parts in the UI to polish for documentation
+
+Next Steps/Deliverables To be Worked on: 
+
+1. Data Visualization (Ah SHiyEEET)
+2. First Survey DB Seeder
+
+--------------------------------------------------------------------------------------------------------
+
+July 23
+
+IN PROGRESS
+
+- Find a way for that link bar div to erm.. be justified with flex-nowrap
+- Fix this disgrace of a question list UI
+
+
+DONE:
+- Found a way for that link bar div to erm.. be justified with flex-nowrap
+- Template for Edit Question Page
+
+To Do Next Session:
+- Modal Template for Adding Survey Question
+- Apply the paginated page for Survey Question Editing Page
+- Look for other parts in the UI to polish for documentation (To do Until July 25, From July 26 u'll be 
+	working on Data Viz, Good Luck BoiE)
+
+NOTE: Ur main container must be "Flex" first so it arranges every new set of div in a per line format. U can't 
+start with a flex-nowrap container first.
+
+Next Steps/Deliverables To be Worked on: 
+
+1. Data Visualization (Ah SHiyEEET)
+2. First Survey DB Seeder (Optional, You Can manually create surveys, questions, and survey questions now
+
+--------------------------------------------------------------------------------------------------------
+
+July 24
+
+IN PROGRESS
+
+- Add Survey Question Modal Template
+
+
+DONE 
+- Add Survey Question Modal Template
+- Functional Edit Survey Question Modal
+- Functional Delete Survey Question Modal
+- Modal Template for Adding Survey Question
+
+
+To Do Next Session:
+- Apply the paginated page for Question Choice & Survey Question Editing Page
+- Look for other parts in the UI to polish for documentation (To do Until July 25, From July 26 u'll be 
+working on Data Viz, Good Luck BoiE)
+
+Next Steps/Deliverables To be Worked on: 
+
+1. Data Visualization (Ah SHiyEEET)
+2. First Survey DB Seeder (Optional, You Can manually create surveys, questions, and survey questions now
+
+--------------------------------------------------------------------------------------------------------
+July 27
+
+IN PROGRESS:
+- Applying a separated div for survey list's  paginated links 
+- Force Question Choices page to a fixed table size
+- Debugging open ended answer question bug redirecting to nothing
+- Separate the back and add survey button from the main DIV for better aesthetic/
+
+
+NOTE: 
+- Survey Questions' edit table has a fixed paginated link div, study it and make it so for Question Choice and it'll be
+your main and best template for reference.
+- Question Choices tab's table adjusts according to amount of units in the table, study how u created those divs and make it so for the others.
+- eh, u must just want to create another =/. 
+
+- Create div with fixed 5/6 height. contain the object loop in a 4/6 div. another 1/6 for the back and add button.
+And then the pagination links is outside the 5/6 div with 1/6 height
+
+sort of like this.. maybe try that h-fit eh
+
+{
+
+  main div with full height
+
+   {
+     table div 5/6 height
+	{
+	 flexed div with 4/6 height for data rows
+	}
+	
+	{
+	 flexed div with 1/7 height for back and add buttons
+	}
+
+	{
+	 flexed div with 1/7 height for pagination link
+	}
+
+  } end of table div 
+
+} end   main div with full height
+
+DONE:
+- Jack shit, template's not working as intended. Well Do a through analysis in bluegre
+
+To Do Next Session:
+- Apply the paginated page for Question Choice & Survey Question Editing Page
+- Look for other parts in the UI to polish for documentation (To do Until July 25, From July 26 u'll be 
+working on Data Viz, Good Luck BoiE)
+
+Next Steps/Deliverables To be Worked on: 
+
+1. Data Visualization (Ah SHiyEEET)
+2. First Survey DB Seeder (Optional, You Can manually create surveys, questions, and survey questions now
+
+--------------------------------------------------------------------------------------------------------
+
+July 28
+
+IN PROGRESS:
+- Creating the perpek div template for QuestionChoices
+- Flexible height for editor pages
+
+DONE:
+- Them DIVs template for Question Choice Edit Page
+- Flexible height for them editor pages
+
+To Do Next Session:
+- Side bar buttons
+- Login Modal 
+- Question Category Dropdown upon creation (inside the modal)
+
+Next Steps/Deliverables To be Worked on: 
+
+1. Data Visualization (Ah SHiyEEET)
+
+--------------------------------------------------------------------------------------------------------
+
+July 29
+
+IN PROGRESS:
+- Side bar buttons
+- Login Modal 
+- Question Category Dropdown upon creation (inside the modal)
+
+DONE:
+- Side bar buttons
+- Login Modal 
+- Found a Code snippet for dropdown, but having trouble passing array  as props for modals. wait. dont pass it? lul. do that next time
+
+To Do Next Session:
+- Dropdown for category and types edit
+- Data Visualization (at last SHIYEEET)
+
+
+https://blog.hubspot.com/website/html-dropdown
+<label for="dog-names">Choose a dog name:</label>
+<select name="dog-names" id="dog-names">
+    <option value="rigatoni">Rigatoni</option>
+  <option value="dave">Dave</option>
+  <option value="pumpernickel">Pumpernickel</option>
+  <option value="reeses">Reeses</option>
+</select>
+
+
+--------------------------------------------------------------------------------------------------------
+
+July 31
+
+IN PROGRESS:
+- Try passing that array into the layout file today. IF attempt today fails, just don't pass it
+- Dropdown style Edit Type Modal
+- Dropdown style Edit Category Modal
+
+DONE:
+- Dropdown style Edit Type Modal
+- Dropdown style Edit Category Modal
+- Just did the query inside the view. hope it doesn't backfire to me
+
+To Do Next Session:
+- Data VIZ?? (Mao naneH mao NaneH)
+- Find other shits to polish, this is as good as it gets for now
+
+

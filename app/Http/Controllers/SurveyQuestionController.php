@@ -67,7 +67,7 @@ class SurveyQuestionController extends Controller
                'type' => 'required',
                'category' => 'required'
             ]);
-
+ewaew
        
 
             $survey = $surveyquestion->survey_id;
