@@ -6,6 +6,10 @@ $alltypes = App\Models\SurveyQuestion::select('type')->distinct()->get();
 
 $types = $alltypes->pluck('type');
 
+$allcategories = App\Models\SurveyQuestion::select('category')->distinct()->get();
+
+$categories = $allcategories->pluck('category');
+
 @endphp
 
 <button class="bg-blue-400 text-black px-4 py-1 rounded-xl ml-4" type="button" data-modal-toggle="modal"> 
@@ -40,6 +44,19 @@ $types = $alltypes->pluck('type');
                                                 @foreach($types as $type) 
                                                 <option hidden> likertscale </option>
                                                 <option value="{{$type}}">{{$type}}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+
+                                        <div class="w-full bg-gray-300 text-black font-bold flex-auto justify-between items-center space-x-4">
+                                        
+                                            <label for="category">Category</label>
+                                            <select name="category" id="category">
+                                                
+                                                @foreach($categories as $category) 
+                                                <option hidden> Category </option>
+                                                <option value="{{$category}}">{{$category}}</option>
                                                 @endforeach
                                             </select>
 

@@ -76,7 +76,7 @@ class SurveyQuestionController extends Controller
            
         $surveyquestion->update($data);
         
-       return redirect()->route('surveyquestionlist', ['survey' => $survey])->with('success', 'Question Edited Successfully');
+       return redirect()->back()->with('success', 'Question Edited Successfully');
 
           // return redirect('/home')->with('success', 'Question Edited Successfully');
     }
@@ -87,7 +87,7 @@ class SurveyQuestionController extends Controller
 
         $surveyquestion->delete();
 
-        return redirect()->route('surveyquestionlist', [$survey])->with('success', 'Question Deleted Successfully');
+        return redirect()->back()->with('success', 'Question Deleted Successfully');
      
     }
 
@@ -105,14 +105,15 @@ class SurveyQuestionController extends Controller
         $data = request()->validate(
             [
                'question' => 'required',
-               'type' => 'required'
+               'type' => 'required',
+               'category' => 'required'
             ]);
 
         
 
         $newquestion = SurveyQuestion::create($data);
 
-        $newquestion->update(['survey_id' => $survey->id, 'category' => NULL]);
+        $newquestion->update(['survey_id' => $survey->id]);
 
         $survey = $newquestion->survey_id;
 
