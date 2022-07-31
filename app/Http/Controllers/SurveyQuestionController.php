@@ -132,7 +132,9 @@ class SurveyQuestionController extends Controller
 
         
 
-        $survey = survey::where('id', $survey->id)->pluck('id');
+        
+
+        
 
         
        
@@ -206,7 +208,7 @@ class SurveyQuestionController extends Controller
                
 
         
-
+        return redirect()->back();
 
         
 

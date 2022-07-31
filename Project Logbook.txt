@@ -1760,10 +1760,11 @@ DONE:
 - Dropdown style Edit Type Modal
 - Dropdown style Edit Category Modal
 - Just did the query inside the view. hope it doesn't backfire to me
+- Fixed the Answer Question Bug. It was just some route naming problems
 
 To Do Next Session:
-- Fix that Answer Test shit
 - Data VIZ?? (Mao naneH mao NaneH)
+- redirect to next page button
 - Find other shits to polish, this is as good as it gets for now
 --------------------------------------------------------------------------------------------------------
 

@@ -72,9 +72,9 @@ Route::get('/divtestpage', function()
     return view('divtestpage');
 });
 
-Route::post('/createanswer/[{survey}]/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
+Route::post('/createanswer/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'createanswer']);
 
-Route::post('/createmultiplechoiceanswer/[{survey}]/{SurveyQuestion}', [QuestionChoiceController::class, 'createanswerchoice']);
+Route::post('/createmultiplechoiceanswer/{survey}/{SurveyQuestion}', [QuestionChoiceController::class, 'createanswerchoice']);
 
 Route::get('/surveyform/{survey}', [SurveyQuestionController::class, 'surveyform']);
 
