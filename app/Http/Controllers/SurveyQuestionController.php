@@ -64,10 +64,13 @@ class SurveyQuestionController extends Controller
         $data = request()->validate(
             [
                'question' => 'required',
+               'type' => 'required'
             ]);
 
             $survey = $surveyquestion->survey_id;
    
+
+           
         $surveyquestion->update($data);
         
        return redirect()->route('surveyquestionlist', ['survey' => $survey])->with('success', 'Question Edited Successfully');
@@ -99,6 +102,7 @@ class SurveyQuestionController extends Controller
         $data = request()->validate(
             [
                'question' => 'required',
+               'type' => 'required'
             ]);
 
         $newquestion = SurveyQuestion::create($data);

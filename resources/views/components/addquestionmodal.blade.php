@@ -1,5 +1,14 @@
 @props(['surveyid'])
- <button class="bg-blue-400 text-black px-4 py-1 rounded-xl ml-4" type="button" data-modal-toggle="modal"> 
+ 
+@php 
+
+$alltypes = App\Models\SurveyQuestion::select('type')->distinct()->get();
+
+$types = $alltypes->pluck('type');
+
+@endphp
+
+<button class="bg-blue-400 text-black px-4 py-1 rounded-xl ml-4" type="button" data-modal-toggle="modal"> 
                         Add Question
  </button> 
 
@@ -21,6 +30,19 @@
                                         <div>
                                             <label for="question" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question </label>
                                             <input type="text" name="question" id="question" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="add question here madafaka" required>
+                                        </div>
+
+                                        <div class="w-full bg-gray-300 text-black font-bold flex justify-center items-center space-x-4">
+                                        
+                                            <label for="type">Question Type:</label>
+                                            <select name="type" id="type">
+                                                
+                                                @foreach($types as $type) 
+                                                <option hidden> likertscale </option>
+                                                <option value="{{$type}}">{{$type}}</option>
+                                                @endforeach
+                                            </select>
+
                                         </div>
 
                                         <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Add Question </button>                                

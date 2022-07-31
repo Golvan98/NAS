@@ -1,4 +1,4 @@
-@props(['SurveyQuestionId', 'SurveyQuestionName'])
+@props(['SurveyQuestionId', 'SurveyQuestionName', 'SurveyQuestionType'])
 
 
 @php 
@@ -45,6 +45,7 @@ $types = $alltypes->pluck('type');
                                             <select name="type" id="type">
                                                 
                                                 @foreach($types as $type) 
+                                                <option hidden> {{$SurveyQuestionType}}</option>
                                                 <option value="{{$type}}">{{$type}}</option>
                                                 @endforeach
                                             </select>
