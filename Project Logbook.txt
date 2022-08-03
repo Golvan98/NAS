@@ -1764,8 +1764,24 @@ DONE:
 
 To Do Next Session:
 - Data VIZ?? (Mao naneH mao NaneH)
-- redirect to next page button
+- redirect to next page button (try that route with value +1 thingy)
 - Find other shits to polish, this is as good as it gets for now
+--------------------------------------------------------------------------------------------------------
+
+Aug 02
+
+IN PROGRESS:
+- fixing that submit button overlapping with back button.
+- Imitate the answer UI (edit and back button)
+- SAVED! page, and then redirect after clicking.
+- Change dem buttons to " Back, Edit, Save"
+- Create a clickable "View" question in the question list, UI is same as 
+- after answering last question, give a view of his listed answers & redirect to homepage.
+
+
+DONE:
+- fixing overlapping button, forms cannot exist within a form and forms within modals count
+- View Question = Admin Form Created for Counselor's POV of editing questions that has the buttons (Back, Edit, Save)
 --------------------------------------------------------------------------------------------------------
 
 

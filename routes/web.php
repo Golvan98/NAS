@@ -37,6 +37,9 @@ Route::get('/createsurveyquestion/{survey}', [SurveyQuestionController::class, '
 
 Route::get('/questionlist/{survey}', [SurveyQuestionController::class, 'questionlist'])->name('surveyquestionlist');
 
+Route::get('/adminsurveyform/{survey}/{SurveyQuestion}', [SurveyQuestionController::class, 'adminsurveyform']);
+
+
 Route::get('/questioneditor/{surveyquestion}', [SurveyQuestionController::class, 'questioneditor']);
 
 Route::get('/surveyeditor/{survey}', [SurveyController::class, 'surveyeditor']);

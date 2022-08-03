@@ -26,7 +26,7 @@ class SurveyQuestionController extends Controller
         
 
        
-
+       
         
         $categories = SurveyQuestion::select('category')->distinct()->get();
 
@@ -36,7 +36,23 @@ class SurveyQuestionController extends Controller
 
     
       
-        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'categories' => $categories]);
+        return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'categories' => $categories, 'SurveyQuestion' =>$SurveyQuestion]);
+    }
+
+    public function adminsurveyform(Survey $survey, SurveyQuestion $SurveyQuestion)
+    {
+
+        $student = auth()->user()->id;
+
+        $choices = QuestionChoice::all()->whereIn('survey_question_id', $SurveyQuestion->id);
+
+        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->pluck('id');
+
+        
+
+        
+    
+        return view('adminsurveyform')->with(['SurveyQuestions' => $SurveyQuestions, 'survey' => $survey, 'SurveyQuestion' =>$SurveyQuestion, 'choices' =>$choices]);
     }
 
 

@@ -44,9 +44,9 @@
      </div>
 
         <div class="flex justify-between w-full h-1/6 bg-white items-center">
-                <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl"> Back </button> </div> 
+                <div> <a href="/surveylist"> <button class="px-8 py-2 bg-red-500 rounded-xl"> Back </button> </div> 
                 <div class=""> <button type="submit" class="px-8 py-2 bg-blue-300 rounded-xl"> Submit </button> </div> 
-                <div class=""> <button class="px-8 py-2 bg-green-500 rounded-xl"> Next </button> </div> 
+                <div class=""> <button type="submit" class="px-8 py-2 bg-green-500 rounded-xl"> Next </button> </div> 
                 
         </div>
          
@@ -144,9 +144,9 @@
 
         <div class="flex justify-between w-full h-4/6 bg-white items-end text-white ">
 
-                <div class=""> <button class="px-8 py-2 bg-red-500 rounded-xl ml-2 mb-2"> Back </button> </div> 
-                <div class=""> <button type="submit" class="px-8 py-2 bg-blue-300 rounded-xl mb-2"> Submit </button> </div> 
-                <div class=""> <button class="px-8 py-2 bg-green-500 rounded-xl mr-2 mb-2"> Next </button> </div> 
+                <div class=""> <button class="inline-flex px-8 py-2 bg-red-500 rounded-xl ml-2 mb-2"> Back </button> </div> 
+                <div class=""> <button class="inline-flex px-12 py-2 bg-blue-300 rounded-xl mb-2"> Edit </button> </div> 
+                <div class=""> <button type="inline-flex submit" class="px-8 py-2 bg-green-500 rounded-xl mr-2 mb-2"> Save  </button> </div> 
                 
         </div>
          
