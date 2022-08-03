@@ -1,5 +1,5 @@
 
- <button class="bg-red-500 px-2 py-1 m-1 rounded" type="button" data-modal-toggle="loginmodal"> 
+ <button class="bg-red-500 px-2 py-1 rounded" type="button" data-modal-toggle="loginmodal"> 
                        Login
  </button> 
 

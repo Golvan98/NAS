@@ -15,65 +15,100 @@
 <div id="main" class="flex-no-wrap bg-gray-300 w-full h-screen">
 
 
-    <div id="header" class="flex justify-between w-full h-9 bg-red-500">
+    <div id="header" class="flex justify-between w-full h-9 bg-red-700">
 
-        <div> MSU IIT </div>
+        <div class=" bg-red-700 font-bold flex items-center text-white px-12 text-left"> 
+                My.IIT 
+        </div>
 
-        <div> Welcome Golps </div>
+        <div class="bg-red-700 flex-auto flex items-center">  
+                <div class="ml-4 space-y-1">
+                    <div class="w-6 h-0.5 bg-white"></div>
+                    <div class="w-6 h-0.5 bg-white"></div>
+                    <div class="w-6 h-0.5 bg-white"></div>
+                </div>
+        </div>
 
-        <div class="bg-red-300"> Logout button here </div>
+        @auth
+        <form method="POST" action="/logout" class="text-white font-bold"> 
+            @csrf
+             Welcome Sir {{ auth()->user()->firstname }} ! 
+            
+        <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded"> logout </button> </a> 
 
-        <div> Counselor Thingy WIth OL Button </div>
+        </form>
+
+        <div class="bg-red-700 items-right text-white font-bold mr-2">
+                <div class="relative inline-block">
+                    <img class="inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                    <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
+                </div>
+        </div>
+                Counselor 
+        @endauth
+
+        @guest
+            <div class="bg-red-700 items-center text-white font-bold mr-2">
+
+
+                <div class="relative inline-block">
+                    <img class="mb-2 inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                    <span class="mb-2 absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
+                </div>
+                
+                <x-loginmodal> login </x-loginmodal> 
+                 Counselor
+                
+                @endguest
+            
+            </div>
+
+        
 
     </div>
 
-    <div id="body" class="flex w-full h-5/6 bg-white">
+    <div id="allcontent" class="flex w-full h-5/6 bg-white">
 
 
-        <div id="nav" class="flex-nowrap w-1/6 h-full bg-gray-500 space-y-16">
+        <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-700 space-y-2">
 
-            <div class="mt-16 flex justify-center"> Tab 1 </div>
+            <div class="mt-16 flex justify-center"> Home </div>
 
-            <div class="flex justify-center"> Tab 2 </div>
+            <div class="flex justify-center"> Surveys </div>
+
+            <div class="flex justify-center"> About </div>
+
+            <div class="flex justify-center"> Manage Surveys </div>
 
 
         </div>
 
-        <div id="content" class="flex-nowrap w-full bg-red-300 h-full">
+        <div id="body" class="flex-nowrap w-full bg-red-300 h-full">
 
             {{$slot}}
 
         </div>
 
+        <div id="footer1" class="bg-green-300 w-full h-1/6 flex-nowrap">
+
+
+            <div class="w-full h-4/6 flex"> 
+                <div class="flex w-1/6 h-full bg-gray-700"> 
+                    
+                </div>
+
+                <div class="flex w-full h-full bg-gray-300"> 
+                 Copyright © 2018 onwards, <span class="text-blue-300"> Mindanao State University, Iligan Institute of Technology </span>
+                </div>
+            </div>
+                
+            <div class="w-full h-2/6 bg-gray-900"> </div>
+
+        </div>
 
     
 
-    </div>
-
-
-    <div id="footer" class="flex-nowrap w-full h-1/6">
-
-                footer here
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
