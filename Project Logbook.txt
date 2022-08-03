@@ -1782,6 +1782,23 @@ IN PROGRESS:
 DONE:
 - fixing overlapping button, forms cannot exist within a form and forms within modals count
 - View Question = Admin Form Created for Counselor's POV of editing questions that has the buttons (Back, Edit, Save)
+- Created a proper template for layout
+
+To Do Next Session (for documentation, important stuff)
+- Gilvin:
+- Finish Proper Layout
+- Footer
+- Page with Pictures for data viz (Pie Charts and Bar Graph)
+- List of Answers by a student
+- Dummy Survey with first year survey questions
+- G Drive with Labels sa aha nga part na belong
+- Pictures Left Side
+- List of Students who answered (Bar Graph pag click kay mu redirect sa lista)
+- List of Students who answered (Lista)
+- List of Student's Answers
+
+
+NOTE: h-screen does what u think h-full does
 --------------------------------------------------------------------------------------------------------
 
 

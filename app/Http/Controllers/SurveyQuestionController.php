@@ -47,11 +47,7 @@ class SurveyQuestionController extends Controller
         $choices = QuestionChoice::all()->whereIn('survey_question_id', $SurveyQuestion->id);
 
         $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->pluck('id');
-
-        
-
-        
-    
+            
         return view('adminsurveyform')->with(['SurveyQuestions' => $SurveyQuestions, 'survey' => $survey, 'SurveyQuestion' =>$SurveyQuestion, 'choices' =>$choices]);
     }
 

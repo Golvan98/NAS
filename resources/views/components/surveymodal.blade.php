@@ -15,12 +15,12 @@
                           <div class="px-6 py-6 lg:px-8">
 
 
-                              <h3 class="mb-4 text-xl text-center font-medium text-gray-900 dark:text-white"> Edit Question Choice</h3>
+                              <h3 class="mb-4 text-xl text-center font-medium text-gray-900 dark:text-white"> Edit Survey </h3>
                               <form method ="POST" action="/updatesurvey/{{$survey}}" class="space-y-6">   
                                 @csrf
                                 @method('PATCH')
                                   <div>
-                                      <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question Choice</label>
+                                      <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Survey </label>
                                       <input type="text" name="name" id="name" class="bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  value="{{$surveyname}}" required>
                                   </div>
 

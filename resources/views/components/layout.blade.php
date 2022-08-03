@@ -125,7 +125,22 @@
 
 
 
+<footer> 
 
+<div class="w-full bg-gray-300 w-full h-1/2 flex-nowrap ">
+
+    <div class="w-full h-5/6 bg-gray-300 flex justify-center items-center">
+
+        <div class="w-4/6 h-5/6 bg-gray-300 flex-nowrap border border-black mt-4">
+
+        </div>
+    
+    </div>
+
+</div>
+
+
+</footer>
 
 
 
