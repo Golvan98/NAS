@@ -1,119 +1,76 @@
-<x-testlayout>
-    <script src="../path/to/flowbite/dist/flowbite.js"></script>
+<x-newlayout>
 
-<div class="w-full bg-gray-300 flex-nowrap ">
-
-    <div class="w-full h-5/6 bg-gray-300 flex justify-center items-center">
-
-        <div class="w-4/6 h-5/6 bg-gray-300 flex-nowrap border border-black mt-4">
-
-            <div class="w-full py-4  flex justify-center mt-4">
-                <strong>   <div>     {{$SurveyQuestion->question }} DIV TEST!</div> </strong>
-            </div>  
-
-            @foreach($QuestionChoices as $QuestionChoice)
-            <div class="w-full  flex justify-between mt-3">
+<div class="w-full bg-gray-300 flex-nowrap">
 
 
-                <div class="w-1/3 text-center"> <button class="bg-gray-300 px-4 py-1 rounded-xl">   {{ $QuestionChoice->question_choice }} Test Version  </button> </div>
 
-                <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-8 py-2 rounded-xl ml-2 mb-2 mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 modal" type="button" data-modal-toggle="{{ $QuestionChoice->id }}">
-                      Edit Question Choice 
-                </button>
-
-                <form method ="POST" action="/updatequestionchoice/{{$QuestionChoice->id}}"  id="{{ $QuestionChoice->id }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-                        <div class="relative w-full h-full max-w-md p-4 md:h-auto">
-                            <!-- Modal content -->
-                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="bg-red-200 close absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="{{ $QuestionChoice->id }}" data-dismiss="{{ $QuestionChoice->id }}">
-                                    <svg class="w-5 h-5 close"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                                </button>
-                                <div class="px-6 py-6 lg:px-8">
-                                    <h3 class="mb-4 text-xl text-center font-medium text-gray-900 dark:text-white"> Edit Question Choice</h3>
-                                    <div class="space-y-6">   
-                                      @csrf
-                                      @method('PATCH')
-                                        <div>
-                                            <label for="question_choice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question Choice</label>
-                                            <input type="text" name="question_choice" id="question_choice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="{{$QuestionChoice->question_choice}}" required>
-                                        </div>
-
-                                        
-
-                                        <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Edit Question Choice</button>                                
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </form>
-
-                <form method="POST" action="/deletequestionchoice/{{$QuestionChoice->id}}" class="w-1/3 text-center"> @method('DELETE') @csrf <a href="/delete{{$QuestionChoice->id}}"> 
-                    <button type="submit" class="bg-red-500 px-4 py-1 rounded-xl"> Delete </button> </a> 
-                </form> 
-
-                
+<div class="w-full bg-white flex h-1/6 justify-center items-end  ">
+        
+    <div class="w-full flex-nowrap ">
+        
+            <div class="w-full flex justify-center"> 
+                <div class="w-4/5 text-lg"> <strong> Good Evening, Counselor! </strong> </div>
             </div>
-            @endforeach
+
+            <div class="w-full flex justify-center"> 
+                <div class="w-5/6 h-0.5 bg-red-500">  </div>
+            </div>
+       </div>
+       
+      
+    </div>
 
 
+  <div class="w-full bg-gray-300 flex justify-center items-center h-4/6">
+
+    <div class="w-4/5  bg-white flex-nowrap justify-center h-full  border border-black mt-4">
+      
+        <div class="w-full bg-gray-300 h-1/6 text-white flex justify-center items-center"> 
+          
+          <div class="text-black text-lg"> <strong> {{$survey->name}}  Henlo I'm testing </strong> </div>
+
+        </div>
+
+        @foreach($SurveyQuestions as $SurveyQuestion)
+        <div class="w-full bg-gray-300 text-white h-1/6 flex justify-between items-center space-y-8"> 
+          
+            <div class="w-1/3 truncate hover:text-clip text-center mx-4 mt-4 py-1 bg-gray-300 rounded-xl"> <button class="bg-gray-300 text-black px-4 py-1 rounded-xl ml-4"> <strong> {{$SurveyQuestion->question}} </strong> </button> </div>
+
+            <div class="w-1/3 text-center mx-4 mt-4 py-1 bg-gray-300 rounded-xl"> <a href="/adminsurveyform/{{$survey->id}}/{{$SurveyQuestion->id}}"> <button class="bg-green-300 text-black px-4 py-1 rounded-xl ml-4"> <strong> View Question </strong> </a> </button> </div>
+
+
+            <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-editquestionmodal> 
+
+            <div class="w-1/3 flex justify-center items-center"> <button class="text-center text-center block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-4 py-2 rounded-xl text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-4"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}">  Edit Question Choices </button> </a>  </div> 
+            </div>
+
+        @endforeach
+
+        <div class="w-full bg-gray-300 text-black h-1/6 flex justify-between items-center space-y-8"> 
+          
+          <div> <a href="/surveylist"> <button class="bg-red-300 text-black px-4 py-1 rounded-xl ml-4 mb-2"> Back  </button> </a> </div>
+  
+          <div class="mr-4"> <x-addquestionmodal surveyid="{{$survey->id}}"> </x-addquestionmodal> </div> 
         </div>
 
     </div>
 
-    <div class="w-full h-1/6 bg-blue-300 flex-nowrap">
+  </div>
 
-        <div class="w-full h-1/2 bg-gray-300 flex justify-center items-center"> 
+  
 
-        <div class="w-5/6 h-full bg-gray-300 flex justify-between items-center mb-6">
+        <div class="w-full bg-transparent h-1/6 flex-nowrap">
+
+            <div class="w-full h-full flex justify-center items-end bg-transparent">
+
+            <div class="w-4/5 h-1/2 text-white">
+            {{$SurveyQuestions->links()}} 
+            </div>
             
-                    <div> <button class="px-6 py-1 ml-2 rounded-xl bg-red-300"> Back <button> </div>
-
-                    <div> 
-                     
-                        <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-8 py-2 rounded-xl ml-2 mb-2 mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="create-modal">
-                        Add Question Choice
-                        </button>
-
-                        <!-- Main modal -->
-                        <div id="create-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-                            <div class="relative w-full h-full max-w-md p-4 md:h-auto">
-                                <!-- Modal content -->
-                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="create-modal">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                                    </button>
-                                    <div class="px-6 py-6 lg:px-8">
-                                        <h3 class="mb-4 text-xl text-center font-medium text-gray-900 dark:text-white"> Add a Question Choice</h3>
-                                        <form method ="POST"class="space-y-6" action="/createquestionchoice/{{$SurveyQuestionId}}">
-                                            @csrf
-                                            <div>
-                                                <label for="question_choice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Question Choice</label>
-                                                <input type="question_choice" name="question_choice" id="question_choice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="True/False/10/Satisfied" required>
-                                            </div>
-                                            
-
-                                            <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Question Choice</button>                                 
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                              
-                    </div>
-        </div>
+            </div>
 
         </div>
-
-
-        <div class="w-full h-1/2 bg-gray-400">
-            {{$QuestionChoices->links()}} 
-        </div>
-
-    </div>
-
-    
-    
-   
+            
 </div>
-
-</x-testlayout>
+    
+</x-newlayout>

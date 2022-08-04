@@ -1,6 +1,6 @@
 @props(['survey', 'surveyname'])
 
-<button class="bg-gray-400 px-4 py-2 rounded-xl modal" type="button" data-modal-toggle="{{ $survey }}">
+<button class="bg-gray-400 px-4 py-1 rounded-xl modal" type="button" data-modal-toggle="{{ $survey }}">
             Manage Survey 
 </button>
             

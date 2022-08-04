@@ -98,9 +98,10 @@
     <div id="footer1" class="bg-green-300 w-full h-1/6 flex-nowrap ">
 
             <div class="w-full h-full flex"> 
+                
                 <div class="flex w-1/6 h-full bg-gray-700"> 
                     
-                </div>
+            </div>
 
                 <div class="flex w-full h-full bg-gray-300 border border-gray-400"> 
                     <strong> <p class="ml-2 mt-3"> Copyright © 2018 onwards, <span class="text-blue-500"> Mindanao State University, Iligan Institute of Technology. </span> </p>

@@ -12,11 +12,11 @@ $categories = $allcategories->pluck('category');
 
 @endphp
 
-<button class="bg-blue-400 text-black px-4 py-1 rounded-xl ml-4" type="button" data-modal-toggle="modal"> 
+<button class="bg-blue-400 text-black px-4 py-1 rounded-xl mb-8" type="button" data-modal-toggle="modal"> 
                         Add Question
  </button> 
 
-                
+
                     
                     
                     <form method ="POST" action="/createquestion/{{$surveyid}}"  id="modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">

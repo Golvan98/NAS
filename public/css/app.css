@@ -917,6 +917,10 @@ input:checked + .toggle-bg {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .ml-12 {
   margin-left: 3rem;
 }
@@ -985,6 +989,9 @@ input:checked + .toggle-bg {
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 .block {
   display: block;
@@ -1286,6 +1293,21 @@ input:checked + .toggle-bg {
 }
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+.whitespace-pre {
+  white-space: pre;
+}
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 .rounded-xl {
   border-radius: 0.75rem;
@@ -1724,6 +1746,12 @@ input:checked + .toggle-bg {
 }
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.hover\:text-clip:hover {
+  text-overflow: clip;
+}
+.hover\:break-all:hover {
+  word-break: break-all;
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
