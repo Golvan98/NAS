@@ -1801,4 +1801,16 @@ To Do Next Session (for documentation, important stuff)
 NOTE: h-screen does what u think h-full does
 --------------------------------------------------------------------------------------------------------
 
+Aug 04
+
+IN PROGRESS:
+- New Layout
+- Accurate Footer
+- Survey List page migration of layout
+- Survey Question Page Migration of layout
+
+DONE:
+- New Accurate Layout
+- Accurate Footer
+- Survey List page migration of layout
 

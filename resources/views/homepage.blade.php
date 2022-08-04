@@ -1,4 +1,4 @@
-<x-layout>
+<x-testlayout>
 
 
 <div id="body" class="bg-gray-300 flex-auto"> 
@@ -72,4 +72,4 @@
 
 
 
-</x-layout>
+</x-testlayout>

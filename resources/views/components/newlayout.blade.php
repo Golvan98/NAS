@@ -15,7 +15,7 @@
 <div id="main" class="flex-no-wrap bg-gray-300 w-full h-screen">
 
 
-    <div id="header" class="flex justify-between w-full h-9 bg-red-700">
+    <div id="header" class="flex justify-between w-full h-12 bg-red-700">
 
         <div class=" bg-red-700 font-bold flex items-center text-white px-12 text-left"> 
                 My.IIT 
@@ -30,15 +30,15 @@
         </div>
 
         @auth
-        <form method="POST" action="/logout" class="text-white font-bold"> 
+        <form method="POST" action="/logout" class="text-white font-bold flex items-center"> 
             @csrf
              Welcome Sir {{ auth()->user()->firstname }} ! 
             
-        <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded"> logout </button> </a> 
+        <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded flex items-center"> logout </button> </a> 
 
         </form>
 
-        <div class="bg-red-700 items-right text-white font-bold mr-2">
+        <div class="bg-red-700 items-center text-white font-bold mr-2">
                 <div class="relative inline-block">
                     <img class="inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
                     <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
@@ -48,7 +48,7 @@
         @endauth
 
         @guest
-            <div class="bg-red-700 items-center text-white font-bold mr-2">
+            <div class="bg-red-700 flex items-center text-white font-bold mr-2">
 
 
                 <div class="relative inline-block">
@@ -65,7 +65,7 @@
 
         
 
-    </div>
+    </div id="headend">
 
     <div id="allcontent" class="flex w-full h-5/6 bg-white">
 
@@ -83,36 +83,35 @@
 
         </div>
 
-        <div id="body" class="flex-nowrap w-full bg-red-300 h-full">
-
+        
+            
             {{$slot}}
-
-        </div>
-
-        <div id="footer1" class="bg-green-300 w-full h-1/6 flex-nowrap">
+           
+        
 
 
-            <div class="w-full h-4/6 flex"> 
+
+    </div id="allcontentend">
+
+
+
+    <div id="footer1" class="bg-green-300 w-full h-1/6 flex-nowrap ">
+
+            <div class="w-full h-full flex"> 
                 <div class="flex w-1/6 h-full bg-gray-700"> 
                     
                 </div>
 
-                <div class="flex w-full h-full bg-gray-300"> 
-                 Copyright © 2018 onwards, <span class="text-blue-300"> Mindanao State University, Iligan Institute of Technology </span>
+                <div class="flex w-full h-full bg-gray-300 border border-gray-400"> 
+                    <strong> <p class="ml-2 mt-3"> Copyright © 2018 onwards, <span class="text-blue-500"> Mindanao State University, Iligan Institute of Technology. </span> </p>
                 </div>
             </div>
                 
             <div class="w-full h-2/6 bg-gray-900"> </div>
 
-        </div>
-
-    
-
-    
+    </div>
 
 
-
-</div>
 
 @if ($message = Session::get('success'))
     <div x-data="{show: true}"
@@ -133,23 +132,6 @@
     </div>
 
     @endif
-
-
-
-
-
-
-
-<footer> 
-
-
-
-
-</footer>
-
-
-
-
 
 
 

@@ -125,10 +125,6 @@
 
 
 
-<footer> 
-
-
-
 
 </footer>
 
