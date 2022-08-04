@@ -1812,5 +1812,26 @@ IN PROGRESS:
 DONE:
 - New Accurate Layout
 - Accurate Footer
-- Survey List page migration of layout
+- Survey List page migration of layout (accurate version)
+- Survey Question Page Migration of Layout (accurate version)
 
+
+To Do Next Session (for documentation, important stuff):
+- Page with Pictures for data viz (Pie Charts and Bar Graph)
+- List of Answers by a student
+- Dummy Survey with first year survey questions
+- G Drive with Labels sa aha nga part na belong
+- Pictures Left Side
+- List of Students who answered (Bar Graph pag click kay mu redirect sa lista)
+- List of Students who answered (Lista)
+- List of Student's Answers
+- Question Choices Page Accurate Layout
+- View Question Page Accurate Layout
+
+--------------------------------------------------------------------------------------------------------
+
+Aug 05
+
+IN PROGRESS:
+- Layout for Question Choice editor
+- Layout for Question View

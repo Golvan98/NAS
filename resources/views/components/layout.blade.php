@@ -12,92 +12,107 @@
   <link href="/css/app.css" rel="stylesheet">
 </head>
 
-<div id="main" class="flex-no-wrap bg-gray-300">
+<div id="main" class="flex-no-wrap bg-gray-300 w-full h-screen">
 
 
-        <div>
-            <header class="flex bg-red-700">   
+    <div id="header" class="flex justify-between w-full h-12 bg-red-700">
 
-            <div class="mt-1 bg-red-700 font-bold text-white px-12 text-left"> 
+        <div class=" bg-red-700 font-bold flex items-center text-white px-12 text-left"> 
                 My.IIT 
-            </div>
+        </div>
 
-            <div class="bg-red-700 flex-auto">  
-                <div class="ml-4 mt-2 space-y-1">
+        <div class="bg-red-700 flex-auto flex items-center">  
+                <div class="ml-4 space-y-1">
                     <div class="w-6 h-0.5 bg-white"></div>
                     <div class="w-6 h-0.5 bg-white"></div>
                     <div class="w-6 h-0.5 bg-white"></div>
                 </div>
-            </div>
+        </div>
 
-            @auth
-                                               
-            <form method="POST" action="/logout" class="text-white font-bold"> 
+        @auth
+        <form method="POST" action="/logout" class="text-white font-bold flex items-center"> 
             @csrf
-             Welcome {{ auth()->user()->firstname }} ! 
+             Welcome Sir {{ auth()->user()->firstname }} ! 
             
-            <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded"> logout </button> </a> 
+        <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded flex items-center"> logout </button> </a> 
 
-            </form>
-            <div class="bg-red-700 items-right text-white font-bold mr-2">
+        </form>
+
+        <div class="bg-red-700 items-center text-white font-bold mr-2">
                 <div class="relative inline-block">
                     <img class="inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
                     <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
                 </div>
-                Counselor    
-            @endauth
+        </div>
+                Counselor 
+        @endauth
+
+        @guest
+            <div class="bg-red-700 flex items-center text-white font-bold mr-2">
 
 
-
-
-
-            @guest
-            <div class="bg-red-700 items-right text-white font-bold mr-2">
                 <div class="relative inline-block">
-                    <img class="inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
-                    <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
+                    <img class="mb-2 inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                    <span class="mb-2 absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
                 </div>
-                
                 
                 <x-loginmodal> login </x-loginmodal> 
                  Counselor
-                </div>
+                
                 @endguest
-            </header>
+            
             </div>
 
-
-    <div id="container" class="flex">
-
-        <div id="nav" class="bg-gray-900 px-12 text-gray-100 font-bold grow-0"> 
-            <nav>
-
-                <div class="flex-auto "> 
-                    <ul class="py-12"> 
-                    <div class="pb-24">     <a href="/home"><li class="bg-white px-4 py-1 text-black font-bold rounded-xl flex justify-center items-center "> Home </li> </a> </div>
-                    <div class="pb-24">     <li class="bg-white px-4 py-1 text-black font-bold rounded-xl flex justify-center items-center"> Grades </li> </div>
-                    <div class="pb-24">     <li class="bg-white px-4 py-1 text-black font-bold rounded-xl flex justify-center items-center"> <a href="/surveylist">  Surveys </li> </a> </div>
-                    </ul> 
-                </div>
-                    
-            </nav>
-        </div>
-        <body>
-        {{ $slot }}
-        </body>
-    </div>
         
 
-</div>
+    </div id="headend">
 
-<footer class="bg-gray-500 flex">
+    <div id="allcontent" class="flex w-full h-5/6 bg-white">
 
 
-    <div class="px-72 bg-white">  </div>
-    <div class="px-72 bg-white">  </div>
+        <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-700 space-y-2">
 
-    
-</footer>
+            <div class="mt-16 flex justify-center"> Home </div>
+
+            <div class="flex justify-center"> Surveys </div>
+
+            <div class="flex justify-center"> About </div>
+
+            <div class="flex justify-center"> Manage Surveys </div>
+
+
+        </div>
+
+        
+            
+            {{$slot}}
+           
+        
+
+
+
+    </div id="allcontentend">
+
+
+
+    <div id="footer1" class="bg-green-300 w-full h-1/6 flex-nowrap ">
+
+            <div class="w-full h-full flex"> 
+                
+                <div class="flex w-1/6 h-full bg-gray-700"> 
+                    
+            </div>
+
+                <div class="flex w-full h-full bg-gray-300 border border-gray-400"> 
+                    <strong> <p class="ml-2 mt-3"> Copyright © 2018 onwards, <span class="text-blue-500"> Mindanao State University, Iligan Institute of Technology. </span> </p>
+                </div>
+            </div>
+                
+            <div class="w-full h-2/6 bg-gray-900"> </div>
+
+    </div>
+
+
 
 @if ($message = Session::get('success'))
     <div x-data="{show: true}"
@@ -118,19 +133,6 @@
     </div>
 
     @endif
-
-
-
-
-
-
-
-
-</footer>
-
-
-
-
 
 
 
