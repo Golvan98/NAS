@@ -1,7 +1,7 @@
 <x-layout>
 
 
-<div id="body" class="bg-gray-300 flex-auto"> 
+<div id="body" class="bg-gray-300 flex-nowrap w-full"> 
 
     <div class="bg-gray-500 mt-16">     
 
@@ -22,7 +22,7 @@
             </button>
         </div>
 
-        <div class="text-center font-bold mr-2"> 
+        <div class="text-center font-bold mr-2 mt-12"> 
             College of Computer Studies
                 
         </div>

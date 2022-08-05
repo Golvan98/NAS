@@ -987,6 +987,9 @@ input:checked + .toggle-bg {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
 .block {
   display: block;
 }
