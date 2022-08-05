@@ -3,6 +3,11 @@
 
 <div class="w-full bg-gray-300 flex-nowrap ">
 
+
+
+    
+
+
     <div class="w-full h-5/6 bg-gray-300 flex justify-center items-center">
 
         <div class="w-4/6 h-auto bg-gray-300 flex-nowrap border border-black mt-4">
@@ -102,8 +107,11 @@
         </div>
 
 
-        <div class="w-full h-1/2 bg-gray-400">
+        <div class="w-full h-1/2 bg-gray-400 flex items-center">
+
+        <div class="w-full  bg-gray-400 ">
             {{$QuestionChoices->links()}} 
+        </div>
         </div>
 
     </div>

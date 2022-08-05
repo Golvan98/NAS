@@ -70,7 +70,7 @@
 
         <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-700 space-y-2">
 
-            <div class="mt-16 flex justify-center"> Home </div>
+           <a href="/home"> <div class="mt-16 flex justify-center"> Home </div> </a>
 
             <div class="flex justify-center"> Surveys </div>
 

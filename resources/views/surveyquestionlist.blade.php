@@ -1,4 +1,4 @@
-<x-newlayout>
+<x-layout>
 
 <div class="w-full bg-gray-300 flex-nowrap">
 
@@ -63,14 +63,14 @@
 
             <div class="w-full h-full flex justify-center items-end bg-transparent">
 
-            <div class="w-4/5 h-1/2 text-white">
-            {{$SurveyQuestions->links()}} 
-            </div>
-            
+              <div class="w-4/5 h-1/2 text-white">
+              {{$SurveyQuestions->links()}} 
+              </div>
+              
             </div>
 
         </div>
             
 </div>
     
-</x-newlayout>
+</x-layout>

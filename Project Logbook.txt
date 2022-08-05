@@ -1843,7 +1843,23 @@ DONE:
 - Home page synced with layout
 - Fixed the double div bug, turns out u have to properly end the @guest loop. no shit lul
 - Migrated layout to original file. There should be no problems now, ur layout is better now
-- View Survey (Result Side) finalized
+- View Survey (Result Side) Accurate UI
+- View Survey Category Accurate UI
+- View Category (Who Answered) Accurate UI
+- View Question Page Accurate UI
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Question Choices Page Accurate Layout (just needs that Hello Counselor Thingy)
+- Page with Pictures for data viz (Pie Charts and Bar Graph)
+- List of Answers by a student
+- View List of Student's Answers
+- Dummy Survey with first year survey questions
+- Pictures Left Side
+- List of Students who answered (Bar Graph pag click kay mu redirect sa lista)
+- List of Students who answered (Lista)
+- View List of Student's Answers
+- View Question Page Proper Pagination
+
 
 
 
