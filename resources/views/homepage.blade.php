@@ -1,7 +1,7 @@
 <x-layout>
 
 
-<div id="body" class="bg-gray-300 w-full "> 
+<div id="body" class="bg-gray-300 w-full"> 
 
 
     @php 
@@ -20,7 +20,8 @@
     </article>
 
 
-    <article class="bg-white flex">    
+    <article class="bg-white flex"
+    >    
 
 
         <article class="ml-4 flex-auto text-black font-bold text-left"> What would you like to do today?

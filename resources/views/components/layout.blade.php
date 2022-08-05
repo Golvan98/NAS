@@ -30,26 +30,26 @@
         </div>
 
         @auth
-        <form method="POST" action="/logout" class="text-white font-bold flex items-center"> 
-            @csrf
-             Welcome Sir {{ auth()->user()->firstname }} ! 
-            
-        <button type="submit" class="bg-red-500 px-2 py-1 m-1 rounded flex items-center"> logout </button> </a> 
+        <form method="POST" action="/logout" class="bg-red-700 flex items-center text-white font-bold mr-2"> 
+                @csrf
+                Welcome Sir {{ auth()->user()->firstname }} ! 
+                
 
-        </form>
+                
+                    <div class="relative inline-block ml-1 flex">
+                        <img class="mb-1 inline-block object-cover w-8 h-8 rounded-full mt-1" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                        <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
+                    </div>
+               
 
-        <div class="bg-red-700 items-center text-white font-bold mr-2">
-                <div class="relative inline-block">
-                    <img class="inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
-                    <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
-                </div>
-        </div>
+                <button type="submit" class="bg-red-500 px-2 py-1 rounded mx-2"> logout </button> 
                 Counselor 
+           
+        </form>
         @endauth
 
         @guest
-            <div class="bg-red-700 flex items-center text-white font-bold mr-2">
-
+        <div class="bg-red-700 flex items-center text-white font-bold mr-2">
 
                 <div class="relative inline-block">
                     <img class="mb-2 inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
@@ -58,11 +58,9 @@
                 
                 <x-loginmodal> login </x-loginmodal> 
                  Counselor
-                
-                @endguest
             
-            </div>
-
+        </div>
+         @endguest
         
 
     </div id="headend">

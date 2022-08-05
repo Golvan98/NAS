@@ -1,4 +1,4 @@
-<x-newlayout>
+<x-layout>
 
 <div id="main" class="flex-nowrap w-full h-full bg-gray-300">
 
@@ -75,4 +75,4 @@
 
 </div>
         
-</x-newlayout>
+</x-layout>
