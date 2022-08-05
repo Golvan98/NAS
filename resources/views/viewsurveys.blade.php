@@ -28,7 +28,7 @@
                                                     
                 <div class="w-auto bg-gray-300"> 
 
-                    <button class="w-32 h-12 bg-gray-400 rounded-xs"> {{$survey->name}} </button> 
+                <a href="/viewsurvey/{{$survey->name}}"> <button class="w-32 h-12 bg-gray-400 rounded-xs"> {{$survey->name}} </button> </a>
             
                 </div>
 

@@ -1,13 +1,13 @@
 <x-layout>
 
 
-<div id="body" class="bg-gray-300 flex-auto"> 
+<div id="body" class="bg-gray-300 w-full"> 
 
     <div class="bg-gray-500 mt-16">     
 
     
-        <article class="bg-gray-300 flex-auto text-black font-bold py-3"> &nbsp &nbsp &nbsp  Good Evening, Counselor!
-            <div class="">    </div>
+        <article class="bg-gray-300 flex-auto text-black font-bold py-3"> &nbsp &nbsp &nbsp &nbsp  &nbsp    Select a Category
+           
             <div class="mt-2 border border-red-500"></div>
         
         </article>
@@ -15,49 +15,40 @@
     </div>
 
 
-    <article class="bg-white">
-      
-    <div class="bg-gray-100 border border-black mt-2 ">
-        <table class="mx-auto mt-2">
-              
+    <div class="flex-nowrap w-full bg-gray-300 h-auto border border-black">
+
+        <div class="w-full bg-gray-300 space-x-12 mt-2 flex justify-between items-center h-auto px-24 py-8">
+
+
+            <div class="w-full flex justify-between items-center h-auto bg-green-300">  
+
                
-                
-                <tr class="space-x-4">
+                                                    
+                <div class="w-full flex flex-wrap justify-between bg-gray-300 "> 
 
-                              
-                @foreach($questioncategories as $questioncategory)  
-                               
+                    @foreach($questioncategories  as $questioncategory)     
                     
-                                 
-                <th> <a href="/viewsurveyresult/{{$questioncategory}}"> <button  class="w-48 h-12 bg-gray-300 ml-2 mr-12 rounded-xl border border-black mt-2"> {{$questioncategory}}	</th> </a>
-                @if($loop->iteration %4 ==0)
-                <tr>
-                    @else
-                    
+                    <div class="ml-4 mt-4"> <a href="/viewsurveyresult/{{$questioncategory}}">  
+                        <button class="w-48 h-12 bg-gray-400 rounded-xl"> {{$questioncategory}}</button> </a>
+                    </div>
 
-                    @endif
-                                        
-                    
-                @endforeach
+                    @endforeach
+                </div>
+
+              
             
-       
+            </div>
 
-                </tr>
 
-        </table>
-        <br>
-        <a href="{{ url()->previous() }}"> <button class="ml-8 w-24 h-6 bg-green-500 text-white font-bold mb-2 "> Get Back </button>
+        </div>
+        
+        <div class="w-full flex justify-start h-auto bg-gray-300">  <a href="{{ url()->previous() }}"> <button class="text-center bg-green-500 px-9 py-1 text-white font-bold ml-8 mb-2 "> Back </button> </a> </div>
+
     </div>
-
-    </article>
 
     
 
 </div>
-
-
-
-
 
 
 

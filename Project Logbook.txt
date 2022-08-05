@@ -1837,10 +1837,16 @@ IN PROGRESS:
 - Layout for Question View
 - Found a bug where if logged in, the main div doubles
 - View All Surveys Result Landing Page
+- View Survey's Category Landing Page
 
 DONE:
 - Home page synced with layout
 - Fixed the double div bug, turns out u have to properly end the @guest loop. no shit lul
 - Migrated layout to original file. There should be no problems now, ur layout is better now
+- View Survey (Result Side) finalized
 
+
+
+
+NOTE!!!: Flex Flex-wrap does auto margining for table contents. It might be the thing you need to properly marginize those choices
 --------------------------------------------------------------------------------------------------------
