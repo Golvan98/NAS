@@ -1,16 +1,29 @@
 <x-layout>
     <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
-<div class="w-full bg-gray-300 flex-nowrap ">
+<div class="w-full bg-transparent flex-nowrap ">
 
 
 
-    
+    <div class="w-full h-1/6 bg-white flex justify-center items-end mb-4 ">
+
+        <div class="w-full flex-nowrap ">
+            
+            <div class="w-full flex justify-center items-end"> 
+                <div class="w-4/5 text-lg"> <strong> Good Evening, Counselor! </strong> </div>
+            </div>
+
+            <div class="w-full flex justify-center"> 
+                <div class="w-full h-0.5 bg-red-500 mx-2">  </div>
+            </div>
+        </div>
+
+    </div>
 
 
-    <div class="w-full h-5/6 bg-gray-300 flex justify-center items-center">
+    <div class="w-full h-auto bg-white flex justify-center items-center">
 
-        <div class="w-4/6 h-auto bg-gray-300 flex-nowrap border border-black mt-4">
+        <div class="w-4/6 h-auto bg-gray-300 flex-nowrap border border-black mb-2">
 
             <div class="w-full py-4  flex justify-center mt-4">
                 <strong>   <div>     {{$SurveyQuestion->question }} DIV TEST!</div> </strong>
@@ -67,13 +80,13 @@
 
         <div class="w-full h-1/2 bg-gray-300 flex justify-center items-center"> 
 
-        <div class="w-5/6 h-full bg-gray-300 flex justify-between items-center mb-6">
+        <div class="w-5/6 h-full bg-transparent flex justify-between items-center">
             
                     <div> <a href="/questionlist/{{$SurveyId}}"> <button class="px-6 py-1 ml-2 rounded-xl bg-red-300"> Back <button> </a> </div>
 
                     <div> 
                      
-                        <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-8 py-2 rounded-xl ml-2 mb-2 mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="create-modal">
+                        <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-8 py-1 rounded-xl ml-2 mr-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="create-modal">
                         Add Question Choice
                         </button>
 

@@ -1866,3 +1866,9 @@ To Do Next Session (for documentation, important stuff and ordered in descending
 
 NOTE!!!: Flex Flex-wrap does auto margining for table contents. It might be the thing you need to properly marginize those choices
 --------------------------------------------------------------------------------------------------------
+
+Aug 06
+
+IN PROGRESS:
+- Question Choices Page Accurate Layout (just needs that Hello Counselor Thingy)
+

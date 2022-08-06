@@ -12,7 +12,7 @@
             </div>
 
             <div class="w-full flex justify-center"> 
-                <div class="w-5/6 h-0.5 bg-red-500">  </div>
+                <div class="w-full h-0.5 bg-red-500 mx-2">  </div>
             </div>
        </div>
        
