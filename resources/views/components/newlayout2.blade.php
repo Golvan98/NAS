@@ -70,6 +70,8 @@
 
         <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-900 space-y-2 items-end">
 
+           
+
         <a href="/home"> 
             <div class="mt-4 h-1/6 flex justify-center bg-transparent">
 
@@ -78,29 +80,19 @@
             </div> 
         </a>
 
-            <div class="flex justify-center h-1/6"> 
-             <img class="object-fill w-4/5 h-4/5" src="{{ asset('storage/manageresult2.png') }}" alt="description of myimage">
+            <div class="flex justify-center h-2/6"> 
+             <img class="object-fill w-4/5 h-4/5" src="{{ asset('storage/manage.png') }}" alt="description of myimage">
 
             </div>
 
-            <div class="flex justify-center">  question category here </div>
+        <a href="/home">    
+            <div class="flex h-1/6 text-yellow-300 font-bold justify-center">  </div>
             
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
+             <div class="flex h-2/6 justify-center"> 
+
+            <img class="object-fill w-4/5 h-3/5" src="{{ asset('storage/home.png') }}" alt="description of myimage">
+            </div>
+        </a>
 
         </div>
 

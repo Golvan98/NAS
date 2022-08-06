@@ -1872,8 +1872,9 @@ Aug 06
 IN PROGRESS:
 - Question Choices Page Accurate Layout (just needs that Hello Counselor Thingy)
 - Survey Question Accurate UI
-
+- Pictures Left Side
 
 DONE:
 - Survey Question Accurate UI
 - Question Choices Accurate UI
+- Pictures Left Side Layout ( Awaiting for Justin's edited pics)
