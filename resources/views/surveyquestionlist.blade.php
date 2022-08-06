@@ -1,10 +1,10 @@
 <x-layout>
 
-<div class="w-full bg-gray-300 flex-nowrap">
+<div class="w-full bg-transparent flex-nowrap">
 
 
 
-<div class="w-full bg-white flex h-1/6 justify-center items-end  ">
+<div class="w-full bg-transparent flex h-1/6 justify-center items-end  ">
         
     <div class="w-full flex-nowrap ">
         
@@ -13,7 +13,7 @@
             </div>
 
             <div class="w-full flex justify-center"> 
-                <div class="w-5/6 h-0.5 bg-red-500">  </div>
+                <div class="w-full mx-4 h-0.5 bg-red-500">  </div>
             </div>
        </div>
        
@@ -21,9 +21,9 @@
     </div>
 
 
-  <div class="w-full bg-gray-300 flex justify-center items-center h-4/6">
+  <div class="w-full bg-transparent flex justify-center items-center h-4/6">
 
-    <div class="w-4/5  bg-white flex-nowrap justify-center h-full  border border-black mt-4">
+    <div class="w-4/5 h-auto bg-white flex-nowrap justify-center  border border-black mt-4">
       
         <div class="w-full bg-gray-300 h-1/6 text-white flex justify-center items-center"> 
           
