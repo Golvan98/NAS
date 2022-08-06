@@ -1,4 +1,4 @@
-<x-layout>
+<x-newlayout>
 
 
 <div id="body" class="bg-gray-300 w-full"> 
@@ -24,9 +24,9 @@
     >    
 
 
-        <article class="ml-4 flex-auto text-black font-bold text-left"> What would you like to do today?
+        <article class="ml-4 w-1/2 flex-auto text-black font-bold text-left "> What would you like to do today?
             
-            <div class="flex-auto text-center"> 
+            <div class="flex-auto text-center "> 
             <a href="/surveylist"> 
 
                     <section class="hero container mx-auto flex justify-center">
@@ -41,9 +41,9 @@
 
     
     
-        <article class="content-center text-black flex flex-auto font-bold">
+        <article class="content-center w-1/2 text-black flex flex-auto font-bold ">
 
-            <article class="bg-white flex-auto text-center font-bold"> <br>
+            <article class="bg-white w-full flex justify-center items-center text-center font-bold"> <br>
                  <div class="text-center"> 
                              
                         <a href="viewsurveys"> 
@@ -72,4 +72,4 @@
 
 
 
-</x-layout>
+</x-newlayout>
