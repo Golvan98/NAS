@@ -45,6 +45,10 @@ Route::get('/bargraph', function() {
     return view('dataviz2');
 });
 
+Route::get('/studentanswerlist', function(){
+    return view('studentanswerlist');
+});
+
 
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 

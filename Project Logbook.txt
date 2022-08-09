@@ -1902,3 +1902,16 @@ IN PROGRESS:
 
 DONE:
 - Filling Template for Data Viz
+- Student Answer List ( not dynamic yet)
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Fill Pictures Left Side After Gerard Sends
+- List of Students in a college with view button to view List of Student's Answers 
+- Dummy Survey with first year survey questions
+- Fill Pictures Left Side After Justin Sends
+- List of Students who answered (Bar Graph pag click kay mu redirect sa lista)
+- List of Students who answered (Lista)
+- View List of Student's Answers
+- View Question Page Proper Pagination
+
+

@@ -45,7 +45,7 @@
                 </tr>
 
                 <tr>
-                    <th class="text-left border border-black px-2"> BS Computer Science </th>
+                    <a href="/studentlist"> <th class="text-left border border-black px-2"> BS Computer Science </th> </a>
 
                         <th class="border border-black px-2"> {{$BSCScount}} </th>
                 </tr>
