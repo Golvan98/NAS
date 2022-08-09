@@ -45,6 +45,10 @@ Route::get('/bargraph', function() {
     return view('dataviz2');
 });
 
+Route::get('/studentlist', function() {
+    return view('studentlist');
+});
+
 Route::get('/studentanswerlist', function(){
     return view('studentanswerlist');
 });
