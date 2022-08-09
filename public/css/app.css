@@ -887,6 +887,9 @@ input:checked + .toggle-bg {
 .z-40 {
   z-index: 40;
 }
+.m-12 {
+  margin: 3rem;
+}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -992,6 +995,18 @@ input:checked + .toggle-bg {
 }
 .ml-6 {
   margin-left: 1.5rem;
+}
+.ml-96 {
+  margin-left: 24rem;
+}
+.mr-3 {
+  margin-right: 0.75rem;
+}
+.mr-2\.5 {
+  margin-right: 0.625rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
 }
 .block {
   display: block;
@@ -1360,6 +1375,10 @@ input:checked + .toggle-bg {
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 .bg-gray-300 {
   --tw-bg-opacity: 1;

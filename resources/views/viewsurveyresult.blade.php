@@ -35,7 +35,7 @@
         @endphp 
 
 
-        <div>
+        <div class="w-full h-full">
             <table class="mx-auto items-center text-center justify-center">
 
                 <tr>
@@ -73,7 +73,25 @@
             </table>
             <br>
             <br>
-            <a href="{{ url()->previous() }}"> <button class="bg-green-500 rounded-bl text-white ml-8 px-2"> Get Back </button> </a>
+
+            <div class="mr-2 flex justify-between"> 
+
+                <div>
+                  <a href="{{ url()->previous() }}">
+                    <button class="text-white place-content-end place-items-end text-end justify-end w-24 h-8 bg-green-400 ml-2">
+                        Back
+                    </button>
+                  </a>
+                </div>
+
+                <div>
+                  <a href="/piechart">  <button class="text-white place-content-end place-items-end text-end justify-end w-24 h-8 bg-blue-400 mr-4">
+                        View Graph
+                    </button>
+                  </a>
+                </div>
+
+            </div>
         </div>
     </div>
 

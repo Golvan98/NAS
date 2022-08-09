@@ -29,6 +29,21 @@ use App\Models\Student;
 */
 
 
+Route::get('/', function () {
+    return view('originlayout');
+});
+
+Route::get('/home', function(){
+    return view('/homepage');
+})->name('balay');
+
+Route::get('/piechart', function() {
+    return view('dataviz1');
+});
+
+Route::get('/bargraph', function() {
+    return view('dataviz2');
+});
 
 
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
@@ -81,14 +96,6 @@ Route::post('/createmultiplechoiceanswer/{survey}/{SurveyQuestion}', [QuestionCh
 
 Route::get('/surveyform/{survey}', [SurveyQuestionController::class, 'surveyform']);
 
-
-Route::get('/', function () {
-    return view('originlayout');
-});
-
-Route::get('/home', function(){
-    return view('/homepage');
-})->name('balay');
 
 
 Route::get('/login', [StudentController::class, 'testlogin']);
