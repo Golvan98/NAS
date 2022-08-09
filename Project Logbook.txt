@@ -1878,3 +1878,26 @@ DONE:
 - Survey Question Accurate UI
 - Question Choices Accurate UI
 - Pictures Left Side Layout ( Awaiting for Justin's edited pics)
+- Template for Data Viz (Pie Chart and Bar Graph)
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Fill Pictures Left Side After Justin Sends
+- Fill the template for data viz (Pie Charts and Bar Graph)
+- List of Answers by a student
+- View List of Student's Answers
+- Dummy Survey with first year survey questions
+- Fill Pictures Left Side After Justin Sends
+- List of Students who answered (Bar Graph pag click kay mu redirect sa lista)
+- List of Students who answered (Lista)
+- View List of Student's Answers
+- View Question Page Proper Pagination
+
+--------------------------------------------------------------------------------------------------------
+
+AUG 09
+
+IN PROGRESS:
+- Filling the template for data viz (Pie Charts and Bar Graph)
+
+DONE:
+- Filling Template for Data Viz

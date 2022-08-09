@@ -3,7 +3,7 @@
 <div id="main" class="flex-nowrap w-full h-full bg-gray-300">
 
 
-    <div class="w-full bg-white flex h-1/6 justify-center items-end  ">
+    <div  class="w-full bg-white flex h-1/6 justify-center items-end  ">
         
        <div class="w-full flex-nowrap ">
         
@@ -22,29 +22,29 @@
     
     
     
-    <div class="w-full bg-gray-300 flex h-full justify-center items-center h-4/6">
+    <div id="main box" class="w-full bg-gray-300 flex h-full justify-center items-center h-4/6">
 
 
         <div class="flex w-full h-full bg-gray-300 border border-black mt-8">
 
-            <div class="w-1/6 h-full flex justify-center bg-gray-300 items-center border border-red-500 "> 
+            <div id="first box" class="w-1/6 h-full flex justify-start bg-gray-300 items-end border border-red-500 "> 
             
-                <div> <strong> Good Day, Counselor! </strong> </div>
+                <div> <button class=" ml-6 mb-4 bg-green-400 text-white font-bold py-1 px-10">  Back  </div>
 
             </div>
 
-            <div class="w-4/6 h-full flex justify-center bg-gray-300 items-center border border-red-500 "> 
+            <div id="second box" class="w-4/6 h-full flex justify-center bg-gray-300 items-center border border-red-500 "> 
             
                 <div> <strong>   <img class="object-fill w-full h-full" src="{{ asset('storage/dummypie.png') }}" alt="description of myimage"> </strong> </div>
 
             </div>
 
-            <div class="w-1/6 h-full flex-nowrap justify-center bg-gray-300 items-center border border-red-500 "> 
+            <div id ="third box" class="w-1/6 h-full flex-nowrap  bg-gray-300  border border-red-500 "> 
             
-                <div> <strong> Print Button Here </strong> </div>
-
-                <div class="mt-48"> <strong> Next Picture for bar/pie chart here</strong> </div>
-
+                <div class="h-1/6"> <button class="border border-black ml-12 mt-4 bg-gray-700 text-white font-bold py-1 px-10">  Print  </button> </div>                
+                <div class="h-3/6 ">   </div>
+                <div class="h-2/6  ml-2 mr-2"> <img class="object-fill w-full h-full" src="{{ asset('storage/dummypie.png') }}" alt="description of myimage"> </div>
+                    
             </div>
            
         
