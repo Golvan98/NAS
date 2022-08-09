@@ -1898,6 +1898,7 @@ AUG 09
 
 IN PROGRESS:
 - Filling the template for data viz (Pie Charts and Bar Graph)
+- View List of Student's Answers
 
 DONE:
 - Filling Template for Data Viz
