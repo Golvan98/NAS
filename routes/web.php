@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\SurveyQuestionController;
 use App\Http\Controllers\SurveyResponsesController;
+use App\Models\Student;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\QuestionChoiceController;
 use App\Models\Survey;
@@ -14,7 +15,7 @@ use App\Models\QuestionChoice;
 use App\Models\AnswerChoice;
 use App\Models\SurveyResponseAnswer;
 use App\Models\SurveyResponses;
-use App\Models\Student;
+
 
 
 /*
@@ -45,14 +46,11 @@ Route::get('/bargraph', function() {
     return view('dataviz2');
 });
 
-Route::get('/studentlist', function() {
-    return view('studentlist');
-});
-
 Route::get('/studentanswerlist', function(){
     return view('studentanswerlist');
 });
 
+Route::get('/studentlist' , [StudentController::class, 'studentlist']);
 
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 

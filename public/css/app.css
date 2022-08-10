@@ -1074,6 +1074,9 @@ input:checked + .toggle-bg {
 .h-5 {
   height: 1.25rem;
 }
+.h-2\/3 {
+  height: 66.666667%;
+}
 .h-12 {
   height: 3rem;
 }
@@ -1100,9 +1103,6 @@ input:checked + .toggle-bg {
 }
 .h-4 {
   height: 1rem;
-}
-.h-2\/3 {
-  height: 66.666667%;
 }
 .w-full {
   width: 100%;
@@ -1486,6 +1486,10 @@ input:checked + .toggle-bg {
 }
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;

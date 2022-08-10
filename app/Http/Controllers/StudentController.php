@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use illuminate\Support\Facades\Auth;
 use illuminate\Contracts\Auth\user as Authenticatable;
 use Illuminate\Http\Request;
+use App\Models\Student;
+
 
 
 class StudentController extends Controller
@@ -37,5 +39,14 @@ class StudentController extends Controller
     {
         auth()->logout();
         return redirect('home')->with('success', 'Logged Out Successfully');
+    }
+
+    public function studentlist()
+    {
+        $students = Student::where('id', '<>', 0 )->paginate(15);
+        
+        
+        return view('studentlist')->with(['students' => $students]);
+       
     }
 }

@@ -27,7 +27,7 @@
 
         <div class="flex w-full h-full bg-gray-300 border border-black mt-8">
 
-            <div class="w-1/6 h-full flex justify-start items-end border border-red-500"> 
+            <div class="w-1/6 h-full flex justify-start items-end"> 
             
                 <div> 
 
@@ -37,21 +37,26 @@
 
             </div>
 
-            <div class="w-4/6 h-full bg-gray-300 items-center border border-red-500 "> 
+            <div class="w-4/6 h-full bg-gray-300 items-center"> 
             
                 <div class="flex-nowrap w-full h-full bg-gray-300"> 
         
                    <div class="flex-nowrap h-1/6"> 
 
-                        <div class="flex justify-center items-center h-2/3 bg-red-300 text-lg font-bold"> School of Computer Studies </div>
-                        <div class="flex justify-center h-1/3 bg-red-300"> Motivation </div>
+                        <div class="flex justify-center items-center h-2/3 text-lg font-bold"> School of Computer Studies </div>
+                        <div class="flex justify-center h-1/3 items-start text-lg"> Motivation </div>
 
                    </div>
 
                    <div class="flex-nowrap items-start h-5/6"> 
 
-                    <div class="justify-center"> 1 </div>
-                    <div class="justify-center"> 2 </div>
+                        <div class="flex justify-center text-lg font-bold"> BS Information Systems </div>
+                        
+                        @foreach($students as $student)
+                        
+                            <div class="flex justify-center"> 2016-0001 | {{$student->firstname}} {{$student->lastname}}</div>
+                        
+                        @endforeach
 
                     </div>
 
@@ -59,11 +64,11 @@
                 
             </div>
 
-            <div class="w-1/6 h-full flex-nowrap justify-center bg-gray-300 items-center border border-red-500 "> 
+            <div class="w-1/6 h-full flex-nowrap justify-end bg-gray-300 items-center"> 
             
-                <div> <strong> Print Button Here </strong> </div>
+                <div class="flex justify-center"> <button class="bg-gray-800 text-white font-bold px-8 mt-4 py-1 ml-12"> Print <button>  </div>
 
-                <div class="mt-48"> <strong> </strong> </div>
+                
 
             </div>
            

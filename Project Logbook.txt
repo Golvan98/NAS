@@ -1919,5 +1919,5 @@ To Do Next Session (for documentation, important stuff and ordered in descending
 AUG 10
 
 IN PROGRESS:
-- Student List
+- Student List Template
 - 
