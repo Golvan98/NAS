@@ -35,7 +35,7 @@
 
             <div id="second box" class="mt-1 mb-2 border border-gray-200 w-4/6 h-full flex justify-center bg-transparent items-center "> 
             
-                <div> <strong>   <img class="object-fill w-full h-full" src="{{ asset('storage/bargraph.png') }}" alt="description of myimage"> </strong> </div>
+                <div> <a href="/studentlist"> <img class="object-fill w-full h-full" src="{{ asset('storage/bargraph.png') }}" alt="description of myimage"> </a> </div>
 
             </div>
 

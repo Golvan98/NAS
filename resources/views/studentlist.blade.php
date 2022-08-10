@@ -22,24 +22,24 @@
     
     
     
-    <div class="w-full bg-gray-300 h-full flex justify-center items-center h-4/6">
+    <div class="w-full bg-white h-full flex justify-center items-center h-4/6">
 
 
-        <div class="flex w-full h-full bg-gray-300 border border-black mt-8">
+        <div class="flex w-full h-full bg-white border border-black mt-8">
 
             <div class="w-1/6 h-full flex justify-start items-end"> 
             
                 <div> 
 
-                    <button class="bg-green-400 text-white font-bold px-10 py-1 ml-4 mb-2"> Back </button> 
+                    <a href="{{ url()->previous() }}"> <button class="bg-green-400 text-white font-bold px-10 py-1 ml-4 mb-2"> Back </button> </a>
 
                 </div>
 
             </div>
 
-            <div class="w-4/6 h-full bg-gray-300 items-center"> 
+            <div class="w-4/6 h-full bg-white items-center"> 
             
-                <div class="flex-nowrap w-full h-full bg-gray-300"> 
+                <div class="flex-nowrap w-full h-full bg-white"> 
         
                    <div class="flex-nowrap h-1/6"> 
 
@@ -54,7 +54,7 @@
                         
                         @foreach($students as $student)
                         
-                            <div class="flex justify-center"> 2016-0001 | {{$student->firstname}} {{$student->lastname}}</div>
+                             <div class="flex justify-center"> <a href="/studentanswerlist"> <button>  2016-0001 | {{$student->firstname}} {{$student->lastname}} </button> </a> </div>
                         
                         @endforeach
 
@@ -64,7 +64,7 @@
                 
             </div>
 
-            <div class="w-1/6 h-full flex-nowrap justify-end bg-gray-300 items-center"> 
+            <div class="w-1/6 h-full flex-nowrap justify-end bg-white items-center"> 
             
                 <div class="flex justify-center"> <button class="bg-gray-800 text-white font-bold px-8 mt-4 py-1 ml-12"> Print <button>  </div>
 
