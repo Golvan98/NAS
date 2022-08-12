@@ -16,14 +16,37 @@
                 
                         <div id="second container" class="flex w-full h-full bg-white items-center justify-center"> 
 
-                         <div id="third container" class="w-full h-auto flex-nowrap mx-4 bg-white border border-black">
+                         <div id="third container" class="w-full h-auto flex-nowrap mx-4 border border-black bg-gray-300">
                                
                           
-                                <div class="w-full bg-gray-300 h-1/6 text-white flex justify-center items-center"> 
+                                <div class="w-full bg-gray-300 h-1/6 text-white flex justify-start items-center "> 
           
-                                 <div class="text-black text-lg"> <strong> yawa</strong> </div>
+                                 <div class="text-black text-lg ml-12 mt-3"> <strong> Lores Ipsum Question Here Rex Immortalis</strong> </div>
 
                                 </div>
+
+                
+                                <div class="w-full flex flex-wrap bg-gray-300 mt-4 "> 
+
+                                @foreach($choices as $choice)     
+
+                                <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
+
+                                @endforeach
+                                </div>
+
+
+
+                                <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-12 ">
+
+                                        <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-xl"> Back </button> </a>  </div> 
+
+                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+
+                                        <div class="w-1/3 flex justify-end mr-2"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <button type="submit" class="mb-2 px-8 py-1 bg-green-500 rounded-xl"> Edit Choices </button> </div> 
+
+                                </div>
+
                          
 
 

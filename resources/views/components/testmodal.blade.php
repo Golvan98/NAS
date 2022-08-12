@@ -15,9 +15,9 @@ $types = $alltypes->pluck('type');
 
 
 
-<div>  
+<div class="w-1/3 flex justify-center">  
 
-    <button class="px-16 py-2 bg-blue-500 rounded-xs ml-2 mb-2 border text-white" type="button" data-modal-toggle="{{ $SurveyQuestionId }}"> Edit Question </button> 
+    <button class="px-16 py-1 bg-blue-500 rounded-xs ml-2 mb-2 border text-white" type="button" data-modal-toggle="{{ $SurveyQuestionId }}"> Edit Question </button> 
                     
 </div>
                 

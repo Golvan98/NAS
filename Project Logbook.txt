@@ -1947,6 +1947,21 @@ IN PROGRESS:
 
 DONE:
 - view question template
+- Proper Form View Auto Flex-Wrap - Multiple Choice
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Proper Form View Auto Flex-Wrap - Likert Scale
+- Proper Form View Auto Flex-Wrap - Open Ended
+- Proper Form View Auto Flex-Wrap - Rating Scale
+- Proper Form View Auto Flex-Wrap - Matrix Question
+- Fill Pictures Left Side After Gerard Sends
+- View Question Page Proper Pagination
+- Proper Form View Auto Flex-Wrap - Likert Scale
+- Proper Form View Auto Flex-Wrap - Open Ended
+- Proper Form View Auto Flex-Wrap - Rating Scale
+- Proper Form View Auto Flex-Wrap - Matrix Question
+- Dummy Survey with first year survey questions
+- Data Vizualiation Dynamic
 
 NOTE: Margin X only works on flex-nowrap divs for some reason idk
 
