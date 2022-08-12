@@ -1930,7 +1930,24 @@ DONE:
 To Do Next Session (for documentation, important stuff and ordered in descending priority):
 - Fill Pictures Left Side After Gerard Sends
 - Dummy Survey with first year survey questions
-- Fill Pictures Left Side After Justin Sends
 - View Question Page Proper Pagination
 
 ^ Dynamic it all, with data viz, Aug 15-20! GL
+
+--------------------------------------------------------------------------------------------------------
+
+AUG 12
+
+IN PROGRESS:
+- View Question Page Proper Pagination and Form - multiple choice
+- View Question Page Proper Pagination and Form - Likert scale
+- View Question Page Proper Pagination and Form - open ended
+- View Question Page Proper Pagination and Form - rating scale
+- View Question Page Proper Pagination and Form - matrix question
+
+DONE:
+- view question template
+
+NOTE: Margin X only works on flex-nowrap divs for some reason idk
+
+

@@ -6,7 +6,7 @@
 
 <div class="w-full bg-transparent flex h-1/6 justify-center items-end  ">
         
-    <div class="w-full flex-nowrap ">
+    <div class="w-full flex-nowrap">
         
             <div class="w-full flex justify-center"> 
                 <div class="w-4/5 text-lg"> <strong> Good Evening, Counselor! </strong> </div>
@@ -27,12 +27,12 @@
       
         <div class="w-full bg-gray-300 h-1/6 text-white flex justify-center items-center"> 
           
-          <div class="text-black text-lg"> <strong> {{$survey->name}}  Main Link </strong> </div>
+          <div class="text-black text-lg"> <strong> {{$survey->name}} </strong> </div>
 
         </div>
 
         @foreach($SurveyQuestions as $SurveyQuestion)
-        <div class="w-full bg-gray-300 text-white h-1/6 flex justify-between items-center space-y-8"> 
+        <div class="w-full bg-gray-300 text-white h-1/6 flex justify-between items-center space-y-6"> 
           
             <div class="w-1/3 truncate hover:text-clip text-center mx-4 mt-4 py-1 bg-gray-300 rounded-xl"> <button class="bg-gray-300 text-black px-4 py-1 rounded-xl ml-4"> <strong> {{$SurveyQuestion->question}} </strong> </button> </div>
 
