@@ -68,38 +68,34 @@
     <div id="allcontent" class="flex w-full h-5/6 bg-white">
 
 
-        <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-900 space-y-2 items-end">
+        <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-900 space-y-1 items-end">
 
-        <a href="/home"> 
-            <div class="mt-4 h-1/6 flex justify-center bg-transparent">
+            <a href="/viewsurveys"> 
+            <div class="mt-4 h-1/6 flex justify-center bg-transparent mt-9">
 
-             <img class="object-fill h-full w-4-5" src="{{ asset('storage/newhome.png') }}" alt="description of myimage">
+             <img class=" object-fill h-full w-4/6" src="{{ asset('storage/newnas.png') }}" alt="description of myimage"><br>
+            
 
             </div> 
-        </a>
+            </a>
 
-            <div class="flex justify-center h-1/6"> 
-             <img class="object-fill w-4/5 h-4/5" src="{{ asset('storage/newnas.png') }}" alt="description of myimage">
+            <div class="flex justify-center text-sm">  Needs Assessment Survey </div>
+            
+            <a href="/surveylist">
+            <div class="flex justify-center h-1/6 mt-12"> 
+
+             <img class="object-fill" src="{{ asset('storage/qanda.png') }}" alt="description of myimage">
 
             </div>
+            </a>
 
-            <div class="flex justify-center">  question category here </div>
             
-            <div class="flex justify-center">  question category here </div>
+            <div class="flex justify-center text-sm">  Manage Questionnaires </div>
+
             
-            <div class="flex justify-center">  question category here </div>
+          
             
-            <div class="flex justify-center">  question category here </div>
             
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
-            
-            <div class="flex justify-center">  question category here </div>
             
 
         </div>

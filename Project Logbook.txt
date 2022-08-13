@@ -1978,6 +1978,7 @@ DONE
 - View Question Page Proper Pagination and Form - open ended
 - View Question Page Proper Pagination and Form - rating scale
 - View Question Page Proper Pagination and Form - matrix question
+- Fill Pictures Left Side After Gerard Sends
 
 
 

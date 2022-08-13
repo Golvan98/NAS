@@ -1,4 +1,4 @@
-<x-newlayout>
+<x-homelayout>
 
 
 <div id="body" class="bg-gray-300 w-full"> 
@@ -30,7 +30,7 @@
             <a href="/surveylist"> 
 
                     <section class="hero container mx-auto flex justify-center">
-                        <img src="{{ asset('storage/manage.png') }}" alt="description of myimage"> 
+                        <img src="{{ asset('storage/manage.png') }}" alt="description of myimage">  
                     </section>
             </a>
              </div>
@@ -72,4 +72,4 @@
 
 
 
-</x-newlayout>
+</x-homelayout>
