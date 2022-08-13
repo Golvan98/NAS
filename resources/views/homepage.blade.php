@@ -1,4 +1,4 @@
-<x-homelayout>
+<x-adminhomelayout>
 
 
 <div id="body" class="bg-gray-300 w-full"> 
@@ -72,4 +72,4 @@
 
 
 
-</x-homelayout>
+</x-adminhomelayout>

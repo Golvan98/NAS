@@ -1,4 +1,4 @@
-<x-layout>
+<x-categoryresultlayout>
 
 
 <div id="body" class="bg-gray-300 flex-nowrap w-full"> 
@@ -114,4 +114,4 @@
 
 
 
-</x-layout>
+</x-categoryresultlayout>

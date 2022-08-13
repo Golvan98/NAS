@@ -1,4 +1,4 @@
-<x-layout>
+<x-resultlayout>
 
 
 
@@ -60,4 +60,4 @@
 
 
 
-</x-layout>
+</x-resultlayout>

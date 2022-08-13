@@ -1,4 +1,4 @@
-<x-layout>
+<x-resultlayout>
 
 
 <div id="body" class="bg-gray-300 w-full"> 
@@ -53,4 +53,4 @@
 
 
 
-</x-layout>
+</x-resultlayout>
