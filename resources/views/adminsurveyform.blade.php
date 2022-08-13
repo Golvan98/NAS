@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
         
 
     @if($SurveyQuestion->type =='multiplechoice')
@@ -321,4 +321,4 @@
       
                        
     
-</x-layout>
+</x-adminhomelayout>

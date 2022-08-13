@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
     <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
 <div class="w-full bg-transparent flex-nowrap ">
@@ -134,4 +134,4 @@
    
 </div>
 
-</x-layout>
+</x-adminhomelayout>

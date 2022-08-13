@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
 
 <div class="w-full bg-transparent flex-nowrap">
 
@@ -73,4 +73,4 @@
             
 </div>
     
-</x-layout>
+</x-adminhomelayout>

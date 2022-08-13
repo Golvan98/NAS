@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
 
 <form method="POST" action="/updatequestion/{{$surveyquestion->id}}" class="px-6 py-4 rounded-xl text-black">
                             @csrf
@@ -26,4 +26,4 @@
                           
 </form>
 
-</x-layout>
+</x-adminhomelayout>

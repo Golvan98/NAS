@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
 
 
 
@@ -31,4 +31,4 @@
 
 
 
-</x-layout>
+</x-adminhomelayout>

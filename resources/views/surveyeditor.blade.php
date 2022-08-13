@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
 
 
 <form method="POST" action="/updatesurvey/{{$survey->id}}" class="px-6 py-4 rounded-xl text-black">
@@ -24,4 +24,4 @@
 </form>
 
 
-</x-layout>
+</x-adminhomelayout>

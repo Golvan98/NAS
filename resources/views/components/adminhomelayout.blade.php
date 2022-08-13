@@ -37,7 +37,7 @@
 
                 
                     <div class="relative inline-block ml-1 flex">
-                        <img class="mb-1 inline-block object-cover w-8 h-8 rounded-full mt-1" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                        <img class="mb-1 inline-block object-cover w-8 h-8 rounded-full mt-1" src="https://pbs.twimg.com/profile_images/1554275654157598721/hssHJJgU_400x400.jpg" alt="Profile image"/>
                         <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
                     </div>
                
@@ -70,6 +70,19 @@
 
         <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-900 space-y-1 items-end">
 
+            <a href="/home"> 
+            <div class="mt-4 h-1/6 flex justify-center bg-transparent mt-4">
+
+             <img class=" object-fill h-4/5 w-4/6" src="{{ asset('storage/newhome.png') }}" alt="description of myimage"><br>
+            
+
+            </div> 
+            </a>
+
+            <div class="flex justify-center text-sm">  Home </div>
+
+
+
             <a href="/viewsurveys"> 
             <div class="mt-4 h-1/6 flex justify-center bg-transparent mt-9">
 
@@ -90,7 +103,7 @@
             </a>
 
             
-            <div class="flex justify-center text-sm">  Manage Questionnaires </div>
+            <div class="flex justify-center text-sm">  Manage Results </div>
 
             
           

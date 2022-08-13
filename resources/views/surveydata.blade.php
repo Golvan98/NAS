@@ -1,4 +1,4 @@
-<x-layout>
+<x-adminhomelayout>
 
 
 <div id="body" class="bg-gray-300 flex-auto"> 
@@ -90,4 +90,4 @@
 
 
 
-</x-layout>
+</x-adminhomelayout>
