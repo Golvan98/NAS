@@ -73,13 +73,13 @@
         <a href="/home"> 
             <div class="mt-4 h-1/6 flex justify-center bg-transparent">
 
-             <img class="object-fill h-full w-4-5" src="{{ asset('storage/nas2.png') }}" alt="description of myimage">
+             <img class="object-fill h-full w-4-5" src="{{ asset('storage/newhome.png') }}" alt="description of myimage">
 
             </div> 
         </a>
 
             <div class="flex justify-center h-1/6"> 
-             <img class="object-fill w-4/5 h-4/5" src="{{ asset('storage/manageresult2.png') }}" alt="description of myimage">
+             <img class="object-fill w-4/5 h-4/5" src="{{ asset('storage/newnas.png') }}" alt="description of myimage">
 
             </div>
 
