@@ -33,9 +33,9 @@
 
             </div>
 
-            <div id="second box" class="border border-gray-200 mb-12 w-4/6 h-full flex justify-center bg-transparent items-center "> 
+            <div id="second box" class="mb-12 w-4/6 h-full flex justify-center bg-transparent items-center "> 
             
-                <div> <a href="/studentlist">  <img class="object-fill w-full h-full" src="{{ asset('storage/dummypie.png') }}" alt="description of myimage"> </a> </div>
+                <div> <a href="/studentlist">  <img class="object-fill w-full h-full  border border-gray-300 py-12 px-48" src="{{ asset('storage/dummypie.png') }}" alt="description of myimage"> </a> </div>
 
             </div>
 

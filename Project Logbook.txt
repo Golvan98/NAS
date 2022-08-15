@@ -1980,5 +1980,26 @@ DONE
 - View Question Page Proper Pagination and Form - matrix question
 - Fill Pictures Left Side After Gerard Sends
 
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- replace that picture shit in data viz not matching
+- Student Side Proper Views for answering
+- View Question Page Proper Pagination
+- Algo for viewing each survey's DISTINCT category results
 
 
+Endgame: - Data Vizualiation Dynamic
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+AUG 15
+
+IN PROGRESS: 
+- replace that picture shit in data viz not matching
+- Student Side Proper Views for answering
+
+
+DONE:
+- replacing pie chart and bar chart feature
+- 
