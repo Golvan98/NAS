@@ -219,8 +219,8 @@ class SurveyQuestionController extends Controller
             }
                
 
+        return redirect()->back()->with('success', 'Answer Submitted');
         
-        return redirect()->back();
 
         
 

@@ -1998,8 +1998,9 @@ AUG 15
 IN PROGRESS: 
 - replace that picture shit in data viz not matching
 - Student Side Proper Views for answering
+- Questions that mimic first year survey
 
 
 DONE:
 - replacing pie chart and bar chart feature
-- 
+- Student Side Proper Views for answering 

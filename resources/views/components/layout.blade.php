@@ -32,7 +32,7 @@
         @auth
         <form method="POST" action="/logout" class="bg-red-700 flex items-center text-white font-bold mr-2"> 
                 @csrf
-                Welcome Sir {{ auth()->user()->firstname }} ! 
+                Welcome {{ auth()->user()->firstname }} ! 
                 
 
                 
@@ -43,7 +43,7 @@
                
 
                 <button type="submit" class="bg-red-500 px-2 py-1 rounded mx-2"> logout </button> 
-                Counselor 
+                 
            
         </form>
         @endauth

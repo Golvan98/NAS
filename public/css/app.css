@@ -1111,6 +1111,15 @@ input:checked + .toggle-bg {
 .h-4 {
   height: 1rem;
 }
+.h-1 {
+  height: 0.25rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-2\/4 {
+  height: 50%;
+}
 .w-full {
   width: 100%;
 }
