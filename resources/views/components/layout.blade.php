@@ -68,15 +68,19 @@
     <div id="allcontent" class="flex w-full h-5/6 bg-white">
 
 
-        <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-700 space-y-2">
+        <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-900 space-y-1 items-end">
 
-           <a href="/home"> <div class="mt-16 flex justify-center"> Home </div> </a>
+            <a href="/home"> 
+            <div class="mt-4 h-1/6 flex justify-center bg-transparent mt-4">
 
-            <div class="flex justify-center"> Surveys </div>
+            <img class=" flex justify-start object-fill h-full w-4/6" src="{{ asset('storage/newhome.png') }}" alt="description of myimage"><br>
+            <br>
+           
 
-            <div class="flex justify-center"> About </div>
-
-            <div class="flex justify-center"> Manage Surveys </div>
+            </div> 
+            <div class="flex justify-center text-white font-bold text-sm"> Home </div>
+            
+            </a>
 
 
         </div>
@@ -97,7 +101,7 @@
 
             <div class="w-full h-full flex"> 
                 
-                <div class="flex w-1/6 h-full bg-gray-700"> 
+                <div class="flex w-1/6 h-full bg-gray-900"> 
                     
             </div>
 

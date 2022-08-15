@@ -129,7 +129,7 @@
 
             <div class="w-full h-full flex"> 
                 
-                <div class="flex w-1/6 h-full bg-gray-700"> 
+                <div class="flex w-1/6 h-full bg-gray-900"> 
                     
             </div>
 

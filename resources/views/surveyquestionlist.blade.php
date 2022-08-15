@@ -21,9 +21,9 @@
     </div>
 
 
-  <div class="w-full bg-transparent flex justify-center items-center h-4/6">
+  <div class="w-full bg-transparent flex justify-center items-center h-4/6 mt-3">
 
-    <div class="w-4/5 h-auto bg-white flex-nowrap justify-center  border border-black mt-4">
+    <div class="w-4/5 h-auto bg-white flex-nowrap justify-center border border-black mt-4">
       
         <div class="w-full bg-gray-300 h-1/6 text-white flex justify-center items-center"> 
           
@@ -46,7 +46,7 @@
 
         @endforeach
 
-        <div class="w-full bg-gray-300 text-black h-1/6 flex justify-between items-center space-y-8"> 
+        <div class="w-full bg-gray-300 text-black h-1/6 flex justify-between items-center space-y-7"> 
           
           <div> <a href="/surveylist"> <button class="bg-red-300 text-black px-4 py-1 rounded-xl ml-4 mb-2"> Back  </button> </a> </div>
   
@@ -63,7 +63,7 @@
 
             <div class="w-full h-full flex justify-center items-end bg-transparent">
 
-              <div class="w-4/5 h-1/2 text-white">
+              <div class="w-4/5 h-1/2 text-white  mb-3">
               {{$SurveyQuestions->links()}} 
               </div>
               
