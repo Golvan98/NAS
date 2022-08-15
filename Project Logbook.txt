@@ -2004,3 +2004,10 @@ IN PROGRESS:
 DONE:
 - replacing pie chart and bar chart feature
 - Student Side Proper Views for answering 
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Mimic the first survey, or maybe you could just erm, edit the first survey
+- View Question Page Proper Pagination
+- Algo for viewing each survey's DISTINCT category results
+
+Endgame: - Data Vizualiation Dynamic

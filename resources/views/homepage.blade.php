@@ -11,7 +11,7 @@
     <article class="bg-gray-500 mt-16">     
 
     
-        <article class="bg-gray-300 flex-auto text-black font-bold py-3"> &nbsp &nbsp &nbsp  Good Evening, Counselor! Click The Survey Name to test  @foreach($surveys as $survey)  <a href = "/testsurvey/{{$survey->id}}" class="text-zinc-500">{{$survey->name}} @endforeach </a>
+        <article class="bg-gray-300 flex-auto text-black font-bold py-3"> &nbsp &nbsp &nbsp  Good Evening, Counselor!  
             <div class="">    </div>
             <div class="mt-2 border border-red-500"></div>
         
