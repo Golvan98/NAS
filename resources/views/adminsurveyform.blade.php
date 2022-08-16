@@ -10,13 +10,13 @@
                         <div class="ml-12"> <strong> Good Day, Counselor! Welcome {{ auth()->user()->firstname }} !  </strong> </div>
         </div>         
 
-        <div class="flex justify-center items-start w-full h-3/4 bg-gray-300"> 
+        <div class="flex justify-center items-start w-full h-auto bg-gray-300"> 
 
-                <div id="first container" class="mt-8 mx-6 flex-nowrap w-full h-5/6 bg-white border border-gray-300">  
+                <div id="first container" class="mt-4 mx-6 flex-nowrap w-full h-auto bg-white border border-gray-300">  
                 
                         <div id="second container" class="flex w-full h-full bg-white items-center justify-center"> 
 
-                         <div id="third container" class="w-full h-auto flex-nowrap mx-4 border border-black bg-gray-300">
+                         <div id="third container" class="w-full h-auto flex-nowrap mx-4 my-2 border border-black bg-gray-300">
                                
                           
                                 <div class="w-full bg-gray-300 h-1/6 text-white flex justify-start items-center "> 
@@ -274,7 +274,7 @@
                 
                         <div class="w-full bg-gray-300 h-1/6 text-white flex justify-start items-center "> 
 
-                                <div class="text-black text-lg ml-12 mt-3"> <strong> {{$SurveyQuestion->question}} ({{$SurveyQuestion->type}})</strong> </div>
+                        <div class="text-black text-lg ml-12 mt-3"> <strong> {{$SurveyQuestion->question}} ({{$SurveyQuestion->type}})</strong> </div>
 
                         </div>
 
