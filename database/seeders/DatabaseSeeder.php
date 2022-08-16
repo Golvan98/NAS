@@ -16,6 +16,7 @@ use App\Models\QuestionChoice;
 use App\Models\AnswerChoice;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 class DatabaseSeeder extends Seeder
 {
@@ -88,11 +89,7 @@ class DatabaseSeeder extends Seeder
           'question_choice' => $this->faker->unique()->randomElement(['Afraid of failing in subjects', 'Unsure of college procedures', 'Having difficulty finding child care (for married students)', 'Having difficulty participating in class', 'Afraid I might not fit in MSU-IIT', 'Having difficulty managing money', 'Having difficulty socializing', 'Sturggling in meeting requirement deadlines', 'Panicking during tests', 'Sturggling to make my family understand college demands', 'Getting along with teachers', 'Missing my family or home', 'Struggling with sexual identity', 'Adjusting with boardmates', 'Always feeling tired', 'Having problems at home', 'Having health problems', 'Having trouble sleeping', 'Having no financial/emotional support', 'Afraid to speak up in class', 'Taking things seriously', 'Gets easily distracted', ' Taking things seriously', 'Gets easily distracted', 'Anxious to approach teachers', 'Having no close friends in school']),
       ]);
       }
-      
-
-
-
-
+  
 
       $NASThirdQuestion = SurveyQuestion::factory()->create([
         'survey_id' => $NASid,
@@ -101,13 +98,21 @@ class DatabaseSeeder extends Seeder
         'type' => 'openended'
       ]);
 
-       $NASOpenEndedQuestions = SurveyQuestion::factory(13)->create([
+       $NASOpenEndedQuestions = SurveyQuestion::factory(6)->create([
         'survey_id' => $NASid,
         'question' => $this->faker->unique()->randomElement(['What do you want toe become in the future?', 'Describe yourself', 'What are your talents and skills?', 'How do you study best?', 'What are the things you enjoy doing? ', 'Do you have health concerns?', 'How do you cope with your problems/difficulties?', 'Do you have any problems/difficulties that you would like to discuss with your guidance counselor?', 'Counselor Notes', 'What are your future plans?', 'In what certain company would you like to belong?', 'What other activties would you engage yourself before being employed?', 'What bothers you in achieving your plans?' ]),
         'category' => $this->faker->unique()->randomElement(['Stress-Management', 'Peer Pressure', 'Cyberbullying', 'Peer Pressure', 'Relationships', 'Motivation', 'Student-Teacher-Relationship', 'Physical-Disability', 'Anxiety', 'Self-Image', 'Bullying', 'Relationships', 'Parent-Separation', 'Student-Teacher-Conflict', 'Student-Teacher-Relationship', 'Cyberbullying', 'Peer Pressure']),
         'type' => 'openended'
       ]);
-      
+
+      foreach($NASOpenEndedQuestions as $NASOpenEndedQuestion)
+      {
+        $NASOpenEndedQuestion->update([
+          'question' => $this->faker->unique()->randomElement(['What do you want toe become in the future?', 'Describe yourself', 'What are your talents and skills?', 'How do you study best?', 'What are the things you enjoy doing? ', 'Do you have health concerns?', 'How do you cope with your problems/difficulties?', 'Do you have any problems/difficulties that you would like to discuss with your guidance counselor?', 'Counselor Notes', 'What are your future plans?', 'In what certain company would you like to belong?', 'What other activties would you engage yourself before being employed?', 'What bothers you in achieving your plans?' ]),
+          'category' => $this->faker->unique()->randomElement(['Stress-Management', 'Peer Pressure', 'Cyberbullying', 'Peer Pressure', 'Relationships', 'Motivation', 'Student-Teacher-Relationship', 'Physical-Disability', 'Anxiety', 'Self-Image', 'Bullying', 'Relationships', 'Parent-Separation', 'Student-Teacher-Conflict', 'Student-Teacher-Relationship', 'Cyberbullying', 'Peer Pressure']),  
+        ]);
+      }
+     
      
 
           
@@ -728,10 +733,17 @@ class DatabaseSeeder extends Seeder
             ]);
           }
 
+          $GilvinAdminAccount = DB::table('students')->where('id', '=', 1);
 
+          $GilvinAdminAccount->update([
+            'firstname' => 'Gilvin',
+            'lastname' => 'Zalsos'
+          ]);
+  
     }
 
-  
+
+   
 
     
       
