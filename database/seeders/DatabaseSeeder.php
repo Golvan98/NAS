@@ -29,6 +29,77 @@ class DatabaseSeeder extends Seeder
 
       $this->faker = Faker::create();
       $examplefakerofnumber = $this->faker->randomDigit();
+
+      $NAS = Survey::factory()->create(
+        [
+
+          'id' => 1,
+          'name' => 'Needs Assessment Survey',
+          'school_year' => 1,
+          'active' =>1
+
+        ]);
+
+      $NASid = $NAS->id;
+
+      $NASFirstQuestion = SurveyQuestion::factory()->create([
+        'survey_id' => $NASid,
+        'question' => 'I have the need to improve the folllowing: _____________. (Please check all that apply to you.)',
+        'category' => 'Motivation',
+        'type' => 'multiplechoice'
+      ]);
+
+      
+      
+
+      $NASFirstQuestionid = $NASFirstQuestion->id;
+
+      $NASFirstQuestionChoices = QuestionChoice::factory(10)->create([
+        'question_choice' => $this->faker->unique()->randomElement(['Study habits', 'Math skills', 'Test-taking skills', 'Note-taking skills', 'Vocabulary/spelling skills', 'Grade point average(GPA)', 'Time-management skills', 'Reading comprehension', 'Reading speed', 'Career decision/choices', 'Memory skills']),       
+        'survey_question_id' => $NASFirstQuestionid,
+      ]);
+
+      foreach($NASFirstQuestionChoices as $NASFirstQuestionChoice)
+      {
+        $NASFirstQuestionChoice->update([
+          'question_choice' => $this->faker->unique()->randomElement(['Study habits', 'Math skills', 'Test-taking skills', 'Note-taking skills', 'Vocabulary/spelling skills', 'Grade point average(GPA)', 'Time-management skills', 'Reading comprehension', 'Reading speed', 'Career decision/choices', 'Memory skills']),
+        ]);
+      }
+
+
+
+      $NASSecondQuestion = SurveyQuestion::factory()->create([
+        'survey_id' => $NASid,
+        'question' => 'I find myself: ___________ (Please check any of the following items which describe you.)',
+        'category' => 'Self-Image',
+        'type' => 'multiplechoice'
+      ]);
+
+      $NASSecondQuestionid = $NASSecondQuestion->id;
+
+      $NasSecondQuestionChoices = QuestionChoice::factory(24)->create([
+        'question_choice' => $this->faker->unique()->randomElement(['Afraid of failing in subjects', 'Unsure of college procedures', 'Having difficulty finding child care (for married students)', 'Having difficulty participating in class', 'Afraid I might not fit in MSU-IIT', 'Having difficulty managing money', 'Having difficulty socializing', 'Sturggling in meeting requirement deadlines', 'Panicking during tests', 'Sturggling to make my family understand college demands', 'Getting along with teachers', 'Missing my family or home', 'Struggling with sexual identity', 'Adjusting with boardmates', 'Always feeling tired', 'Having problems at home', 'Having health problems', 'Having trouble sleeping', 'Having no financial/emotional support', 'Afraid to speak up in class', 'Taking things seriously', 'Gets easily distracted', ' Taking things seriously', 'Gets easily distracted', 'Anxious to approach teachers', 'Having no close friends in school']),
+        'survey_question_id' => $NASSecondQuestionid,
+      ]);
+
+
+
+      $NASThirdQuestion = SurveyQuestion::factory()->create([
+        'survey_id' => $NASid,
+        'question' => 'How do you find your studies in your particular course/field?',
+        'category' => 'Stress-Management',
+        'type' => 'openended'
+      ]);
+
+       $NASOpenEndedQuestions = SurveyQuestion::factory(13)->create([
+        'survey_id' => $NASid,
+        'question' => $this->faker->unique()->randomElement(['What do you want toe become in the future?', 'Describe yourself', 'What are your talents and skills?', 'How do you study best?', 'What are the things you enjoy doing? ', 'Do you have health concerns?', 'How do you cope with your problems/difficulties?', 'Do you have any problems/difficulties that you would like to discuss with your guidance counselor?', 'Counselor Notes', 'What are your future plans?', 'In what certain company would you like to belong?', 'What other activties would you engage yourself before being employed?', 'What bothers you in achieving your plans?' ]),
+        'category' => $this->faker->unique()->randomElement(['Stress-Management', 'Peer Pressure', 'Cyberbullying', 'Peer Pressure', 'Relationships', 'Motivation', 'Student-Teacher-Relationship', 'Physical-Disability', 'Anxiety', 'Self-Image', 'Bullying', 'Relationships', 'Parent-Separation', 'Student-Teacher-Conflict', 'Student-Teacher-Relationship', 'Cyberbullying', 'Peer Pressure']),
+        'type' => 'openended'
+      ]);
+      
+     
+
           
       $COE = College::factory()->create([
         'id' => 1,
@@ -476,7 +547,7 @@ class DatabaseSeeder extends Seeder
       }
 
 
-      $surveys = Survey::factory(4)->create();
+      $surveys = Survey::factory(3)->create();
 
       foreach ($surveys as $survey) 
       {

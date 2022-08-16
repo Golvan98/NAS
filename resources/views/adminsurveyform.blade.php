@@ -274,7 +274,7 @@
                 
                         <div class="w-full bg-gray-300 h-1/6 text-white flex justify-start items-center "> 
 
-                        <div class="text-black text-lg ml-12 mt-3"> <strong> {{$SurveyQuestion->question}} ({{$SurveyQuestion->type}})</strong> </div>
+                                <div class="text-black text-lg ml-12 mt-3"> <strong> {{$SurveyQuestion->question}} ({{$SurveyQuestion->type}})</strong> </div>
 
                         </div>
 

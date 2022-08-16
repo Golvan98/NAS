@@ -2011,3 +2011,15 @@ To Do Next Session (for documentation, important stuff and ordered in descending
 - Algo for viewing each survey's DISTINCT category results
 
 Endgame: - Data Vizualiation Dynamic
+
+--------------------------------------------------------------------------------------------------------
+
+
+AUG 16
+
+IN PROGRESS:
+- Mimicing first survey (DB Seeder)
+
+DONE:
+
+

@@ -19,7 +19,7 @@ class SurveyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['First Year Survey', 'Second Year Survey', 'Third Year Survey', 'Fourth Year Survey', 'Fifth Year Survey']),
+            'name' => $this->faker->unique()->randomElement(['Second Year Survey', 'Third Year Survey', 'Fourth Year Survey', 'Fifth Year Survey']),
             'school_year' => $this->faker->numberBetween(1, 4),
             'active' => $this->faker->boolean(),
         ];
