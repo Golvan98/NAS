@@ -2021,5 +2021,11 @@ IN PROGRESS:
 - Mimicing first survey (DB Seeder)
 
 DONE:
+- NAS Mimic Survey DB Seeder
 
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- View Question Page Proper Pagination
+- Question Survey Form auto format correction
+- Algo for viewing each survey's DISTINCT category results
 
+Endgame: - Data Vizualiation Dynamic

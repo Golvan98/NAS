@@ -83,18 +83,17 @@
 
 
 
-            <a href="/viewsurveys"> 
+            <a href="/surveylist"> 
             <div class="mt-4 h-1/6 flex justify-center bg-transparent mt-9">
 
              <img class=" object-fill h-full w-4/6" src="{{ asset('storage/newnas.png') }}" alt="description of myimage"><br>
             
-
             </div> 
             </a>
 
-            <div class="flex justify-center text-sm">  Needs Assessment Survey </div>
+            <div class="flex justify-center text-sm"> Manage Surveys </div>
             
-            <a href="/surveylist">
+            <a href="/viewsurveys">
             <div class="flex justify-center h-1/6 mt-12"> 
 
              <img class="object-fill" src="{{ asset('storage/qanda.png') }}" alt="description of myimage">

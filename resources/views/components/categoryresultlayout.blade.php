@@ -70,7 +70,7 @@
 
         <div id="nav" class="flex-nowrap w-1/6 h-full text-white font-bold bg-gray-900 space-y-1 items-end">
 
-            <a href="/viewsurveys"> 
+            <a href="/surveylist"> 
             <div class="mt-4 h-1/6 flex justify-center bg-transparent">
 
              <img class=" object-fill h-full w-4/6" src="{{ asset('storage/newnas.png') }}" alt="description of myimage"><br>
@@ -79,9 +79,9 @@
             </div> 
             </a>
 
-            <div class="flex justify-center text-sm">  Needs Assessment Survey </div>
+            <div class="flex justify-center text-sm">  Manage Surveys </div>
             
-            <a href="/surveylist">
+            <a href="/viewsurveys">
             <div class="flex justify-center h-1/6"> 
 
              <img class="object-fill" src="{{ asset('storage/newmanageresult.png') }}" alt="description of myimage">
