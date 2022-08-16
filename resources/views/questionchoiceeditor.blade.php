@@ -26,7 +26,7 @@
         <div class="w-4/6 h-auto bg-gray-300 flex-nowrap border border-black mb-2">
 
             <div class="w-full py-4  flex justify-center mt-4">
-                <strong>   <div>     {{$SurveyQuestion->question }} DIV TEST!</div> </strong>
+                <strong>   <div>     {{$SurveyQuestion->question }} </div> </strong>
             </div>  
 
             @foreach($QuestionChoices as $QuestionChoice)

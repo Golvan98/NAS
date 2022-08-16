@@ -2022,10 +2022,16 @@ IN PROGRESS:
 
 DONE:
 - NAS Mimic Survey DB Seeder
+- Question Survey Form auto format correction
 
 To Do Next Session (for documentation, important stuff and ordered in descending priority):
 - View Question Page Proper Pagination
-- Question Survey Form auto format correction
-- Algo for viewing each survey's DISTINCT category results
 
 Endgame: - Data Vizualiation Dynamic
+
+Dynamic Data Viz Sub Tasks
+
+- Algo for viewing each survey's DISTINCT category results
+- Algo for searching a student's answers in a particular survey
+
+

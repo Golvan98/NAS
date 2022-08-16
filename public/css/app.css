@@ -1104,6 +1104,14 @@ input:checked + .toggle-bg {
 .h-4 {
   height: 1rem;
 }
+.h-16 {
+  height: 4rem;
+}
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .w-full {
   width: 100%;
 }
@@ -1166,6 +1174,9 @@ input:checked + .toggle-bg {
 }
 .w-4 {
   width: 1rem;
+}
+.w-40 {
+  width: 10rem;
 }
 .max-w-md {
   max-width: 28rem;
@@ -1313,6 +1324,9 @@ input:checked + .toggle-bg {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.whitespace-pre {
+  white-space: pre;
 }
 .rounded-md {
   border-radius: 0.375rem;
