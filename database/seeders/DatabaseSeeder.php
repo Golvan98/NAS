@@ -82,6 +82,16 @@ class DatabaseSeeder extends Seeder
         'survey_question_id' => $NASSecondQuestionid,
       ]);
 
+      foreach($NasSecondQuestionChoices as $NasSecondQuestionChoice)
+      {
+        $NasSecondQuestionChoice->update([
+          'question_choice' => $this->faker->unique()->randomElement(['Afraid of failing in subjects', 'Unsure of college procedures', 'Having difficulty finding child care (for married students)', 'Having difficulty participating in class', 'Afraid I might not fit in MSU-IIT', 'Having difficulty managing money', 'Having difficulty socializing', 'Sturggling in meeting requirement deadlines', 'Panicking during tests', 'Sturggling to make my family understand college demands', 'Getting along with teachers', 'Missing my family or home', 'Struggling with sexual identity', 'Adjusting with boardmates', 'Always feeling tired', 'Having problems at home', 'Having health problems', 'Having trouble sleeping', 'Having no financial/emotional support', 'Afraid to speak up in class', 'Taking things seriously', 'Gets easily distracted', ' Taking things seriously', 'Gets easily distracted', 'Anxious to approach teachers', 'Having no close friends in school']),
+      ]);
+      }
+      
+
+
+
 
 
       $NASThirdQuestion = SurveyQuestion::factory()->create([
