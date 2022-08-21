@@ -1311,6 +1311,9 @@ input:checked + .toggle-bg {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.whitespace-pre {
+  white-space: pre;
+}
 .rounded-md {
   border-radius: 0.375rem;
 }

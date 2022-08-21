@@ -1,6 +1,6 @@
 <x-layout>
 
-<div id="main" class="flex-nowrap w-full h-full bg-gray-300">
+<div id="main" class="flex-nowrap w-full full bg-gray-300 b">
 
 
     <div class="w-full bg-white flex h-1/6 justify-center items-end  ">
@@ -25,13 +25,13 @@
     <div class="w-full bg-white h-full flex justify-center items-center h-4/6">
 
 
-        <div class="flex w-full h-full bg-white border border-black mt-8">
+        <div class="flex w-full h-full bg-white mt-8">
 
-            <div class="w-1/6 h-full flex justify-start items-end"> 
+            <div class="w-1/6 h-full flex justify-start items-start"> 
             
                 <div> 
 
-                    <a href="{{ url()->previous() }}"> <button class="bg-green-400 text-white font-bold px-10 py-1 ml-4 mb-2"> Back </button> </a>
+                    <a href="{{ url()->previous() }}"> <button class="mt-4 bg-green-400 text-white font-bold px-10 py-1 ml-4 mb-2"> Return to Graphs </button> </a>
 
                 </div>
 
@@ -44,7 +44,7 @@
                    <div class="flex-nowrap h-1/6"> 
 
                         <div class="flex justify-center items-center h-2/3 text-lg font-bold"> School of Computer Studies </div>
-                        <div class="flex justify-center h-1/3 items-start text-lg"> Motivation </div>
+                        <div class="flex justify-center h-1/3 items-start text-lg"> Anxiety </div>
 
                    </div>
 
@@ -80,8 +80,13 @@
         
     </div>
 
-
+    <div id="pagination" class="w-full h-1/6 bg-white">
+      
+         {{$students->links()}}
+        
+    </div>
 
 </div>
-        
+
+
 </x-layout>
