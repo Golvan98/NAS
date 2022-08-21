@@ -43,7 +43,7 @@ class StudentController extends Controller
 
     public function studentlist()
     {
-        $students = Student::where('id', '<>', 0 )->paginate(15);
+        $students = Student::where('id', '<>', 0 )->paginate(11);
         
         
         return view('studentlist')->with(['students' => $students]);

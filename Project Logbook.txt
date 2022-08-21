@@ -2023,15 +2023,38 @@ IN PROGRESS:
 DONE:
 - NAS Mimic Survey DB Seeder
 - Question Survey Form auto format correction
+- Evened out the categories buttons not aligning
 
 To Do Next Session (for documentation, important stuff and ordered in descending priority):
 - View Question Page Proper Pagination
 
 Endgame: - Data Vizualiation Dynamic
 
-Dynamic Data Viz Sub Tasks
+Dynamic Data Viz Sub Tasks:
 
+- Pie Chart and Bar Chart dynamic(requires fuck tons of queries)
 - Algo for viewing each survey's DISTINCT category results
 - Algo for searching a student's answers in a particular survey
+- Scrollable choices in nav bar for categories list
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- View Question Page Proper Pagination
+- Redirect to next page after submitting or saves the input values 
+
+NOTE!!!: For the last task above, Create a distinct list of questions and paginate it, associate each to a next button?
+
+--------------------------------------------------------------------------------------------------------
+	
+AUG 21
+
+IN PROGRESS:
+
+------------->Finding shits to clean up<--------- 
+
+- student list pagination
+- View Question Page Proper Pagination
+
+DONE:
+- student list pagination
 
 
