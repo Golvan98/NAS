@@ -19,23 +19,12 @@ class SurveyQuestionController extends Controller
 
     public function questionlist(Survey $survey, SurveyQuestion $SurveyQuestion)
     {
-        
-
-
-      
-        
-
-       
-       
-        
+               
         $categories = SurveyQuestion::select('category')->distinct()->get();
 
 
         $SurveyQuestions = SurveyQuestion::where('survey_id', $survey->id)->paginate(4);
-
-
     
-      
         return view('surveyquestionlist')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'categories' => $categories, 'SurveyQuestion' =>$SurveyQuestion]);
     }
 
@@ -131,25 +120,13 @@ class SurveyQuestionController extends Controller
         
     }
 
-   
-
-
-
-
 
     public function surveyform(Survey $survey)
     {
         
         $student = auth()->user()->id;
 
-        
-
-        
-
-        
-
-        
-       
+         
         $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
 
         $id = $SurveyQuestions->pluck('id');
@@ -168,10 +145,6 @@ class SurveyQuestionController extends Controller
     public function createanswer(Survey $survey, SurveyQuestion $SurveyQuestion, SurveyResponseAnswers $SurveyResponseAnswers, Student $student, SurveyResponses $SurveyResponses, )
     {
        
-
-      
-        
-
         $student = auth()->user()->id;
         
        
@@ -220,10 +193,7 @@ class SurveyQuestionController extends Controller
                
 
         return redirect()->back()->with('success', 'Answer Submitted');
-        
-
-        
-
+               
         /* return redirect('texthere/' . $variablehere->id '?page=' . $page->id);  THE RESULT OF THIS IS /texthere/varaiableid?page=pageid*/
     }
 }

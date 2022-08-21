@@ -8,11 +8,11 @@ use App\Models\QuestionChoice;
 use App\Models\SurveyResponseAnswers;
 use App\Models\AnswerChoice;
 use Illuminate\Pagination\Paginator;
-
 use Illuminate\Http\Request;
 
 class QuestionChoiceController extends Controller
 {
+
     public function createanswerchoice(Survey $survey, SurveyQuestion $SurveyQuestion)
     {
         $questionchoices = request()->get('question_choice');
@@ -83,20 +83,13 @@ class QuestionChoiceController extends Controller
     {
     
         
-
-
         $SurveyQuestion = $QuestionChoice->survey_question_id;
-
         
-
         $data = request()->validate([
             'question_choice' => 'required',           
         ]);
 
-
         $QuestionChoice->update($data);
-
-
 
         return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Edited Successfully');
     }
@@ -106,10 +99,7 @@ class QuestionChoiceController extends Controller
         
         $SurveyQuestion = $QuestionChoice->survey_question_id;
 
-
         $QuestionChoice->delete();
-
-       
 
         return redirect()->route('questionchoiceeditor', ['SurveyQuestion' => $SurveyQuestion])->with('success', 'QuestionChoice Deleted Successfully');
 
@@ -131,7 +121,6 @@ class QuestionChoiceController extends Controller
             ]);
         
         return redirect()->back()->with('success', 'New Question Choice Added');
-
 
     }
 }

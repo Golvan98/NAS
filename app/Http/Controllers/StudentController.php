@@ -22,9 +22,7 @@ class StudentController extends Controller
             'firstname' => 'required',
             'password' => 'required',
         ]);
-
         
-
         if (auth()->attempt($data)) {
             
             return redirect('/home')->with('success', 'You are now logged in');
@@ -44,8 +42,7 @@ class StudentController extends Controller
     public function studentlist()
     {
         $students = Student::where('id', '<>', 0 )->simplePaginate(11);
-        
-        
+                
         return view('studentlist')->with(['students' => $students]);
        
     }

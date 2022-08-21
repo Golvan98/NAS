@@ -32,12 +32,12 @@
         @auth
         <form method="POST" action="/logout" class="bg-red-700 flex items-center text-white font-bold mr-2"> 
                 @csrf
-                Welcome Sir {{ auth()->user()->firstname }} ! 
+                Welcome {{ auth()->user()->firstname }} ! 
                 
 
                 
                     <div class="relative inline-block ml-1 flex">
-                        <img class="mb-1 inline-block object-cover w-8 h-8 rounded-full mt-1" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                        <img class="mb-1 inline-block object-cover w-8 h-8 rounded-full mt-1" src="https://pbs.twimg.com/profile_images/1554275654157598721/hssHJJgU_400x400.jpg" alt="Profile image"/>
                         <span class="absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
                     </div>
                
@@ -93,7 +93,7 @@
 
 
             
-            
+            <div class="flex justify-center text-sm text-yellow-300 "> Anxiety </div>
             <div class="flex justify-center text-sm"> Student-Teacher Relationship </div>
             <div class="flex justify-center  text-sm"> Parent-Separation </div>
             <div class="flex justify-center  text-sm"> Stress-Management </div>

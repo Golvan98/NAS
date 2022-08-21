@@ -81,16 +81,8 @@ class SurveyController extends Controller
         
     }
 
-   
-
-   
-
     public function listsurvey(Survey $survey)
-    {
-
-
-
-       
+    {      
 
         $survey = survey::where('id', '<>', 0 )->paginate(4);
 
@@ -98,7 +90,6 @@ class SurveyController extends Controller
         return view('/surveylist')->with(['surveys' =>$survey]);
     }
     
-
 
     public function viewsurveys(Survey $surveys)
 
@@ -154,9 +145,9 @@ class SurveyController extends Controller
 
     public function surveydata($surveyquestioncategory)
     {
+       
+        return view('/surveydata')->with(['surveyquestioncategory' => $surveyquestioncategory]);
 
         
-
-        return view('/surveydata')->with(['surveyquestioncategory' => $surveyquestioncategory]);
     }
 }

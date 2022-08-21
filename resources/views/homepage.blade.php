@@ -13,7 +13,7 @@
     
         <article class="bg-gray-300 flex-auto text-black font-bold py-3"> &nbsp &nbsp &nbsp  Good Evening, Counselor!  
             <div class="">    </div>
-            <div class="mt-2 border border-red-500"></div>
+            <div class="mt-2 mx-2 border border-red-500"></div>
         
         </article>
 
