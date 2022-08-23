@@ -1,5 +1,6 @@
 <x-adminhomelayout>
         
+@foreach($SurveyQuestions as $SurveyQuestion)
 
     @if($SurveyQuestion->type =='multiplechoice')
 
@@ -39,7 +40,7 @@
 
                                 <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-12 ">
 
-                                        <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> Back </button> </a>  </div> 
+                                        <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> {{$SurveyQuestions->links()}}   </button> </a>  </div> 
 
                                         <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
 
@@ -318,6 +319,7 @@
 </div>
         @endif
 
+        @endforeach
       
                        
     

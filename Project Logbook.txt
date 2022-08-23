@@ -2062,4 +2062,16 @@ DONE:
 To Do Next Session (for documentation, important stuff and ordered in descending priority):
 - View Question Page Proper Pagination
 - Redirect to next page after submitting or saves the input values 
-- Matrix Question Bug
+- Matrix Question div Bug
+--------------------------------------------------------------------------------------------------------
+AUG 23
+
+IN PROGRESS:
+
+- View Question Page Proper Pagination
+
+DONE:
+Algo for pagination in the admin side, but needs to tweak the back and next button
+
+
+
