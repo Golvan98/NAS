@@ -2082,3 +2082,10 @@ To Do Next Session (for documentation, important stuff and ordered in descending
 - Matrix Question div Bug
 
 --------------------------------------------------------------------------------------------------------
+
+AUG 24
+
+IN PROGRESS:
+- Matrix Question div Bug
+- Found a bigger bug, flex wrap on matrix/likert/rating dismisses the home nav bar if there's too many choices
+

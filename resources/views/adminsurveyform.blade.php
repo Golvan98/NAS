@@ -158,7 +158,7 @@
 
                                 @foreach($choices as $choice)     
 
-                                <div class="justify-between bg-gray-300 py-2 flex-auto truncate hover:text-clip border border-black"> <input class="ml-2 "type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
+                                <div class="justify-between bg-gray-300 py-2 w-1/5 flex-auto truncate hover:text-clip border border-black"> <input class="ml-2 "type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
 
                                 @endforeach
                                 </div>
