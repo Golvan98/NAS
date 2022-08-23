@@ -2069,9 +2069,16 @@ AUG 23
 IN PROGRESS:
 
 - View Question Page Proper Pagination
+- currently stuck on justifying between simple these paginate buttons
 
 DONE:
-Algo for pagination in the admin side, but needs to tweak the back and next button
+- Algo for pagination in the admin side, but needs to tweak the back and next button
+- Proper placing of Previous Edit Next Button, code snippet is 
+"{{$PaginatedVariable->previousPageUrl()}}" and "{{$PaginatedVariable->nextPageUrl()}}"
 
 
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Redirect to next page after submitting or saves the input values 
+- Matrix Question div Bug
 
+--------------------------------------------------------------------------------------------------------

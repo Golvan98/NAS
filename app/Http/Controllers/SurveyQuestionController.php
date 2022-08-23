@@ -35,7 +35,7 @@ class SurveyQuestionController extends Controller
 
         $choices = QuestionChoice::all()->whereIn('survey_question_id', $SurveyQuestion->id);
 
-        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->paginate(1);
+        $SurveyQuestions = SurveyQuestion::whereIn('survey_id', $survey)->simplePaginate(1);
 
       
         

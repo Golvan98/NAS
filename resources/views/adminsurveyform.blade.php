@@ -38,14 +38,14 @@
 
 
 
-                                <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-12 ">
+                                <div class="w-full flex justify-between h-4/6 bg-gray-300 items-end text-white mt-12">
 
-                                        <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> {{$SurveyQuestions->links()}}   </button> </a>  </div> 
+                                        <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
                                         <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
 
-                                        <div class="w-1/3 flex justify-end mr-2"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <button type="submit" class="mb-2 px-8 py-1 bg-green-500 rounded-md"> Edit Choices </button> </div> 
-
+                                        <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
+                                        
                                 </div>
 
                          
@@ -103,14 +103,14 @@
 
 
 
-                                <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-12 ">
+                                <div class="w-full flex justify-between h-4/6 bg-gray-300 items-end text-white mt-12">
 
-                                        <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> Back </button> </a>  </div> 
+                                        <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
                                         <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
 
-                                        <div class="w-1/3 flex justify-end mr-2"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <button type="submit" class="mb-2 px-8 py-1 bg-green-500 rounded-md"> Edit Choices </button> </div> 
-
+                                        <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
+                                        
                                 </div>
 
                         
@@ -165,14 +165,14 @@
 
 
 
-                                <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-12 ">
+                                <div class="w-full flex justify-between h-4/6 bg-gray-300 items-end text-white mt-12">
 
-                                        <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> Back </button> </a>  </div> 
+                                        <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
                                         <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
 
-                                        <div class="w-1/3 flex justify-end mr-2"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <button type="submit" class="mb-2 px-8 py-1 bg-green-500 rounded-md"> Edit Choices </button> </div> 
-
+                                        <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
+                                        
                                 </div>
 
                         
@@ -230,14 +230,14 @@
 
 
 
-                        <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-12 ">
+                        <div class="w-full flex justify-between h-4/6 bg-gray-300 items-end text-white mt-12">
 
-                                <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> Back </button> </a>  </div> 
+                                        <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
 
-                                <div class="w-1/3 flex justify-end mr-2"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <button type="submit" class="mb-2 px-8 py-1 bg-green-500 rounded-md"> Edit Choices </button> </div> 
-
+                                        <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
+                                        
                         </div>
 
                 
@@ -293,14 +293,14 @@
 
 
 
-                        <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white mt-8 ">
+                        <div class="w-full flex justify-between h-4/6 bg-gray-300 items-end text-white mt-12">
 
-                                <div class="w-1/3"> <a href="/questionlist/{{$survey->id}}"> <button class="mb-2 ml-2 px-8 py-1 bg-green-300 rounded-md"> Back </button> </a>  </div> 
+                                        <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
 
-                                <div class="w-1/3 flex justify-end mr-2"> <a href="/questionchoiceeditor/{{$SurveyQuestion->id}}"> <button type="submit" class="mb-2 px-8 py-1 bg-green-500 rounded-md"> Edit Choices </button> </div> 
-
+                                        <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
+                                        
                         </div>
 
                 
