@@ -53,7 +53,7 @@ class QuestionChoiceController extends Controller
 
         }
 
-        return redirect()->back()->withInput()->withSuccess('Answer Saved Successfully');
+        return redirect()->back()->withInput()->withSuccess('Answer Saved Successfully')->withInput();
 
     }
 

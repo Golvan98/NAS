@@ -2088,4 +2088,17 @@ AUG 24
 IN PROGRESS:
 - Matrix Question div Bug
 - Found a bigger bug, flex wrap on matrix/likert/rating dismisses the home nav bar if there's too many choices
+- Redirect to next page after submitting or saves the input values 
+- Kind of lost in the saving input shits, the last snippet at the end might help
+https://laracasts.com/discuss/channels/laravel/input-old-and-array
+
+DONE:
+- Fixing Matrix Question div Bug
+- Fixing the other bugs for likertscale and ratingscale type of questions
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Redirect to next page after submitting or saves the input values 
+- Limit to only 1 checkbox if ratingscale/likertscale/matrix
+
+Endgame: - Data Vizualiation Dynamic
 
