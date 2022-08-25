@@ -11,6 +11,7 @@ use App\Models\SurveyResponses;
 use App\Models\QuestionChoice;
 use App\Http\Controllers\SurveyResponsesController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 
 class SurveyQuestionController extends Controller

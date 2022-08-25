@@ -9,6 +9,7 @@ use App\Models\SurveyResponseAnswers;
 use App\Models\AnswerChoice;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class QuestionChoiceController extends Controller
 {

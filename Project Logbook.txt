@@ -2102,3 +2102,13 @@ To Do Next Session (for documentation, important stuff and ordered in descending
 
 Endgame: - Data Vizualiation Dynamic
 
+--------------------------------------------------------------------------------------------------------
+
+AUG 25
+
+IN PROGRESS:
+- Redirect to next page after submitting or saves the input values 
+- Limit to only 1 checkbox if ratingscale/likertscale/matrix
+
+hmm. create an answer choice query sht?
+
