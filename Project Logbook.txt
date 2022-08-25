@@ -2112,3 +2112,7 @@ IN PROGRESS:
 
 hmm. create an answer choice query sht?
 
+All else fails, gonna try to resolve this later by adding a query in the controller.
+
+like if ($auth has an answer, show these qchoices
+
