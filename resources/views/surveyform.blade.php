@@ -146,6 +146,7 @@
                 <div class="ml-12"> <strong> Good Day, Counselor! Welcome {{ auth()->user()->firstname }} !  </strong> </div>
 </div>         
 
+
 <form method="POST" action="/createmultiplechoiceanswer/{{$survey->id}}/{{$SurveyQuestion->id}}/" class="flex justify-center items-start w-full h-auto bg-gray-300"> 
 @csrf @method('POST')  
 <div id="first container" class="mt-8 mx-6 flex-nowrap w-full h-auto bg-white border border-gray-300">  

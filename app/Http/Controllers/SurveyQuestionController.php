@@ -140,10 +140,14 @@ class SurveyQuestionController extends Controller
         $studentid = auth()->user()->id;
         $surveyid = $survey->id;
 
-        $surveyresponse = SurveyResponses::whereIn('student_id', $studentid)->paginate(1);
+        $surveyresponse = SurveyResponses::where('student_id', $studentid)->paginate(1);
 
-                                        dd($surveyresponse);
+       foreach ($SurveyQuestions as $SurveyQuestion)
+       {
+        $SurveyQuestionId = $SurveyQuestion->id; 
+       }
 
+       dd($SurveyQuestionId);
 
         $nextpage = $SurveyQuestions->nextPageURL();
 

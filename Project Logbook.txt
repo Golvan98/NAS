@@ -2122,3 +2122,10 @@ write a php code in the view, @answerofstudent = answer_Choice::where('student_i
 @if(choice=>answer_choice) chekced
 else
 
+
+--------------------------------------------------------------------------------------------------------
+
+AUG 26
+
+IN PROGRESS:
+- Algorithm for that show answers thingy
