@@ -2109,10 +2109,16 @@ AUG 25
 IN PROGRESS:
 - Redirect to next page after submitting or saves the input values 
 - Limit to only 1 checkbox if ratingscale/likertscale/matrix
+- Algorithm for that show answers thingy
 
 hmm. create an answer choice query sht?
 
 All else fails, gonna try to resolve this later by adding a query in the controller.
 
 like if ($auth has an answer, show these qchoices
+
+write a php code in the view, @answerofstudent = answer_Choice::where('student_id", $auth)->where(SurveyQuestion->
+
+@if(choice=>answer_choice) chekced
+else
 

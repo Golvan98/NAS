@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 
+
 class SurveyQuestionController extends Controller
 {
 
@@ -136,7 +137,13 @@ class SurveyQuestionController extends Controller
         
         $choices = QuestionChoice::all()->whereIn('survey_question_id', $id);
 
-    
+        $studentid = auth()->user()->id;
+        $surveyid = $survey->id;
+
+        $surveyresponse = SurveyResponses::whereIn('student_id', $studentid)->paginate(1);
+
+                                        dd($surveyresponse);
+
 
         $nextpage = $SurveyQuestions->nextPageURL();
 
