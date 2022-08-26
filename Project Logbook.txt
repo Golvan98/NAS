@@ -2129,6 +2129,7 @@ AUG 26
 
 IN PROGRESS:
 - Algorithm for that show answers thingy
+- Will Code the blade side later on the day, Good Luck
 
 IDEA:
 - if answerchoice = $choice->questionchoice, checked!

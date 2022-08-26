@@ -156,12 +156,11 @@ class SurveyQuestionController extends Controller
 
        $AnswerChoices = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
 
-       dd($AnswerChoices);
        $nextpage = $SurveyQuestions->nextPageURL();
 
       
         
-        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage , 'choices' => $choices]);
+        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage , 'choices' => $choices, 'AnswerChoices' => $AnswerChoices]);
     }
 
     public function createanswer(Survey $survey, SurveyQuestion $SurveyQuestion, SurveyResponseAnswers $SurveyResponseAnswers, Student $student, SurveyResponses $SurveyResponses, )
