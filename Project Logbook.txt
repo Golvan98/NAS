@@ -2130,6 +2130,9 @@ AUG 26
 IN PROGRESS:
 - Algorithm for that show answers thingy
 - Will Code the blade side later on the day, Good Luck
+- Found a flaw in your AnswerChoice logic, it refers to a response id, needs more filtering since a response id can relate
+to many other answer choices on different questions
+
 
 IDEA:
 - if answerchoice = $choice->questionchoice, checked!
