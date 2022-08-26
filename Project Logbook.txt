@@ -2129,3 +2129,8 @@ AUG 26
 
 IN PROGRESS:
 - Algorithm for that show answers thingy
+
+IDEA:
+- if answerchoice = $choice->questionchoice, checked!
+
+ez pz

@@ -9,6 +9,7 @@ use App\Models\SurveyResponseAnswers;
 use App\Models\Student;
 use App\Models\SurveyResponses;
 use App\Models\QuestionChoice;
+use App\Models\AnswerChoice;
 use App\Http\Controllers\SurveyResponsesController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -140,16 +141,23 @@ class SurveyQuestionController extends Controller
         $studentid = auth()->user()->id;
         $surveyid = $survey->id;
 
-        $surveyresponse = SurveyResponses::where('student_id', $studentid)->paginate(1);
+        $SurveyResponse = SurveyResponses::where('student_id', $studentid)->where('survey_id', $surveyid)->get();
+       
+        $SurveyResponseId = $SurveyResponse->pluck('id');
 
        foreach ($SurveyQuestions as $SurveyQuestion)
        {
         $SurveyQuestionId = $SurveyQuestion->id; 
        }
+       
+       $SurveyResponseAnswer = SurveyResponseAnswers::where('survey_response_id', $SurveyResponseId)->where('survey_question_id', $SurveyQuestionId)->get();
+       
+       $SurveyResponseAnswerId = $SurveyResponseAnswer->pluck('id');
 
-       dd($SurveyQuestionId);
+       $AnswerChoices = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
 
-        $nextpage = $SurveyQuestions->nextPageURL();
+       dd($AnswerChoices);
+       $nextpage = $SurveyQuestions->nextPageURL();
 
       
         
