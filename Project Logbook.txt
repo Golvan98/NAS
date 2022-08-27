@@ -2122,6 +2122,9 @@ write a php code in the view, @answerofstudent = answer_Choice::where('student_i
 @if(choice=>answer_choice) chekced
 else
 
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Show answers after submitting
+- Limit to only 1 checkbox if ratingscale/likertscale/matrix
 
 --------------------------------------------------------------------------------------------------------
 
@@ -2137,4 +2140,18 @@ to many other answer choices on different questions
 IDEA:
 - if answerchoice = $choice->questionchoice, checked!
 
-ez pz
+DONE:
+- Found a function that compares a collection and returns the ones that are not duplicate, only issue is
+that the variable queries on the controller side is not properly filtered
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Show answers after submitting
+- Limit to only 1 checkbox if ratingscale/likertscale/matrix
+
+--------------------------------------------------------------------------------------------------------
+
+AUG 27
+
+IN PROGRESS:
+- trying to sort out the query in controller for SurveyResponseAnswers
+

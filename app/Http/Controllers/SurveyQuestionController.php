@@ -136,7 +136,6 @@ class SurveyQuestionController extends Controller
 
         $id = $SurveyQuestions->pluck('id');
         
-       
 
         $studentid = auth()->user()->id;
         $surveyid = $survey->id;
@@ -149,16 +148,20 @@ class SurveyQuestionController extends Controller
        {
         $SurveyQuestionId = $SurveyQuestion->id; 
        }
+       
        $choices = QuestionChoice::all()->whereIn('survey_question_id', $id);
 
        $SurveyResponseAnswer = SurveyResponseAnswers::where('survey_response_id', $SurveyResponseId)->where('survey_question_id', $SurveyQuestionId)->get();
        
        $SurveyResponseAnswerId = $SurveyResponseAnswer->pluck('id');
 
-       $AnswerChoices = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
+      // $AnswerChoices = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->pluck('answer_choice');
 
+       $AnswerChoices = DB::table('answer_choices')->where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
+       dd($AnswerChoices);
+       //this shit ^ throws an error when null, must condition to only run it if surveyresponseanswer exists
        $diff = $choices->diffKeys($AnswerChoices);
-       dd($diff->pluck('question_choice'));
+       
        $nextpage = $SurveyQuestions->nextPageURL();
 
       
