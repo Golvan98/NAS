@@ -28,23 +28,26 @@
                         </div>
 
         
+               
                         <div class="w-full flex flex-wrap bg-gray-300"> 
 
                         @foreach($AnswerChoices as $AnswerChoice)     
 
-                        <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$AnswerChoice}}" checked > &nbsp {{$AnswerChoice}} </div> 
+                        <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$AnswerChoice}}" checked  > &nbsp {{$AnswerChoice}} </div> 
                                                                                         
                         
                         @endforeach
+
 
                         @foreach($UnCheckedChoices as $UnCheckedChoice)
 
                         <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$UnCheckedChoice}}"  > &nbsp {{$UnCheckedChoice}} </div> 
                         
                         @endforeach
+                        
                         </div>
 
-
+ 
 
                         <div class="flex justify-between w-full h-4/6 bg-gray-300 items-end text-white">
 
@@ -75,7 +78,7 @@
 
 </div>
 
-         
+                        
 
     @endif
                 
@@ -150,6 +153,24 @@
 </form>
 
 </div>
+<script>
+                       var $checkboxes = $('input[type=checkbox]');
+
+                        $checkboxes.change(function () {
+                        if (this.checked) {
+                                if ($checkboxes.filter(':checked').length == 2) {
+                                $checkboxes.not(':checked').prop('disabled', true);
+                                alert("Please select only 1");
+                                }
+                        } else {
+                                $checkboxes.prop('disabled', false);
+                                
+                        }
+                        });
+
+                        
+</script>
+
         @endif
 
         @if($SurveyQuestion->type =='ratingscale')
@@ -224,6 +245,23 @@
 </form>
 
 </div>
+        <script>
+                var $checkboxes = $('input[type=checkbox]');
+
+                $checkboxes.change(function () {
+                        if (this.checked) {
+                                        if ($checkboxes.filter(':checked').length == 2) {
+                                        $checkboxes.not(':checked').prop('disabled', true);
+                                        alert("Please select only 1");
+                                        }
+                        } else {
+                                        $checkboxes.prop('disabled', false);
+                                        
+                        }
+                });
+
+                                
+        </script>
 
         @endif
        
@@ -264,6 +302,9 @@
 
                 @foreach($UnCheckedChoices as $UnCheckedChoice)
 
+
+
+                
                 <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$UnCheckedChoice}}"  > &nbsp {{$UnCheckedChoice}} </div> 
                 
                 @endforeach
@@ -300,6 +341,23 @@
 
 </div>
 
+        <script>
+                var $checkboxes = $('input[type=checkbox]');
+
+                $checkboxes.change(function () {
+                        if (this.checked) {
+                                        if ($checkboxes.filter(':checked').length == 2) {
+                                        $checkboxes.not(':checked').prop('disabled', true);
+                                        alert("Please select only 1");
+                                        }
+                        } else {
+                                        $checkboxes.prop('disabled', false);
+                                        
+                        }
+                });
+
+                                
+        </script>
 
         @endif
 
@@ -370,9 +428,14 @@
 
 </div>	
 
+
+
         @endif
 
     @endforeach           
                        
     
 </x-layout>
+
+
+         
