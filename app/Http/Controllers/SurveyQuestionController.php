@@ -168,9 +168,9 @@ class SurveyQuestionController extends Controller
        //       $AnswerChoices1 = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
   //     $AnswerChoices2 = $AnswerChoices1->pluck('id');
 
-       $UnCheckedChoices = $questionchoices->diffKeys($AnswerChoices);
+       $UnCheckedChoices = $questionchoices->diff($AnswerChoices);
       
-       dd($UnCheckedChoices);
+      
        
        //this shit ^ throws an error when null, must condition to only run it if surveyresponseanswer exists
        
