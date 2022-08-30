@@ -30,10 +30,17 @@
         
                         <div class="w-full flex flex-wrap bg-gray-300"> 
 
-                        @foreach($choices as $choice)     
+                        @foreach($AnswerChoices as $AnswerChoice)     
 
-                        <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
+                        <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$AnswerChoice}}" checked > &nbsp {{$AnswerChoice}} </div> 
+                                                                                        
+                        
+                        @endforeach
 
+                        @foreach($UnCheckedChoices as $UnCheckedChoice)
+
+                        <div class="justify-between bg-gray-300 px-2 py-1 w-1/4  h-auto truncate hover:text-clip"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$UnCheckedChoice}}"  > &nbsp {{$UnCheckedChoice}} </div> 
+                        
                         @endforeach
                         </div>
 
@@ -99,10 +106,17 @@
 
                 <div class="w-full flex flex-wrap bg-gray-300 mt-1"> 
 
-                @foreach($choices as $choice)     
+                @foreach($AnswerChoices as $AnswerChoice)     
 
-                <div class="flex flex-wrap  bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
+                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$AnswerChoice}}" checked > &nbsp {{$AnswerChoice}} </div> 
+                                                                                   
+                
+                @endforeach
 
+                @foreach($UnCheckedChoices as $UnCheckedChoice)
+
+                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$UnCheckedChoice}}"  > &nbsp {{$UnCheckedChoice}} </div> 
+                
                 @endforeach
                 </div>
 
@@ -241,10 +255,17 @@
 
                 <div class="w-full flex flex-wrap bg-gray-300 mt-1"> 
 
-                @foreach($choices as $choice)     
+                @foreach($AnswerChoices as $AnswerChoice)     
 
-                <div class="flex flex-wrap  bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox" name="question_choice[]" id="question_choice[]" value="{{$choice->question_choice}}"> &nbsp {{$choice->question_choice}} </div> 
+                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$AnswerChoice}}" checked > &nbsp {{$AnswerChoice}} </div> 
+                                                                                   
+                
+                @endforeach
 
+                @foreach($UnCheckedChoices as $UnCheckedChoice)
+
+                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$UnCheckedChoice}}"  > &nbsp {{$UnCheckedChoice}} </div> 
+                
                 @endforeach
                 </div>
 

@@ -2174,5 +2174,15 @@ To Do Next Session (for documentation, important stuff and ordered in descending
 AUG 30
 
 IN PROGRESS:
-- found a bug on view question (admin side) where the body overlaps the nav bars, again.
 - Show answers after submitting fix
+- found a bug on view question (admin side) where the body overlaps the nav bars, again. trying to fix it now.
+Uhm.. apparently it fixed itself? wtf.
+
+DONE:
+- Show answers after submitting complete with no bugs
+- Fixed that mcchoice bug, turns out diff(), diffAssoc() and diffKeys(),  works differently. IDK yet.
+- Parameter bug occurs when you're using "Where()" but not when using "whereIn()"
+- "Mcchoice bug" wasnt a bug, it was just a byproduct of using diffKeys and diffAssoc, turns out diff() was the proper
+query command for what you needed.
+
+
