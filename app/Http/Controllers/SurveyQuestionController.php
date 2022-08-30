@@ -147,26 +147,38 @@ class SurveyQuestionController extends Controller
        foreach ($SurveyQuestions as $SurveyQuestion)
        {
         $SurveyQuestionId = $SurveyQuestion->id; 
+
        }
        
-       $choices = QuestionChoice::all()->whereIn('survey_question_id', $id);
+       
+       
+       $choices = QuestionChoice::all()->whereIn('survey_question_id', $SurveyQuestionId);
 
-       $SurveyResponseAnswer = SurveyResponseAnswers::where('survey_response_id', $SurveyResponseId)->where('survey_question_id', $SurveyQuestionId)->get();
+       $SurveyResponseAnswer = SurveyResponseAnswers::whereIn('survey_response_id', $SurveyResponseId)->where('survey_question_id', $SurveyQuestionId)->get();
        
        $SurveyResponseAnswerId = $SurveyResponseAnswer->pluck('id');
+       $questionchoices = $choices->pluck('question_choice');
 
-      // $AnswerChoices = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->pluck('answer_choice');
+       $AnswerChoicesCollection = AnswerChoice::whereIn('survey_response_answer_id', $SurveyResponseAnswerId)->get();
+       $AnswerChoices = $AnswerChoicesCollection->pluck('answer_choice');
+       
 
-       $AnswerChoices = DB::table('answer_choices')->where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
-       dd($AnswerChoices);
+
+       // dd($SurveyResponseAnswerId);
+       //       $AnswerChoices1 = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
+  //     $AnswerChoices2 = $AnswerChoices1->pluck('id');
+
+       $UnCheckedChoices = $questionchoices->diffKeys($AnswerChoices);
+      
+       dd($UnCheckedChoices);
+       
        //this shit ^ throws an error when null, must condition to only run it if surveyresponseanswer exists
-       $diff = $choices->diffKeys($AnswerChoices);
        
        $nextpage = $SurveyQuestions->nextPageURL();
 
-      
         
-        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage , 'choices' => $choices, 'AnswerChoices' => $AnswerChoices]);
+        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage , 'choices' => $choices, 'UnCheckedChoices' => $UnCheckedChoices, 'AnswerChoices' => $AnswerChoices]);
+
     }
 
     public function createanswer(Survey $survey, SurveyQuestion $SurveyQuestion, SurveyResponseAnswers $SurveyResponseAnswers, Student $student, SurveyResponses $SurveyResponses, )
@@ -219,7 +231,7 @@ class SurveyQuestionController extends Controller
             }
                
 
-        return redirect()->back()->with('success', 'Answer Submitted');
+        return redirect()->back()->with('success', 'Answer Submitted')->withInput();
                
         /* return redirect('texthere/' . $variablehere->id '?page=' . $page->id);  THE RESULT OF THIS IS /texthere/varaiableid?page=pageid*/
     }

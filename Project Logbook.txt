@@ -2154,4 +2154,25 @@ AUG 27
 
 IN PROGRESS:
 - trying to sort out the query in controller for SurveyResponseAnswers
+- Found another bug, the diffKeys function works on the first question but apparently not on the second one. Fuck
 
+DONE:
+
+- whereIn works as a sub for where (I'm yet to know the difference of the two). Atleast it bypasses that error
+that throws when wanted query doesn't exist)
+- Fixed the bug where diffKey function works only on the first question. Turns out u need to pluck the attribute on both collections
+needed to differentiate them according to that attribute.
+- Built a query that returns all the unchecked choices under the variable "$UncheckedChoices"	
+- A query that returns all checked choices is just.. answerchoices lol
+
+To Do Next Session (for documentation, important stuff and ordered in descending priority):
+- Show answers after submitting (View Side, Finally)
+- Limit to only 1 checkbox if ratingscale/likertscale/matrix
+- remove that fokin mcchoice thingy, that sht creates bugs tf
+--------------------------------------------------------------------------------------------------------
+
+AUG 30
+
+IN PROGRESS:
+- found a bug on view question (admin side) where the body overlaps the nav bars, again.
+- Show answers after submitting fix

@@ -165,18 +165,18 @@
 
                 <div class="w-full flex flex-wrap bg-gray-300 mt-1"> 
 
-                @foreach($choices as $choice)     
+                @foreach($AnswerChoices as $AnswerChoice)     
 
-                @php
-
-               
-                $option = $choice->question_choice;
-                @endphp
-                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$choice->question_choice}}" @if(old('question_choice') == $option))  checked  @endif> &nbsp {{$choice->question_choice}} </div> 
-                                                                                    
+                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$AnswerChoice}}" checked > &nbsp {{$AnswerChoice}} </div> 
+                                                                                   
                 
                 @endforeach
 
+                @foreach($UnCheckedChoices as $UnCheckedChoice)
+
+                <div class="flex flex-wrap bg-gray-300 px-2 py-1 w-1/5  h-auto truncate hover:text-clip border border-black"> <input type="checkbox"  name="question_choice[]"  id="question_choice" value="{{$UnCheckedChoice}}"  > &nbsp {{$UnCheckedChoice}} </div> 
+                
+                @endforeach
                 
                 </div>
 
