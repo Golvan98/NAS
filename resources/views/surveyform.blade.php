@@ -158,7 +158,7 @@
 
                         $checkboxes.change(function () {
                         if (this.checked) {
-                                if ($checkboxes.filter(':checked').length == 2) {
+                                if ($checkboxes.filter(':checked').length == 1) {
                                 $checkboxes.not(':checked').prop('disabled', true);
                                 alert("Please select only 1");
                                 }
@@ -250,7 +250,7 @@
 
                 $checkboxes.change(function () {
                         if (this.checked) {
-                                        if ($checkboxes.filter(':checked').length == 2) {
+                                        if ($checkboxes.filter(':checked').length == 1) {
                                         $checkboxes.not(':checked').prop('disabled', true);
                                         alert("Please select only 1");
                                         }
@@ -346,7 +346,7 @@
 
                 $checkboxes.change(function () {
                         if (this.checked) {
-                                        if ($checkboxes.filter(':checked').length == 2) {
+                                        if ($checkboxes.filter(':checked').length == 1) {
                                         $checkboxes.not(':checked').prop('disabled', true);
                                         alert("Please select only 1");
                                         }

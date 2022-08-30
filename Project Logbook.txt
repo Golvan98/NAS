@@ -2184,5 +2184,9 @@ DONE:
 - Parameter bug occurs when you're using "Where()" but not when using "whereIn()"
 - "Mcchoice bug" wasnt a bug, it was just a byproduct of using diffKeys and diffAssoc, turns out diff() was the proper
 query command for what you needed.
+- Limit to only 1 checkbox if ratingscale/likert/matrix
 
 
+To Do Next Session: Dynamic Data Vizualization (This is Finally It, GL)
+
+--------------------------------------------------------------------------------------------------------
