@@ -389,9 +389,15 @@
 
                         <div class="flex bg-gray-300 h-full w-full"> 
 
-
-                                <input class="mx-2 bg-gray-300 w-full h-full py-4"  type="text" name="answer" id="answer" placeholder="Answer Here" value="{{old('answer')}}"> 
-
+                        @if ($SurveyQuestionAnswer->count() > 0 )
+                        @foreach($SurveyQuestionAnswer as $Sqs)
+                        <input class="mx-2 bg-gray-300 w-full h-full py-4"  type="text" name="answer" id="answer" placeholder="{{$Sqs}}" value="{{$Sqs}}" >                         
+                        @endforeach
+                        @else
+                        <input class="mx-2 bg-gray-300 w-full h-full py-4"  type="text" name="answer" id="answer" placeholder="answer here" >                         
+                        @endif
+                        
+                                
 
                         </div>  
                 </div>

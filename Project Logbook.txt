@@ -2190,3 +2190,28 @@ query command for what you needed.
 To Do Next Session: Dynamic Data Vizualization (This is Finally It, GL)
 
 --------------------------------------------------------------------------------------------------------
+
+AUG 31
+
+IN PROGRESS: Dynamic Data Vizualization
+- show old answer for open ended questions
+- dynamic list for student answers
+- studying that part where u make pie charts
+
+DONE:
+- show old anser for open ended questions.
+
+an empty variable from ->pluck() is an empty set and not NULL. u can set conditions if the variable is empty 
+like this: 
+@if ($products->count() > 0 )
+    @foreach($products as $product)
+        //enter code here
+    @endforeach
+@else
+   <div class="alert alert-warning">
+        <strong>Sorry!</strong> No Product Found.
+    </div>
+@endif
+
+--------------------------------------------------------------------------------------------------------
+

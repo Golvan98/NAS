@@ -162,8 +162,9 @@ class SurveyQuestionController extends Controller
        $AnswerChoicesCollection = AnswerChoice::whereIn('survey_response_answer_id', $SurveyResponseAnswerId)->get();
        $AnswerChoices = $AnswerChoicesCollection->pluck('answer_choice');
        
+       $SurveyQuestionAnswer = $SurveyResponseAnswer->pluck('answer');
 
-
+      
        // dd($SurveyResponseAnswerId);
        //       $AnswerChoices1 = AnswerChoice::where('survey_response_answer_id', $SurveyResponseAnswerId)->get();
   //     $AnswerChoices2 = $AnswerChoices1->pluck('id');
@@ -177,7 +178,7 @@ class SurveyQuestionController extends Controller
        $nextpage = $SurveyQuestions->nextPageURL();
 
         
-        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage , 'choices' => $choices, 'UnCheckedChoices' => $UnCheckedChoices, 'AnswerChoices' => $AnswerChoices]);
+        return view('/surveyform')->with(['survey' => $survey, 'SurveyQuestions' => $SurveyQuestions, 'student' => $student, 'nextpage' => $nextpage , 'choices' => $choices, 'UnCheckedChoices' => $UnCheckedChoices,  'AnswerChoices' => $AnswerChoices, 'SurveyQuestionAnswer' => $SurveyQuestionAnswer]);
 
     }
 
