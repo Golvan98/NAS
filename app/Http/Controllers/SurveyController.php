@@ -5,11 +5,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
-use App\Models\SurveyResponseAnswer;
+use App\Models\SurveyResponseAnswers;
 use App\Models\SurveyResponses;
 use App\Models\Student;
 use App\Models\Course;
 use App\Models\Department;
+use App\Models\AnswerChoice;
 use Illuminate\Pagination\Paginator;
 
 class SurveyController extends Controller
@@ -119,6 +120,11 @@ class SurveyController extends Controller
 
         $BSCA = Course::all()->where('coursecode', '=', 'BSCA')->pluck('id');
         $BSCS = Course::all()->where('coursecode', '=', 'BSCS')->pluck('id');
+
+        $Anxiety = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers' ])->pluck('survey_response_answer_id');
+
+        
+       $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn();
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
        
