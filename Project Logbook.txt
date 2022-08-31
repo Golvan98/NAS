@@ -2200,6 +2200,11 @@ IN PROGRESS: Dynamic Data Vizualization
 
 DONE:
 - show old anser for open ended questions.
+- The bug resurfaces, it's the admin question list that bends the nav bar
+- ^apparently the bug is not a bug? just a result of anything lower than 100% view.. huh. must learn how to fix that someday
+
+
+NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!:
 
 an empty variable from ->pluck() is an empty set and not NULL. u can set conditions if the variable is empty 
 like this: 

@@ -24,7 +24,7 @@ class QuestionChoiceController extends Controller
             $StudentId = auth()->user()->id;
 
             $SurveyQuestionId = $SurveyQuestion->id;
-
+            $SurveyQuestionType = $SurveyQuestion->type;
 
             $ResponseData = [
                 'survey_id' => $survey->id,
@@ -38,10 +38,10 @@ class QuestionChoiceController extends Controller
             $NewAnswerData = [
                 'survey_response_id' => $NewResponse->id,
                 'survey_question_id' => $SurveyQuestionId,
-                'answer' => 'multiple_choice'
+                'answer' => $SurveyQuestionType
             ];
 
-    
+            
             $NewAnswer = SurveyResponseAnswers::firstOrCreate($NewAnswerData);
    
            $NewAnswerChoiceData = [
