@@ -2202,11 +2202,13 @@ IN PROGRESS: Dynamic Data Vizualization
 - studying that part where u make pie charts
 
 DONE:
-- show old anser for open ended questions.
+- show old anwser for open ended questions.
 - The bug resurfaces, it's the admin question list that bends the nav bar
 - ^apparently the bug is not a bug? just a result of anything lower than 100% view.. huh. must learn how to fix that someday
+- query that identifies students who answered on the anxious part.
 - I have decided to only include CCS as part of the Dynamic Data Vizualization. Including all colleges would need me to write 
 100 + SQL queries.
+
 
 NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!:
 
@@ -2222,5 +2224,20 @@ like this:
     </div>
 @endif
 
+To Do Next Session: Dynamic Data Vizualization (This is Finally It, GL)
+Substeps
+
+- Query that plucks anxious students' courses.
+- Query that identifies CCS students.
+
 --------------------------------------------------------------------------------------------------------
+
+Sept 1:
+
+IN PROGRESS:
+- dynamic list for student answers
+- List of Students in a college
+- List of Students in a college who answered
+- List of Students' answers in a category
+- studying that part where u make pie charts
 

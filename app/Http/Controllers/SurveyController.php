@@ -130,7 +130,21 @@ class SurveyController extends Controller
 
        $AnxiousStudents = Student::all()->whereIn('id', $SurveyResponse);
 
-       dd($AnxiousStudents);
+       
+        $CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id');
+
+        $CCSCourses = Course::all()->whereIn('department_id', $CCSDepartments)->pluck('id');
+
+       $AnxiousCCSStudents = $AnxiousStudents->whereIn('course_id', $CCSCourses);
+
+       
+
+        dd($AnxiousCCSStudents);
+
+
+      
+dd($CCSCourses);
+        
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
        
