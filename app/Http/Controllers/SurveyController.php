@@ -141,7 +141,13 @@ class SurveyController extends Controller
        $RelationshipProblemStudents = Student::all()->whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
        $RelationshipProblemCCSStudents = $RelationshipProblemStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 relationship problem
 
-       dd($RelationshipProblemCCSStudents);
+       $StressAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Having trouble sleeping', 'Having health problems', 'Always feeling tired'])->pluck('survey_response_answer_id');
+       $StressSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $StressAnswers)->pluck('survey_response_id');
+       $StressSurveyResponse = SurveyResponses::all()->whereIn('id', $StressSurveyResponseAnswers)->pluck('student_id');
+       $StressStudents = Student::all()->whereIn('id', $StressSurveyResponse); //Query for all Students who are atleast having 1 Stress Management problem
+       $StressCCSStudents = $StressStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Stress Management problem
+
+       
       
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');

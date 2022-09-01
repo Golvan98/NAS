@@ -2235,7 +2235,7 @@ Substeps
 Sept 1:
 
 IN PROGRESS:
-- dynamic list for student answers
+- dynamic list for a student's answers
 - List of Students in a college
 - List of Students in a college who answered
 - List of Students' answers in a category
@@ -2243,3 +2243,15 @@ IN PROGRESS:
 
 DONE:
 - Query for Anxious Students
+- Query for Stressed Students
+- Query for Students with Relationship Problems
+- Query for Students with peer/social problems
+
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- Query for the rest of the 4 remaining categories for NAS 1
+- Connecting these queries to the list of students in survey results
+- dynamic list for a student's answers
+- studying that part where u make pie charts
+
+--------------------------------------------------------------------------------------------------------
+
