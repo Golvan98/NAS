@@ -153,8 +153,13 @@ class SurveyController extends Controller
        $StudentTeacherStudents = Student::all()->whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
        $StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
 
-     
+       $SelfImageAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Struggling with sexual identity'])->pluck('survey_response_answer_id');
+       $SelfImageResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $SelfImageAnswers)->pluck('survey_response_id');
+       $SelfImageSurveyResponse = SurveyResponses::all()->whereIn('id', $SelfImageResponseAnswers)->pluck('student_id');
+       $SelfImageStudents = Student::all()->whereIn('id', $SelfImageSurveyResponse); //Query for all Students who are atleast having 1 Self-Image problem
+       $SelfImageCCSStudents = $SelfImageStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Self-Image problem
 
+        dd($SelfImageCCSStudents);
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
        
         $CoeCourses = Course::all()->whereIn('department_id', $CoeDepartments)->pluck('id');

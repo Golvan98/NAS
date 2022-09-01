@@ -2263,6 +2263,8 @@ IN PROGRESS:
 
 DONE:
 - Query for StudentTeacher Problem Students
+- Query for Self-Image Problem Students
+
 
 
 
