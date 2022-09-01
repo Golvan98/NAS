@@ -124,7 +124,13 @@ class SurveyController extends Controller
         $Anxiety = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers' ])->pluck('survey_response_answer_id');
 
         
-       $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn();
+       $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $Anxiety)->pluck('survey_response_id');
+
+       $SurveyResponse = SurveyResponses::all()->whereIn('id', $AnxietySurveyResponseAnswers)->pluck('student_id');
+
+       $AnxiousStudents = Student::all()->whereIn('id', $SurveyResponse);
+
+       dd($AnxiousStudents);
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
        
