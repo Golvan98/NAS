@@ -70,7 +70,21 @@
                 <tr>
                     <th class="border border-black px-2 text-left"> TOTAL </th>
 
-                        <th class="border border-black px-2"> @if($questioncategory == "Motivation") {{$LackOfMotivationCCSStudents}} @endif </th>
+                        <th class="border border-black px-2"> 
+                            @if($questioncategory == "Motivation") {
+                                {$LackOfMotivationCCSStudents}}
+                            @endif 
+                            @if($questioncategory == "Anxiety") {
+                                {$AnxiousCCSStudents}}
+                            @endif 
+                            @if($questioncategory == "Relationships") {
+                                {$RelationshipProblemCCSStudents}}
+                            @endif 
+                            @if($questioncategory == "Stress-Management") {
+                                {$StressCCSStudents}}
+                            @endif 
+
+                        </th>
                 </tr>
 
             </table>
