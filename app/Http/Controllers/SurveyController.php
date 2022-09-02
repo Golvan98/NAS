@@ -133,7 +133,7 @@ class SurveyController extends Controller
        $MotivationSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $MotivationAnswers)->pluck('survey_response_id');
        $MotivationSurveyResponse = SurveyResponses::all()->whereIn('id', $MotivationSurveyResponseAnswers)->pluck('student_id');
        $LackOfMotivationStudents = Student::all()->whereIn('id', $MotivationSurveyResponse); //Query for all Students who answered atleast 1 Motivation problem
-       $LackOfMotivationCCSStudents = $LackOfMotivationStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who answered atleast 1 Motivation problem
+       $LackOfMotivationCCSStudents = $LackOfMotivationStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who answered atleast 1 Motivation problem
 
        $RelationshipProblemAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Having no close friends in school', 'Having no financial/emotional support', 'Having difficulty socializing'])->pluck('survey_response_answer_id');
        $RelationshipProblemResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $RelationshipProblemAnswers)->pluck('survey_response_id');
@@ -166,6 +166,7 @@ class SurveyController extends Controller
        $BulliedCCSStudents = $BulliedStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Bullying  problem
 
     
+       
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
        
@@ -179,7 +180,7 @@ class SurveyController extends Controller
         $BSCScount = Student::all()->whereIn('course_id', $BSCS)->count();
         
 
-        return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount]);
+        return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents]);
     }
 
 

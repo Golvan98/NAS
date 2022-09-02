@@ -27,7 +27,10 @@
                 
         </div>
         <div class="text-center  mr-2"> 
-            {{$questioncategory}}
+           @if($questioncategory == "Motivation")
+           yewe
+           @endif
+           
         </div>
 
         @php  $BSIT = App\Models\Course::all()->where('coursecode', '=', 'BSIT')->pluck('id');
@@ -67,7 +70,7 @@
                 <tr>
                     <th class="border border-black px-2 text-left"> TOTAL </th>
 
-                        <th class="border border-black px-2"> 31 </th>
+                        <th class="border border-black px-2"> @if($questioncategory == "Motivation") {{$LackOfMotivationCCSStudents}} @endif </th>
                 </tr>
 
             </table>

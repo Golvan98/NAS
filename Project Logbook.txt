@@ -2260,11 +2260,29 @@ Sept 2:
 IN PROGRESS:
 
 - Query for the rest of the 4 remaining categories for NAS 1
+- dynamic list for a student's answers
+- List of Students in a college
+- List of Students in a college who answered
+- List of Students' answers in a category
+- studying that part where u make pie charts
+- Connecting the queries to the list of students in survey results
+
 
 DONE:
 - Query for StudentTeacher Problem Students
 - Query for Self-Image Problem Students
+- Query for Bullied Students
+- Decided to leave "Peer Pressure" Category as blank for testing purposes (if data viz is to show no data)
+- Algo to reflect the number of students who answered a category
 
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- Connecting these queries to the list of students in survey results
+- dynamic list for a student's answers
+- studying that part where u make pie charts
+- Finishing the Algo to reflect the number of students who answered a category
+
+
+--------------------------------------------------------------------------------------------------------
 
 
 
