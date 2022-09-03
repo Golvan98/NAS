@@ -165,7 +165,12 @@ class SurveyController extends Controller
        $BulliedStudents = Student::all()->whereIn('id', $BullyingSurveyResponse); //Query for all Students who are atleast having 1 Bullying problem
        $BulliedCCSStudents = $BulliedStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Bullying  problem
 
-    
+       $PeerPressureAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Being pressured by friends'])->pluck('survey_response_answer_id');
+       $PeerPressureResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $PeerPressureAnswers)->pluck('survey_response_id');
+       $PeerPressureSurveyResponse = SurveyResponses::all()->whereIn('id', $PeerPressureResponseAnswers)->pluck('student_id');
+       $PeerPressuredStudents = Student::all()->whereIn('id', $PeerPressureSurveyResponse); //Query for all Students who are atleast having 1 Peer-pressure problem
+       $PeerPressuredCCSStudents = $PeerPressuredStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Peer-pressure  problem
+
        
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
@@ -180,7 +185,7 @@ class SurveyController extends Controller
         $BSCScount = Student::all()->whereIn('course_id', $BSCS)->count();
         
 
-        return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents]);
+        return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents, 'RelationshipProblemCCSStudents' => $RelationshipProblemCCSStudents, 'StressCCSStudents' => $StressCCSStudents, 'StudentTeacherCCSStudents' => $StudentTeacherCCSStudents, 'SelfImageCCSStudents' => $SelfImageCCSStudents, 'BulliedCCSStudents' => $BulliedCCSStudents, 'PeerPressuredCCSStudents' => $PeerPressuredCCSStudents]);
     }
 
 

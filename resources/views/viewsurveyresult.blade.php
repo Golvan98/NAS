@@ -72,21 +72,34 @@
 
                         <th class="border border-black px-2"> 
                             @if($questioncategory == "Motivation") {
-                                {$LackOfMotivationCCSStudents}}
+                                $LackOfMotivationCCSStudents
                             @endif 
                             @if($questioncategory == "Anxiety") {
-                                {$AnxiousCCSStudents}}
+                                $AnxiousCCSStudents
                             @endif 
                             @if($questioncategory == "Relationships") {
-                                {$RelationshipProblemCCSStudents}}
+                                $RelationshipProblemCCSStudents
                             @endif 
                             @if($questioncategory == "Stress-Management") {
-                                {$StressCCSStudents}}
+                                $StressCCSStudents
                             @endif 
+                            @if($questioncategory == "Student-Teacher-Conflict") {
+                                $StudentTeacherCCSStudents
+                            @endif 
+                            @if($questioncategory == "Self-Image") {
+                                $SelfImageCCSStudents
+                            @endif 
+                            @if($questioncategory == "Bullying") {
+                                $BulliedCCSStudents
+                            @endif 
+                            @if($questioncategory == "Peer Pressure") {
+                                $PeerPressuredCCSStudents
+                            @endif 
+                            
 
                         </th>
                 </tr>
-
+                
             </table>
             <br>
             <br>

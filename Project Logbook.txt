@@ -2283,6 +2283,15 @@ To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, G
 
 
 --------------------------------------------------------------------------------------------------------
+Sept 3:
 
+ dynamic list for a student's answers
+- List of Students in a college
+- List of Students in a college who answered
+- List of Students' answers in a category
+- studying that part where u make pie charts
+- Connecting the queries to the list of students in survey results
 
+DONE:
+- 
 
