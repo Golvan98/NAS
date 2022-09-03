@@ -71,29 +71,29 @@
                     <th class="border border-black px-2 text-left"> TOTAL </th>
 
                         <th class="border border-black px-2"> 
-                            @if($questioncategory == "Motivation") {
-                                $LackOfMotivationCCSStudents
+                            @if($questioncategory == "Motivation") 
+                               {{ $LackOfMotivationCCSStudents}}
                             @endif 
-                            @if($questioncategory == "Anxiety") {
-                                $AnxiousCCSStudents
+                            @if($questioncategory == "Anxiety") 
+                              {{  $AnxiousCCSStudents}}
                             @endif 
-                            @if($questioncategory == "Relationships") {
-                                $RelationshipProblemCCSStudents
+                            @if($questioncategory == "Relationships") 
+                               {{ $RelationshipProblemCCSStudents }}
                             @endif 
-                            @if($questioncategory == "Stress-Management") {
-                                $StressCCSStudents
+                            @if($questioncategory == "Stress-Management") 
+                               {{ $StressCCSStudents }}
                             @endif 
-                            @if($questioncategory == "Student-Teacher-Conflict") {
-                                $StudentTeacherCCSStudents
+                            @if($questioncategory == "Student-Teacher-Conflict") 
+                              {{  $StudentTeacherCCSStudents }}
                             @endif 
-                            @if($questioncategory == "Self-Image") {
-                                $SelfImageCCSStudents
+                            @if($questioncategory == "Self-Image") 
+                              {{  $SelfImageCCSStudents }}
                             @endif 
-                            @if($questioncategory == "Bullying") {
-                                $BulliedCCSStudents
+                            @if($questioncategory == "Bullying") 
+                              {{  $BulliedCCSStudents }}
                             @endif 
-                            @if($questioncategory == "Peer Pressure") {
-                                $PeerPressuredCCSStudents
+                            @if($questioncategory == "Peer Pressure") 
+                               {{  $PeerPressuredCCSStudents }}
                             @endif 
                             
 
