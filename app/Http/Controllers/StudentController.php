@@ -5,7 +5,7 @@ use illuminate\Support\Facades\Auth;
 use illuminate\Contracts\Auth\user as Authenticatable;
 use Illuminate\Http\Request;
 use App\Models\Student;
-
+use App\Models\Course;
 
 
 class StudentController extends Controller
@@ -41,8 +41,10 @@ class StudentController extends Controller
 
     public function studentlist()
     {
-        $students = Student::where('id', '<>', 0 )->simplePaginate(11);
-                
+        $CCSCoursesIDs = Course::all()->whereIn('coursecode', ['BSIS', 'BSCA', 'BSCS', 'BSIT'])->pluck('id');
+
+        $students = Student::whereIn('course_id', [7,8,9,10] )->simplePaginate(11);
+            
         return view('studentlist')->with(['students' => $students]);
        
     }

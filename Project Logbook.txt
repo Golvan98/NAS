@@ -2293,5 +2293,10 @@ Sept 3:
 - Connecting the queries to the list of students in survey results
 
 DONE:
-- 
+- Connecting these queries to the list of students in survey results
+- Student list for comp sci now reflects all. Got a weird query tho where a more dynamic one for it doesnt work
+(the algo is pluck all course ids, then compare all students, if course ids are the same, then return all of it, it works
+but only on 4 of out of 14)
 
+
+--------------------------------------------------------------------------------------------------------
