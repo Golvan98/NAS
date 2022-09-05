@@ -2285,7 +2285,9 @@ To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, G
 --------------------------------------------------------------------------------------------------------
 Sept 3:
 
- dynamic list for a student's answers
+IN PROGRESS:
+
+- dynamic list for a student's answers
 - List of Students in a college
 - List of Students in a college who answered
 - List of Students' answers in a category
@@ -2294,9 +2296,24 @@ Sept 3:
 
 DONE:
 - Connecting these queries to the list of students in survey results
-- Student list for comp sci now reflects all. Got a weird query tho where a more dynamic one for it doesnt work
-(the algo is pluck all course ids, then compare all students, if course ids are the same, then return all of it, it works
-but only on 4 of out of 14)
+- List of Students in a college/CCS
+- List of Students in a college who answered
+
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- dynamic list for a student's answers
+- studying that part where u make pie charts
+- Finishing the Algo to reflect the number of students who answered a category
+- pie charts
 
 
 --------------------------------------------------------------------------------------------------------
+
+Sept 6:
+
+IN PROGRESS:
+
+- dynamic list for a student's answers
+- studying that part where u make pie charts
+- Finishing the Algo to reflect the number of students who answered a category
+- pie charts
+

@@ -27,9 +27,7 @@
                 
         </div>
         <div class="text-center  mr-2"> 
-           @if($questioncategory == "Motivation")
-           yewe
-           @endif
+        {{ $questioncategory }}
            
         </div>
 
@@ -44,7 +42,7 @@
                 <tr>
                     <th class="text-left border border-black px-2"> BS Computer Applications </th>
 
-                        <th class="border border-black px-2"> {{$BSCAcount}} </th>
+                        <th class="border border-black px-2"> {{$AnxiousCAStudentsCount}} </th>
                 </tr>
 
                 <tr>
@@ -75,7 +73,7 @@
                                {{ $LackOfMotivationCCSStudents}}
                             @endif 
                             @if($questioncategory == "Anxiety") 
-                              {{  $AnxiousCCSStudents}}
+                              {{  $AnxiousCCSStudentsCount}}
                             @endif 
                             @if($questioncategory == "Relationships") 
                                {{ $RelationshipProblemCCSStudents }}
