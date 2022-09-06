@@ -186,15 +186,19 @@ class SurveyController extends Controller
        $StudentTeacherITStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', 10)->count();
        $StudentTeacherComSciStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', 9)->count();
        
-      
-      
-       
 
        $SelfImageAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Struggling with sexual identity'])->pluck('survey_response_answer_id');
        $SelfImageResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $SelfImageAnswers)->pluck('survey_response_id');
        $SelfImageSurveyResponse = SurveyResponses::all()->whereIn('id', $SelfImageResponseAnswers)->pluck('student_id');
        $SelfImageStudents = Student::all()->whereIn('id', $SelfImageSurveyResponse); //Query for all Students who are atleast having 1 Self-Image problem
-       $SelfImageCCSStudents = $SelfImageStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Self-Image problem
+       $SelfImageCCSStudents = $SelfImageStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Self-Image problem
+       $SelfImageCCSStudentsCount = $SelfImageStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Self-Image problem
+       $SelfImageISStudentsCount = $SelfImageCCSStudents->whereIn('course_id', 7)->count();
+       $SelfImageCAStudentsCount = $SelfImageCCSStudents->whereIn('course_id', 8)->count();
+       $SelfImageComSciStudentsCount = $SelfImageCCSStudents->whereIn('course_id', 9)->count();
+       $SelfImageITStudentsCount = $SelfImageCCSStudents->whereIn('course_id', 10)->count();
+
+
 
        $BullyingAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Being bullied'])->pluck('survey_response_answer_id');
        $BullyingResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $BullyingAnswers)->pluck('survey_response_id');
@@ -233,7 +237,9 @@ class SurveyController extends Controller
         'StressProblemISStudentsCount' => $StressProblemISStudentsCount, 'StressProblemCAStudentsCount' => $StressProblemCAStudentsCount, 'StressProblemComSciStudentsCount' => $StressProblemComSciStudentsCount,
         'StressProblemITStudentsCount' => $StressProblemITStudentsCount, 'StressCCSStudentsCount' => $StressCCSStudentsCount,
         'StudentTeacherCCSStudentsCount' => $StudentTeacherCCSStudentsCount, 'StudentTeacherISStudentsCount' => $StudentTeacherISStudentsCount, 'StudentTeacherComSciStudentsCount' => $StudentTeacherComSciStudentsCount,
-        'StudentTeacherITStudentsCount' => $StudentTeacherITStudentsCount, 'StudentTeacherCAStudentsCount' => $StudentTeacherCAStudentsCount]);
+        'StudentTeacherITStudentsCount' => $StudentTeacherITStudentsCount, 'StudentTeacherCAStudentsCount' => $StudentTeacherCAStudentsCount, 'SelfImageCCSStudentsCount' => $SelfImageCCSStudentsCount,
+        'SelfImageISStudentsCount' => $SelfImageISStudentsCount, 'SelfImageCAStudentsCount' => $SelfImageCAStudentsCount, 'SelfImageComSciStudentsCount' => $SelfImageComSciStudentsCount,
+        'SelfImageITStudentsCount' => $SelfImageITStudentsCount]);
     
     }
     

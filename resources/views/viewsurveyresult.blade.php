@@ -60,7 +60,7 @@
                               {{  $StudentTeacherCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageCCSStudents }}
+                              {{  $StudentTeacherCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedCCSStudents }}
@@ -92,7 +92,7 @@
                               {{  $StudentTeacherComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageCCSStudents }}
+                              {{  $SelfImageComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedCCSStudents }}
@@ -126,7 +126,7 @@
                               {{  $StudentTeacherITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageCCSStudents }}
+                              {{  $SelfImageITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedCCSStudents }}
@@ -159,7 +159,7 @@
                               {{  $StudentTeacherISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageCCSStudents }}
+                              {{  $SelfImageISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedCCSStudents }}
@@ -190,7 +190,7 @@
                               {{  $StudentTeacherCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageCCSStudents }}
+                              {{  $SelfImageCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedCCSStudents }}
