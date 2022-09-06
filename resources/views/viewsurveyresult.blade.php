@@ -54,7 +54,7 @@
                                {{ $RelationshipProblemCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
-                               {{ $StressCCSStudents }}
+                               {{ $StressProblemCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
                               {{  $StudentTeacherCCSStudents }}
@@ -86,7 +86,7 @@
                                {{ $RelationshipProblemComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
-                               {{ $StressCCSStudents }}
+                               {{ $StressProblemComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
                               {{  $StudentTeacherCCSStudents }}
@@ -120,7 +120,7 @@
                                {{ $RelationshipProblemITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
-                               {{ $StressCCSStudents }}
+                               {{ $StressProblemITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
                               {{  $StudentTeacherCCSStudents }}
@@ -153,7 +153,7 @@
                                {{ $RelationshipProblemISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
-                               {{ $StressCCSStudents }}
+                               {{ $StressProblemISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
                               {{  $StudentTeacherCCSStudents }}
@@ -184,7 +184,7 @@
                                {{ $RelationshipProblemCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
-                               {{ $StressCCSStudents }}
+                               {{ $StressCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
                               {{  $StudentTeacherCCSStudents }}
