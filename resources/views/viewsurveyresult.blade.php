@@ -63,7 +63,7 @@
                               {{  $StudentTeacherCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
-                              {{  $BulliedCCSStudents }}
+                              {{  $BulliedCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredCCSStudents }}
@@ -95,7 +95,7 @@
                               {{  $SelfImageComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
-                              {{  $BulliedCCSStudents }}
+                              {{  $BulliedComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredCCSStudents }}
@@ -129,7 +129,7 @@
                               {{  $SelfImageITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
-                              {{  $BulliedCCSStudents }}
+                              {{  $BulliedITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredCCSStudents }}
@@ -162,7 +162,7 @@
                               {{  $SelfImageISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
-                              {{  $BulliedCCSStudents }}
+                              {{  $BulliedISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredCCSStudents }}
@@ -193,7 +193,7 @@
                               {{  $SelfImageCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
-                              {{  $BulliedCCSStudents }}
+                              {{  $BulliedCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredCCSStudents }}

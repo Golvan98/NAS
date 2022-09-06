@@ -204,7 +204,14 @@ class SurveyController extends Controller
        $BullyingResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $BullyingAnswers)->pluck('survey_response_id');
        $BullyingSurveyResponse = SurveyResponses::all()->whereIn('id', $BullyingResponseAnswers)->pluck('student_id');
        $BulliedStudents = Student::all()->whereIn('id', $BullyingSurveyResponse); //Query for all Students who are atleast having 1 Bullying problem
-       $BulliedCCSStudents = $BulliedStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Bullying  problem
+       $BulliedCCSStudents = $BulliedStudents->whereIn('course_id', $CCSCourses);
+       $BulliedCCSStudentsCount = $BulliedStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Bullying  problem
+       $BulliedISStudentsCount = $BulliedCCSStudents->whereIn('course_id', 7)->count();
+       $BulliedCAStudentsCount = $BulliedCCSStudents->whereIn('course_id', 8)->count();
+       $BulliedComSciStudentsCount = $BulliedCCSStudents->whereIn('course_id', 9)->count();
+       $BulliedITStudentsCount = $BulliedCCSStudents->whereIn('course_id', 10)->count();
+
+
 
        $PeerPressureAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Being pressured by friends'])->pluck('survey_response_answer_id');
        $PeerPressureResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $PeerPressureAnswers)->pluck('survey_response_id');
@@ -220,7 +227,7 @@ class SurveyController extends Controller
 
         $CoeStudents = Student::all()->whereIn('course_id', $CoeCourses)->pluck('firstname');
 
-        
+       
         
         $BSCAcount = Student::all()->whereIn('course_id', $BSCA)->count();
         $BSCScount = Student::all()->whereIn('course_id', $BSCS)->count();
@@ -239,12 +246,13 @@ class SurveyController extends Controller
         'StudentTeacherCCSStudentsCount' => $StudentTeacherCCSStudentsCount, 'StudentTeacherISStudentsCount' => $StudentTeacherISStudentsCount, 'StudentTeacherComSciStudentsCount' => $StudentTeacherComSciStudentsCount,
         'StudentTeacherITStudentsCount' => $StudentTeacherITStudentsCount, 'StudentTeacherCAStudentsCount' => $StudentTeacherCAStudentsCount, 'SelfImageCCSStudentsCount' => $SelfImageCCSStudentsCount,
         'SelfImageISStudentsCount' => $SelfImageISStudentsCount, 'SelfImageCAStudentsCount' => $SelfImageCAStudentsCount, 'SelfImageComSciStudentsCount' => $SelfImageComSciStudentsCount,
-        'SelfImageITStudentsCount' => $SelfImageITStudentsCount]);
+        'SelfImageITStudentsCount' => $SelfImageITStudentsCount, 'BulliedCCSStudentsCount' => $BulliedCCSStudentsCount, 
+        'BulliedISStudentsCount' => $BulliedISStudentsCount, 'BulliedCAStudentsCount' => $BulliedCAStudentsCount, 'BulliedComSciStudentsCount' => $BulliedComSciStudentsCount,
+        'BulliedITStudentsCount' => $BulliedITStudentsCount]);
     
     }
     
-
-    
+   
     
     public function surveyresults(SurveyQuestion $surveyquestion)
     {
