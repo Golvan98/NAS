@@ -151,7 +151,14 @@ class SurveyController extends Controller
        $RelationshipProblemResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $RelationshipProblemAnswers)->pluck('survey_response_id');
        $RelationshipProblemSurveyResponse = SurveyResponses::all()->whereIn('id', $RelationshipProblemResponseAnswers)->pluck('student_id');
        $RelationshipProblemStudents = Student::all()->whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
-       $RelationshipProblemCCSStudents = $RelationshipProblemStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 relationship problem
+       $RelationshipProblemCCSStudents = $RelationshipProblemStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 relationship problem
+       $RelationshipProblemCCSStudentsCount = $RelationshipProblemStudents->whereIn('course_id', $CCSCourses)->count();
+       $RelationshipProblemISStudentsCount = $RelationshipProblemStudents->whereIn('course_id', 7)->count();
+       $RelationshipProblemCAStudentsCount = $RelationshipProblemStudents->whereIn('course_id', 8)->count();
+       $RelationshipProblemComSciStudentsCount = $RelationshipProblemStudents->whereIn('course_id', 9)->count();
+       $RelationshipProblemITStudentsCount = $RelationshipProblemStudents->whereIn('course_id', 10)->count();
+
+
 
        $StressAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Having trouble sleeping', 'Having health problems', 'Always feeling tired'])->pluck('survey_response_answer_id');
        $StressSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $StressAnswers)->pluck('survey_response_id');
@@ -202,7 +209,11 @@ class SurveyController extends Controller
         'AnxiousCAStudentsCount' => $AnxiousCAStudentsCount, 'AnxiousISStudentsCount' => $AnxiousISStudentsCount,
         'AnxiousComSciStudentsCount' => $AnxiousComSciStudentsCount, 'AnxiousITStudentsCount' => $AnxiousITStudentsCount,
         'LackofMotivationCAStudentsCount' => $LackofMotivationCAStudentsCount,'LackofMotivationISStudentsCount' => $LackofMotivationISStudentsCount,
-        'LackofMotivationComSciStudentsCount' => $LackofMotivationComSciStudentsCount, 'LackofMotivationITStudentsCount' =>$LackofMotivationITStudentsCount, 'LackOfMotivationCCSStudentsCount' => $LackOfMotivationCCSStudentsCount,]);
+        'LackofMotivationComSciStudentsCount' => $LackofMotivationComSciStudentsCount, 'LackofMotivationITStudentsCount' =>$LackofMotivationITStudentsCount, 'LackOfMotivationCCSStudentsCount' => $LackOfMotivationCCSStudentsCount,
+        'RelationshipProblemCCSStudentsCount' => $RelationshipProblemCCSStudentsCount, 'RelationshipProblemISStudentsCount' => $RelationshipProblemISStudentsCount, 'RelationshipProblemCAStudentsCount' => $RelationshipProblemCAStudentsCount,
+        'RelationshipProblemComSciStudentsCount' => $RelationshipProblemComSciStudentsCount, 'RelationshipProblemITStudentsCount' => $RelationshipProblemITStudentsCount]);
+      
+    
     }
 
     

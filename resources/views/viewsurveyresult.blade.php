@@ -51,7 +51,7 @@
                                 {{$AnxiousCAStudentsCount}} 
                             @endif 
                             @if($questioncategory == "Relationships") 
-                               {{ $RelationshipProblemCCSStudents }}
+                               {{ $RelationshipProblemCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
                                {{ $StressCCSStudents }}
@@ -83,7 +83,7 @@
                                 {{$AnxiousComSciStudentsCount}} 
                             @endif 
                             @if($questioncategory == "Relationships") 
-                               {{ $RelationshipProblemCCSStudents }}
+                               {{ $RelationshipProblemComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
                                {{ $StressCCSStudents }}
@@ -117,7 +117,7 @@
                                 {{ $AnxiousITStudentsCount }} 
                             @endif 
                             @if($questioncategory == "Relationships") 
-                               {{ $RelationshipProblemCCSStudents }}
+                               {{ $RelationshipProblemITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
                                {{ $StressCCSStudents }}
@@ -150,7 +150,7 @@
                                 {{$AnxiousISStudentsCount}} 
                             @endif 
                             @if($questioncategory == "Relationships") 
-                               {{ $RelationshipProblemCCSStudents }}
+                               {{ $RelationshipProblemISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
                                {{ $StressCCSStudents }}
@@ -181,7 +181,7 @@
                               {{  $AnxiousCCSStudentsCount}} 
                             @endif 
                             @if($questioncategory == "Relationships") 
-                               {{ $RelationshipProblemCCSStudents }}
+                               {{ $RelationshipProblemCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Stress-Management") 
                                {{ $StressCCSStudents }}
