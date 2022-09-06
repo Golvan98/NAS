@@ -130,7 +130,9 @@ class SurveyController extends Controller
        $AnxiousCCSStudents = $AnxiousStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who answered atleast 1 Anxiety problem
        $AnxiousCCSStudentsCount = $AnxiousStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who answered atleast 1 Anxiety problem Count
        $AnxiousCAStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 8)->count();
-       
+       $AnxiousISStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 7)->count();
+       $AnxiousCSciStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 9)->count();
+       $AnxiousITStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 10)->count();
 
        $MotivationAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Lacking Motivation'])->pluck('survey_response_answer_id');
        $MotivationSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $MotivationAnswers)->pluck('survey_response_id');
@@ -188,7 +190,10 @@ class SurveyController extends Controller
         $BSCScount = Student::all()->whereIn('course_id', $BSCS)->count();
         
 
-        return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount, 'AnxiousCCSStudents' => $AnxiousCCSStudents, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents, 'RelationshipProblemCCSStudents' => $RelationshipProblemCCSStudents, 'StressCCSStudents' => $StressCCSStudents, 'StudentTeacherCCSStudents' => $StudentTeacherCCSStudents, 'SelfImageCCSStudents' => $SelfImageCCSStudents, 'BulliedCCSStudents' => $BulliedCCSStudents, 'PeerPressuredCCSStudents' => $PeerPressuredCCSStudents, 'AnxiousCAStudentsCount' => $AnxiousCAStudentsCount]);
+        return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount, 'AnxiousCCSStudentsCount' => $AnxiousCCSStudentsCount, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents, 'RelationshipProblemCCSStudents' => $RelationshipProblemCCSStudents, 'StressCCSStudents' => $StressCCSStudents, 'StudentTeacherCCSStudents' => $StudentTeacherCCSStudents, 'SelfImageCCSStudents' => $SelfImageCCSStudents, 
+        'BulliedCCSStudents' => $BulliedCCSStudents, 'PeerPressuredCCSStudents' => $PeerPressuredCCSStudents, 
+        'AnxiousCAStudentsCount' => $AnxiousCAStudentsCount, 'AnxiousISStudentsCount' => $AnxiousISStudentsCount,
+        'AnxiousCSciStudentsCount' => $AnxiousCSciStudentsCount, 'AnxiousITStudentsCount' => $AnxiousITStudentsCount]);
     }
 
 
