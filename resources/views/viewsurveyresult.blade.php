@@ -57,7 +57,7 @@
                                {{ $StressProblemCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
-                              {{  $StudentTeacherCCSStudents }}
+                              {{  $StudentTeacherCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
                               {{  $SelfImageCCSStudents }}
@@ -89,7 +89,7 @@
                                {{ $StressProblemComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
-                              {{  $StudentTeacherCCSStudents }}
+                              {{  $StudentTeacherComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
                               {{  $SelfImageCCSStudents }}
@@ -123,7 +123,7 @@
                                {{ $StressProblemITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
-                              {{  $StudentTeacherCCSStudents }}
+                              {{  $StudentTeacherITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
                               {{  $SelfImageCCSStudents }}
@@ -156,7 +156,7 @@
                                {{ $StressProblemISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
-                              {{  $StudentTeacherCCSStudents }}
+                              {{  $StudentTeacherISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
                               {{  $SelfImageCCSStudents }}
@@ -187,7 +187,7 @@
                                {{ $StressCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Student-Teacher-Conflict") 
-                              {{  $StudentTeacherCCSStudents }}
+                              {{  $StudentTeacherCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
                               {{  $SelfImageCCSStudents }}

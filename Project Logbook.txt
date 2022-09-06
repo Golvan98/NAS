@@ -2322,3 +2322,21 @@ DONE:
 - Finishing the Algo to reflect the number of students who answered a category
 - Apply algo for every category in view survey results page
 - Algo applied for Motivation, Anxiety category
+
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- dynamic list for a student's answers
+- studying that part where u make pie charts
+- Finishing the Algo to reflect the number of students for Self-Image, Bullying, and Peer Pressure category
+- Clickable reference links for students data pages
+
+--------------------------------------------------------------------------------------------------------
+
+Sept 7:
+
+IN PROGRESS:
+
+- dynamic list for a student's answers
+- studying that part where u make pie charts
+- Finishing the Algo to reflect the number of students for Self-Image, Bullying, and Peer Pressure category
+- pie charts
+

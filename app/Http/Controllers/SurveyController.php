@@ -123,6 +123,8 @@ class SurveyController extends Controller
           /*query for all Departments in CCS */$CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id');
        /*query for all Courses in CCS */$CCSCourses = Course::all()->whereIn('department_id', $CCSDepartments)->pluck('id');
 
+     
+
        $AnxietyAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers', 'Panicking during tests' ])->pluck('survey_response_answer_id');
        $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $AnxietyAnswers)->pluck('survey_response_id');
        $AnxietySurveyResponse = SurveyResponses::all()->whereIn('id', $AnxietySurveyResponseAnswers)->pluck('student_id');
@@ -177,7 +179,16 @@ class SurveyController extends Controller
        $StudentTeacherResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $StudentTeacherAnswers)->pluck('survey_response_id');
        $StudentTeacherSurveyResponse = SurveyResponses::all()->whereIn('id', $StudentTeacherResponseAnswers)->pluck('student_id');
        $StudentTeacherStudents = Student::all()->whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
-       $StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
+       $StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
+       $StudentTeacherCCSStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', $CCSCourses)->count();
+       $StudentTeacherISStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', 7)->count();
+       $StudentTeacherCAStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', 8)->count();
+       $StudentTeacherITStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', 10)->count();
+       $StudentTeacherComSciStudentsCount = $StudentTeacherCCSStudents->whereIn('course_id', 9)->count();
+       
+      
+      
+       
 
        $SelfImageAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Struggling with sexual identity'])->pluck('survey_response_answer_id');
        $SelfImageResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $SelfImageAnswers)->pluck('survey_response_id');
@@ -220,8 +231,9 @@ class SurveyController extends Controller
         'RelationshipProblemCCSStudentsCount' => $RelationshipProblemCCSStudentsCount, 'RelationshipProblemISStudentsCount' => $RelationshipProblemISStudentsCount, 'RelationshipProblemCAStudentsCount' => $RelationshipProblemCAStudentsCount,
         'RelationshipProblemComSciStudentsCount' => $RelationshipProblemComSciStudentsCount, 'RelationshipProblemITStudentsCount' => $RelationshipProblemITStudentsCount,
         'StressProblemISStudentsCount' => $StressProblemISStudentsCount, 'StressProblemCAStudentsCount' => $StressProblemCAStudentsCount, 'StressProblemComSciStudentsCount' => $StressProblemComSciStudentsCount,
-        'StressProblemITStudentsCount' => $StressProblemITStudentsCount, 'StressCCSStudentsCount' => $StressCCSStudentsCount]);
-      
+        'StressProblemITStudentsCount' => $StressProblemITStudentsCount, 'StressCCSStudentsCount' => $StressCCSStudentsCount,
+        'StudentTeacherCCSStudentsCount' => $StudentTeacherCCSStudentsCount, 'StudentTeacherISStudentsCount' => $StudentTeacherISStudentsCount, 'StudentTeacherComSciStudentsCount' => $StudentTeacherComSciStudentsCount,
+        'StudentTeacherITStudentsCount' => $StudentTeacherITStudentsCount, 'StudentTeacherCAStudentsCount' => $StudentTeacherCAStudentsCount]);
     
     }
     
