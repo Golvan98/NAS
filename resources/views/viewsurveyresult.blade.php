@@ -66,7 +66,7 @@
                               {{  $BulliedCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
-                               {{  $PeerPressuredCCSStudents }}
+                               {{  $PeerPressuredCAStudentsCount }}
                             @endif 
                                                
                         </th>
@@ -98,7 +98,7 @@
                               {{  $BulliedComSciStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
-                               {{  $PeerPressuredCCSStudents }}
+                               {{  $PeerPressuredComSciStudentsCount }}
                             @endif 
                     
                     </th>
@@ -132,7 +132,7 @@
                               {{  $BulliedITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
-                               {{  $PeerPressuredCCSStudents }}
+                               {{  $PeerPressuredITStudentsCount }}
                             @endif 
                     
                         </th>
@@ -165,7 +165,7 @@
                               {{  $BulliedISStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
-                               {{  $PeerPressuredCCSStudents }}
+                               {{  $PeerPressuredISStudentsCount }}
                             @endif 
                         </th>
                 </tr>
@@ -196,7 +196,7 @@
                               {{  $BulliedCCSStudentsCount }}
                             @endif 
                             @if($questioncategory == "Peer Pressure") 
-                               {{  $PeerPressuredCCSStudents }}
+                               {{  $PeerPressuredCCSStudentsCount }}
                             @endif 
                             
 

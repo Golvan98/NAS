@@ -217,9 +217,14 @@ class SurveyController extends Controller
        $PeerPressureResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $PeerPressureAnswers)->pluck('survey_response_id');
        $PeerPressureSurveyResponse = SurveyResponses::all()->whereIn('id', $PeerPressureResponseAnswers)->pluck('student_id');
        $PeerPressuredStudents = Student::all()->whereIn('id', $PeerPressureSurveyResponse); //Query for all Students who are atleast having 1 Peer-pressure problem
-       $PeerPressuredCCSStudents = $PeerPressuredStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Peer-pressure  problem
-        
-       
+       $PeerPressuredCCSStudents = $PeerPressuredStudents->whereIn('course_id', $CCSCourses);
+       $PeerPressuredCCSStudentsCount = $PeerPressuredStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Peer-pressure  problem
+       $PeerPressuredISStudentsCount = $PeerPressuredCCSStudents->whereIn('course_id', 7)->count();
+       $PeerPressuredCAStudentsCount = $PeerPressuredCCSStudents->whereIn('course_id', 8)->count();
+       $PeerPressuredComSciStudentsCount = $PeerPressuredCCSStudents->whereIn('course_id', 9)->count();
+       $PeerPressuredITStudentsCount = $PeerPressuredCCSStudents->whereIn('course_id', 10)->count();
+
+      
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
        
@@ -248,7 +253,8 @@ class SurveyController extends Controller
         'SelfImageISStudentsCount' => $SelfImageISStudentsCount, 'SelfImageCAStudentsCount' => $SelfImageCAStudentsCount, 'SelfImageComSciStudentsCount' => $SelfImageComSciStudentsCount,
         'SelfImageITStudentsCount' => $SelfImageITStudentsCount, 'BulliedCCSStudentsCount' => $BulliedCCSStudentsCount, 
         'BulliedISStudentsCount' => $BulliedISStudentsCount, 'BulliedCAStudentsCount' => $BulliedCAStudentsCount, 'BulliedComSciStudentsCount' => $BulliedComSciStudentsCount,
-        'BulliedITStudentsCount' => $BulliedITStudentsCount]);
+        'BulliedITStudentsCount' => $BulliedITStudentsCount, 'PeerPressuredCCSStudentsCount' => $PeerPressuredCCSStudentsCount, 'PeerPressuredISStudentsCount' => $PeerPressuredISStudentsCount,
+        'PeerPressuredCAStudentsCount' => $PeerPressuredCAStudentsCount, 'PeerPressuredComSciStudentsCount' => $PeerPressuredComSciStudentsCount, 'PeerPressuredITStudentsCount' => $PeerPressuredITStudentsCount]);
     
     }
     
