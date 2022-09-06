@@ -131,14 +131,21 @@ class SurveyController extends Controller
        $AnxiousCCSStudentsCount = $AnxiousStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who answered atleast 1 Anxiety problem Count
        $AnxiousCAStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 8)->count();
        $AnxiousISStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 7)->count();
-       $AnxiousCSciStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 9)->count();
+       $AnxiousComSciStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 9)->count();
        $AnxiousITStudentsCount = $AnxiousCCSStudents->whereIn('course_id', 10)->count();
 
        $MotivationAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Lacking Motivation'])->pluck('survey_response_answer_id');
        $MotivationSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $MotivationAnswers)->pluck('survey_response_id');
        $MotivationSurveyResponse = SurveyResponses::all()->whereIn('id', $MotivationSurveyResponseAnswers)->pluck('student_id');
        $LackOfMotivationStudents = Student::all()->whereIn('id', $MotivationSurveyResponse); //Query for all Students who answered atleast 1 Motivation problem
-       $LackOfMotivationCCSStudents = $LackOfMotivationStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who answered atleast 1 Motivation problem
+       $LackOfMotivationCCSStudents = $LackOfMotivationStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who answered atleast 1 Motivation problem
+       $LackOfMotivationCCSStudentsCount = $LackOfMotivationCCSStudents->count();
+       $LackofMotivationCAStudentsCount = $LackOfMotivationCCSStudents->whereIn('course_id', 8)->count();
+       $LackofMotivationISStudentsCount = $LackOfMotivationCCSStudents->whereIn('course_id', 7)->count();
+       $LackofMotivationComSciStudentsCount = $LackOfMotivationCCSStudents->whereIn('course_id', 9)->count();
+       $LackofMotivationITStudentsCount = $LackOfMotivationCCSStudents->whereIn('course_id', 10)->count();
+       
+
 
        $RelationshipProblemAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Having no close friends in school', 'Having no financial/emotional support', 'Having difficulty socializing'])->pluck('survey_response_answer_id');
        $RelationshipProblemResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $RelationshipProblemAnswers)->pluck('survey_response_id');
@@ -175,7 +182,7 @@ class SurveyController extends Controller
        $PeerPressureSurveyResponse = SurveyResponses::all()->whereIn('id', $PeerPressureResponseAnswers)->pluck('student_id');
        $PeerPressuredStudents = Student::all()->whereIn('id', $PeerPressureSurveyResponse); //Query for all Students who are atleast having 1 Peer-pressure problem
        $PeerPressuredCCSStudents = $PeerPressuredStudents->whereIn('course_id', $CCSCourses)->count(); //Query for all Students from CCS who are atleast having 1 Peer-pressure  problem
-
+        
        
 
         $CoeDepartments = Department::all()->where('college_id', '=', 1)->pluck('id');
@@ -193,10 +200,13 @@ class SurveyController extends Controller
         return view('viewsurveyresult')->with(['questioncategory' => $questioncategory, 'BSCAcount' => $BSCAcount, 'BSCScount' => $BSCScount, 'AnxiousCCSStudentsCount' => $AnxiousCCSStudentsCount, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents, 'RelationshipProblemCCSStudents' => $RelationshipProblemCCSStudents, 'StressCCSStudents' => $StressCCSStudents, 'StudentTeacherCCSStudents' => $StudentTeacherCCSStudents, 'SelfImageCCSStudents' => $SelfImageCCSStudents, 
         'BulliedCCSStudents' => $BulliedCCSStudents, 'PeerPressuredCCSStudents' => $PeerPressuredCCSStudents, 
         'AnxiousCAStudentsCount' => $AnxiousCAStudentsCount, 'AnxiousISStudentsCount' => $AnxiousISStudentsCount,
-        'AnxiousCSciStudentsCount' => $AnxiousCSciStudentsCount, 'AnxiousITStudentsCount' => $AnxiousITStudentsCount]);
+        'AnxiousComSciStudentsCount' => $AnxiousComSciStudentsCount, 'AnxiousITStudentsCount' => $AnxiousITStudentsCount,
+        'LackofMotivationCAStudentsCount' => $LackofMotivationCAStudentsCount,'LackofMotivationISStudentsCount' => $LackofMotivationISStudentsCount,
+        'LackofMotivationComSciStudentsCount' => $LackofMotivationComSciStudentsCount, 'LackofMotivationITStudentsCount' =>$LackofMotivationITStudentsCount, 'LackOfMotivationCCSStudentsCount' => $LackOfMotivationCCSStudentsCount,]);
     }
 
-
+    
+    
     public function surveyresults(SurveyQuestion $surveyquestion)
     {
         $surveyquestioncategories = SurveyQuestion::query()->distinct()->pluck('category');

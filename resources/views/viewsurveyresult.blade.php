@@ -45,7 +45,7 @@
                         <th class="border border-black px-2"> 
                             
                             @if($questioncategory == "Motivation") 
-                               {{ $LackOfMotivationCCSStudents}}  
+                               {{ $LackofMotivationCAStudentsCount}}  
                             @endif 
                             @if($questioncategory == "Anxiety") 
                                 {{$AnxiousCAStudentsCount}} 
@@ -77,10 +77,10 @@
 
                         <th class="border border-black px-2"> 
                         @if($questioncategory == "Motivation") 
-                               {{ $LackOfMotivationCCSStudents}}  
+                               {{ $LackofMotivationComSciStudentsCount}}  
                             @endif 
                             @if($questioncategory == "Anxiety") 
-                                {{$AnxiousCSciStudentsCount}} 
+                                {{$AnxiousComSciStudentsCount}} 
                             @endif 
                             @if($questioncategory == "Relationships") 
                                {{ $RelationshipProblemCCSStudents }}
@@ -111,7 +111,7 @@
                            
                        
                             @if($questioncategory == "Motivation") 
-                               {{ $LackOfMotivationCCSStudents}}  
+                               {{ $LackofMotivationITStudentsCount}}  
                             @endif 
                             @if($questioncategory == "Anxiety") 
                                 {{ $AnxiousITStudentsCount }} 
@@ -144,7 +144,7 @@
                         <th class="border border-black px-2">
 
                             @if($questioncategory == "Motivation") 
-                               {{ $LackOfMotivationCCSStudents}}  
+                               {{ $LackofMotivationISStudentsCount}}  
                             @endif 
                             @if($questioncategory == "Anxiety") 
                                 {{$AnxiousISStudentsCount}} 
@@ -175,7 +175,7 @@
 
                         <th class="border border-black px-2"> 
                             @if($questioncategory == "Motivation") 
-                               {{ $LackOfMotivationCCSStudents}}  
+                               {{ $LackOfMotivationCCSStudentsCount}}  
                             @endif 
                             @if($questioncategory == "Anxiety") 
                               {{  $AnxiousCCSStudentsCount}} 

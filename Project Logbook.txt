@@ -2311,9 +2311,14 @@ To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, G
 Sept 6:
 
 IN PROGRESS:
-
-- dynamic list for a student's answers
-- studying that part where u make pie charts
 - Finishing the Algo to reflect the number of students who answered a category
-- pie charts
+- Apply algo for every category in view survey results page
+- dynamic list for a student's answers
+- Clickable reference links for students data pages
+- studying that part where u make pie charts
 
+
+DONE:
+- Finishing the Algo to reflect the number of students who answered a category
+- Apply algo for every category in view survey results page
+- Algo applied for Motivation, Anxiety category
