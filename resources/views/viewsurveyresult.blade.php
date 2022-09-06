@@ -27,7 +27,7 @@
                 
         </div>
         <div class="text-center  mr-2"> 
-        {{ $questioncategory }}
+        <a href="/studentlist/{{$questioncategory}}"> {{ $questioncategory }} </a>
            
         </div>
 

@@ -50,7 +50,7 @@ Route::get('/studentanswerlist', function(){
     return view('studentanswerlist');
 });
 
-Route::get('/studentlist' , [StudentController::class, 'studentlist']);
+Route::get('/studentlist/{questioncategory}' , [StudentController::class, 'studentlist']);
 
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 

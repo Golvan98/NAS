@@ -44,7 +44,15 @@
                    <div class="flex-nowrap h-1/6"> 
 
                         <div class="flex justify-center items-center h-2/3 text-lg font-bold"> School of Computer Studies </div>
-                        <div class="flex justify-center h-1/3 items-start text-lg"> Anxiety </div>
+                        <div class="flex justify-center h-1/3 items-start text-lg">
+
+                            {{$questioncategory}} 
+
+                          
+
+
+
+                        </div>
 
                    </div>
 
@@ -52,11 +60,37 @@
 
                         <div class="flex justify-center text-lg font-bold"> BS Information Systems </div>
                         
-                        @foreach($students as $student)
                         
-                             <div class="flex justify-center"> <a href="/studentanswerlist"> <button>  2016-0001 | {{$student->firstname}} {{$student->lastname}} </button> </a> </div>
                         
-                        @endforeach
+                             <div class="flex justify-center"> <a href="/studentanswerlist"> 
+                                <button>  
+                                    @if($questioncategory == "Motivation") 
+                                    {{ $questioncategory}}  
+                                    @endif 
+                                    @if($questioncategory == "Anxiety") 
+                                        {{$questioncategory}} 
+                                    @endif 
+                                    @if($questioncategory == "Relationships") 
+                                    {{ $questioncategory }}
+                                    @endif 
+                                    @if($questioncategory == "Stress-Management") 
+                                    {{ $questioncategory }}
+                                    @endif 
+                                    @if($questioncategory == "Student-Teacher-Conflict") 
+                                    {{  $questioncategory }}
+                                    @endif 
+                                    @if($questioncategory == "Self-Image") 
+                                    {{  $questioncategory }}
+                                    @endif 
+                                    @if($questioncategory == "Bullying") 
+                                    {{  $questioncategory }}
+                                    @endif 
+                                    @if($questioncategory == "Peer Pressure") 
+                                    {{  $questioncategory }}
+                                    @endif 
+                                </button> </a> </div>
+                        
+                        
 
                     </div>
 
