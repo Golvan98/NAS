@@ -64,6 +64,7 @@
                         
                              <div class="flex justify-center"> <a href="/studentanswerlist"> 
                                 <button>  
+                                    
                                     @if($questioncategory == "Motivation") 
                                         @foreach($LackOfMotivationCCSStudents as $LackOfMotivationCCSStudent)
                                                     @if($LackOfMotivationCCSStudent->course_id == 7)
@@ -71,6 +72,7 @@
                                                     @endif
                                         @endforeach
                                     @endif 
+
                                     @if($questioncategory == "Anxiety") 
                                         @foreach($AnxiousCCSStudents as $AnxiousCCSStudent)
                                                 @if($AnxiousCCSStudent->course_id == 7)
@@ -78,23 +80,31 @@
                                                 @endif
                                         @endforeach
                                     @endif 
+
                                     @if($questioncategory == "Relationships") 
-                                    @foreach($RelationshipProblemCCSStudents as $RelationshipProblemCCSStudent)
-                                                @if($RelationshipProblemCCSStudent->course_id == 7)
-                                                    2014-{{$RelationshipProblemCCSStudent->id}} | {{$RelationshipProblemCCSStudent->firstname}} {{$RelationshipProblemCCSStudent->lastname}} 
-                                                @endif
-                                    @endforeach
+                                        @foreach($RelationshipProblemCCSStudents as $RelationshipProblemCCSStudent)
+                                                    @if($RelationshipProblemCCSStudent->course_id == 7)
+                                                        2014-{{$RelationshipProblemCCSStudent->id}} | {{$RelationshipProblemCCSStudent->firstname}} {{$RelationshipProblemCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
+
                                     @if($questioncategory == "Stress-Management")  
-                                    @foreach($StressCCSStudents as $StressCCSStudent)
-                                                @if($StressCCSStudent->course_id == 7) 
-                                                  2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} 
-                                                @endif
-                                    @endforeach
+                                        @foreach($StressCCSStudents as $StressCCSStudent)
+                                                    @if($StressCCSStudent->course_id == 7) 
+                                                    2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
+
                                     @if($questioncategory == "Student-Teacher-Conflict") 
-                                    {{  $questioncategory }}
+                                        @foreach($StressCCSStudents as $StressCCSStudent)
+                                                    @if($StressCCSStudent->course_id == 7) 
+                                                    2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
+
                                     @if($questioncategory == "Self-Image") 
                                     {{  $questioncategory }}
                                     @endif 
