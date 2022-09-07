@@ -62,7 +62,7 @@ class StudentController extends Controller
         $CCSCoursesIDs = Course::all()->whereIn('coursecode', ['BSIS', 'BSCA', 'BSCS', 'BSIT'])->pluck('id');
 
         $students = Student::whereIn('course_id', $CCSCoursesIDs )->simplePaginate(11);
-        return view('studentlist')->with(['students' => $students, 'questioncategory' => $questioncategory]);
+        return view('studentlist')->with(['students' => $students, 'questioncategory' => $questioncategory, 'AnxiousCCSStudents' => $AnxiousCCSStudents]);
        
     }
 }
