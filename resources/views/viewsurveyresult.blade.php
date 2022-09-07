@@ -38,7 +38,7 @@
             <table class="mx-auto items-center text-center justify-center">
             @foreach ($CCSPrograms as $CCSProgram) 
                 <tr>
-                  <th class="text-left border border-black px-2"> <a href="/studentdepartmentcategory/{{$CCSProgram->id}}/{{$questioncategory}}"> {{$CCSProgram->coursename}} </th> </a>
+                  <th class="text-left border border-black px-2"> <a href="/studentlist/{{$CCSProgram->id}}/{{$questioncategory}}"> {{$CCSProgram->coursename}} </th> </a>
             
 
 

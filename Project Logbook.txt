@@ -2337,10 +2337,10 @@ IN PROGRESS:
 
 - Dynamic showing for students in a category for IS side, the other 3 will be done later
 - Decided to try and wrap a foreach for the department list in viewsurvey. will try.
+- Clickable reference links for students data pages
 
 IN QUEUE:
 - dynamic list for a student's answers
-- Clickable reference links for students data pages
 - pie chart
 
 
@@ -2348,5 +2348,11 @@ IN QUEUE:
 DONE:
 - Finishing the Algo to reflect the number of students for Self-Image, Bullying, and Peer Pressure category
 - Done Connecting the student category numbers to the student list. Now to write another fucktons of queries to reflect the damn names
+- Clickable reference links for students data pages
+
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- pagination problem for the dynamic student list
+- dynamic list for a student's answers
+- pie chart
 
 
