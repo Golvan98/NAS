@@ -82,13 +82,32 @@ class StudentController extends Controller
         $StudentTeacherStudents = Student::all()->whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
         $StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
       
+        $SelfImageAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Struggling with sexual identity'])->pluck('survey_response_answer_id');
+        $SelfImageResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $SelfImageAnswers)->pluck('survey_response_id');
+        $SelfImageSurveyResponse = SurveyResponses::all()->whereIn('id', $SelfImageResponseAnswers)->pluck('student_id');
+        $SelfImageStudents = Student::all()->whereIn('id', $SelfImageSurveyResponse); //Query for all Students who are atleast having 1 Self-Image problem
+        $SelfImageCCSStudents = $SelfImageStudents->whereIn('course_id', $CCSCourses); //Query for all Students from CCS who are atleast having 1 Self-Image problem
+      
+        $BullyingAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Being bullied'])->pluck('survey_response_answer_id');
+        $BullyingResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $BullyingAnswers)->pluck('survey_response_id');
+        $BullyingSurveyResponse = SurveyResponses::all()->whereIn('id', $BullyingResponseAnswers)->pluck('student_id');
+        $BulliedStudents = Student::all()->whereIn('id', $BullyingSurveyResponse); //Query for all Students who are atleast having 1 Bullying problem
+        $BulliedCCSStudents = $BulliedStudents->whereIn('course_id', $CCSCourses);
+       
+        $PeerPressureAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Being pressured by friends'])->pluck('survey_response_answer_id');
+        $PeerPressureResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $PeerPressureAnswers)->pluck('survey_response_id');
+        $PeerPressureSurveyResponse = SurveyResponses::all()->whereIn('id', $PeerPressureResponseAnswers)->pluck('student_id');
+        $PeerPressuredStudents = Student::all()->whereIn('id', $PeerPressureSurveyResponse); //Query for all Students who are atleast having 1 Peer-pressure problem
+        $PeerPressuredCCSStudents = $PeerPressuredStudents->whereIn('course_id', $CCSCourses);
+        
         
         $CCSCoursesIDs = Course::all()->whereIn('coursecode', ['BSIS', 'BSCA', 'BSCS', 'BSIT'])->pluck('id');
 
         $students = Student::whereIn('course_id', $CCSCoursesIDs )->simplePaginate(11);
         return view('studentlist')->with(['students' => $students, 'questioncategory' => $questioncategory, 'AnxiousCCSStudents' => $AnxiousCCSStudents, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents,
         'RelationshipProblemCCSStudents' => $RelationshipProblemCCSStudents, 'StressCCSStudents' => $StressCCSStudents,
-        'StudentTeacherCCSStudents' => $StudentTeacherCCSStudents]);
+        'StudentTeacherCCSStudents' => $StudentTeacherCCSStudents, 'SelfImageCCSStudents' => $SelfImageCCSStudents,
+        'BulliedCCSStudents' => $BulliedCCSStudents, 'PeerPressuredCCSStudents' => $PeerPressuredCCSStudents]);
        
     }
 }

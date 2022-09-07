@@ -64,7 +64,7 @@
                         
                              <div class="flex justify-center"> <a href="/studentanswerlist"> 
                                 <button>  
-                                    
+
                                     @if($questioncategory == "Motivation") 
                                         @foreach($LackOfMotivationCCSStudents as $LackOfMotivationCCSStudent)
                                                     @if($LackOfMotivationCCSStudent->course_id == 7)
@@ -105,14 +105,28 @@
                                         @endforeach
                                     @endif 
 
-                                    @if($questioncategory == "Self-Image") 
-                                    {{  $questioncategory }}
+                                    @if($questioncategory == "Self-Image")  
+                                        @foreach($SelfImageCCSStudents as $SelfImageCCSStudent)
+                                                    @if($SelfImageCCSStudent->course_id == 7) 
+                                                    2014-{{$SelfImageCCSStudent->id}} | {{$SelfImageCCSStudent->firstname}} {{$SelfImageCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
+
                                     @if($questioncategory == "Bullying") 
-                                    {{  $questioncategory }}
+                                        @foreach($BulliedCCSStudents as $BulliedCCSStudent)
+                                                    @if($BulliedCCSStudent->course_id == 7) 
+                                                    2014-{{$BulliedCCSStudent->id}} | {{$BulliedCCSStudent->firstname}} {{$BulliedCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
-                                    @if($questioncategory == "Peer Pressure") 
-                                    {{  $questioncategory }}
+
+                                    @if($questioncategory == "Peer Pressure")  
+                                        @foreach($PeerPressuredCCSStudents as $PeerPressuredCCSStudent)
+                                                    @if($PeerPressuredCCSStudent->course_id == 7) 
+                                                    2014-{{$PeerPressuredCCSStudent->id}} | {{$PeerPressuredCCSStudent->firstname}} {{$PeerPressuredCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
                                 </button> </a> </div>
                         

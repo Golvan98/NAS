@@ -2344,5 +2344,5 @@ IN PROGRESS:
 DONE:
 - Finishing the Algo to reflect the number of students for Self-Image, Bullying, and Peer Pressure category
 - Done Connecting the student category numbers to the student list. Now to write another fucktons of queries to reflect the damn names
-
+- Dynamic showing for students in a category for IS side, the other 3 will be done later
 
