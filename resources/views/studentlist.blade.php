@@ -65,7 +65,11 @@
                              <div class="flex justify-center"> <a href="/studentanswerlist"> 
                                 <button>  
                                     @if($questioncategory == "Motivation") 
-                                    {{$questioncategory}}
+                                        @foreach($LackOfMotivationCCSStudents as $LackOfMotivationCCSStudent)
+                                                    @if($LackOfMotivationCCSStudent->course_id == 7)
+                                                        2014-{{$LackOfMotivationCCSStudent->id}} | {{$LackOfMotivationCCSStudent->firstname}} {{$LackOfMotivationCCSStudent->lastname}} 
+                                                    @endif
+                                        @endforeach
                                     @endif 
                                     @if($questioncategory == "Anxiety") 
                                         @foreach($AnxiousCCSStudents as $AnxiousCCSStudent)
@@ -75,7 +79,11 @@
                                         @endforeach
                                     @endif 
                                     @if($questioncategory == "Relationships") 
-                                    {{ $questioncategory }}
+                                    @foreach($RelationshipProblemCCSStudents as $RelationshipProblemCCSStudent)
+                                                @if($RelationshipProblemCCSStudent->course_id == 7)
+                                                    2014-{{$RelationshipProblemCCSStudent->id}} | {{$RelationshipProblemCCSStudent->firstname}} {{$RelationshipProblemCCSStudent->lastname}} 
+                                                @endif
+                                    @endforeach
                                     @endif 
                                     @if($questioncategory == "Stress-Management") 
                                     {{ $questioncategory }}
