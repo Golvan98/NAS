@@ -46,6 +46,12 @@ class StudentController extends Controller
         return redirect('home')->with('success', 'Logged Out Successfully');
     }
 
+    public function studentdepartmentcategory($course, $questioncategory)
+    {
+
+          
+    }
+
     public function studentlist($questioncategory)
     {
         /*query for all Departments in CCS */$CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id');

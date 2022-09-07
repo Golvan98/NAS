@@ -31,19 +31,19 @@
            
         </div>
 
-        @php  $BSIT = App\Models\Course::all()->where('coursecode', '=', 'BSIT')->pluck('id');
-              $BSITcount = App\Models\Student::all()->whereIn('course_id', $BSIT)->count();
-        @endphp 
+        
 
 
         <div class="w-full h-full">
             <table class="mx-auto items-center text-center justify-center">
-
+            @foreach ($CCSPrograms as $CCSProgram) 
                 <tr>
-                    <th class="text-left border border-black px-2"> BS Computer Applications </th>
+                  <th class="text-left border border-black px-2"> <a href="/studentdepartmentcategory/{{$CCSProgram->id}}/{{$questioncategory}}"> {{$CCSProgram->coursename}} </th> </a>
+            
+
 
                         <th class="border border-black px-2"> 
-                            
+                          @if($CCSProgram->coursecode =="BSCA") 
                             @if($questioncategory == "Motivation") 
                                {{ $LackofMotivationCAStudentsCount}}  
                             @endif 
@@ -68,15 +68,11 @@
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredCAStudentsCount }}
                             @endif 
-                                               
-                        </th>
-                </tr>
-
-                <tr>
-                    <a href="/studentlist"> <th class="text-left border border-black px-2"> BS Computer Science </th> </a>
-
-                        <th class="border border-black px-2"> 
-                        @if($questioncategory == "Motivation") 
+                          @endif 
+                          
+                          
+                          @if($CCSProgram->coursecode =="BSCS")
+                            @if($questioncategory == "Motivation") 
                                {{ $LackofMotivationComSciStudentsCount}}  
                             @endif 
                             @if($questioncategory == "Anxiety") 
@@ -100,16 +96,9 @@
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredComSciStudentsCount }}
                             @endif 
-                    
-                    </th>
-                </tr>
-
-                <tr>
-                    <th class="text-left border border-black px-2"> BS Information Technology </th>
-                   
-                        <th class="border border-black px-2"> 
-                           
-                       
+                          @endif
+                         
+                          @if($CCSProgram->coursecode =="BSIT")
                             @if($questioncategory == "Motivation") 
                                {{ $LackofMotivationITStudentsCount}}  
                             @endif 
@@ -126,7 +115,7 @@
                               {{  $StudentTeacherITStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageITStudentsCount }}
+                              {{  $SelfImageITStudentsCount }} 
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedITStudentsCount }}
@@ -134,41 +123,45 @@
                             @if($questioncategory == "Peer Pressure") 
                                {{  $PeerPressuredITStudentsCount }}
                             @endif 
-                    
-                        </th>
-                </tr>
-                
-                <tr>
-                    <th class="text-left border border-black px-2"> BS Information Systems </th>
-
-                        <th class="border border-black px-2">
-
+                          @endif
+                        
+                          @if($CCSProgram->coursecode == "BSIS")
                             @if($questioncategory == "Motivation") 
-                               {{ $LackofMotivationISStudentsCount}}  
-                            @endif 
-                            @if($questioncategory == "Anxiety") 
-                                {{$AnxiousISStudentsCount}} 
-                            @endif 
-                            @if($questioncategory == "Relationships") 
-                               {{ $RelationshipProblemISStudentsCount }}
-                            @endif 
-                            @if($questioncategory == "Stress-Management") 
-                               {{ $StressProblemISStudentsCount }}
-                            @endif 
-                            @if($questioncategory == "Student-Teacher-Conflict") 
-                              {{  $StudentTeacherISStudentsCount }}
-                            @endif 
-                            @if($questioncategory == "Self-Image") 
-                              {{  $SelfImageISStudentsCount }}
-                            @endif 
-                            @if($questioncategory == "Bullying") 
-                              {{  $BulliedISStudentsCount }}
-                            @endif 
-                            @if($questioncategory == "Peer Pressure") 
-                               {{  $PeerPressuredISStudentsCount }}
-                            @endif 
+                                {{ $LackofMotivationISStudentsCount}}  
+                              @endif 
+                              @if($questioncategory == "Anxiety") 
+                                  {{$AnxiousISStudentsCount}} 
+                              @endif 
+                              @if($questioncategory == "Relationships") 
+                                {{ $RelationshipProblemISStudentsCount }}
+                              @endif 
+                              @if($questioncategory == "Stress-Management") 
+                                {{ $StressProblemISStudentsCount }}
+                              @endif 
+                              @if($questioncategory == "Student-Teacher-Conflict") 
+                                {{  $StudentTeacherISStudentsCount }}
+                              @endif 
+                              @if($questioncategory == "Self-Image") 
+                                {{  $SelfImageISStudentsCount }} 
+                              @endif 
+                              @if($questioncategory == "Bullying") 
+                                {{  $BulliedISStudentsCount }}
+                              @endif 
+                              @if($questioncategory == "Peer Pressure") 
+                                {{  $PeerPressuredISStudentsCount }}
+                              @endif 
+                            @endif
+
+
                         </th>
+
+                        
                 </tr>
+
+                
+                @endforeach
+
+              
 
                 <tr>
                     <th class="border border-black px-2 text-left"> TOTAL </th>

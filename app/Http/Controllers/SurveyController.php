@@ -118,12 +118,17 @@ class SurveyController extends Controller
     public function viewsurveyresult($questioncategory) 
     {
 
-        $BSCA = Course::all()->where('coursecode', '=', 'BSCA')->pluck('id');
-        $BSCS = Course::all()->where('coursecode', '=', 'BSCS')->pluck('id');
+        $BSCA = Course::all()->where('coursecode', 'BSCA')->pluck('id');
+        $BSCS = Course::all()->where('coursecode',  'BSCS')->pluck('id');
+        $BSIT = Course::all()->where('coursecode',  'BSIT')->pluck('id');
+        $BSIS = Course::all()->where('coursecode',  'BSIS')->pluck('id');
+
+       
+        
           /*query for all Departments in CCS */$CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id');
        /*query for all Courses in CCS */$CCSCourses = Course::all()->whereIn('department_id', $CCSDepartments)->pluck('id');
 
-     
+       $CCSPrograms = Course::all()->whereIn('department_id', $CCSDepartments);
 
        $AnxietyAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers', 'Panicking during tests' ])->pluck('survey_response_answer_id');
        $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $AnxietyAnswers)->pluck('survey_response_id');
@@ -254,7 +259,8 @@ class SurveyController extends Controller
         'SelfImageITStudentsCount' => $SelfImageITStudentsCount, 'BulliedCCSStudentsCount' => $BulliedCCSStudentsCount, 
         'BulliedISStudentsCount' => $BulliedISStudentsCount, 'BulliedCAStudentsCount' => $BulliedCAStudentsCount, 'BulliedComSciStudentsCount' => $BulliedComSciStudentsCount,
         'BulliedITStudentsCount' => $BulliedITStudentsCount, 'PeerPressuredCCSStudentsCount' => $PeerPressuredCCSStudentsCount, 'PeerPressuredISStudentsCount' => $PeerPressuredISStudentsCount,
-        'PeerPressuredCAStudentsCount' => $PeerPressuredCAStudentsCount, 'PeerPressuredComSciStudentsCount' => $PeerPressuredComSciStudentsCount, 'PeerPressuredITStudentsCount' => $PeerPressuredITStudentsCount]);
+        'PeerPressuredCAStudentsCount' => $PeerPressuredCAStudentsCount, 'PeerPressuredComSciStudentsCount' => $PeerPressuredComSciStudentsCount, 'PeerPressuredITStudentsCount' => $PeerPressuredITStudentsCount,
+        'BSIS' => $BSIS, 'BSIT' => $BSIT, 'BSCA' =>$BSCA, 'BSCS' => $BSCS, 'CCSPrograms' => $CCSPrograms]);
     
     }
     

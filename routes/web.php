@@ -52,6 +52,8 @@ Route::get('/studentanswerlist', function(){
 
 Route::get('/studentlist/{questioncategory}' , [StudentController::class, 'studentlist']);
 
+Route::get('/studentdepartmentcategory/{course}/{questioncategory}', [StudentController::class, 'studentdepartmentcategory']);
+
 Route::get('/survey/{survey}', [SurveyQuestionController::class, 'surveyform'])->name('form');
 
 Route::get('/createsurveyquestion/{survey}', [SurveyQuestionController::class, 'createquestion']);

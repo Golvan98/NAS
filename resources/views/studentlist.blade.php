@@ -5,7 +5,7 @@
 
     <div class="w-full bg-white flex h-1/6 justify-center items-end  ">
         
-       <div class="w-full flex-nowrap ">
+       <div class="w-full flex-nowrap">
         
             <div class="w-full flex justify-center items-end"> 
                 <div class="w-4/5 text-lg"> <strong> Good Evening, Counselor! </strong> </div>
