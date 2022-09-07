@@ -85,8 +85,12 @@
                                                 @endif
                                     @endforeach
                                     @endif 
-                                    @if($questioncategory == "Stress-Management") 
-                                    {{ $questioncategory }}
+                                    @if($questioncategory == "Stress-Management")  
+                                    @foreach($StressCCSStudents as $StressCCSStudent)
+                                                @if($StressCCSStudent->course_id == 7) 
+                                                  2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} 
+                                                @endif
+                                    @endforeach
                                     @endif 
                                     @if($questioncategory == "Student-Teacher-Conflict") 
                                     {{  $questioncategory }}
