@@ -55,9 +55,19 @@ class StudentController extends Controller
     public function studentanswerlist($student)
     {
 
-        
+        $StudentResponse = SurveyResponses::where('student_id', $student)->where('survey_id', 1)->pluck('id');
+        $NASSurveyQuestions = SurveyQuestion::all()->whereIn('survey_id', 1)->pluck('id');
+        $StudentNASAnswersid = SurveyResponseAnswers::all()->whereIn('survey_response_id', $StudentResponse)->whereIn('survey_question_id', $NASSurveyQuestions)->pluck('id');
+        $StudentAnswerChoicesResponseid = AnswerChoice::all()->whereIn('survey_response_answer_id' , $StudentResponse)->pluck('survey_response_answer_id');
+      
         $SelectedStudent = Student::where('id', $student)->get();
 
+        foreach($NASSurveyQuestions as $NASSurveyQuestion)
+        {
+            $QuestionAnswerChoice = AnswerChoice::all()->whereIn('survey_response_answer_id', $StudentAnswerChoicesResponseid);
+        }
+
+       
         
         return view('studentanswerlist')->with(['SelectedStudent' => $SelectedStudent]);
     }

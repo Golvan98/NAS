@@ -2375,6 +2375,6 @@ NOTE!!!:
 - where and wherein returns a query.
 - while Get() returns collection. if u compare a query from a collection i think it morphs it to a collection too
 maybe that's why it wouldn't paginate when compared.
-
+- If you put an all()-> before whereIn(), it doesn't throw an Arguement #1 must be of type array.
 
 
