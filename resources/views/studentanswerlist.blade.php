@@ -46,7 +46,7 @@
             
                 <div class="bg-transparent ml-2 w-full h-2/6 flex-nowrap">  
 
-                    <div class="bg-transparent h-1/3 flex items-end font-bold text-lg"> JUSTIN CABIARA </div>
+                    <div class="bg-transparent h-1/3 flex items-end font-bold text-lg"> @foreach ($SelectedStudent as $Student) {{$Student->firstname}} {{$Student->lastname}} @endforeach</div>
                     <div class="bg-transparent h-1/3 flex items-center"> BS INFORMATION SYSTEMS, CCS </div>
                     <div class="bg-transparent h-1/3"> 2014-69420, 4th Year </div>
 

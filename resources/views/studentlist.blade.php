@@ -62,13 +62,13 @@
                         
                                
                         
-                             <div class="flex justify-center"> <a href="/studentanswerlist"> 
+                             <div class="flex justify-center"> 
                                 <button>  
 
                                     @if($questioncategory == "Motivation") 
                                         @foreach($LackOfMotivationCCSStudents as $LackOfMotivationCCSStudent)
                                                     @if($LackOfMotivationCCSStudent->course_id == $course->id)
-                                                        2014-{{$LackOfMotivationCCSStudent->id}} | {{$LackOfMotivationCCSStudent->firstname}} {{$LackOfMotivationCCSStudent->lastname}} 
+                                                    <a href="/studentanswerlist/{{$LackOfMotivationCCSStudent->id}}">     2014-{{$LackOfMotivationCCSStudent->id}} | {{$LackOfMotivationCCSStudent->firstname}} {{$LackOfMotivationCCSStudent->lastname}} </a> 
                                                     @endif
                                         @endforeach
                                     @endif 
@@ -76,7 +76,7 @@
                                     @if($questioncategory == "Anxiety") 
                                         @foreach($AnxiousCCSStudents as $AnxiousCCSStudent)
                                                 @if($AnxiousCCSStudent->course_id == $course->id)
-                                                    2014-{{$AnxiousCCSStudent->id}} | {{$AnxiousCCSStudent->firstname}} {{$AnxiousCCSStudent->lastname}} 
+                                                <a href="/studentanswerlist/{{$AnxiousCCSStudent->id}}">     2014-{{$AnxiousCCSStudent->id}} | {{$AnxiousCCSStudent->firstname}} {{$AnxiousCCSStudent->lastname}} </a>
                                                 @endif
                                         @endforeach
                                     @endif 
@@ -84,7 +84,7 @@
                                     @if($questioncategory == "Relationships") 
                                         @foreach($RelationshipProblemCCSStudents as $RelationshipProblemCCSStudent)
                                                     @if($RelationshipProblemCCSStudent->course_id == $course->id)
-                                                        2014-{{$RelationshipProblemCCSStudent->id}} | {{$RelationshipProblemCCSStudent->firstname}} {{$RelationshipProblemCCSStudent->lastname}} 
+                                                    <a href="/studentanswerlist/{{$RelationshipProblemCCSStudent->id}}">   2014-{{$RelationshipProblemCCSStudent->id}} | {{$RelationshipProblemCCSStudent->firstname}} {{$RelationshipProblemCCSStudent->lastname}} </a>
                                                     @endif
                                         @endforeach
                                     @endif 
@@ -92,7 +92,7 @@
                                     @if($questioncategory == "Stress-Management")  
                                         @foreach($StressCCSStudents as $StressCCSStudent)
                                                     @if($StressCCSStudent->course_id == $course->id) 
-                                                    2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} 
+                                                    <a href="/studentanswerlist/{{$StressCCSStudent->id}}">2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} </a>
                                                     @endif
                                         @endforeach
                                     @endif 
@@ -100,7 +100,7 @@
                                     @if($questioncategory == "Student-Teacher-Conflict") 
                                         @foreach($StudentTeacherCCSStudents as $StudentTeacherCCSStudent)
                                                     @if($StudentTeacherCCSStudent->course_id == $course->id) 
-                                                    2014-{{$StudentTeacherCCSStudent->id}} | {{$StudentTeacherCCSStudent->firstname}} {{$StudentTeacherCCSStudent->lastname}} <br>
+                                                    <a href="/studentanswerlist/{{$StudentTeacherCCSStudent->id}}">2014-{{$StudentTeacherCCSStudent->id}} | {{$StudentTeacherCCSStudent->firstname}} {{$StudentTeacherCCSStudent->lastname}} </a>
                                                     @endif
                                         @endforeach
                                     @endif 
@@ -108,7 +108,7 @@
                                     @if($questioncategory == "Self-Image")  
                                         @foreach($SelfImageCCSStudents as $SelfImageCCSStudent)
                                                     @if($SelfImageCCSStudent->course_id == $course->id) 
-                                                    2014-{{$SelfImageCCSStudent->id}} | {{$SelfImageCCSStudent->firstname}} {{$SelfImageCCSStudent->lastname}} 
+                                                    <a href="/studentanswerlist/{{$SelfImageCCSStudent->id}}">2014-{{$SelfImageCCSStudent->id}} | {{$SelfImageCCSStudent->firstname}} {{$SelfImageCCSStudent->lastname}} </a>
                                                     @endif
                                         @endforeach
                                     @endif 
@@ -116,7 +116,7 @@
                                     @if($questioncategory == "Bullying") 
                                         @foreach($BulliedCCSStudents as $BulliedCCSStudent)
                                                     @if($BulliedCCSStudent->course_id == $course->id)  
-                                                    2014-{{$BulliedCCSStudent->id}} | {{$BulliedCCSStudent->firstname}} {{$BulliedCCSStudent->lastname}}  ez
+                                                    <a href="/studentanswerlist/{{$BulliedCCSStudent->id}}">2014-{{$BulliedCCSStudent->id}} | {{$BulliedCCSStudent->firstname}} {{$BulliedCCSStudent->lastname}}  </a>
                                                     @endif
                                         @endforeach
                                     @endif 
@@ -124,7 +124,7 @@
                                     @if($questioncategory == "Peer Pressure")  
                                         @foreach($PeerPressuredCCSStudents as $PeerPressuredCCSStudent)
                                                     @if($PeerPressuredCCSStudent->course_id == $course->id) 
-                                                    2014-{{$PeerPressuredCCSStudent->id}} | {{$PeerPressuredCCSStudent->firstname}} {{$PeerPressuredCCSStudent->lastname}} 
+                                                    <a href="/studentanswerlist/{{$PeerPressuredCCSStudent->id}}">2014-{{$PeerPressuredCCSStudent->id}} | {{$PeerPressuredCCSStudent->firstname}} {{$PeerPressuredCCSStudent->lastname}}  </a>
                                                     @endif
                                         @endforeach
                                     @endif 

@@ -46,9 +46,9 @@ Route::get('/bargraph', function() {
     return view('dataviz2');
 });
 
-Route::get('/studentanswerlist', function(){
-    return view('studentanswerlist');
-});
+
+
+Route::get('/studentanswerlist/{student}', [StudentController::class, 'studentanswerlist']);
 
 Route::get('/studentlist/{course}/{questioncategory}', [StudentController::class, 'studentlist']);
 

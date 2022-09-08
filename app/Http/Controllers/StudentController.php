@@ -52,6 +52,16 @@ class StudentController extends Controller
         
     }
 
+    public function studentanswerlist($student)
+    {
+
+        
+        $SelectedStudent = Student::where('id', $student)->get();
+
+        
+        return view('studentanswerlist')->with(['SelectedStudent' => $SelectedStudent]);
+    }
+
     public function studentlist($course, $questioncategory)
     {
         /*query for all Departments in CCS */$CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id');
