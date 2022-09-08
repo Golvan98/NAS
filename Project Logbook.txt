@@ -2355,4 +2355,25 @@ To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, G
 - dynamic list for a student's answers
 - pie chart
 
+--------------------------------------------------------------------------------------------------------
+
+Sept 8:
+
+IN PROGRESS:
+- pagination problem for the dynamic student list
+
+IN QUEUE:
+- dynamic list for a student's answers
+- pie chart
+
+
+DONE:
+- pagination problem for the dynamic student list
+
+NOTE!!!: 
+- where and wherein returns a query.
+- while Get() returns collection. if u compare a query from a collection i think it morphs it to a collection too
+maybe that's why it wouldn't paginate when compared.
+
+
 

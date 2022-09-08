@@ -156,7 +156,7 @@
 
     <div id="pagination" class="w-full h-1/6 bg-white">
       
-         {{$students->links()}}
+         {{$StudentTeacherCCSStudents->links()}}
         
     </div>
 
