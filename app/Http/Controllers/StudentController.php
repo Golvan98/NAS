@@ -56,7 +56,7 @@ class StudentController extends Controller
     {
 
         $StudentNASResponse = SurveyResponses::where('student_id', $student)->where('survey_id', 1)->pluck('id');
-        $NASSurveyQuestions = SurveyQuestion::all()->whereIn('survey_id', 1);
+        $NASSurveyQuestions = SurveyQuestion::whereIn('survey_id', [1])->paginate(9);
         $NASSurveyQuestionsid = SurveyQuestion::all()->whereIn('survey_id', 1)->pluck('id');
         $StudentNASAnswersid = SurveyResponseAnswers::all()->whereIn('survey_response_id', $StudentNASResponse)->whereIn('survey_question_id', $NASSurveyQuestionsid)->pluck('id');
        // $StudentAnswerChoicesResponse = AnswerChoice::all()->whereIn('survey_response_answer_id' , $StudentNASResponse);
