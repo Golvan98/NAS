@@ -55,21 +55,37 @@ class StudentController extends Controller
     public function studentanswerlist($student)
     {
 
-        $StudentResponse = SurveyResponses::where('student_id', $student)->where('survey_id', 1)->pluck('id');
-        $NASSurveyQuestions = SurveyQuestion::all()->whereIn('survey_id', 1)->pluck('id');
-        $StudentNASAnswersid = SurveyResponseAnswers::all()->whereIn('survey_response_id', $StudentResponse)->whereIn('survey_question_id', $NASSurveyQuestions)->pluck('id');
-        $StudentAnswerChoicesResponseid = AnswerChoice::all()->whereIn('survey_response_answer_id' , $StudentResponse)->pluck('survey_response_answer_id');
+        $StudentNASResponse = SurveyResponses::where('student_id', $student)->where('survey_id', 1)->pluck('id');
+        $NASSurveyQuestions = SurveyQuestion::all()->whereIn('survey_id', 1);
+        $NASSurveyQuestionsid = SurveyQuestion::all()->whereIn('survey_id', 1)->pluck('id');
+        $StudentNASAnswersid = SurveyResponseAnswers::all()->whereIn('survey_response_id', $StudentNASResponse)->whereIn('survey_question_id', $NASSurveyQuestionsid)->pluck('id');
+       // $StudentAnswerChoicesResponse = AnswerChoice::all()->whereIn('survey_response_answer_id' , $StudentNASResponse);
+        $StudentAnswerChoicesResponseid = AnswerChoice::all()->whereIn('survey_response_answer_id' , $StudentNASResponse)->pluck('survey_response_answer_id');
       
+
+        $SelectedStudentid = Student::where('id', $student)->pluck('id');
+        $StudentNASResponses = SurveyResponses::whereIn('student_id' , $SelectedStudentid)->whereIn('survey_id', [1])->pluck('id');
+        /* ^ testvar is a NAS Response by selected student */ 
+ 
+    $StudentNASAnswers = SurveyResponseAnswers::whereIn('survey_response_id', $StudentNASResponses)->get();
+    $StudentAnswerChoices = AnswerChoice::whereIn('survey_response_answer_id' , $StudentNASAnswersid)->get();
+   
+
+    //$StudentNASAnswersid1 = SurveyResponseAnswers::all()->whereIn('survey_response_id', $StudentNASResponses)->pluck('id');
+      //  $StudentNASAnswersid2 = SurveyResponseAnswers::all()->whereIn('survey_response_id', $StudentNASResponses)->pluck('survey_question_id');
+        
+        
+       
         $SelectedStudent = Student::where('id', $student)->get();
 
-        foreach($NASSurveyQuestions as $NASSurveyQuestion)
+        /* foreach($NASSurveyQuestions as $NASSurveyQuestion)
         {
-            $QuestionAnswerChoice = AnswerChoice::all()->whereIn('survey_response_answer_id', $StudentAnswerChoicesResponseid);
+            $QuestionAnswerChoice = AnswerChoice::all()->whereIn('survey_response_answer_id', $StudentNASAnswersid);
         }
 
-       
+       dd($QuestionAnswerChoice); */
         
-        return view('studentanswerlist')->with(['SelectedStudent' => $SelectedStudent]);
+        return view('studentanswerlist')->with(['SelectedStudent' => $SelectedStudent, 'StudentAnswerChoices' => $StudentAnswerChoices, 'NASSurveyQuestions' => $NASSurveyQuestions, 'StudentNASResponse' => $StudentNASResponse, 'StudentNASAnswers' =>$StudentNASAnswers]);
     }
 
     public function studentlist($course, $questioncategory)

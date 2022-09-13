@@ -53,14 +53,33 @@
                 </div>
 
 
-                <div class="bg-white h-4/6 flex-nowrap">  
+                <div class="bg-white h-4/6 flex flex-wrap">  
+                @foreach ($NASSurveyQuestions as $NASSurveyQuestion) 
+                    <div class="w-full h-2/6 flex flex-wrap"> Module {{$NASSurveyQuestion->id }}: 
+            
+                                           
+                            {{$NASSurveyQuestion->question }} - 
+                            
+                            @foreach($StudentNASAnswers as $StudentNASAnswer) 
+                                @if($StudentNASAnswer->survey_question_id == $NASSurveyQuestion->id)
+                                 {{$StudentNASAnswer->answer}} 
+                                    @foreach($StudentAnswerChoices as $StudentAnswerChoice)
+                                        @if($StudentAnswerChoice->survey_response_answer_id == $StudentNASAnswer->id)
+                                            {{$StudentNASAnswer->answer}}
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                          
+                        </div>
 
-                    <div class="w-full h-2/6"> Module 1: <br> Study Habits <br> Time Management Skills </div>
-                    <div class="w-full h/4-6 bg-white"> Module 2: <br> Afraid of failing in subjects <br> Taking Things Seriously <br> Getting Along With Teachers </div>
 
+
+                  
+                @endforeach 
                 </div>
 
-            </div>
+            </div>  
 
             <div class="w-3/6 h-full flex-nowrap bg-white"> 
             
