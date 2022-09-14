@@ -63,10 +63,10 @@
             
                             @foreach($StudentNASAnswers as $StudentNASAnswer) 
                                 @if($StudentNASAnswer->survey_question_id == $NASSurveyQuestion->id)
-                                 {{$StudentNASAnswer->answer}} <br> 
+                                <div class="w-1/2 flex flex-wrap"> {{$StudentNASAnswer->answer}} </div> 
                                     @foreach($StudentAnswerChoices as $StudentAnswerChoice)
                                         @if($StudentAnswerChoice->survey_response_answer_id == $StudentNASAnswer->id)
-                                        <br> <div class="w-1/2 "> <strong> ✔ </strong> {{$StudentAnswerChoice->answer_choice}} </div>
+                                        <br> <div class="w-1/2 flex flex-wrap"> <strong> ✔ </strong> {{$StudentAnswerChoice->answer_choice}} </div>
                                         @endif
                                     @endforeach
                                 @endif

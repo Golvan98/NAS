@@ -2423,8 +2423,28 @@ IN QUEUE:
 DONE:
 - dynamic list for a student's answer along with the question. You may need to rethink the 
 queries behind this one. kind of a pickle.
+- dynamic list for a student's answer along with the question. You may need to rethink the 
+queries behind this one. kind of a pickle.
+
 
 To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
-- dynamic list for a student's answers (front-end part)
-- pie chart
+- a small problem on the front-end part where it doesn't immediately create another div for answer choices. It's working good already tho. grats.
+- pie chart (ENDGAME LFG)
+
+--------------------------------------------------------------------------------------------------------
+
+Sept 13:
+
+IN PROGRESS:
+- a small problem on the front-end part where it doesn't immediately create another div for answer choices. It's working good already tho. grats.
+
+
+IN QUEUE:
+- dynamic pie chart
+- Polishing of Student lists (Back redirect buttons, and that part where an admin can select CCS students according to their courses)
+
+DONE:
+- a small problem on the front-end part where it doesn't immediately create another div for answer choices. It's working good already tho. grats.
+
+
 
