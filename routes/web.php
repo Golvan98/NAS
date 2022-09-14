@@ -47,6 +47,7 @@ Route::get('/bargraph', function() {
 });
 
 
+Route::get('/collegestudentlist/{college}/{questioncategory}', [StudentController::class, 'collegestudentlist']);
 
 Route::get('/studentanswerlist/{student}', [StudentController::class, 'studentanswerlist']);
 

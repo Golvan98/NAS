@@ -2437,7 +2437,10 @@ Sept 13:
 
 IN PROGRESS:
 - a small problem on the front-end part where it doesn't immediately create another div for answer choices. It's working good already tho. grats.
-
+- hotfix for showing all students in a category.
+- hotfix for showing all students in a college regardless of category.
+- hotfix for paginating students in student list, 
+(if statements are to be written in the studentlist page to reflect the proper paginated list of students)
 
 IN QUEUE:
 - dynamic pie chart
@@ -2445,6 +2448,8 @@ IN QUEUE:
 
 DONE:
 - a small problem on the front-end part where it doesn't immediately create another div for answer choices. It's working good already tho. grats.
+- queries for each CCS' departments in which students belong or answered in a category
 
+NOTE: probably gonna start on the pie charts at september 15. You'll have two weeks to finish this till then.
 
 

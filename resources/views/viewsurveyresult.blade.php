@@ -60,7 +60,7 @@
                               {{  $StudentTeacherCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Self-Image") 
-                              {{  $StudentTeacherCAStudentsCount }}
+                              {{  $SelfImageCAStudentsCount }}
                             @endif 
                             @if($questioncategory == "Bullying") 
                               {{  $BulliedCAStudentsCount }}
