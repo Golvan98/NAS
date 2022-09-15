@@ -129,37 +129,59 @@
 
 
                                         @if($course->id == 7)
-                                            @foreach($AnxiousISStudents as $AnxiousISStudent)
-                                            <a href="/studentanswerlist/{{$AnxiousISStudent->id}}">2014-{{$AnxiousISStudent->id}} | {{$AnxiousISStudent->firstname}} {{$AnxiousISStudent->lastname}} <br> </a>         
+                                            @foreach($RelationshipProblemISStudents as $RelationshipProblemISStudent)
+                                            <a href="/studentanswerlist/{{$RelationshipProblemISStudent->id}}">2014-{{$RelationshipProblemISStudent->id}} | {{$RelationshipProblemISStudent->firstname}} {{$RelationshipProblemISStudent->lastname}} <br> </a>         
                                             @endforeach
                                         @endif
 
                                         @if($course->id == 8)
-                                            @foreach($AnxiousCAStudents as $AnxiousCAStudent)
-                                            <a href="/studentanswerlist/{{$AnxiousCAStudent->id}}">2014-{{$AnxiousCAStudent->id}} | {{$AnxiousCAStudent->firstname}} {{$AnxiousCAStudent->lastname}} <br> </a>         
+                                            @foreach($RelationshipProblemCAStudents as $RelationshipProblemCAStudent)
+                                            <a href="/studentanswerlist/{{$RelationshipProblemCAStudent->id}}">2014-{{$RelationshipProblemCAStudent->id}} | {{$RelationshipProblemCAStudent->firstname}} {{$RelationshipProblemCAStudent->lastname}} <br> </a>         
                                             @endforeach
                                         @endif
 
                                         @if($course->id == 9)
-                                            @foreach($AnxiousComSciStudents as $AnxiousComSciStudent)
-                                            <a href="/studentanswerlist/{{$AnxiousComSciStudent->id}}">2014-{{$AnxiousComSciStudent->id}} | {{$AnxiousComSciStudent->firstname}} {{$AnxiousComSciStudent->lastname}} <br> </a>         
+                                            @foreach($RelationshipProblemComSciStudents as $RelationshipProblemComSciStudent)
+                                            <a href="/studentanswerlist/{{$RelationshipProblemComSciStudent->id}}">2014-{{$RelationshipProblemComSciStudent->id}} | {{$RelationshipProblemComSciStudent->firstname}} {{$RelationshipProblemComSciStudent->lastname}} <br> </a>         
                                             @endforeach
                                         @endif
 
                                         @if($course->id == 10)
-                                            @foreach($AnxiousITStudents as $AnxiousITStudent)
-                                            <a href="/studentanswerlist/{{$AnxiousITStudent->id}}">2014-{{$AnxiousITStudent->id}} | {{$AnxiousITStudent->firstname}} {{$AnxiousITStudent->lastname}} <br> </a>         
+                                            @foreach($RelationshipProblemITStudents as $RelationshipProblemITStudent)
+                                            <a href="/studentanswerlist/{{$RelationshipProblemITStudent->id}}">2014-{{$RelationshipProblemITStudent->id}} | {{$RelationshipProblemITStudent->firstname}} {{$RelationshipProblemITStudent->lastname}} <br> </a>         
                                             @endforeach
                                         @endif
                                         
                                     @endif 
 
                                     @if($questioncategory == "Stress-Management")  
-                                        @foreach($StressCCSStudents as $StressCCSStudent)
-                                                    @if($StressCCSStudent->course_id == $course->id) 
-                                                    <a href="/studentanswerlist/{{$StressCCSStudent->id}}">2014-{{$StressCCSStudent->id}} | {{$StressCCSStudent->firstname}} {{$StressCCSStudent->lastname}} <br> </a>
-                                                    @endif
-                                        @endforeach
+
+
+                                        @if($course->id == 7)
+                                            @foreach($StressISStudents as $StressISStudent)
+                                            <a href="/studentanswerlist/{{$StressISStudent->id}}">2014-{{$StressISStudent->id}} | {{$StressISStudent->firstname}} {{$StressISStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 8)
+                                            @foreach($StressCAStudents as $StressCAStudent)
+                                            <a href="/studentanswerlist/{{$StressCAStudent->id}}">2014-{{$StressCAStudent->id}} | {{$StressCAStudent->firstname}} {{$StressCAStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 9)
+                                            @foreach($StressComSciStudents as $StressComSciStudent)
+                                            <a href="/studentanswerlist/{{$StressComSciStudent->id}}">2014-{{$StressComSciStudent->id}} | {{$StressComSciStudent->firstname}} {{$StressComSciStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 10)
+                                            @foreach($StressITStudents as $StressITStudent)
+                                            <a href="/studentanswerlist/{{$StressITStudent->id}}">2014-{{$StressITStudent->id}} | {{$StressITStudent->firstname}} {{$StressITStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+
                                     @endif 
 
                                     @if($questioncategory == "Student-Teacher-Conflict") 
@@ -190,28 +212,92 @@
 
                                     @endif 
 
-                                    @if($questioncategory == "Self-Image")  
-                                        @foreach($SelfImageCCSStudents as $SelfImageCCSStudent)
-                                                    @if($SelfImageCCSStudent->course_id == $course->id) 
-                                                    <a href="/studentanswerlist/{{$SelfImageCCSStudent->id}}">2014-{{$SelfImageCCSStudent->id}} | {{$SelfImageCCSStudent->firstname}} {{$SelfImageCCSStudent->lastname}} <br></a>
-                                                    @endif
-                                        @endforeach
+                                    @if($questioncategory == "Self-Image")
+                                    
+                                    
+                                        @if($course->id == 7)
+                                            @foreach($SelfImageISStudents as $SelfImageISStudent)
+                                            <a href="/studentanswerlist/{{$SelfImageISStudent->id}}">2014-{{$SelfImageISStudent->id}} | {{$SelfImageISStudent->firstname}} {{$SelfImageISStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                            @endif
+
+                                        @if($course->id == 8)
+                                            @foreach($SelfImageCAStudents as $SelfImageCAStudent)
+                                            <a href="/studentanswerlist/{{$SelfImageCAStudent->id}}">2014-{{$SelfImageCAStudent->id}} | {{$SelfImageCAStudent->firstname}} {{$SelfImageCAStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 9)
+                                            @foreach($SelfImageComSciStudents as $SelfImageComSciStudent)
+                                            <a href="/studentanswerlist/{{$SelfImageComSciStudent->id}}">2014-{{$SelfImageComSciStudent->id}} | {{$SelfImageComSciStudent->firstname}} {{$SelfImageComSciStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 10)
+                                            @foreach($SelfImageITStudents as $SelfImageITStudent)
+                                            <a href="/studentanswerlist/{{$SelfImageITStudent->id}}">2014-{{$SelfImageITStudent->id}} | {{$SelfImageITStudent->firstname}} {{$SelfImageITStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+
                                     @endif 
 
                                     @if($questioncategory == "Bullying") 
-                                        @foreach($BulliedCCSStudents as $BulliedCCSStudent)
-                                                    @if($BulliedCCSStudent->course_id == $course->id)  
-                                                    <a href="/studentanswerlist/{{$BulliedCCSStudent->id}}">2014-{{$BulliedCCSStudent->id}} | {{$BulliedCCSStudent->firstname}} {{$BulliedCCSStudent->lastname}}  <br></a>
-                                                    @endif
-                                        @endforeach
+
+                                        @if($course->id == 7)
+                                            @foreach($BulliedISStudents as $BulliedISStudent)
+                                            <a href="/studentanswerlist/{{$BulliedISStudent->id}}">2014-{{$BulliedISStudent->id}} | {{$BulliedISStudent->firstname}} {{$BulliedISStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                            @endif
+
+                                        @if($course->id == 8)
+                                            @foreach($BulliedCAStudents as $BulliedCAStudent)
+                                            <a href="/studentanswerlist/{{$BulliedCAStudent->id}}">2014-{{$BulliedCAStudent->id}} | {{$BulliedCAStudent->firstname}} {{$BulliedCAStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 9)
+                                            @foreach($BulliedComSciStudents as $BulliedComSciStudent)
+                                            <a href="/studentanswerlist/{{$BulliedComSciStudent->id}}">2014-{{$BulliedComSciStudent->id}} | {{$BulliedComSciStudent->firstname}} {{$BulliedComSciStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 10)
+                                            @foreach($BulliedITStudents as $BulliedITStudent)
+                                            <a href="/studentanswerlist/{{$BulliedITStudent->id}}">2014-{{$BulliedITStudent->id}} | {{$BulliedITStudent->firstname}} {{$BulliedITStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
                                     @endif 
 
-                                    @if($questioncategory == "Peer Pressure")  
-                                        @foreach($PeerPressuredCCSStudents as $PeerPressuredCCSStudent)
-                                                    @if($PeerPressuredCCSStudent->course_id == $course->id) 
-                                                       <a href="/studentanswerlist/{{$PeerPressuredCCSStudent->id}}">2014-{{$PeerPressuredCCSStudent->id}} | {{$PeerPressuredCCSStudent->firstname}} {{$PeerPressuredCCSStudent->lastname}}  </a> <br>
-                                                    @endif
-                                        @endforeach
+                                    @if($questioncategory == "Peer Pressure") 
+                                    
+                                    
+                                        @if($course->id == 7)
+                                            @foreach($PeerPressuredISStudents as $PeerPressuredISStudent)
+                                            <a href="/studentanswerlist/{{$PeerPressuredISStudent->id}}">2014-{{$PeerPressuredISStudent->id}} | {{$PeerPressuredISStudent->firstname}} {{$PeerPressuredISStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                            @endif
+
+                                        @if($course->id == 8)
+                                            @foreach($PeerPressuredCAStudents as $PeerPressuredCAStudent)
+                                            <a href="/studentanswerlist/{{$PeerPressuredCAStudent->id}}">2014-{{$PeerPressuredCAStudent->id}} | {{$PeerPressuredCAStudent->firstname}} {{$PeerPressuredCAStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 9)
+                                            @foreach($PeerPressuredComSciStudents as $PeerPressuredComSciStudent)
+                                            <a href="/studentanswerlist/{{$PeerPressuredComSciStudent->id}}">2014-{{$PeerPressuredComSciStudent->id}} | {{$PeerPressuredComSciStudent->firstname}} {{$PeerPressuredComSciStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+                                        @if($course->id == 10)
+                                            @foreach($PeerPressuredITStudents as $PeerPressuredITStudent)
+                                            <a href="/studentanswerlist/{{$PeerPressuredITStudent->id}}">2014-{{$PeerPressuredITStudent->id}} | {{$PeerPressuredITStudent->firstname}} {{$PeerPressuredITStudent->lastname}} <br> </a>         
+                                            @endforeach
+                                        @endif
+
+
                                     @endif 
                                 </button> </a> </div>
                         
