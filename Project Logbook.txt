@@ -2452,4 +2452,20 @@ DONE:
 
 NOTE: probably gonna start on the pie charts at september 15. You'll have two weeks to finish this till then.
 
+--------------------------------------------------------------------------------------------------------
 
+Sept 14:
+
+IN PROGRESS:
+- for paginating students in student list, 
+(if statements are to be written in the studentlist page to reflect the proper paginated list of students, current
+pagination shows all CCS students in CCS, not the specific course.)
+
+DONE:
+- sht's too difficult holy sht. Will proceed to pie charts.
+
+NOTE!!!!!!: 
+- figured out why the queries are returning empty sets, if a collection is already compared to and paginated, somehow laravel controller
+forgets about that set collection, fix is to create another collection with literally the same values but with different name. SMH.
+- forced to create 4 copies of each data sets. turns out you cannot query on the same variable(collection) if you're
+going to repeatedly paginate it. 
