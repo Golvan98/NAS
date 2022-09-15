@@ -47,7 +47,7 @@ class StudentController extends Controller
         return redirect('home')->with('success', 'Logged Out Successfully');
     }
 
-    public function studentdepartmentcategory($course, $questioncategory)
+    public function studentmasterlist($course, $questioncategory)
     {
 
         

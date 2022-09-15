@@ -2450,6 +2450,12 @@ DONE:
 - a small problem on the front-end part where it doesn't immediately create another div for answer choices. It's working good already tho. grats.
 - queries for each CCS' departments in which students belong or answered in a category
 
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- hotfix for paginating students in student list, 
+(if statements are to be written in the studentlist page to reflect the proper paginated list of students)
+- pie chart (ENDGAME LFG)
+
+
 NOTE: probably gonna start on the pie charts at september 15. You'll have two weeks to finish this till then.
 
 --------------------------------------------------------------------------------------------------------
@@ -2462,7 +2468,14 @@ IN PROGRESS:
 pagination shows all CCS students in CCS, not the specific course.)
 
 DONE:
-- sht's too difficult holy sht. Will proceed to pie charts.
+- Proper pagination for each department and category.
+
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- show all students who answered regardless of category but separate them by college. 
+A Dropdown for category/all/department is what I have in mind. controller for it is named "studentmasterlist"
+- pie chart (ENDGAME LFG)
+
+
 
 NOTE!!!!!!: 
 - figured out why the queries are returning empty sets, if a collection is already compared to and paginated, somehow laravel controller

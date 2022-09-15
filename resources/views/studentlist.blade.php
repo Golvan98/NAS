@@ -313,12 +313,9 @@
             
                 <div class="flex justify-center"> <button class="bg-gray-800 text-white font-bold px-8 mt-4 py-1 ml-12"> Print <button>  </div>
 
-                
-
             </div>
            
-        
-
+    
         </div>
     
 
@@ -337,7 +334,7 @@
         {{ $StudentTeacherCAStudents->links()}}
         @endif
         @if($course->id == 9)
-        {{ $StudentTeacherComSciStudents->links()}} hi
+        {{ $StudentTeacherComSciStudents->links()}} 
         @endif
         @if($course->id == 10)
         {{ $StudentTeacherITStudents->links()}} 
