@@ -44,9 +44,27 @@
                    <div class="flex-nowrap h-1/6"> 
 
                         <div class="flex justify-center items-center h-2/3 text-lg font-bold">  School of Computer Studies  </div>
-                        <div class="flex justify-center h-1/3 items-start text-lg">
+                        <div class="flex justify-center h-1/3 items-start font-bold">  
+                        <select name="formal"  onchange="javascript:handleSelect(this)">
 
-                            {{$questioncategory}} 
+                            @foreach($questioncategories as $selectcategory) 
+                            <option value="/collegestudentlist/CCS/{{$selectcategory}}" @if($selectcategory == $questioncategory) selected @endif >
+                                
+                                    {{$selectcategory}}
+
+                            </option> 
+                            @endforeach
+
+                        </select>
+
+                        <script type="text/javascript">
+                        function handleSelect(elm)
+                        {
+                            window.location = elm.value+"";
+                        }
+                        </script>
+                       
+                            
 
                       
 
@@ -56,7 +74,7 @@
 
                    </div>
 
-                   <div class="flex-nowrap items-start h-5/6"> 
+                   <div class="flex-nowrap items-start h-5/6 mt-4"> 
 
                         <div class="flex justify-center text-lg font-bold"> @if($college=="CCS") College of Computer Science @endif Students </div> 
                      

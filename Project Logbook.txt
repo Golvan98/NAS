@@ -2490,4 +2490,14 @@ Sept 15:
 IN PROGRESS:
 - dropdown referential link for each department for each category
 
+IN QUEUE:
+- Dropdown for category, similar to college
 
+DONE:
+- dropdown referential link for each department for each category but default selected is not yet working
+- Fixed dropdown for department selection
+- Dropdown for Category in the master list. Now you have the list for all kinds in the College of Computer Studies. Pie CHARTS ARE NEXT! LFG! Javascript saved the day
+
+
+To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
+- Dynamic Pie Charts (LFG!!!!!!!!!!!)

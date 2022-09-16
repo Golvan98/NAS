@@ -65,7 +65,7 @@
                         <select name="formal" selected="{{$course->id}}" onchange="javascript:handleSelect(this)">
 
                         @foreach($CCSCourses as $test) 
-                        <option value="/studentlist/{{$test}}/{{$questioncategory}}" selected>
+                        <option value="/studentlist/{{$test}}/{{$questioncategory}}" @if($course->id == $test) selected @endif>
                             
                         
                             @if($test ==7) Bachelor of Science in Information Systems  @endif
