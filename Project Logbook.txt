@@ -2471,10 +2471,10 @@ DONE:
 - Proper pagination for each department and category.
 
 To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
-- show all students who answered regardless of category but separate them by college. 
+- Show all students who answered regardless of category but separate them by college. 
 A Dropdown for category/all/department is what I have in mind. controller for it is named "studentmasterlist"
-- pie chart (ENDGAME LFG)
 
+- pie chart (ENDGAME LFG)
 
 
 NOTE!!!!!!: 
@@ -2482,3 +2482,12 @@ NOTE!!!!!!:
 forgets about that set collection, fix is to create another collection with literally the same values but with different name. SMH.
 - forced to create 4 copies of each data sets. turns out you cannot query on the same variable(collection) if you're
 going to repeatedly paginate it. 
+
+--------------------------------------------------------------------------------------------------------
+
+Sept 15:
+
+IN PROGRESS:
+- dropdown referential link for each department for each category
+
+

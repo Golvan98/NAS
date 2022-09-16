@@ -58,9 +58,40 @@
 
                    <div class="flex-nowrap items-start h-5/6"> 
 
-                        <div class="flex justify-center text-lg font-bold"> @foreach ($CCScourse as $course) {{$course->coursename}} @endforeach</div> 
-                     
-                               
+                        <div class="flex justify-center text-lg font-bold mt-2"> 
+                        @foreach ($CCScourse as $course) 
+                            
+                        
+                        <select name="formal" selected="{{$course->id}}" onchange="javascript:handleSelect(this)">
+
+                        @foreach($CCSCourses as $test) 
+                        <option value="/studentlist/{{$test}}/{{$questioncategory}}" selected>
+                            
+                        
+                            @if($test ==7) Bachelor of Science in Information Systems  @endif
+                            
+                            @if($test ==8) Bachelor of Science in Computer Applications @endif
+                            
+                            @if($test ==9) Bachelor of Science in Computer Science @endif
+                            
+                            @if($test ==10) Bachelor of Science in Information Technology @endif
+                        </option> 
+                        @endforeach
+                        
+                        </select>
+                        
+                        
+                        
+                        </div> 
+                        @endforeach
+
+                       <script type="text/javascript">
+                        function handleSelect(elm)
+                        {
+                            window.location = elm.value+"";
+                        }
+                        </script>
+                                            
                         
                              <div class="flex justify-center"> 
                                 <button>  

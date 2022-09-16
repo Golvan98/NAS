@@ -93,10 +93,6 @@ class StudentController extends Controller
     {
            /*query for all Departments in CCS */$CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id');
         /*query for all Courses in CCS */$CCSCourses = Course::all()->whereIn('department_id', $CCSDepartments)->pluck('id');
-       
-    
-
-
 
         $AnxietyAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers', 'Panicking during tests' ])->pluck('survey_response_answer_id');
         $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $AnxietyAnswers)->pluck('survey_response_id');
@@ -104,8 +100,6 @@ class StudentController extends Controller
         $AnxiousStudents = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem
         $AnxiousCCSStudents = $AnxiousStudents->whereIn('course_id', $CCSCourses)->paginate(10); //Query for all Students from CCS who answered atleast 1 Anxiety problem
         
-        
-
         $MotivationAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Lacking Motivation'])->pluck('survey_response_answer_id');
         $MotivationSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $MotivationAnswers)->pluck('survey_response_id');
         $MotivationSurveyResponse = SurveyResponses::all()->whereIn('id', $MotivationSurveyResponseAnswers)->pluck('student_id');
@@ -169,8 +163,7 @@ class StudentController extends Controller
         $BSComSciCourse = Course::all()->whereIn('coursecode', "BSCS")->pluck('id');
         $BSCACourse = Course::where('coursecode', "BSCA")->pluck('id');
         
-       
-        
+ 
 
         $AnxietyAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers', 'Panicking during tests' ])->pluck('survey_response_answer_id');
         $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $AnxietyAnswers)->pluck('survey_response_id');
@@ -240,10 +233,10 @@ class StudentController extends Controller
         $StudentTeacherStudents3 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
         $StudentTeacherStudents4 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
         $StudentTeacherStudents5 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem     
-        /* */$StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses)->paginate(3); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
+        /* */$StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses)->paginate(9); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
         $StudentTeacherISStudents = $StudentTeacherStudents2->whereIn('course_id', [7])->paginate(10); 
         $StudentTeacherCAStudents = $StudentTeacherStudents3->whereIn('course_id', [8])->paginate(10); 
-        $StudentTeacherComSciStudents = $StudentTeacherStudents4->whereIn('course_id', $BSComSciCourse)->paginate(1); 
+        $StudentTeacherComSciStudents = $StudentTeacherStudents4->whereIn('course_id', $BSComSciCourse)->paginate(9); 
         $StudentTeacherITStudents = $StudentTeacherStudents5->whereIn('course_id', [10])->paginate(10); 
 
        
@@ -300,6 +293,8 @@ class StudentController extends Controller
 
         $CCSCollege = College::where('collegecode', "CCS")->get();
 
+        
+
         $students = Student::whereIn('course_id', $CCSCoursesIDs);
         return view('studentlist')->with(['students' => $students, 'questioncategory' => $questioncategory, 'AnxiousCCSStudents' => $AnxiousCCSStudents, 'LackOfMotivationCCSStudents' => $LackOfMotivationCCSStudents,
         'RelationshipProblemCCSStudents' => $RelationshipProblemCCSStudents, 'StressCCSStudents' => $StressCCSStudents,
@@ -312,7 +307,8 @@ class StudentController extends Controller
         'StudentTeacherISStudents' => $StudentTeacherISStudents, 'StudentTeacherCAStudents' => $StudentTeacherCAStudents, 'StudentTeacherComSciStudents' => $StudentTeacherComSciStudents, 'StudentTeacherITStudents' => $StudentTeacherITStudents,
         'SelfImageISStudents' => $SelfImageISStudents, 'SelfImageCAStudents' => $SelfImageCAStudents, 'SelfImageComSciStudents' => $SelfImageComSciStudents, 'SelfImageITStudents' => $SelfImageITStudents,
         'BulliedISStudents' => $BulliedISStudents, 'BulliedCAStudents' => $BulliedCAStudents, 'BulliedComSciStudents' => $BulliedComSciStudents, 'BulliedITStudents' => $BulliedITStudents,
-        'PeerPressuredISStudents' => $PeerPressuredISStudents, 'PeerPressuredCAStudents' => $PeerPressuredCAStudents, 'PeerPressuredComSciStudents' => $PeerPressuredComSciStudents, 'PeerPressuredITStudents' => $PeerPressuredITStudents]);
+        'PeerPressuredISStudents' => $PeerPressuredISStudents, 'PeerPressuredCAStudents' => $PeerPressuredCAStudents, 'PeerPressuredComSciStudents' => $PeerPressuredComSciStudents, 'PeerPressuredITStudents' => $PeerPressuredITStudents,
+        'CCSCourses' => $CCSCourses]);
               
     }
 }
