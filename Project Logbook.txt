@@ -2501,3 +2501,17 @@ DONE:
 
 To Do Next Session: Dynamic Data Vizualization Sub Steps (This is the Endgame, GL)
 - Dynamic Pie Charts (LFG!!!!!!!!!!!)
+
+--------------------------------------------------------------------------------------------------------
+
+Sept 16:
+
+IN PROGRESS:
+- All Student List for CCS who didnt answer
+
+IN QUEUE:
+- All Student List for CCS who didnt answered w/o category segregation
+DONE:
+- All Student List for CCS who didnt answer
+
+

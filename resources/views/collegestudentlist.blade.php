@@ -53,8 +53,13 @@
                                     {{$selectcategory}}
 
                             </option> 
+
+                            
                             @endforeach
 
+                            <option value="/collegestudentlist/CCS/All">
+                                                All
+                            </option>
                         </select>
 
                         <script type="text/javascript">
@@ -129,6 +134,12 @@
                                                        <a href="/studentanswerlist/{{$PeerPressuredCCSStudent->id}}">2014-{{$PeerPressuredCCSStudent->id}} | {{$PeerPressuredCCSStudent->firstname}} {{$PeerPressuredCCSStudent->lastname}}  </a> <br>
                                         @endforeach
                                     @endif 
+                                    
+                                    @if($questioncategory == "All")
+                                        @foreach($CCSStudents as $CCSStudent)
+                                         <a href="/studentanswerlist/{{$CCSStudent->id}}">2014-{{$CCSStudent->id}} | {{$CCSStudent->firstname}} {{$CCSStudent->lastname}}  </a> <br>
+                                        @endforeach
+                                    @endif
                                 </button> </a> 
 
                                 
@@ -168,6 +179,7 @@
     @if($questioncategory == "Self-Image") {{$SelfImageCCSStudents->links()}} @endif
     @if($questioncategory == "Bullying") {{$BulliedCCSStudents->links()}} @endif
     @if($questioncategory == "Peer Pressure") {{$PeerPressuredCCSStudents->links()}} @endif
+    @if($questioncategory == "All") {{$CCSStudents->links()}} @endif
         
     </div>
 
