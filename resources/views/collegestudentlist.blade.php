@@ -60,6 +60,14 @@
                             <option value="/collegestudentlist/CCS/All">
                                                 All
                             </option>
+
+                            <option value="/collegestudentlist/CCS/Unresponsive">
+                                               Unresponsive
+                            </option>
+
+                            <option value="/collegestudentlist/CCS/Responsive">
+                                               Responsive
+                            </option>
                         </select>
 
                         <script type="text/javascript">
@@ -140,6 +148,18 @@
                                          <a href="/studentanswerlist/{{$CCSStudent->id}}">2014-{{$CCSStudent->id}} | {{$CCSStudent->firstname}} {{$CCSStudent->lastname}}  </a> <br>
                                         @endforeach
                                     @endif
+
+                                    @if($questioncategory == "Unresponsive")
+                                        @foreach($UnresponsiveStudents as $UnresponsiveStudent)
+                                         <a href="/studentanswerlist/{{$UnresponsiveStudent->id}}">2014-{{$UnresponsiveStudent->id}} | {{$UnresponsiveStudent->firstname}} {{$UnresponsiveStudent->lastname}}  </a> <br>
+                                        @endforeach
+                                    @endif
+
+                                    @if($questioncategory == "Responsive")
+                                        @foreach($ResponsiveStudents as $ResponsiveStudent)
+                                         <a href="/studentanswerlist/{{$ResponsiveStudent->id}}">2014-{{$ResponsiveStudent->id}} | {{$ResponsiveStudent->firstname}} {{$ResponsiveStudent->lastname}}  </a> <br>
+                                        @endforeach
+                                    @endif
                                 </button> </a> 
 
                                 
@@ -180,6 +200,8 @@
     @if($questioncategory == "Bullying") {{$BulliedCCSStudents->links()}} @endif
     @if($questioncategory == "Peer Pressure") {{$PeerPressuredCCSStudents->links()}} @endif
     @if($questioncategory == "All") {{$CCSStudents->links()}} @endif
+    @if($questioncategory == "Unresponsive") {{$UnresponsiveStudents->links()}} @endif
+    @if($questioncategory == "Responsive") {{$ResponsiveStudents->links()}} @endif
         
     </div>
 

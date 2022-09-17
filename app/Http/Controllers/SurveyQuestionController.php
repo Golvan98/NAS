@@ -59,12 +59,9 @@ class SurveyQuestionController extends Controller
         {
            $surveyquestion->delete();
 
-           
-           return redirect()->back()->with('success' , 'Survey Question Successfully');
+             return redirect()->back()->with('success' , 'Survey Question Successfully');
      
-
         }
-
         $data = request()->validate(
             [
                'question' => 'required',
@@ -72,11 +69,7 @@ class SurveyQuestionController extends Controller
                'category' => 'required'
             ]);
 
-       
-
             $survey = $surveyquestion->survey_id;
-   
-
            
         $surveyquestion->update($data);
         
