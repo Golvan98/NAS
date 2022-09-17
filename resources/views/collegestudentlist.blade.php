@@ -57,15 +57,15 @@
                             
                             @endforeach
 
-                            <option value="/collegestudentlist/CCS/All">
+                            <option value="/collegestudentlist/CCS/All" @if($questioncategory == "All") selected @endif >
                                                 All
                             </option>
 
-                            <option value="/collegestudentlist/CCS/Unresponsive">
+                            <option value="/collegestudentlist/CCS/Unresponsive" @if($questioncategory == "Unresponsive") selected @endif >
                                                Unresponsive
                             </option>
 
-                            <option value="/collegestudentlist/CCS/Responsive">
+                            <option value="/collegestudentlist/CCS/Responsive" @if($questioncategory == "Responsive") selected @endif >
                                                Responsive
                             </option>
                         </select>
