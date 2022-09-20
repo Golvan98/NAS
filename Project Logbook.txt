@@ -2511,7 +2511,23 @@ IN PROGRESS:
 
 IN QUEUE:
 - All Student List for CCS who didnt answered w/o category segregation
+
 DONE:
 - All Student List for CCS who didnt answer
+- All Student List for CCS who didnt answered w/o category segregation
+- Student List for those who answered the NAS Survey
+- Student List for CCS who didnt answer NAS survey
 
+--------------------------------------------------------------------------------------------------------
 
+Sept 17:
+
+IN PROGRESS:
+- Pie Charts (ENDGAME!)
+- Reading some github shit about pie charts
+
+DONE:
+- Found one close to what you want, creates a controller and a new migration
+but its data is written as queries from involving the other models, link here: https://websolutionstuff.com/post/how-to-create-dynamic-pie-chart-in-laravel
+
+- Controller created for dynamic pie chart

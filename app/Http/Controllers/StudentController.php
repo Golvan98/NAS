@@ -14,6 +14,10 @@ use App\Models\Department;
 use App\Models\AnswerChoice;
 use Illuminate\Pagination\Paginator;
 use App\Models\College;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
 
 
 class StudentController extends Controller
@@ -47,9 +51,52 @@ class StudentController extends Controller
         return redirect('home')->with('success', 'Logged Out Successfully');
     }
 
-    public function studentmasterlist($course, $questioncategory)
+    public function piechart()
     {
 
+        $CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id'); /*query for all Departments in CCS */
+        $CCSCourses = Course::all()->whereIn('department_id', $CCSDepartments)->pluck('id'); /*query for all Courses in CCS */
+        $questioncategories = SurveyQuestion::where('survey_id', 1)->pluck('category')->unique();
+        $CCSStudents = Student::whereIn('course_id', $CCSCourses)->paginate(10);
+        $CCSStudents1 = Student::all()->whereIn('course_id', $CCSCourses);
+
+        $CCSStudentsid = Student::whereIn('course_id', $CCSCourses)->pluck('id');
+     
+      $StudentsWhoAnsweredNASid = SurveyResponses::whereIn('student_id', $CCSStudentsid)->where('survey_id', 1)->pluck('student_id')->unique();
+      //  $CCSStudentsWhoAnswered = Student::where('id', $StudentsWhoAnswered);
+      $StudentsWhoAnsweredNAS = student::all()->whereIn('id', $StudentsWhoAnsweredNASid);
+
+      $UnresponsiveStudentsid = $CCSStudents1->diff($StudentsWhoAnsweredNAS)->pluck('id');
+
+      $ResponsiveStudents = Student::whereIn('id', $StudentsWhoAnsweredNASid)->paginate(5);
+      $UnresponsiveStudents = Student::whereIn('id', $UnresponsiveStudentsid)->paginate(5);
+     
+      $AnxietyAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers', 'Panicking during tests' ])->pluck('survey_response_answer_id');
+      $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $AnxietyAnswers)->pluck('survey_response_id');
+      $AnxietySurveyResponse = SurveyResponses::all()->whereIn('id', $AnxietySurveyResponseAnswers)->pluck('student_id');
+      $AnxiousStudents = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem
+      $AnxiousCCSStudents = $AnxiousStudents->whereIn('course_id', $CCSCourses)->get();
+        
+      $MotivationAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Lacking Motivation'])->pluck('survey_response_answer_id');
+      $MotivationSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $MotivationAnswers)->pluck('survey_response_id');
+      $MotivationSurveyResponse = SurveyResponses::all()->whereIn('id', $MotivationSurveyResponseAnswers)->pluck('student_id');
+      $LackOfMotivationStudents = Student::whereIn('id', $MotivationSurveyResponse); //Query for all Students who answered atleast 1 Motivation problem
+      $LackOfMotivationCCSStudents = $LackOfMotivationStudents->whereIn('course_id', $CCSCourses)->paginate(10); //Query for all Students from CCS who answered atleast 1 Motivation problem
+    
+      $RelationshipProblemAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Having no close friends in school', 'Having no financial/emotional support', 'Having difficulty socializing'])->pluck('survey_response_answer_id');
+      $RelationshipProblemResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $RelationshipProblemAnswers)->pluck('survey_response_id');
+      $RelationshipProblemSurveyResponse = SurveyResponses::all()->whereIn('id', $RelationshipProblemResponseAnswers)->pluck('student_id');
+      $RelationshipProblemStudents = Student::whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
+      $RelationshipProblemCCSStudents = $RelationshipProblemStudents->whereIn('course_id', $CCSCourses)->paginate(10); //Query for all Students from CCS who are atleast having 1 relationship problem
+       
+      $AnxietyCCS_count = count($AnxiousCCSStudents);
+      $NoMotivationCCS_count = count($LackOfMotivationCCSStudents);
+      $RelationshipProblemCCS_count = count($RelationshipProblemCCSStudents);
+
+      
+
+
+        return view('dynamicpiechart', compact('AnxietyCCS_count', 'NoMotivationCCS_count', 'RelationshipProblemCCS_count'));
         
     }
 

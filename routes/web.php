@@ -38,9 +38,12 @@ Route::get('/home', function(){
     return view('/homepage');
 })->name('balay');
 
-Route::get('/piechart', function() {
+/* Route::get('/piechart', function() {
     return view('dataviz1');
-});
+}); */
+
+
+Route::get('piechart', [StudentController::class, 'piechart']);
 
 Route::get('/bargraph', function() {
     return view('dataviz2');
