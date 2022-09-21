@@ -20,131 +20,144 @@
     </div>
     
     
+    <div id="first box" class="flex justify-center items-center w-full h-full bg-white flex h-full  border border-red-500"> 
     
-    
-    <div id="main box" class="w-full bg-white flex h-full justify-center items-center h-4/6">
+            <div id="first box" class="w-1/6 bg-white flex h-full items-center">
+
+            <div class="mt-56">  <button class="ml-8 bg-green-500 px-8 py-3 rounded-md text-white font-bold"> Get Back </button> </div>
+
+            </div>
+
+            <div id="main box" class="w-4/6 bg-white flex h-full h-full border border-gray-100 flex justify-center">
 
 
-        <?php
-        
-        switch($questioncategory){
-            case "Anxiety":
-
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$AnxiousISStudents),
-                    array("label"=>"Information Technology", "y"=>$AnxiousITStudents),
-                    array("label"=>"Computer Applications", "y"=>$AnxiousCAStudents),
-                    array("label"=>"Computer Science", "y"=>$AnxiousComSciStudents),        
-                );
-            break;
-
-            case "Motivation":
+                <?php
                 
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$LackOfMotivationISStudents),
-                    array("label"=>"Computer Applications", "y"=>$LackOfMotivationCAStudents),
-                    array("label"=>"Computer Science", "y"=>$LackOfMotivationComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$LackOfMotivationITStudents),                   
-                );
-           
-            break;
-            case "Relationships":
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$RelationshipProblemISStudents),
-                    array("label"=>"Computer Applications", "y"=>$RelationshipProblemCAStudents),
-                    array("label"=>"Computer Science", "y"=>$RelationshipProblemComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$RelationshipProblemITStudents),                   
-                );
-            break;
+                switch($questioncategory){
+                    case "Anxiety":
 
-            case "Stress-Management":
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$StressedISStudents),
-                    array("label"=>"Computer Applications", "y"=>$StressedCAStudents),
-                    array("label"=>"Computer Science", "y"=>$StressedComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$StressedITStudents),                   
-                );
-            break;
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$AnxiousISStudents),
+                            array("label"=>"Information Technology", "y"=>$AnxiousITStudents),
+                            array("label"=>"Computer Applications", "y"=>$AnxiousCAStudents),
+                            array("label"=>"Computer Science", "y"=>$AnxiousComSciStudents),        
+                        );
+                    break;
 
-            case "Student-Teacher-Conflict":
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$StudentTeacherISStudents),
-                    array("label"=>"Computer Applications", "y"=>$StudentTeacherCAStudents),
-                    array("label"=>"Computer Science", "y"=>$StudentTeacherComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$StudentTeacherITStudents),                   
-                );
-            break;
+                    case "Motivation":
+                        
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$LackOfMotivationISStudents),
+                            array("label"=>"Computer Applications", "y"=>$LackOfMotivationCAStudents),
+                            array("label"=>"Computer Science", "y"=>$LackOfMotivationComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$LackOfMotivationITStudents),                   
+                        );
+                
+                    break;
+                    case "Relationships":
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$RelationshipProblemISStudents),
+                            array("label"=>"Computer Applications", "y"=>$RelationshipProblemCAStudents),
+                            array("label"=>"Computer Science", "y"=>$RelationshipProblemComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$RelationshipProblemITStudents),                   
+                        );
+                    break;
 
-            case "Self-Image":
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$SelfImageISStudents),
-                    array("label"=>"Computer Applications", "y"=>$SelfImageCAStudents),
-                    array("label"=>"Computer Science", "y"=>$SelfImageComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$SelfImageITStudents),                   
-                );
-            break; 
+                    case "Stress-Management":
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$StressedISStudents),
+                            array("label"=>"Computer Applications", "y"=>$StressedCAStudents),
+                            array("label"=>"Computer Science", "y"=>$StressedComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$StressedITStudents),                   
+                        );
+                    break;
 
-            case "Bullying":
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$BulliedStudentsISStudents),
-                    array("label"=>"Computer Applications", "y"=>$BulliedStudentsCAStudents),
-                    array("label"=>"Computer Science", "y"=>$BulliedStudentsComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$BulliedStudentsITStudents),                   
-                );
-            break;
+                    case "Student-Teacher-Conflict":
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$StudentTeacherISStudents),
+                            array("label"=>"Computer Applications", "y"=>$StudentTeacherCAStudents),
+                            array("label"=>"Computer Science", "y"=>$StudentTeacherComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$StudentTeacherITStudents),                   
+                        );
+                    break;
+
+                    case "Self-Image":
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$SelfImageISStudents),
+                            array("label"=>"Computer Applications", "y"=>$SelfImageCAStudents),
+                            array("label"=>"Computer Science", "y"=>$SelfImageComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$SelfImageITStudents),                   
+                        );
+                    break; 
+
+                    case "Bullying":
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$BulliedStudentsISStudents),
+                            array("label"=>"Computer Applications", "y"=>$BulliedStudentsCAStudents),
+                            array("label"=>"Computer Science", "y"=>$BulliedStudentsComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$BulliedStudentsITStudents),                   
+                        );
+                    break;
+                    
+                    case "Peer Pressure":
+                        $dataPoints = array( 
+                            array("label"=>"Informaton Systems", "y"=>$PeerPressuredISStudents),
+                            array("label"=>"Computer Applications", "y"=>$PeerPressuredCAStudents),
+                            array("label"=>"Computer Science", "y"=>$PeerPressuredComSciStudents),
+                            array("label"=>"Information Technology", "y"=>$PeerPressuredITStudents),                   
+                        );
+                    break;
+                    default:
+                    //Catch anything
+                    break; //Break is not needed if default is the final case.
+                    }
             
-            case "Peer Pressure":
-                $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$PeerPressuredISStudents),
-                    array("label"=>"Computer Applications", "y"=>$PeerPressuredCAStudents),
-                    array("label"=>"Computer Science", "y"=>$PeerPressuredComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$PeerPressuredITStudents),                   
-                );
-            break;
-            default:
-            //Catch anything
-            break; //Break is not needed if default is the final case.
-            }
-       
-            //put an if statement here to check if $dataPoints is empty, put a text saying "Data for this category is currently empty
-           
+                    //put an if statement here to check if $dataPoints is empty, put a text saying "Data for this category is currently empty
+                
 
-        ?>
-        <!DOCTYPE HTML>
-        <html>
-        <head>
-        <script>
-        window.onload = function() {
-        
-        
-        var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            title: {
-                text: "Students in CCS Having Problems With"
-            },
-            subtitles: [{
-                text: "{{$questioncategory}}"
-            }],
-            data: [{
-                type: "pie",
-                yValueFormatString: "#,##\"\"",
-                indexLabel: "{label} ({y})",
-                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-            }]
-        });
-        chart.render();
-        
-        }
-        </script>
-        </head>
-        <body>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        </body>
-        </html>         
+                ?>
+                <!DOCTYPE HTML>
+                <html>
+                <head>
+                <script>
+                window.onload = function() {
+                
+                
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    title: {
+                        text: "Students in CCS Having Problems With"
+                    },
+                    subtitles: [{
+                        text: "{{$questioncategory}}"
+                    }],
+                    data: [{
+                        type: "pie",
+                        yValueFormatString: "#,##\"\"",
+                        indexLabel: "{label} ({y})",
+                        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                    }]
+                });
+                chart.render();
+                
+                }
 
-        
-    </div>
+                </script>
+                </head>
+                <body>
+                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </body>
+                </html>         
+
+                
+            </div>
+
+            <div id="main box" class="w-1/6 bg-white flex h-full">
+
+            </div>
+
+    </div>        
 
 
 
