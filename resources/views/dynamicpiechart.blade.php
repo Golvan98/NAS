@@ -66,12 +66,39 @@
                 );
             break;
 
-            case "dummy":
+            case "Student-Teacher-Conflict":
                 $dataPoints = array( 
-                    array("label"=>"Informaton Systems", "y"=>$RelationshipProblemISStudents),
-                    array("label"=>"Computer Applications", "y"=>$RelationshipProblemCAStudents),
-                    array("label"=>"Computer Science", "y"=>$RelationshipProblemComSciStudents),
-                    array("label"=>"Information Technology", "y"=>$RelationshipProblemITStudents),                   
+                    array("label"=>"Informaton Systems", "y"=>$StudentTeacherISStudents),
+                    array("label"=>"Computer Applications", "y"=>$StudentTeacherCAStudents),
+                    array("label"=>"Computer Science", "y"=>$StudentTeacherComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$StudentTeacherITStudents),                   
+                );
+            break;
+
+            case "Self-Image":
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$SelfImageISStudents),
+                    array("label"=>"Computer Applications", "y"=>$SelfImageCAStudents),
+                    array("label"=>"Computer Science", "y"=>$SelfImageComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$SelfImageITStudents),                   
+                );
+            break; 
+
+            case "Bullying":
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$BulliedStudentsISStudents),
+                    array("label"=>"Computer Applications", "y"=>$BulliedStudentsCAStudents),
+                    array("label"=>"Computer Science", "y"=>$BulliedStudentsComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$BulliedStudentsITStudents),                   
+                );
+            break;
+            
+            case "Peer Pressure":
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$PeerPressuredISStudents),
+                    array("label"=>"Computer Applications", "y"=>$PeerPressuredCAStudents),
+                    array("label"=>"Computer Science", "y"=>$PeerPressuredComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$PeerPressuredITStudents),                   
                 );
             break;
             default:
@@ -80,9 +107,7 @@
             }
        
             //put an if statement here to check if $dataPoints is empty, put a text saying "Data for this category is currently empty
-       
-        
-
+           
 
         ?>
         <!DOCTYPE HTML>
