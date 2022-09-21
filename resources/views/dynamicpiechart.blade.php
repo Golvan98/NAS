@@ -48,8 +48,31 @@
                 );
            
             break;
-            case "thing3":
-            //Do a different thing
+            case "Relationships":
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$RelationshipProblemISStudents),
+                    array("label"=>"Computer Applications", "y"=>$RelationshipProblemCAStudents),
+                    array("label"=>"Computer Science", "y"=>$RelationshipProblemComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$RelationshipProblemITStudents),                   
+                );
+            break;
+
+            case "Stress-Management":
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$StressedISStudents),
+                    array("label"=>"Computer Applications", "y"=>$StressedCAStudents),
+                    array("label"=>"Computer Science", "y"=>$StressedComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$StressedITStudents),                   
+                );
+            break;
+
+            case "dummy":
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$RelationshipProblemISStudents),
+                    array("label"=>"Computer Applications", "y"=>$RelationshipProblemCAStudents),
+                    array("label"=>"Computer Science", "y"=>$RelationshipProblemComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$RelationshipProblemITStudents),                   
+                );
             break;
             default:
             //Catch anything
@@ -72,7 +95,7 @@
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             title: {
-                text: "Students Having Problems With"
+                text: "Students in CCS Having Problems With"
             },
             subtitles: [{
                 text: "{{$questioncategory}}"

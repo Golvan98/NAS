@@ -2548,7 +2548,7 @@ DONE:
 - Algo for a dynamic pie chart, catches the questioncategory from URL.
 
 IN QUEUE:
-
+- Buttons on pie chart UI to switch current page like back, other categories and stuff
 
 To Do Next Session:
 - Make Dynamic Pie Chart Pages for Each category

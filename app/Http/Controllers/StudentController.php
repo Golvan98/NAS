@@ -109,18 +109,45 @@ class StudentController extends Controller
       $RelationshipProblemResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $RelationshipProblemAnswers)->pluck('survey_response_id');
       $RelationshipProblemSurveyResponse = SurveyResponses::all()->whereIn('id', $RelationshipProblemResponseAnswers)->pluck('student_id');
       $RelationshipProblemStudents = Student::whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
+      $RelationshipProblemStudents2 = Student::whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
+      $RelationshipProblemStudents3 = Student::whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
+      $RelationshipProblemStudents4 = Student::whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
+      $RelationshipProblemStudents5 = Student::whereIn('id', $RelationshipProblemSurveyResponse); //Query for all Students who are atleast having 1 relationship problem
       $RelationshipProblemCCSStudents = $RelationshipProblemStudents->whereIn('course_id', $CCSCourses)->paginate(10); //Query for all Students from CCS who are atleast having 1 relationship problem
-       
+      $RelationshipProblemISStudents = count($RelationshipProblemStudents2->whereIn('course_id', [7])->get());
+      $RelationshipProblemCAStudents = count($RelationshipProblemStudents3->whereIn('course_id', [8])->get());
+      $RelationshipProblemComSciStudents = count($RelationshipProblemStudents4->whereIn('course_id', [9])->get());
+      $RelationshipProblemITStudents = count($RelationshipProblemStudents5->whereIn('course_id', [10])->get());
+     
+
       $StressAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Having trouble sleeping', 'Having health problems', 'Always feeling tired'])->pluck('survey_response_answer_id');
       $StressSurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $StressAnswers)->pluck('survey_response_id');
       $StressSurveyResponse = SurveyResponses::all()->whereIn('id', $StressSurveyResponseAnswers)->pluck('student_id');
       $StressStudents = Student::whereIn('id', $StressSurveyResponse); //Query for all Students who are atleast having 1 Stress Management problem
+      $StressStudents2 = Student::whereIn('id', $StressSurveyResponse); //Query for all Students who are atleast having 1 Stress Management problem
+      $StressStudents3 = Student::whereIn('id', $StressSurveyResponse); //Query for all Students who are atleast having 1 Stress Management problem
+      $StressStudents4 = Student::whereIn('id', $StressSurveyResponse); //Query for all Students who are atleast having 1 Stress Management problem
+      $StressStudents5 = Student::whereIn('id', $StressSurveyResponse); //Query for all Students who are atleast having 1 Stress Management problem
       $StressCCSStudents = $StressStudents->whereIn('course_id', $CCSCourses)->paginate(10); //Query for all Students from CCS who are atleast having 1 Stress Management problem
-    
+      $StressedISStudents = count($StressStudents2->whereIn('course_id', [7])->get());
+      $StressedCAStudents = count($StressStudents3->whereIn('course_id', [8])->get());
+      $StressedComSciStudents = count($StressStudents4->whereIn('course_id', [9])->get());
+      $StressedITStudents = count($StressStudents5->whereIn('course_id', [10])->get());
+
+
+
+
       $StudentTeacherAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Getting along with teachers', 'Anxious to approach teachers'])->pluck('survey_response_answer_id');
       $StudentTeacherResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $StudentTeacherAnswers)->pluck('survey_response_id');
       $StudentTeacherSurveyResponse = SurveyResponses::all()->whereIn('id', $StudentTeacherResponseAnswers)->pluck('student_id');
       $StudentTeacherStudents = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
+      $StudentTeacherStudent2 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
+      $StudentTeacherStudent3 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
+      $StudentTeacherStudent4 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
+      $StudentTeacherStudent5 = Student::whereIn('id', $StudentTeacherSurveyResponse); //Query for all Students who are atleast having 1 Student Teacher problem
+
+
+
       $StudentTeacherCCSStudents = $StudentTeacherStudents->whereIn('course_id', $CCSCourses)->paginate(10); //Query for all Students from CCS who are atleast having 1 Student Teacher problem
       
       $SelfImageAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Struggling with sexual identity'])->pluck('survey_response_answer_id');
@@ -146,10 +173,13 @@ class StudentController extends Controller
       $NoMotivationCCS_count = count($LackOfMotivationCCSStudents);
       $RelationshipProblemCCS_count = count($RelationshipProblemCCSStudents);
 
-
-        return view('dynamicpiechart', compact('questioncategory','AnxiousISStudents','AnxiousCAStudents', 'AnxiousComSciStudents', 'AnxiousITStudents','LackOfMotivationISStudents', 'LackOfMotivationCAStudents', 'LackOfMotivationITStudents', 'LackOfMotivationComSciStudents'  ));
-    
-
+      $RelationshipProblemISStudents = count($RelationshipProblemStudents2->whereIn('course_id', [7])->get());
+      $RelationshipProblemCAStudents = count($RelationshipProblemStudents3->whereIn('course_id', [8])->get());
+      $RelationshipProblemComSciStudents = count($RelationshipProblemStudents4->whereIn('course_id', [9])->get());
+      $RelationshipProblemITStudents = count($RelationshipProblemStudents5->whereIn('course_id', [10])->get());
+     
+        return view('dynamicpiechart', compact('questioncategory','AnxiousISStudents','AnxiousCAStudents', 'AnxiousComSciStudents', 'AnxiousITStudents','LackOfMotivationISStudents', 'LackOfMotivationCAStudents', 'LackOfMotivationITStudents', 'LackOfMotivationComSciStudents',
+                    'RelationshipProblemISStudents', 'RelationshipProblemCAStudents', 'RelationshipProblemComSciStudents', 'RelationshipProblemITStudents', 'StressedISStudents' , 'StressedCAStudents', 'StressedComSciStudents' ,'StressedITStudents'));
     }
 
     public function studentanswerlist($student)
