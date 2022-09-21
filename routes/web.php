@@ -43,7 +43,7 @@ Route::get('/home', function(){
 }); */
 
 
-Route::get('piechart', [StudentController::class, 'piechart']);
+Route::get('piechart/{questioncategory}', [StudentController::class, 'piechart']);
 
 Route::get('/bargraph', function() {
     return view('dataviz2');

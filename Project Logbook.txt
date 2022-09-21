@@ -2520,7 +2520,7 @@ DONE:
 
 --------------------------------------------------------------------------------------------------------
 
-Sept 17:
+Sept 20:
 
 IN PROGRESS:
 - Pie Charts (ENDGAME!)
@@ -2531,3 +2531,28 @@ DONE:
 but its data is written as queries from involving the other models, link here: https://websolutionstuff.com/post/how-to-create-dynamic-pie-chart-in-laravel
 
 - Controller created for dynamic pie chart
+- Found a working template for pie chart, it auto divides by itself, kind of a pickle to get the percentage but
+nonetheless the pie is working, dynamic, and its values can be connected through controller queries, u were right.
+
+To Do Next Session:
+- Make Dynamic Pie Chart Pages for Each category
+- Bar Graph Pages for Each Category
+--------------------------------------------------------------------------------------------------------
+
+Sept 21:
+
+IN PROGRESS:
+- Dynamic Pie Chart Pages for Each Category
+
+DONE:
+- Algo for a dynamic pie chart, catches the questioncategory from URL.
+
+IN QUEUE:
+
+
+To Do Next Session:
+- Make Dynamic Pie Chart Pages for Each category
+- Bar Graph Pages for Each Category
+
+
+

@@ -27,15 +27,40 @@
 
         <?php
         
-        $dataPoints = array( 
-            array("label"=>"Informaton Systems", "y"=>$AnxietyCCS_count),
-            array("label"=>"Information Technology", "y"=>24),
-            array("label"=>"Computer Applications", "y"=>13),
-            array("label"=>"Computer Science", "y"=>6),
-            
-            
-        )
+        switch($questioncategory){
+            case "Anxiety":
+
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$AnxiousISStudents),
+                    array("label"=>"Information Technology", "y"=>$AnxiousITStudents),
+                    array("label"=>"Computer Applications", "y"=>$AnxiousCAStudents),
+                    array("label"=>"Computer Science", "y"=>$AnxiousComSciStudents),        
+                );
+            break;
+
+            case "Motivation":
+                
+                $dataPoints = array( 
+                    array("label"=>"Informaton Systems", "y"=>$LackOfMotivationISStudents),
+                    array("label"=>"Computer Applications", "y"=>$LackOfMotivationCAStudents),
+                    array("label"=>"Computer Science", "y"=>$LackOfMotivationComSciStudents),
+                    array("label"=>"Information Technology", "y"=>$LackOfMotivationITStudents),                   
+                );
+           
+            break;
+            case "thing3":
+            //Do a different thing
+            break;
+            default:
+            //Catch anything
+            break; //Break is not needed if default is the final case.
+            }
+       
+            //put an if statement here to check if $dataPoints is empty, put a text saying "Data for this category is currently empty
+       
         
+
+
         ?>
         <!DOCTYPE HTML>
         <html>
@@ -50,7 +75,7 @@
                 text: "Students Having Problems With"
             },
             subtitles: [{
-                text: "Anxiety"
+                text: "{{$questioncategory}}"
             }],
             data: [{
                 type: "pie",

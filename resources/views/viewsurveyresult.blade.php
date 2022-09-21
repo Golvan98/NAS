@@ -211,7 +211,7 @@
                 </div>
 
                 <div>
-                  <a href="/piechart">  <button class="text-white place-content-end place-items-end text-end justify-end w-24 h-8 bg-blue-400 mr-4">
+                  <a href="/piechart/{{$questioncategory}}">  <button class="text-white place-content-end place-items-end text-end justify-end w-24 h-8 bg-blue-400 mr-4">
                         View Graph
                     </button>
                   </a>
