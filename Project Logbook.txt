@@ -2554,6 +2554,7 @@ IN QUEUE:
 To Do Next Session:
 - Make Dynamic Pie Chart Pages for Each category
 - Bar Graph Pages for Each Category
+- Bar Graph Image for the right side of the pie chart page
 
 
 
