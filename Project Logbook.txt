@@ -2563,4 +2563,16 @@ To Do Next Session:
 Sept 22:
 
 IN PROGRESS:
-- 
+- Make reference buttons for each category in dynamic pie chart
+- Bar Graph Pages for Each Category
+
+DONE:
+- View and Controller side for bar graph created
+- Template for Bar Graph loaded, will tweak tomorrow.
+
+
+To Do Next Session:
+- Make reference buttons for each category in dynamic pie chart
+- Bar Graph Pages for Each Category
+- Bar Graph Image for the right side of the pie chart page
+

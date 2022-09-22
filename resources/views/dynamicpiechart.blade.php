@@ -175,7 +175,7 @@
 
                     </div>
 
-                    <div class="bg-white w-full h-5/6"> box 2</div>
+                    <div class="bg-white w-full h-5/6"> <a href ="/bargraph/{{$questioncategory}}"> box 2 </a> </div>
 
                 </div>
 

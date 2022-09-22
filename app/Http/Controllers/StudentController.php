@@ -54,7 +54,45 @@ class StudentController extends Controller
 
     public function bargraph()
     {
-        return view('dynamicbargraph');
+        $CCSDepartments = Department::all()->whereIn('departmentname', ['Computer Application', 'Computer Science', 'Information Technology', 'Information Systems'])->pluck('id'); /*query for all Departments in CCS */
+        $CCSCourses = Course::all()->whereIn('department_id', $CCSDepartments)->pluck('id'); /*query for all Courses in CCS */
+        $questioncategories = SurveyQuestion::where('survey_id', 1)->pluck('category')->unique();
+        $CCSStudents = Student::whereIn('course_id', $CCSCourses)->paginate(10);
+        $CCSStudents1 = Student::all()->whereIn('course_id', $CCSCourses);
+
+        $CCSStudentsid = Student::whereIn('course_id', $CCSCourses)->pluck('id');
+     
+      $StudentsWhoAnsweredNASid = SurveyResponses::whereIn('student_id', $CCSStudentsid)->where('survey_id', 1)->pluck('student_id')->unique();
+      //  $CCSStudentsWhoAnswered = Student::where('id', $StudentsWhoAnswered);
+      $StudentsWhoAnsweredNAS = student::all()->whereIn('id', $StudentsWhoAnsweredNASid);
+
+      $UnresponsiveStudentsid = $CCSStudents1->diff($StudentsWhoAnsweredNAS)->pluck('id');
+
+      $ResponsiveStudents = Student::whereIn('id', $StudentsWhoAnsweredNASid)->paginate(5);
+      $UnresponsiveStudents = Student::whereIn('id', $UnresponsiveStudentsid)->paginate(5);
+     
+      $AnxietyAnswers = AnswerChoice::all()->whereIn('answer_choice', ['Afraid I might not fit in MSU-IIT', 'Afraid to speak up in class', 'Afraid of failing in subjects', 'Anxious to approach teachers', 'Panicking during tests' ])->pluck('survey_response_answer_id');
+      $AnxietySurveyResponseAnswers = SurveyResponseAnswers::all()->whereIn('id', $AnxietyAnswers)->pluck('survey_response_id');
+      $AnxietySurveyResponse = SurveyResponses::all()->whereIn('id', $AnxietySurveyResponseAnswers)->pluck('student_id');
+      $AnxiousStudents = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem
+      $AnxiousStudents2 = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem     
+      $AnxiousStudents3 = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem      
+      $AnxiousStudents4 = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem
+      $AnxiousStudents5 = Student::whereIn('id', $AnxietySurveyResponse); //Query for all Students who answered atleast 1 Anxiety problem
+      $AnxiousCCSStudents = $AnxiousStudents->whereIn('course_id', $CCSCourses)->get();
+      $AnxiousISStudents = count($AnxiousStudents2->whereIn('course_id', [7])->get());
+      $fruit_count = count($AnxiousStudents3->whereIn('course_id', [8])->get());
+      $veg_count = count($AnxiousStudents4->whereIn('course_id', [9])->get());
+      $grains_count = count($AnxiousStudents5->whereIn('course_id', [10])->get());
+    
+
+
+
+
+
+
+
+        return view('dynamicbargraph', compact('fruit_count', 'veg_count', 'grains_count'));
     }
 
     public function piechart($questioncategory)
