@@ -51,6 +51,12 @@ class StudentController extends Controller
         return redirect('home')->with('success', 'Logged Out Successfully');
     }
 
+
+    public function bargraph()
+    {
+        return view('dynamicbargraph');
+    }
+
     public function piechart($questioncategory)
     {
 

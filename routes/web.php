@@ -43,11 +43,15 @@ Route::get('/home', function(){
 }); */
 
 
+/* Route::get('/bargraph', function() {
+    return view('dataviz2');
+}); */
+
+
 Route::get('piechart/{questioncategory}', [StudentController::class, 'piechart']);
 
-Route::get('/bargraph', function() {
-    return view('dataviz2');
-});
+Route::get('bargraph', [StudentController::class, 'bargraph']);
+
 
 
 Route::get('/collegestudentlist/{college}/{questioncategory}', [StudentController::class, 'collegestudentlist']);

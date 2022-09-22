@@ -20,11 +20,23 @@
     </div>
     
     
-    <div id="first box" class="flex justify-center items-center w-full h-full bg-white flex h-full  border border-red-500"> 
+    <div id="first box" class="flex justify-center items-center w-full h-full bg-white flex h-full"> 
     
             <div id="first box" class="w-1/6 bg-white flex h-full items-center">
 
-            <div class="mt-56">  <button class="ml-8 bg-green-500 px-8 py-3 rounded-md text-white font-bold"> Get Back </button> </div>
+                <div class="mt-56">  
+                
+                    <a href="/viewsurveyresult/{{$questioncategory}}"> 
+                            
+                        <button class="ml-8 bg-green-500 px-8 py-3 rounded-md text-white font-bold"> 
+                            
+                            Get Back 
+
+                        </button> 
+                        
+                    </a> 
+                    
+                </div>
 
             </div>
 
@@ -112,7 +124,7 @@
                     break; //Break is not needed if default is the final case.
                     }
             
-                    //put an if statement here to check if $dataPoints is empty, put a text saying "Data for this category is currently empty
+                    //put an if statement here to check if $dataPoints is empty, put a text saying "Data for this category is currently empty"
                 
 
                 ?>
