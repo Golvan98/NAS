@@ -22,7 +22,7 @@
     
     <div id="first box" class="flex justify-center items-center w-full h-full bg-white flex h-full"> 
     
-            <div id="first box" class="w-1/6 bg-white flex h-full items-center">
+            <div id="first box" class="w-1/5 bg-white flex h-full items-center">
 
                 <div class="mt-56">  
                 
@@ -40,7 +40,7 @@
 
             </div>
 
-            <div id="main box" class="w-4/6 bg-white flex h-full h-full border border-gray-100 flex justify-center">
+            <div id="center box" class="w-3/5 bg-white flex h-full h-full border border-gray-100 flex justify-center">
 
 
                 <?php
@@ -165,17 +165,27 @@
                 
             </div>
 
-            <div id="main box" class="flex-nowrap w-1/6 bg-white flex h-full">
+            <div id="third box" class="flex-nowrap w-1/5 bg-white flex h-full">
 
-                <div class="bg-red-300 w-full h-full flex-nowrap"> 
+                <div class="bg-white w-full h-full flex-nowrap"> 
 
-                    <div class="bg-white w-full h-1/6 flex justify-end"> 
+                    <div class="bg-white w-full h-1/5 flex justify-end "> 
 
                        <div class="w-full h-full"> <button class=" ml-16 mt-4 bg-gray-900 px-10 py-2 text-white font-bold rounded-md "> Print </button> </div>
 
                     </div>
 
-                    <div class="bg-white w-full h-5/6"> <a href ="/bargraph/{{$questioncategory}}"> box 2 </a> </div>
+                    <div class="bg-white w-full h-1/5 "> <a href ="/piechart/{{$questioncategory}}">  </a> </div>
+
+							<div class="bg-white w-full h-2/6"> 
+									
+							<a href ="/bargraph/{{$questioncategory}}"> 
+									
+							<img class="object-fill w-full h-full" src="{{ asset('storage/bargraph.png') }}" alt="description of myimage">
+							
+							
+							</a> 
+								</div>
 
                 </div>
 

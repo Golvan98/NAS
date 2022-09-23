@@ -2588,4 +2588,12 @@ IN PROGRESS:
 DONE:
 - Bar Graph Pages for Each Category. the php switch statement and this line of code did the trick 
 --------->  dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?> <-----------------
+- Had a pickle with charts not being able to show both. Will try another chart canva but an image filler will do for now
+- Referrence buttons & links for piechart to bargraph & vice versa.
 
+To Do Next Session (Polishes at this point, the entire project is ready for a demo CONGRATS! >:D )
+
+- bar graph and piechart in one page
+- highlighted category text on the lay-out side, according to questioncategory 
+idea for the code is
+foreach $allcategory yada yada (if $questioncategory == allcategory)
