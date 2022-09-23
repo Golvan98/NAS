@@ -2576,3 +2576,16 @@ To Do Next Session:
 - Bar Graph Pages for Each Category
 - Bar Graph Image for the right side of the pie chart page
 
+--------------------------------------------------------------------------------------------------------
+
+Sept 23:
+
+IN PROGRESS:
+- Make reference buttons for each category in dynamic pie chart
+- Bar Graph Pages for Each Category
+- Bar Graph Image for the right side of the pie chart page
+
+DONE:
+- Bar Graph Pages for Each Category. the php switch statement and this line of code did the trick 
+--------->  dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?> <-----------------
+

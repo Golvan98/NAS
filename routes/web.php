@@ -50,7 +50,7 @@ Route::get('/home', function(){
 
 Route::get('piechart/{questioncategory}', [StudentController::class, 'piechart']);
 
-Route::get('bargraph', [StudentController::class, 'bargraph']);
+Route::get('bargraph/{questioncategory}', [StudentController::class, 'bargraph']);
 
 
 

@@ -15,7 +15,7 @@
     </div>
 
 
-    <div class="flex-nowrap w-full bg-gray-300 h-auto border border-black">
+    <div class="flex-nowrap w-full bg-gray-300 h-auto">
 
         <div class="w-full bg-gray-300 space-x-12 mt-2 flex justify-between items-center h-auto px-24 py-8">
 
