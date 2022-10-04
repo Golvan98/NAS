@@ -2597,3 +2597,19 @@ To Do Next Session (Polishes at this point, the entire project is ready for a de
 - highlighted category text on the lay-out side, according to questioncategory 
 idea for the code is
 foreach $allcategory yada yada (if $questioncategory == allcategory)
+- Reference link that uses Previous()->link sucks, replace them with <AHREF> links with fixed routes.
+
+--------------------------------------------------------------------------------------------------------
+
+Oct 3: Took a break since it was fiesta. 
+
+DONE:
+- Got Covid, must take rest, updated the team & ERD for  documentation though. 
+
+To Do Next Session (Polishes at this point, the entire project is ready for a demo CONGRATS! >:D 
+
+- bar graph and piechart in one page
+- highlighted category text on the lay-out side, according to questioncategory 
+idea for the code is
+foreach $allcategory yada yada (if $questioncategory == allcategory)
+- Reference link that uses Previous()->link sucks, replace them with <AHREF> links with fixed routes.
