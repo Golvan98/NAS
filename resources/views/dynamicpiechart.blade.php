@@ -181,7 +181,7 @@
 									
 							<a href ="/bargraph/{{$questioncategory}}"> 
 									
-							<img class="object-fill w-full h-full" src="{{ asset('storage/bargraph.png') }}" alt="description of myimage">
+							<img class="object-fill w-full h-full" src="{{ asset('storage/bargraph template.png') }}" alt="description of myimage">
 							
 							
 							</a> 

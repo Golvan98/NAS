@@ -179,7 +179,7 @@
 									
 							<a href ="/piechart/{{$questioncategory}}"> 
 									
-							<img class="object-fill w-full h-full" src="{{ asset('storage/dummypie.png') }}" alt="description of myimage">
+							<img class="object-fill w-full h-full" src="{{ asset('storage/dummiepiechart.png') }}" alt="description of myimage">
 							
 							
 							</a> 
