@@ -2613,3 +2613,17 @@ To Do Next Session (Polishes at this point, the entire project is ready for a de
 idea for the code is
 foreach $allcategory yada yada (if $questioncategory == allcategory)
 - Reference link that uses Previous()->link sucks, replace them with <AHREF> links with fixed routes.
+
+--------------------------------------------------------------------------------------------------------
+
+Nov 15: Yet again another long break lmao
+
+DONE:
+- replaced bar graph and pie chart template
+
+- - bar graph and piechart in one page
+- highlighted category text on the lay-out side, according to questioncategory 
+idea for the code is
+foreach $allcategory yada yada (if $questioncategory == allcategory)
+- Reference link that uses Previous()->link sucks, replace them with <AHREF> links with fixed routes.
+

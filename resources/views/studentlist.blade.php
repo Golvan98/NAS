@@ -31,7 +31,7 @@
             
                 <div> 
 
-                    <a href="{{ url()->previous() }}"> <button class="mt-4 bg-green-400 text-white font-bold px-10 py-1 ml-4 mb-2"> Return to Graphs </button> </a>
+                    <a href="/viewsurveyresult/{{$questioncategory}}"> <button class="mt-4 bg-green-400 text-white font-bold px-10 py-1 ml-4 mb-2"> Back </button> </a>
 
                 </div>
 

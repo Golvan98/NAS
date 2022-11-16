@@ -42,7 +42,7 @@
 
         </div>
         
-        <div class="w-full flex justify-start h-auto bg-gray-300">  <a href="{{ url()->previous() }}"> <button class="text-center bg-green-500 px-9 py-1 text-white font-bold ml-8 mb-2 "> Back </button> </a> </div>
+        <div class="w-full flex justify-start h-auto bg-gray-300">  <a href="/viewsurveys"> <button class="text-center bg-green-500 px-9 py-1 text-white font-bold ml-8 mb-2 "> Back </button> </a> </div>
 
     </div>
 

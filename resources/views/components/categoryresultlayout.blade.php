@@ -96,7 +96,8 @@
             <div class="flex justify-center text-sm text-yellow-300 "> Anxiety </div>
             <div class="flex justify-center text-sm"> Student-Teacher Relationship </div>
             <div class="flex justify-center  text-sm"> Parent-Separation </div>
-            <div class="flex justify-center  text-sm"> Stress-Management </div>
+            
+            <div class="flex justify-center  text-sm"> Stress-Management  </div>
             <div class="flex justify-center  text-sm"> Peer Pressure</div>
             <div class="flex justify-center  text-sm"> Cyberbullying </div>
             <div class="flex justify-center  text-sm"> Relationships </div>

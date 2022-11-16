@@ -57,7 +57,7 @@
                 </div>
 
 
-                <div class="bg-white w-full h-3/4 flex flex-wrap border border-red-500">  
+                <div class="bg-white w-full h-3/4 flex flex-wrap">  
                 @foreach ($NASSurveyQuestions as $NASSurveyQuestion) 
                     <div class="w-1/2 h-auto flex flex-wrap"><strong> Module {{$NASSurveyQuestion->id }}: &nbsp </strong>
             
