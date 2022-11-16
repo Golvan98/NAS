@@ -18,7 +18,7 @@
     <div id="header" class="flex justify-between w-full h-12 bg-red-700">
 
         <div class=" bg-red-700 font-bold flex items-center text-white px-12 text-left"> 
-                My.IIT 
+            <a href="/home"> My.IIT </a>
         </div>
 
         <div class="bg-red-700 flex-auto flex items-center">  
