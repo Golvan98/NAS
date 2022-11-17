@@ -53,8 +53,8 @@
         @guest
         <div class="bg-red-700 flex items-center text-white font-bold mr-2">
 
-                <div class="relative inline-block">
-                    <img class="mb-2 inline-block object-cover w-8 h-8 rounded-full" src="https://pbs.twimg.com/profile_images/1430917464792072200/rqqJOqer_400x400.jpg" alt="Profile image"/>
+                <div class="relative inline-block mr-1">
+                    <img class="mb-2 inline-block object-cover w-7 h-7 rounded-full" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile image"/>
                     <span class="mb-2 absolute bottom-0 right-0 inline-block w-2 h-2 bg-green-600 border-2 border-white rounded-full"></span>
                 </div>
                 

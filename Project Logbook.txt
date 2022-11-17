@@ -2620,10 +2620,39 @@ Nov 15: Yet again another long break lmao
 
 DONE:
 - replaced bar graph and pie chart template
+- made modals more pleasing to the eyes by making background light gray instead of dark
+- My.IIT now is a ahref button for home page
+- removed the text yellow to show which category is active thingy since algo is not written for it yet.
 
-- - bar graph and piechart in one page
+BUGS FOUND:
+- (FIXED) Edit button not working in view question, removed it for now
+removed its modal reference code which is: 
+
+BUG FIX:
+- Edit button not working was just the for if category not containing the proper modal link
+
+ <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+and replaced it with a back button	
+
+
+To Do Next Session (Polishes at this point, the entire project is ready for a demo. CONGRATS! >:D 
+-  bar graph and piechart in one page
 - highlighted category text on the lay-out side, according to questioncategory 
 idea for the code is
 foreach $allcategory yada yada (if $questioncategory == allcategory)
 - Reference link that uses Previous()->link sucks, replace them with <AHREF> links with fixed routes.
 
+--------------------------------------------------------------------------------------------------------
+
+Nov 16: 
+
+DONE:
+- highlighted category text on the lay-out side, according to questioncategory 
+
+
+BUGS FOUND:
+- page 2 of survey Question manager overlaps layout, flex wrap fix maybe?
+
+BUG FIX:
+- page overlap layout is more of a zoom issue I think, 90% solves the problem but at 100% it overlaps. Something to learn about
+further for front-end development

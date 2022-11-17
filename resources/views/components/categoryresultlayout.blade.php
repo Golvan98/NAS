@@ -1,3 +1,4 @@
+@props(['questioncategory'])
 <!doctype html>
 <html>
 <head>
@@ -92,15 +93,66 @@
             </a>
 
 
-            
-            <div class="flex justify-center text-sm text-yellow-300 "> Anxiety </div>
+            @if ($questioncategory == "Anxiety") 
+            <div class="flex justify-center text-sm text-yellow-200"> Anxiety </div>
+            @else
+            <div class="flex justify-center text-sm"> Anxiety </div>
+            @endif
+
+            @if ($questioncategory == "Student-Teacher Relationship") 
+            <div class="flex justify-center text-sm text-yellow-200"> Student-Teacher Relationship </div>
+            @else
             <div class="flex justify-center text-sm"> Student-Teacher Relationship </div>
-            <div class="flex justify-center  text-sm"> Parent-Separation </div>
-            
+            @endif
+
+            @if ($questioncategory == "Parent-Separation") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Parent-Separation </div>
+            @else
+            <div class="flex justify-center text-sm"> Parent-Separation </div>
+            @endif
+
+            @if ($questioncategory == "Stress-Management") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Stress-Management  </div>
+            @else 
             <div class="flex justify-center  text-sm"> Stress-Management  </div>
-            <div class="flex justify-center  text-sm"> Peer Pressure</div>
-            <div class="flex justify-center  text-sm"> Cyberbullying </div>
-            <div class="flex justify-center  text-sm"> Relationships </div>
+            @endif
+
+            @if ($questioncategory == "Peer Pressure") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Peer Pressure </div>
+            @else 
+            <div class="flex justify-center  text-sm"> Peer Pressure  </div>
+            @endif
+
+            @if ($questioncategory == "Cyberbullying") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Cyberbullying </div>
+            @else 
+            <div class="flex justify-center  text-sm"> Cyberbullying  </div>
+            @endif
+
+            @if ($questioncategory == "Relationships") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Relationships </div>
+            @else 
+            <div class="flex justify-center  text-sm"> Relationships  </div>
+            @endif
+
+            @if ($questioncategory == "Physical-Psychological-Abuse") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Physical-Psychological-Abuse </div>
+            @else 
+            <div class="flex justify-center  text-sm"> Physical-Psychological-Abuse  </div>
+            @endif
+
+            @if ($questioncategory == "Bullying") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Bullying </div>
+            @else 
+            <div class="flex justify-center  text-sm"> Bullying  </div>
+            @endif
+
+            @if ($questioncategory == "Student-Teacher-Conflict") 
+            <div class="flex justify-center  text-sm text-yellow-200"> Student-Teacher-Conflict </div>
+            @else 
+            <div class="flex justify-center  text-sm"> Student-Teacher-Conflict  </div>
+            @endif
+
 
             
           

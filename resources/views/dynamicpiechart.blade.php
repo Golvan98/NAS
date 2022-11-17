@@ -30,7 +30,7 @@
                             
                         <button class="ml-8 bg-green-500 px-8 py-3 rounded-md text-white font-bold"> 
                             
-                            Get Back 
+                            Back 
 
                         </button> 
                         

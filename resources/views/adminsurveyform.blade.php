@@ -42,7 +42,7 @@
 
                                         <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <div class="w-full mb-2">  <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-editquestionmodal> </div>        
 
                                         <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
                                         
@@ -107,7 +107,7 @@
 
                                         <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <div class="w-full mb-2">  <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-editquestionmodal> </div>        
 
                                         <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
                                         
@@ -169,7 +169,7 @@
 
                                         <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <div class="w-full mb-2">  <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-editquestionmodal> </div>        
 
                                         <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
                                         
@@ -234,7 +234,7 @@
 
                                         <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <div class="w-full mb-2">  <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-editquestionmodal> </div>        
 
                                         <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
                                         
@@ -297,7 +297,7 @@
 
                                         <div class="w-1/3 mt-1"> <a href="{{ $SurveyQuestions->previousPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Previous </a> </button> </div> 
 
-                                        <x-testmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-testmodal>  
+                                        <div class="w-full mb-2">  <x-editquestionmodal SurveyQuestionId="{{$SurveyQuestion->id}}" SurveyQuestionName="{{$SurveyQuestion->question}}" SurveyQuestionCategory="{{$SurveyQuestion->category}}" SurveyQuestionType="{{$SurveyQuestion->type}}"> </x-editquestionmodal> </div>        
 
                                         <div class="w-1/3 flex justify-end mr-4 mt-1"> <a href="{{ $SurveyQuestions->nextPageUrl() }}"> <button class="px-8 py-1 bg-green-400 rounded-md ml-2 mb-2 border text-white"> Next </a> </button> </div> 
                                         

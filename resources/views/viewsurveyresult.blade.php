@@ -1,6 +1,6 @@
-<x-categoryresultlayout>
+<x-categoryresultlayout questioncategory="{{$questioncategory}}">
 
-
+ 
 <div id="body" class="bg-gray-300 flex-nowrap w-full"> 
 
     <div class="bg-gray-500 mt-16">     
